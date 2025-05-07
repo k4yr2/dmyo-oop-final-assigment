@@ -14,7 +14,7 @@ namespace dmyo_oop_final_assigment
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			Application.Run(new WasteTypesForm());
 		}
 	}
 }
