@@ -1,0 +1,58 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+# Windows Form designer generated files (optional — if not manually edited)
+*.Designer.cs
+
+# SQL LocalDB and other database artifacts
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Rider IDE
+.idea/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# DotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+*.nunit.xml
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.swp
+*.swo
+*.bak
+
+# Others
+Thumbs.db
+desktop.ini
