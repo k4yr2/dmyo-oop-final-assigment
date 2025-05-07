@@ -42,7 +42,7 @@
 			// wt_name
 			// 
 			this.wt_name.AutoSize = true;
-			this.wt_name.Location = new System.Drawing.Point(6, 22);
+			this.wt_name.Location = new System.Drawing.Point(9, 22);
 			this.wt_name.Name = "wt_name";
 			this.wt_name.Size = new System.Drawing.Size(35, 13);
 			this.wt_name.TabIndex = 0;
@@ -58,6 +58,7 @@
 			// richTextBox1
 			// 
 			this.richTextBox1.Location = new System.Drawing.Point(9, 64);
+			this.richTextBox1.MaxLength = 250;
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.Size = new System.Drawing.Size(200, 80);
 			this.richTextBox1.TabIndex = 3;
@@ -119,7 +120,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(451, 308);
+			this.ClientSize = new System.Drawing.Size(239, 202);
 			this.Controls.Add(this.wt_group);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "WasteTypesForm";
