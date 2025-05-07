@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
 {
-	public partial class WasteTypeForm : Form
+	public partial class WasteTypesForm : Form
 	{
-		public WasteTypeForm()
+		public WasteTypesForm()
 		{
 			InitializeComponent();
 		}
