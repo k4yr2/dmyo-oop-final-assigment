@@ -34,6 +34,8 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.wt_group = new System.Windows.Forms.GroupBox();
 			this.wt_description = new System.Windows.Forms.Label();
+			this.wt_apply = new System.Windows.Forms.Button();
+			this.wt_delete = new System.Windows.Forms.Button();
 			this.wt_group.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -72,13 +74,15 @@
 			// 
 			// wt_group
 			// 
+			this.wt_group.Controls.Add(this.wt_delete);
+			this.wt_group.Controls.Add(this.wt_apply);
 			this.wt_group.Controls.Add(this.richTextBox1);
 			this.wt_group.Controls.Add(this.textBox1);
 			this.wt_group.Controls.Add(this.wt_description);
 			this.wt_group.Controls.Add(this.wt_name);
 			this.wt_group.Location = new System.Drawing.Point(12, 12);
 			this.wt_group.Name = "wt_group";
-			this.wt_group.Size = new System.Drawing.Size(215, 155);
+			this.wt_group.Size = new System.Drawing.Size(215, 181);
 			this.wt_group.TabIndex = 5;
 			this.wt_group.TabStop = false;
 			this.wt_group.Text = "Waste Type";
@@ -91,6 +95,25 @@
 			this.wt_description.Size = new System.Drawing.Size(60, 13);
 			this.wt_description.TabIndex = 0;
 			this.wt_description.Text = "Description";
+			// 
+			// wt_apply
+			// 
+			this.wt_apply.Location = new System.Drawing.Point(9, 150);
+			this.wt_apply.Name = "wt_apply";
+			this.wt_apply.Size = new System.Drawing.Size(98, 23);
+			this.wt_apply.TabIndex = 6;
+			this.wt_apply.Text = "Add";
+			this.wt_apply.UseVisualStyleBackColor = true;
+			// 
+			// wt_delete
+			// 
+			this.wt_delete.Enabled = false;
+			this.wt_delete.Location = new System.Drawing.Point(111, 150);
+			this.wt_delete.Name = "wt_delete";
+			this.wt_delete.Size = new System.Drawing.Size(98, 23);
+			this.wt_delete.TabIndex = 7;
+			this.wt_delete.Text = "Delete";
+			this.wt_delete.UseVisualStyleBackColor = true;
 			// 
 			// WasteTypesForm
 			// 
@@ -115,5 +138,7 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox wt_group;
 		private System.Windows.Forms.Label wt_description;
+		private System.Windows.Forms.Button wt_delete;
+		private System.Windows.Forms.Button wt_apply;
 	}
 }
