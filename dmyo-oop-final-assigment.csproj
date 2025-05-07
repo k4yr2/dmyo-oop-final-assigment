@@ -58,6 +58,7 @@
     <Compile Include="Forms\WasteTypesForm.Designer.cs">
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\SQLConnectionManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\WasteTypesForm.resx">
