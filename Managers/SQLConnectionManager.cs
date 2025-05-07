@@ -1,8 +1,7 @@
-﻿namespace dmyo_oop_final_assigment.Managers
-{
-	using System;
-	using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
+namespace dmyo_oop_final_assigment.Managers
+{
 	public static class SqlConnectionManager
 	{
 		// Connection string
