@@ -65,7 +65,7 @@
 			this.pg_label.Name = "pg_label";
 			this.pg_label.Size = new System.Drawing.Size(24, 13);
 			this.pg_label.TabIndex = 1;
-			this.pg_label.Text = "0/0";
+			this.pg_label.Text = "1/1";
 			// 
 			// pg_next
 			// 

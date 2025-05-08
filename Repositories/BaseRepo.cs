@@ -25,6 +25,7 @@ namespace dmyo_oop_final_assigment.Repositories
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
+			OnChanged.Invoke();
 			return new DataObject<TModel>(id, model);
 		}
 
@@ -59,6 +60,9 @@ namespace dmyo_oop_final_assigment.Repositories
 				affected = command.ExecuteNonQuery() > 0;
 			});
 
+			if(affected)
+				OnChanged.Invoke();
+
 			return affected;
 		}
 
@@ -70,6 +74,9 @@ namespace dmyo_oop_final_assigment.Repositories
 				command.Parameters.AddWithValue("id", id);
 				affected = command.ExecuteNonQuery() > 0;
 			});
+
+			if (affected)
+				OnChanged.Invoke();
 
 			return affected;
 		}

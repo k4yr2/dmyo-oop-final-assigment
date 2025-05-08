@@ -12,40 +12,29 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class PagebarControl : UserControl
 	{
-		private int m_current = 1;
+		private int m_current = 0;
 
-		private int m_count = 1;
+		private int m_count = 0;
 
 		public event Action OnSet;
 
 		public PagebarControl()
 		{
 			InitializeComponent();
+			Set(1, 1);
 		}
 
 
 		public int Current
 		{
 			get => m_current;
-			set
-			{
-				if (m_current != value)
-				{
-					Set(value, m_count);
-				}
-			}
+			set => Set(value, m_count);
 		}
 
 		public int Count
 		{
 			get => m_count;
-			set
-			{
-				if(m_count != value)
-				{
-					Set(m_current, value);
-				}
-			}
+			set => Set(m_current, value);
 		}
 
 
@@ -58,13 +47,28 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Set(int current, int count)
 		{
-			current = Math.Min(current, count);
-			current = Math.Max(current, 1);
-			count = Math.Max(count, 1);
+			count = Math.Min(count, 1);
+			current = Math.Min(current, 1);
+			current = Math.Max(current, count);
 
-			pg_label.Text = $"{m_current = current} / {m_count = count}";
+			if(m_current != current || m_count != current)
+			{
+				pg_label.Text = $"{m_current = current} / {m_count = count}";
 
-			OnSet?.Invoke();
+				if(m_current == 1)
+				{
+					pg_first.Enabled = false;
+					pg_previous.Enabled = false;
+				}
+
+				if(m_current == m_count)
+				{
+					pg_next.Enabled = false;
+					pg_last.Enabled = false;
+				}
+
+				OnSet?.Invoke();
+			}
 		}
 
 		private void pg_first_Click(object sender, EventArgs e)

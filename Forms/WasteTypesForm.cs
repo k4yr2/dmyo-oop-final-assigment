@@ -20,12 +20,15 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			RepoManager.WasteType.OnChanged += RefreshData;
 			pagebarControl1.OnSet += RefreshData;
-
+			RefreshData();
 		}
 
 		private void RefreshData()
 		{
-			pagebarControl1.Count = (int)Math.Ceiling(RepoManager.WasteType.Count() / 5d);
+			int count = (int)Math.Ceiling(RepoManager.WasteType.Count() / 5d);
+
+			if(count > 0)
+				pagebarControl1.Count = count;
 
 			var data = RepoManager.WasteType.ReadPage(pagebarControl1.Current, 5)
 				.Concat(Enumerable.Repeat<DataObject<WasteType>>(null, 5))
