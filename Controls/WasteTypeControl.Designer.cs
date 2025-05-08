@@ -30,7 +30,7 @@
 		{
 			this.wt_name = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.wt_description = new System.Windows.Forms.RichTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -51,21 +51,22 @@
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
-			// richTextBox1
+			// wt_description
 			// 
-			this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.richTextBox1.Location = new System.Drawing.Point(76, 29);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(221, 64);
-			this.richTextBox1.TabIndex = 2;
-			this.richTextBox1.Text = "";
+			this.wt_description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.wt_description.Location = new System.Drawing.Point(76, 29);
+			this.wt_description.Name = "wt_description";
+			this.wt_description.ReadOnly = true;
+			this.wt_description.Size = new System.Drawing.Size(221, 64);
+			this.wt_description.TabIndex = 2;
+			this.wt_description.Text = "";
 			// 
 			// WasteTypeControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.richTextBox1);
+			this.Controls.Add(this.wt_description);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.wt_name);
 			this.Name = "WasteTypeControl";
@@ -80,6 +81,6 @@
 
 		private System.Windows.Forms.Label wt_name;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.RichTextBox wt_description;
 	}
 }

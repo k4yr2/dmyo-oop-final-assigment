@@ -16,6 +16,12 @@ namespace dmyo_oop_final_assigment.Controls
 	{
 		private DataObject<WasteType> m_data;
 
+		public WasteTypeControl()
+		{
+			InitializeComponent();
+			m_data = new DataObject<WasteType>(-1, new WasteType("BLANK", "no description entered"));
+		}	
+
 		public WasteTypeControl(DataObject<WasteType> data)
 		{
 			InitializeComponent();
@@ -27,6 +33,8 @@ namespace dmyo_oop_final_assigment.Controls
 		public void Update(DataObject<WasteType> data)
 		{
 			m_data = data;
+			wt_name.Text = m_data.Model.Name;
+			wt_description.Text = m_data.Model.Description;
 		}
 	}
 }
