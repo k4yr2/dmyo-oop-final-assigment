@@ -23,6 +23,20 @@ namespace dmyo_oop_final_assigment.Controls
 			InitializeComponent();
 		}
 
+
+		public int Current
+		{
+			get => m_current;
+			set => Set(value, m_count);
+		}
+
+		public int Count
+		{
+			get => m_count;
+			set => Set(m_current, value);
+		}
+
+
 		private void PagebarControl_Resize(object sender, EventArgs e)
 		{
 			pg_label.Anchor = AnchorStyles.None;
