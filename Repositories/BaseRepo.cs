@@ -1,7 +1,10 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
@@ -11,12 +14,18 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public DataObject<TModel> Create(TModel model)
 		{
-			var data = OnCreate(model);
+			int id = -1;
 
-			if(data != null)
-				OnChanged.Invoke();
+			var tableParams = string.Join(", ", Params);
+			var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
 
-			return data;
+			DataManager.ExecuteCommand($"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})", (SqlCommand command) =>
+			{
+				OnCreate(command);
+				id = Convert.ToInt32(command.ExecuteScalar());
+			});
+
+			return new DataObject<TModel>(id, model);
 		}
 
 		public DataObject<TModel> Read(int id)
@@ -50,14 +59,10 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		protected abstract DataObject<TModel> OnCreate(TModel model);
+		public abstract string Name { get; }
 
-		protected abstract DataObject<TModel> OnRead(int id);
+		public abstract string[] Params { get; }
 
-		protected abstract bool OnUpdate(int id, TModel model);
-
-		protected abstract bool OnDelete(int id);
-
-		protected abstract IEnumerable<DataObject<TModel>> OnReadAll();
+		protected abstract void OnCreate(TModel model, SqlCommand command);
 	}
 }

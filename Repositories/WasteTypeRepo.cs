@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -11,18 +12,14 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public class WasteTypeRepo : BaseRepo<WasteType>
 	{
-		protected override DataObject<WasteType> OnCreate(WasteType model)
+		public override string Name => "WasteTypes";
+
+		public override string[] Params => new string[] { "name", "description" } ;
+
+		protected override void OnCreate(WasteType wasteType, SqlCommand command)
 		{
-			int id = -1;
-
-			DataManager.ExecuteCommand("INSERT INTO WasteTypes (name, description) VALUES (@Name, @Description)", (SqlCommand command) =>
-			{
-				command.Parameters.AddWithValue("@Name", model.Name);
-				command.Parameters.AddWithValue("@Description", model.Description);
-				id = Convert.ToInt32(command.ExecuteScalar());
-			});
-
-			return new DataObject<WasteType>(id, model);
+			command.Parameters.AddWithValue("@name", wasteType.Name);
+			command.Parameters.AddWithValue("@description", wasteType.Description);
 		}
 
 		protected override DataObject<WasteType> OnRead(int id)
