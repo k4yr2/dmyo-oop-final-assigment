@@ -71,7 +71,7 @@
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Providers\IDataCRUD.cs" />
-    <Compile Include="Managers\SQLConnectionManager.cs" />
+    <Compile Include="Managers\DataConnection.cs" />
     <Compile Include="Models\DataObject.cs" />
     <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
