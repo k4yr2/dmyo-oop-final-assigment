@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Models
 {
-	public class SQLModel<TModel> where TModel : class
+	public class SQLData<TModel> where TModel : class
 	{
 		private int m_id;
 
 		private TModel m_model;
 
-		public SQLModel(int id, TModel model)
+		public SQLData(int id, TModel model)
 		{
 			m_id = id;
 			m_model = model;
