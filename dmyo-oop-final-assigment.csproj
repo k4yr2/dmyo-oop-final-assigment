@@ -70,6 +70,7 @@
     <Compile Include="Forms\WasteTypesForm.Designer.cs">
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\RepoManager.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\DataManager.cs" />
     <Compile Include="Models\DataObject.cs" />
