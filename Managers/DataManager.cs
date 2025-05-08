@@ -1,4 +1,7 @@
-﻿using System.Data.SqlClient;
+﻿using dmyo_oop_final_assigment.Models;
+using System;
+using System.Data.SqlClient;
+using System.Reflection;
 
 namespace dmyo_oop_final_assigment.Managers
 {
@@ -12,7 +15,7 @@ namespace dmyo_oop_final_assigment.Managers
 
 
 		// Property to get the connection object
-		public static SqlConnection Connection
+		private static SqlConnection Connection
 		{
 			get
 			{
@@ -26,7 +29,7 @@ namespace dmyo_oop_final_assigment.Managers
 		}
 
 		// Util method to open the connection
-		public static void OpenConnection()
+		private static void OpenConnection()
 		{
 			if (m_connection == null)
 			{
@@ -40,11 +43,28 @@ namespace dmyo_oop_final_assigment.Managers
 		}
 
 		// Util method to close the connection
-		public static void CloseConnection()
+		private static void CloseConnection()
 		{
 			if (m_connection != null && m_connection.State == System.Data.ConnectionState.Open)
 			{
 				m_connection.Close();
+			}
+		}
+
+
+		public static void ExecuteCommand<TModel>(string query, Func<SqlCommand, TModel> func) where TModel : class
+		{
+			try
+			{
+				OpenConnection();
+				using (SqlCommand command = new SqlCommand(query, Connection))
+				{
+					func.Invoke(command);
+				}
+			}
+			finally
+			{
+				CloseConnection();
 			}
 		}
 	}
