@@ -2,7 +2,7 @@
 
 namespace dmyo_oop_final_assigment.Managers
 {
-	public interface ICRUDManager<TModel> where TModel : class
+	public interface IDataCRUD<TModel> where TModel : class
 	{
 		SQLModel<TModel> Create(TModel model);
 
