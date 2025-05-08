@@ -12,9 +12,9 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class PagebarControl : UserControl
 	{
-		private int m_current = 0;
+		private int m_current = 1;
 
-		private int m_count = 0;
+		private int m_count = 1;
 
 		public event Action OnSet;
 
@@ -27,13 +27,25 @@ namespace dmyo_oop_final_assigment.Controls
 		public int Current
 		{
 			get => m_current;
-			set => Set(value, m_count);
+			set
+			{
+				if (m_current != value)
+				{
+					Set(value, m_count);
+				}
+			}
 		}
 
 		public int Count
 		{
 			get => m_count;
-			set => Set(m_current, value);
+			set
+			{
+				if(m_count != value)
+				{
+					Set(m_current, value);
+				}
+			}
 		}
 
 
@@ -50,8 +62,7 @@ namespace dmyo_oop_final_assigment.Controls
 			current = Math.Max(current, 1);
 			count = Math.Max(count, 1);
 
-			m_current = current;
-			m_count = count;
+			pg_label.Text = $"{m_current = current} / {m_count = count}";
 
 			OnSet?.Invoke();
 		}
