@@ -48,10 +48,16 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public bool Update(int id, TModel model)
 		{
-			bool affected = OnUpdate(id, model);
+			bool affected = false;
+			var setParams = string.Join(", ", Params.Select(p => $"{p} = @{p}"));
 
-			if (affected) 
-				OnChanged.Invoke();
+			DataManager.ExecuteCommand($"UPDATE {Name} SET {setParams} WHERE id = @id", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("@id", id);
+				OnUpdate(model, command);
+
+				affected = command.ExecuteNonQuery() > 0;
+			});
 
 			return affected;
 		}
@@ -79,5 +85,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		protected abstract void OnCreate(TModel model, SqlCommand command);
 
 		protected abstract TModel OnRead(SqlDataReader reader);
+
+		protected abstract void OnUpdate(TModel model, SqlCommand command);
 	}
 }

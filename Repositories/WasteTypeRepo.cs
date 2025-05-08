@@ -27,19 +27,10 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new WasteType(reader.GetString(1), reader.GetString(2));
 		}
 
-		protected override bool OnUpdate(int id, WasteType model)
+		protected override void OnUpdate(WasteType model, SqlCommand command)
 		{
-			bool affected = false;
-			DataManager.ExecuteCommand("UPDATE WasteTypes SET name = @Name, description = @Description WHERE id = @Id", (SqlCommand command) =>
-			{
-				command.Parameters.AddWithValue("@Id", id);
-				command.Parameters.AddWithValue("@Name", model.Name);
-				command.Parameters.AddWithValue("@Description", model.Description);
-
-				affected = command.ExecuteNonQuery() > 0;
-			});
-
-			return affected;
+			command.Parameters.AddWithValue("@name", model.Name);
+			command.Parameters.AddWithValue("@description", model.Description);
 		}
 
 		protected override bool OnDelete(int id)
