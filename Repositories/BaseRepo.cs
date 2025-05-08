@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 			DataManager.ExecuteCommand($"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})", (SqlCommand command) =>
 			{
-				OnCreate(command);
+				OnCreate(model, command);
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
@@ -30,7 +30,20 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public DataObject<TModel> Read(int id)
 		{
-			return OnRead(id);
+			TModel model = null;
+
+			DataManager.ExecuteCommand($"SELECT * FROM {Name} WHERE id = @id", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("@id", id);
+				SqlDataReader reader = command.ExecuteReader();
+
+				if (reader.Read())
+				{
+					model = OnRead(reader);
+				}	
+			});
+
+			return new DataObject<TModel>(id, model);
 		}
 
 		public bool Update(int id, TModel model)
@@ -64,5 +77,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		public abstract string[] Params { get; }
 
 		protected abstract void OnCreate(TModel model, SqlCommand command);
+
+		protected abstract TModel OnRead(SqlDataReader reader);
 	}
 }
