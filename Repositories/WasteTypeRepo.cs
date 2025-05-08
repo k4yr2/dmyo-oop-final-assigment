@@ -61,7 +61,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE Id = @Id", (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@Id", id);
-				affected = command.ExecuteNonQuery() > 0;
+				//affected = command.ExecuteNonQuery() > 0;
 			});
 
 			return affected;
@@ -69,12 +69,12 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override IEnumerable<DataObject<WasteType>> ReadAll()
 		{
-			List<DataObject<WasteType>> list = new List<DataObject<WasteType>>();
+			List<DataObject<WasteType>> list = null;
 
-			SqlDataReader reader = null; 
 			DataManager.ExecuteCommand("SELECT * FROM WasteTypes", (SqlCommand command) =>
 			{
-				reader = command.ExecuteReader();
+				SqlDataReader reader = command.ExecuteReader();
+				list = new List<DataObject<WasteType>>();
 
 				while (reader.Read())
 				{

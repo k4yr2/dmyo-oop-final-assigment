@@ -19,18 +19,15 @@ namespace dmyo_oop_final_assigment.Forms
 
 			foreach (var wt in RepoManager.WasteType.ReadAll())
 			{
-				for (int i = 0; i < 3; i++)
-				{
-					Control control = new WasteTypeControl(wt);
-					wt_panel.Controls.Add(control);
+				Control control = new WasteTypeControl(wt);
+				wt_panel.Controls.Add(control);
 
-					control.Left = 10; control.Top = top;
-					control.Width = wt_panel.Width - 20;
+				control.Left = 10; control.Top = top;
+				control.Width = wt_panel.Width - 20;
 
-					control.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+				control.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
 
-					top += control.Height + 10;
-				}
+				top += control.Height + 10;
 			}
 		}
 	}

@@ -31,6 +31,7 @@
 			this.wt_name = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.wt_description = new System.Windows.Forms.RichTextBox();
+			this.wt_delete = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -68,12 +69,24 @@
 			this.wt_description.TabIndex = 2;
 			this.wt_description.Text = "";
 			// 
+			// wt_delete
+			// 
+			this.wt_delete.BackColor = System.Drawing.Color.Tomato;
+			this.wt_delete.Location = new System.Drawing.Point(271, 3);
+			this.wt_delete.Name = "wt_delete";
+			this.wt_delete.Size = new System.Drawing.Size(23, 23);
+			this.wt_delete.TabIndex = 3;
+			this.wt_delete.Text = "X";
+			this.wt_delete.UseVisualStyleBackColor = false;
+			this.wt_delete.Click += new System.EventHandler(this.wt_delete_Click);
+			// 
 			// WasteTypeControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.wt_delete);
 			this.Controls.Add(this.wt_description);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.wt_name);
@@ -90,5 +103,6 @@
 		private System.Windows.Forms.Label wt_name;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.RichTextBox wt_description;
+		private System.Windows.Forms.Button wt_delete;
 	}
 }

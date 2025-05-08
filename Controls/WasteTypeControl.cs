@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,12 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			m_data = data;
 			wt_name.Text = data.Model.Name;
-			wt_description.Text = data.Model.Description;
+			wt_description.Text = data.Id.ToString();
+		}
+
+		private void wt_delete_Click(object sender, EventArgs e)
+		{
+			RepoManager.WasteType.Delete(Data.Id);
 		}
 	}
 }
