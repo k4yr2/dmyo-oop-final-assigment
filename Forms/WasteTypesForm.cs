@@ -25,7 +25,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void RefreshData()
 		{
-			pagebarControl1.Count = RepoManager.WasteType.Count();
+			pagebarControl1.Count = (int)Math.Ceiling(RepoManager.WasteType.Count() / 5d);
 
 			var data = RepoManager.WasteType.ReadPage(pagebarControl1.Current, 5)
 				.Concat(Enumerable.Repeat<DataObject<WasteType>>(null, 5))
