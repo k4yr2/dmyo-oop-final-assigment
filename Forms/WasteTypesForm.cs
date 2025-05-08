@@ -23,13 +23,14 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void RefreshData()
 		{
-			int count = (int)Math.Ceiling(RepoManager.WasteType.Count() / 6d);
+			int count = (int)Math.Ceiling(RepoManager.WasteType.Count() / 5d);
 
 			if(count > 0)
 				pagebarControl1.Count = count;
 
-			var data = RepoManager.WasteType.ReadPage(pagebarControl1.Current, 6)
-				.Concat(Enumerable.Repeat<DataObject<WasteType>>(null, 6))
+			var data = RepoManager.WasteType.ReadPage(pagebarControl1.Current, 5)
+				.Concat(new DataObject<WasteType>[] { null })
+				.Concat(Enumerable.Repeat(DataObject<WasteType>.Blank, 5))
 				.Take(6).ToArray();
 			
 			wt_control1.Update(data[0]);

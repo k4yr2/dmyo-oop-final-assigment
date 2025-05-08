@@ -1,4 +1,6 @@
-﻿namespace dmyo_oop_final_assigment.Models
+﻿using System.Windows.Forms;
+
+namespace dmyo_oop_final_assigment.Models
 {
 	public class DataObject<TModel> where TModel : class
 	{

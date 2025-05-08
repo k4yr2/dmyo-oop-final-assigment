@@ -32,6 +32,8 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.wt_description = new System.Windows.Forms.RichTextBox();
 			this.wt_delete = new System.Windows.Forms.Button();
+			this.wt_nameBox = new System.Windows.Forms.TextBox();
+			this.wt_create = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -43,7 +45,7 @@
 			this.wt_name.Location = new System.Drawing.Point(4, 6);
 			this.wt_name.Name = "wt_name";
 			this.wt_name.Size = new System.Drawing.Size(66, 20);
-			this.wt_name.TabIndex = 0;
+			this.wt_name.TabIndex = 4;
 			this.wt_name.Text = "BLANK";
 			// 
 			// pictureBox1
@@ -68,6 +70,8 @@
 			this.wt_description.Size = new System.Drawing.Size(218, 64);
 			this.wt_description.TabIndex = 2;
 			this.wt_description.Text = "";
+			this.wt_description.Enter += new System.EventHandler(this.wt_description_Enter);
+			this.wt_description.Leave += new System.EventHandler(this.wt_description_Leave);
 			// 
 			// wt_delete
 			// 
@@ -80,18 +84,43 @@
 			this.wt_delete.UseVisualStyleBackColor = false;
 			this.wt_delete.Click += new System.EventHandler(this.wt_delete_Click);
 			// 
+			// wt_nameBox
+			// 
+			this.wt_nameBox.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.wt_nameBox.Location = new System.Drawing.Point(6, 5);
+			this.wt_nameBox.Name = "wt_nameBox";
+			this.wt_nameBox.Size = new System.Drawing.Size(127, 20);
+			this.wt_nameBox.TabIndex = 0;
+			this.wt_nameBox.Visible = false;
+			this.wt_nameBox.Enter += new System.EventHandler(this.wt_nameBox_Enter);
+			this.wt_nameBox.Leave += new System.EventHandler(this.wt_nameBox_Leave);
+			// 
+			// wt_create
+			// 
+			this.wt_create.Location = new System.Drawing.Point(271, 3);
+			this.wt_create.Name = "wt_create";
+			this.wt_create.Size = new System.Drawing.Size(23, 23);
+			this.wt_create.TabIndex = 5;
+			this.wt_create.Text = "+";
+			this.wt_create.UseVisualStyleBackColor = true;
+			this.wt_create.Visible = false;
+			this.wt_create.Click += new System.EventHandler(this.wt_create_Click);
+			// 
 			// WasteTypeControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.wt_create);
+			this.Controls.Add(this.wt_nameBox);
 			this.Controls.Add(this.wt_delete);
 			this.Controls.Add(this.wt_description);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.wt_name);
 			this.Name = "WasteTypeControl";
 			this.Size = new System.Drawing.Size(300, 98);
+			this.Leave += new System.EventHandler(this.WasteTypeControl_Leave);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -104,5 +133,7 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.RichTextBox wt_description;
 		private System.Windows.Forms.Button wt_delete;
+		private System.Windows.Forms.TextBox wt_nameBox;
+		private System.Windows.Forms.Button wt_create;
 	}
 }
