@@ -1,5 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Models;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
 
@@ -60,6 +62,23 @@ namespace dmyo_oop_final_assigment.Managers
 				using (SqlCommand command = new SqlCommand(query, Connection))
 				{
 					func.Invoke(command);
+				}
+			}
+			finally
+			{
+				CloseConnection();
+			}
+		}
+
+		public static IEnumerable<T> ExecuteCommand<T>(string query, Func<SqlCommand, IEnumerable<T>> func)
+		{
+			try
+			{
+				OpenConnection();
+				using (SqlCommand command = new SqlCommand(query, Connection))
+				{
+					foreach (var item in func.Invoke(command))
+						yield return item;
 				}
 			}
 			finally

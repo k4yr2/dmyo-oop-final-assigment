@@ -26,26 +26,5 @@ namespace dmyo_oop_final_assigment.Repositories
 		{
 			return new WasteType(reader.GetString(1), reader.GetString(2));
 		}
-
-		protected override IEnumerable<DataObject<WasteType>> OnReadAll()
-		{
-			List<DataObject<WasteType>> list = null;
-
-			DataManager.ExecuteCommand("SELECT * FROM WasteTypes", (SqlCommand command) =>
-			{
-				SqlDataReader reader = command.ExecuteReader();
-				list = new List<DataObject<WasteType>>();
-
-				while (reader.Read())
-				{
-					int id = reader.GetInt32(0);
-					WasteType wasteType = new WasteType(reader.GetString(1), reader.GetString(2));
-
-					list.Add(new DataObject<WasteType>(id, wasteType));
-				}
-			});
-
-			return list;
-		}
 	}
 }

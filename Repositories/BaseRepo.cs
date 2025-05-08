@@ -76,8 +76,20 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public IEnumerable<DataObject<TModel>> ReadAll()
 		{
-			return OnReadAll();
+			return DataManager.ExecuteCommand($"SELECT * FROM {Name}", DoRead);
 		}
+
+		private IEnumerable<DataObject<TModel>> DoRead(SqlCommand command)
+		{
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				int id = reader.GetInt32(0);
+				yield return new DataObject<TModel>(id, OnModel(reader));
+			}
+		}
+
 
 
 		public abstract string Name { get; }
