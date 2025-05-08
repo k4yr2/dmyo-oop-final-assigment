@@ -22,7 +22,7 @@ namespace dmyo_oop_final_assigment.Controls
 			m_data = data;
 		}
 
-		public DataObject<WasteType> Object => m_data;
+		public DataObject<WasteType> Data => m_data;
 
 		public void Update(DataObject<WasteType> data)
 		{
