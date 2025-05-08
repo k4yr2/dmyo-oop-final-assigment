@@ -34,6 +34,7 @@
 			// wt_panel
 			// 
 			this.wt_panel.AutoScroll = true;
+			this.wt_panel.AutoScrollMargin = new System.Drawing.Size(0, 10);
 			this.wt_panel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.wt_panel.Location = new System.Drawing.Point(0, 0);
 			this.wt_panel.Name = "wt_panel";
