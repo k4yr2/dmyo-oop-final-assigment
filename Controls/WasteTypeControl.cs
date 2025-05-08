@@ -16,10 +16,9 @@ namespace dmyo_oop_final_assigment.Controls
 	{
 		private DataObject<WasteType> m_data;
 
-		public WasteTypeControl()
+		public WasteTypeControl() : this(new DataObject<WasteType>(-1, new WasteType("BLANK", "no description entered")))
 		{
-			InitializeComponent();
-			m_data = new DataObject<WasteType>(-1, new WasteType("BLANK", "no description entered"));
+
 		}	
 
 		public WasteTypeControl(DataObject<WasteType> data)
