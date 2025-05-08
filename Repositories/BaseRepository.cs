@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	abstract class BaseRepository<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
+	public abstract class BaseRepository<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
 	{
 		public abstract SQLData<TModel> Create(TModel model);
 
