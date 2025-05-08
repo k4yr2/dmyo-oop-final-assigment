@@ -88,9 +88,6 @@
     <Compile Include="Providers\IDataQuery.cs" />
     <Compile Include="Repositories\BaseRepo.cs" />
     <Compile Include="Repositories\WasteTypeRepo.cs" />
-    <EmbeddedResource Include="Controls\WasteTypeControl.resx">
-      <DependentUpon>WasteTypeControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewWasteTypeForm.resx">
       <DependentUpon>NewWasteTypeForm.cs</DependentUpon>
     </EmbeddedResource>

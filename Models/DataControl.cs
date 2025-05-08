@@ -15,7 +15,10 @@ namespace dmyo_oop_final_assigment.Models
 			set
 			{
 				m_object = value;
+				OnUpdate();
 			}
 		}
+
+		public abstract void OnUpdate();
 	}
 }
