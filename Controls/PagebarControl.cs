@@ -41,5 +41,25 @@ namespace dmyo_oop_final_assigment.Controls
 
 			OnSet?.Invoke();
 		}
+
+		private void pg_first_Click(object sender, EventArgs e)
+		{
+			Set(1, m_count);
+		}
+
+		private void pg_previous_Click(object sender, EventArgs e)
+		{
+			Set(m_current - 1, m_count);
+		}
+
+		private void pg_next_Click(object sender, EventArgs e)
+		{
+			Set(m_current + 1, m_count);
+		}
+
+		private void pg_last_Click(object sender, EventArgs e)
+		{
+			Set(m_count, m_count);
+		}
 	}
 }

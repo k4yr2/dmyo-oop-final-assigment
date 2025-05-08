@@ -43,6 +43,7 @@
 			this.pg_first.TabIndex = 0;
 			this.pg_first.Text = "<<";
 			this.pg_first.UseVisualStyleBackColor = true;
+			this.pg_first.Click += new System.EventHandler(this.pg_first_Click);
 			// 
 			// pg_previous
 			// 
@@ -52,6 +53,7 @@
 			this.pg_previous.TabIndex = 0;
 			this.pg_previous.Text = "<";
 			this.pg_previous.UseVisualStyleBackColor = true;
+			this.pg_previous.Click += new System.EventHandler(this.pg_previous_Click);
 			// 
 			// pg_label
 			// 
@@ -74,6 +76,7 @@
 			this.pg_next.TabIndex = 0;
 			this.pg_next.Text = ">";
 			this.pg_next.UseVisualStyleBackColor = true;
+			this.pg_next.Click += new System.EventHandler(this.pg_next_Click);
 			// 
 			// pg_last
 			// 
@@ -84,6 +87,7 @@
 			this.pg_last.TabIndex = 0;
 			this.pg_last.Text = ">>";
 			this.pg_last.UseVisualStyleBackColor = true;
+			this.pg_last.Click += new System.EventHandler(this.pg_last_Click);
 			// 
 			// PagebarControl
 			// 
