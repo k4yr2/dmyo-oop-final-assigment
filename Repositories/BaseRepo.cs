@@ -74,10 +74,6 @@ namespace dmyo_oop_final_assigment.Repositories
 			return affected;
 		}
 
-		public IEnumerable<DataObject<TModel>> ReadAll()
-		{
-			return DataManager.ExecuteCommand($"SELECT * FROM {Name}", DoRead);
-		}
 
 		private IEnumerable<DataObject<TModel>> DoRead(SqlCommand command)
 		{
@@ -90,6 +86,15 @@ namespace dmyo_oop_final_assigment.Repositories
 			}
 		}
 
+		public IEnumerable<DataObject<TModel>> ReadAll()
+		{
+			return DataManager.ExecuteCommand($"SELECT * FROM {Name}", DoRead);
+		}
+
+		public IEnumerable<DataObject<TModel>> ReadPage(int page, int per)
+		{
+			return DataManager.ExecuteCommand($"SELECT * FROM {Name} ORDER BY id OFFSET ({page} - 1) * {per} ROWS FETCH NEXT {per} ROWS ONLY", DoRead);
+		}
 
 
 		public abstract string Name { get; }
@@ -99,5 +104,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		protected abstract void OnParameters(TModel model, SqlCommand command);
 
 		protected abstract TModel OnModel(SqlDataReader reader);
+
+
 	}
 }
