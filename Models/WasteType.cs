@@ -6,16 +6,41 @@ using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Models
 {
-	public class WasteType : BaseModel
+	public class WasteType
 	{
-		public WasteType(int id, string name, string description) : base(id)
+		private string m_name;
+
+		private string m_description;
+
+		public WasteType(string name, string description)
 		{
-			Name = name;
-			Description = description;
+			m_name = name;
+			m_description = description;
 		}
 
-		public string Name { get; }
 
-		public string Description { get; }
+		public string Name
+		{
+			get
+			{
+				return m_name;
+			}
+			set
+			{
+				m_name = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return m_description;
+			}
+			set
+			{
+				m_description = value;
+			}
+		}
 	}	
 }
