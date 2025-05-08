@@ -2,7 +2,7 @@
 
 namespace dmyo_oop_final_assigment.Managers
 {
-	public static class SqlConnectionManager
+	internal static class SqlConnectionManager
 	{
 		// Connection string
 		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assigment;Integrated Security=True;Trust Server Certificate=True";
@@ -12,7 +12,7 @@ namespace dmyo_oop_final_assigment.Managers
 
 
 		// Util method to open the connection
-		private static void OpenConnection()
+		public static void OpenConnection()
 		{
 			if (connection == null)
 			{
@@ -26,7 +26,7 @@ namespace dmyo_oop_final_assigment.Managers
 		}
 
 		// Util method to close the connection
-		private static void CloseConnection()
+		public static void CloseConnection()
 		{
 			if (connection != null && connection.State == System.Data.ConnectionState.Open)
 			{
