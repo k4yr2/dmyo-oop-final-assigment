@@ -30,13 +30,13 @@
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
 			this.wt_controlX = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.wt_control5 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.wt_control4 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.wt_control3 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.wt_control2 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.wt_control1 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.pagebarControl1 = new dmyo_oop_final_assigment.Controls.PagebarControl();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -60,13 +60,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(306, 312);
 			this.panel2.TabIndex = 0;
-			// 
-			// panel3
-			// 
-			this.panel3.Location = new System.Drawing.Point(12, 327);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(616, 54);
-			this.panel3.TabIndex = 1;
 			// 
 			// wt_controlX
 			// 
@@ -122,12 +115,19 @@
 			this.wt_control1.Size = new System.Drawing.Size(300, 98);
 			this.wt_control1.TabIndex = 0;
 			// 
+			// pagebarControl1
+			// 
+			this.pagebarControl1.Location = new System.Drawing.Point(121, 330);
+			this.pagebarControl1.Name = "pagebarControl1";
+			this.pagebarControl1.Size = new System.Drawing.Size(387, 30);
+			this.pagebarControl1.TabIndex = 1;
+			// 
 			// WasteTypesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(643, 394);
-			this.Controls.Add(this.panel3);
+			this.ClientSize = new System.Drawing.Size(643, 363);
+			this.Controls.Add(this.pagebarControl1);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "WasteTypesForm";
@@ -149,6 +149,6 @@
 		private Controls.WasteTypeControl wt_controlX;
 		private Controls.WasteTypeControl wt_control5;
 		private Controls.WasteTypeControl wt_control4;
-		private System.Windows.Forms.Panel panel3;
+		private Controls.PagebarControl pagebarControl1;
 	}
 }
