@@ -47,11 +47,11 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Set(int current, int count)
 		{
-			count = Math.Min(count, 1);
-			current = Math.Min(current, 1);
-			current = Math.Max(current, count);
+			count = Math.Max(count, 1);
+			current = Math.Max(current, 1);
+			current = Math.Min(current, count);
 
-			if(m_current != current || m_count != current)
+			if (m_current != current || m_count != count)
 			{
 				pg_label.Text = $"{m_current = current} / {m_count = count}";
 
@@ -60,11 +60,21 @@ namespace dmyo_oop_final_assigment.Controls
 					pg_first.Enabled = false;
 					pg_previous.Enabled = false;
 				}
+				else
+				{
+					pg_first.Enabled = true;
+					pg_previous.Enabled = true;
+				}
 
 				if(m_current == m_count)
 				{
 					pg_next.Enabled = false;
 					pg_last.Enabled = false;
+				}
+				else
+				{
+					pg_next.Enabled = true;
+					pg_last.Enabled = true;
 				}
 
 				OnSet?.Invoke();

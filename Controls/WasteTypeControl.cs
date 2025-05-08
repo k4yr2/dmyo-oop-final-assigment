@@ -17,7 +17,7 @@ namespace dmyo_oop_final_assigment.Controls
 	{
 		private DataObject<WasteType> m_data;
 
-		public WasteTypeControl() : this(new DataObject<WasteType>(-1, new WasteType("BLANK", "no description entered")))
+		public WasteTypeControl() : this(null)
 		{
 
 		}	
@@ -42,13 +42,14 @@ namespace dmyo_oop_final_assigment.Controls
 			else
 			{
 				wt_name.Text = data.Model.Name;
-				wt_description.Text = data.Id.ToString();
+				wt_description.Text = data.Model.Description.ToString();
 			}
 		}
 
 		private void wt_delete_Click(object sender, EventArgs e)
 		{
-			RepoManager.WasteType.Delete(Data.Id);
+			if(Data != null)
+				RepoManager.WasteType.Delete(Data.Id);
 		}
 	}
 }
