@@ -2,6 +2,14 @@
 {
 	public class DataObject<TModel> where TModel : class
 	{
+		public static DataObject<TModel> Blank
+		{
+			get
+			{
+				return new DataObject<TModel>(-500, null);
+			}
+		}
+
 		private int m_id;
 
 		private TModel m_model;
