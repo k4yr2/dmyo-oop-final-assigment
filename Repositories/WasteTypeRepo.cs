@@ -1,14 +1,10 @@
-﻿using dmyo_oop_final_assigment.Models;
-using dmyo_oop_final_assigment.Providers;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public class WasteTypeRepository : BaseRepository<WasteType>
+	public class WasteTypeRepo : BaseRepo<WasteType>
 	{
 		public override DataObject<WasteType> Create(WasteType model)
 		{
