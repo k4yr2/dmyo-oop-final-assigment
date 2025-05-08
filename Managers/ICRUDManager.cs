@@ -1,12 +1,14 @@
-﻿namespace dmyo_oop_final_assigment.Managers
+﻿using dmyo_oop_final_assigment.Models;
+
+namespace dmyo_oop_final_assigment.Managers
 {
-	public interface ICRUDManager<TModel>
+	public interface ICRUDManager<TModel> where TModel : class
 	{
-		TModel Create();
+		SQLModel<TModel> Create(TModel model);
 
-		TModel Read(int id);
+		SQLModel<TModel> Read(int id);
 
-		bool Update(int id);
+		bool Update(int id, TModel model);
 
 		bool Delete(int id);
 	}
