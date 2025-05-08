@@ -69,7 +69,19 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override IEnumerable<DataObject<WasteType>> ReadAll()
 		{
-			throw new NotImplementedException();
+			SqlDataReader reader = null;
+			DataManager.ExecuteCommand("SELECT * FROM WasteTypes", (SqlCommand command) =>
+			{
+				reader = command.ExecuteReader();
+			});
+
+			while(reader.Read())
+			{
+				int id = reader.GetInt32(0);
+				WasteType wasteType = new WasteType(reader.GetString(1), reader.GetString(2));
+
+				yield return new DataObject<WasteType>(id, wasteType);
+			}
 		}
 	}
 }
