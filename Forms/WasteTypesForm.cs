@@ -16,13 +16,12 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void WasteTypesForm_Load(object sender, EventArgs e)
 		{
-			RefreshData();
-			RepoManager.WasteType.OnChanged += RefreshData;
-		}
-
-		private void RefreshData()
-		{
-
+			var data = RepoManager.WasteType.ReadPage(2, 5).ToArray();
+			wt_control1.Update(data[0]);
+			wt_control2.Update(data[1]);
+			wt_control3.Update(data[2]);
+			wt_control4.Update(data[3]);
+			wt_control5.Update(data[4]);
 		}
 	}
 }

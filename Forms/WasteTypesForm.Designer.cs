@@ -31,21 +31,21 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.wasteTypeControl4 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
-			this.wasteTypeControl5 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
-			this.wasteTypeControl6 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
-			this.wasteTypeControl3 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
-			this.wasteTypeControl2 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
-			this.wasteTypeControl1 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_controlX = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_control5 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_control4 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_control3 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_control2 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
+			this.wt_control1 = new dmyo_oop_final_assigment.Controls.WasteTypeControl();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.wasteTypeControl3);
-			this.panel1.Controls.Add(this.wasteTypeControl2);
-			this.panel1.Controls.Add(this.wasteTypeControl1);
+			this.panel1.Controls.Add(this.wt_control3);
+			this.panel1.Controls.Add(this.wt_control2);
+			this.panel1.Controls.Add(this.wt_control1);
 			this.panel1.Location = new System.Drawing.Point(12, 12);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(306, 312);
@@ -53,9 +53,9 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.wasteTypeControl4);
-			this.panel2.Controls.Add(this.wasteTypeControl5);
-			this.panel2.Controls.Add(this.wasteTypeControl6);
+			this.panel2.Controls.Add(this.wt_controlX);
+			this.panel2.Controls.Add(this.wt_control5);
+			this.panel2.Controls.Add(this.wt_control4);
 			this.panel2.Location = new System.Drawing.Point(325, 12);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(306, 312);
@@ -68,59 +68,59 @@
 			this.panel3.Size = new System.Drawing.Size(616, 54);
 			this.panel3.TabIndex = 1;
 			// 
-			// wasteTypeControl4
+			// wt_controlX
 			// 
-			this.wasteTypeControl4.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl4.Location = new System.Drawing.Point(3, 211);
-			this.wasteTypeControl4.Name = "wasteTypeControl4";
-			this.wasteTypeControl4.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl4.TabIndex = 0;
+			this.wt_controlX.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_controlX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_controlX.Location = new System.Drawing.Point(3, 211);
+			this.wt_controlX.Name = "wt_controlX";
+			this.wt_controlX.Size = new System.Drawing.Size(300, 98);
+			this.wt_controlX.TabIndex = 0;
 			// 
-			// wasteTypeControl5
+			// wt_control5
 			// 
-			this.wasteTypeControl5.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl5.Location = new System.Drawing.Point(3, 107);
-			this.wasteTypeControl5.Name = "wasteTypeControl5";
-			this.wasteTypeControl5.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl5.TabIndex = 0;
+			this.wt_control5.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_control5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_control5.Location = new System.Drawing.Point(3, 107);
+			this.wt_control5.Name = "wt_control5";
+			this.wt_control5.Size = new System.Drawing.Size(300, 98);
+			this.wt_control5.TabIndex = 0;
 			// 
-			// wasteTypeControl6
+			// wt_control4
 			// 
-			this.wasteTypeControl6.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl6.Location = new System.Drawing.Point(3, 3);
-			this.wasteTypeControl6.Name = "wasteTypeControl6";
-			this.wasteTypeControl6.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl6.TabIndex = 0;
+			this.wt_control4.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_control4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_control4.Location = new System.Drawing.Point(3, 3);
+			this.wt_control4.Name = "wt_control4";
+			this.wt_control4.Size = new System.Drawing.Size(300, 98);
+			this.wt_control4.TabIndex = 0;
 			// 
-			// wasteTypeControl3
+			// wt_control3
 			// 
-			this.wasteTypeControl3.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl3.Location = new System.Drawing.Point(3, 211);
-			this.wasteTypeControl3.Name = "wasteTypeControl3";
-			this.wasteTypeControl3.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl3.TabIndex = 0;
+			this.wt_control3.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_control3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_control3.Location = new System.Drawing.Point(3, 211);
+			this.wt_control3.Name = "wt_control3";
+			this.wt_control3.Size = new System.Drawing.Size(300, 98);
+			this.wt_control3.TabIndex = 0;
 			// 
-			// wasteTypeControl2
+			// wt_control2
 			// 
-			this.wasteTypeControl2.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl2.Location = new System.Drawing.Point(3, 107);
-			this.wasteTypeControl2.Name = "wasteTypeControl2";
-			this.wasteTypeControl2.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl2.TabIndex = 0;
+			this.wt_control2.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_control2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_control2.Location = new System.Drawing.Point(3, 107);
+			this.wt_control2.Name = "wt_control2";
+			this.wt_control2.Size = new System.Drawing.Size(300, 98);
+			this.wt_control2.TabIndex = 0;
 			// 
-			// wasteTypeControl1
+			// wt_control1
 			// 
-			this.wasteTypeControl1.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.wasteTypeControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.wasteTypeControl1.Location = new System.Drawing.Point(3, 3);
-			this.wasteTypeControl1.Name = "wasteTypeControl1";
-			this.wasteTypeControl1.Size = new System.Drawing.Size(300, 98);
-			this.wasteTypeControl1.TabIndex = 0;
+			this.wt_control1.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.wt_control1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.wt_control1.Location = new System.Drawing.Point(3, 3);
+			this.wt_control1.Name = "wt_control1";
+			this.wt_control1.Size = new System.Drawing.Size(300, 98);
+			this.wt_control1.TabIndex = 0;
 			// 
 			// WasteTypesForm
 			// 
@@ -142,13 +142,13 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panel1;
-		private Controls.WasteTypeControl wasteTypeControl3;
-		private Controls.WasteTypeControl wasteTypeControl2;
-		private Controls.WasteTypeControl wasteTypeControl1;
+		private Controls.WasteTypeControl wt_control3;
+		private Controls.WasteTypeControl wt_control2;
+		private Controls.WasteTypeControl wt_control1;
 		private System.Windows.Forms.Panel panel2;
-		private Controls.WasteTypeControl wasteTypeControl4;
-		private Controls.WasteTypeControl wasteTypeControl5;
-		private Controls.WasteTypeControl wasteTypeControl6;
+		private Controls.WasteTypeControl wt_controlX;
+		private Controls.WasteTypeControl wt_control5;
+		private Controls.WasteTypeControl wt_control4;
 		private System.Windows.Forms.Panel panel3;
 	}
 }
