@@ -64,10 +64,12 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public bool Delete(int id)
 		{
-			bool affected = OnDelete(id);
-
-			if (affected)
-				OnChanged.Invoke();
+			bool affected = false;
+			DataManager.ExecuteCommand($"DELETE FROM {Name} WHERE id = @id", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("id", id);
+				affected = command.ExecuteNonQuery() > 0;
+			});
 
 			return affected;
 		}

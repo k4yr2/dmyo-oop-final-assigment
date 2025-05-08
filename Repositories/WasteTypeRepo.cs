@@ -35,14 +35,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		protected override bool OnDelete(int id)
 		{
-			bool affected = false;
-			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE id = @Id", (SqlCommand command) =>
-			{
-				command.Parameters.AddWithValue("@Id", id);
-				affected = command.ExecuteNonQuery() > 0;
-			});
 
-			return affected;
 		}
 
 		protected override IEnumerable<DataObject<WasteType>> OnReadAll()
