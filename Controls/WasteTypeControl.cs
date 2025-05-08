@@ -24,7 +24,7 @@ namespace dmyo_oop_final_assigment.Controls
 		public WasteTypeControl(DataObject<WasteType> data)
 		{
 			InitializeComponent();
-			m_data = data;
+			Update(data);
 		}
 
 		public DataObject<WasteType> Data => m_data;
@@ -32,8 +32,8 @@ namespace dmyo_oop_final_assigment.Controls
 		public void Update(DataObject<WasteType> data)
 		{
 			m_data = data;
-			wt_name.Text = m_data.Model.Name;
-			wt_description.Text = m_data.Model.Description;
+			wt_name.Text = data.Model.Name;
+			wt_description.Text = data.Model.Description;
 		}
 	}
 }

@@ -37,17 +37,21 @@
 			// wt_name
 			// 
 			this.wt_name.AutoSize = true;
-			this.wt_name.Location = new System.Drawing.Point(3, 6);
+			this.wt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.wt_name.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.wt_name.Location = new System.Drawing.Point(4, 6);
 			this.wt_name.Name = "wt_name";
-			this.wt_name.Size = new System.Drawing.Size(42, 13);
+			this.wt_name.Size = new System.Drawing.Size(66, 20);
 			this.wt_name.TabIndex = 0;
 			this.wt_name.Text = "BLANK";
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
 			this.pictureBox1.Location = new System.Drawing.Point(6, 29);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
@@ -55,10 +59,12 @@
 			// 
 			this.wt_description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.wt_description.BackColor = System.Drawing.SystemColors.Control;
+			this.wt_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.wt_description.Location = new System.Drawing.Point(76, 29);
 			this.wt_description.Name = "wt_description";
 			this.wt_description.ReadOnly = true;
-			this.wt_description.Size = new System.Drawing.Size(221, 64);
+			this.wt_description.Size = new System.Drawing.Size(218, 64);
 			this.wt_description.TabIndex = 2;
 			this.wt_description.Text = "";
 			// 
@@ -66,11 +72,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Controls.Add(this.wt_description);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.wt_name);
 			this.Name = "WasteTypeControl";
-			this.Size = new System.Drawing.Size(300, 100);
+			this.Size = new System.Drawing.Size(300, 98);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
