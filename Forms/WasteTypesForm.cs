@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using dmyo_oop_final_assigment.Controls;
+using dmyo_oop_final_assigment.Managers;
 
 namespace dmyo_oop_final_assigment.Forms
 {
@@ -15,17 +16,21 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			wt_panel.Controls.Clear();
 			int top = 10;
-			for (int i = 0; i < 3; i++)
+
+			foreach (var wt in RepoManager.WasteType.ReadAll())
 			{
-				Control control = new WasteTypeControl();
-				wt_panel.Controls.Add(control);
+				for (int i = 0; i < 3; i++)
+				{
+					Control control = new WasteTypeControl(wt);
+					wt_panel.Controls.Add(control);
 
-				control.Left = 10; control.Top = top;
-				control.Width = wt_panel.Width - 20;
+					control.Left = 10; control.Top = top;
+					control.Width = wt_panel.Width - 20;
 
-				control.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+					control.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
 
-				top += control.Height + 10;
+					top += control.Height + 10;
+				}
 			}
 		}
 	}
