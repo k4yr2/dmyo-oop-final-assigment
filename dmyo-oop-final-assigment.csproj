@@ -72,7 +72,7 @@
     </Compile>
     <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\SQLConnectionManager.cs" />
-    <Compile Include="Models\SQLData.cs" />
+    <Compile Include="Models\DataObject.cs" />
     <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

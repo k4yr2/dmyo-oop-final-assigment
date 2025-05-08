@@ -5,6 +5,6 @@ namespace dmyo_oop_final_assigment.Providers
 {
 	internal interface IDataQuery<TModel> where TModel : class
 	{
-		IEnumerable<SQLData<TModel>> ReadAll();
+		IEnumerable<DataObject<TModel>> ReadAll();
 	}
 }

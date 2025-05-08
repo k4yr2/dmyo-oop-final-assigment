@@ -10,12 +10,12 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public class WasteTypeRepository : BaseRepository<WasteType>
 	{
-		public override SQLData<WasteType> Create(WasteType model)
+		public override DataObject<WasteType> Create(WasteType model)
 		{
 			throw new NotImplementedException();
 		}
 
-		public override SQLData<WasteType> Read(int id)
+		public override DataObject<WasteType> Read(int id)
 		{
 			throw new NotImplementedException();
 		}
@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			throw new NotImplementedException();
 		}
 
-		public override IEnumerable<SQLData<WasteType>> ReadAll()
+		public override IEnumerable<DataObject<WasteType>> ReadAll()
 		{
 			throw new NotImplementedException();
 		}

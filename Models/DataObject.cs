@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace dmyo_oop_final_assigment.Models
+﻿namespace dmyo_oop_final_assigment.Models
 {
-	public class SQLData<TModel> where TModel : class
+	public class DataObject<TModel> where TModel : class
 	{
 		private int m_id;
 
 		private TModel m_model;
 
-		public SQLData(int id, TModel model)
+		public DataObject(int id, TModel model)
 		{
 			m_id = id;
 			m_model = model;

@@ -4,9 +4,9 @@ namespace dmyo_oop_final_assigment.Providers
 {
 	public interface IDataCRUD<TModel> where TModel : class
 	{
-		SQLData<TModel> Create(TModel model);
+		DataObject<TModel> Create(TModel model);
 
-		SQLData<TModel> Read(int id);
+		DataObject<TModel> Read(int id);
 
 		bool Update(int id, TModel model);
 
