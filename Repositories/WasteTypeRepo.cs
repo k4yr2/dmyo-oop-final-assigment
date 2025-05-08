@@ -42,12 +42,29 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override bool Update(int id, WasteType model)
 		{
-			throw new NotImplementedException();
+			bool affected = false;
+			DataManager.ExecuteCommand("UPDATE WasteTypes SET Name = @Name, Description = @Description WHERE Id = @Id", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("@Id", id);
+				command.Parameters.AddWithValue("@Name", model.Name);
+				command.Parameters.AddWithValue("@Description", model.Description);
+
+				affected = command.ExecuteNonQuery() > 0;
+			});
+
+			return affected;
 		}
 
 		public override bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			bool affected = false;
+			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE Id = @Id", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("@Id", id);
+				affected = command.ExecuteNonQuery() > 0;
+			});
+
+			return affected;
 		}
 
 		public override IEnumerable<DataObject<WasteType>> ReadAll()
