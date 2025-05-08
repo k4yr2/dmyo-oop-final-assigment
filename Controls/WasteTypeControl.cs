@@ -33,8 +33,17 @@ namespace dmyo_oop_final_assigment.Controls
 		public void Update(DataObject<WasteType> data)
 		{
 			m_data = data;
-			wt_name.Text = data.Model.Name;
-			wt_description.Text = data.Id.ToString();
+
+			if(data == null)
+			{
+				wt_name.Text = "BLANK";
+				wt_description.Text = "no description entered";
+			}
+			else
+			{
+				wt_name.Text = data.Model.Name;
+				wt_description.Text = data.Id.ToString();
+			}
 		}
 
 		private void wt_delete_Click(object sender, EventArgs e)
