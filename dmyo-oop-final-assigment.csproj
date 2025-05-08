@@ -70,7 +70,7 @@
     <Compile Include="Forms\WasteTypesForm.Designer.cs">
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Providers\IDataCRUDProvider.cs" />
+    <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\SQLConnectionManager.cs" />
     <Compile Include="Models\SQLModel.cs" />
     <Compile Include="Models\WasteType.cs" />
@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Providers\IDataQuery.cs" />
     <EmbeddedResource Include="Controls\WasteTypeControl.resx">
       <DependentUpon>WasteTypeControl.cs</DependentUpon>
     </EmbeddedResource>
