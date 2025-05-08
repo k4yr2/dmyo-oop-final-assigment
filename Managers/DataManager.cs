@@ -52,7 +52,7 @@ namespace dmyo_oop_final_assigment.Managers
 		}
 
 
-		public static void ExecuteCommand<TModel>(string query, Func<SqlCommand, TModel> func) where TModel : class
+		public static void ExecuteCommand(string query, Action<SqlCommand> func)
 		{
 			try
 			{
