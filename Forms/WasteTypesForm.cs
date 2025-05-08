@@ -16,7 +16,15 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void WasteTypesForm_Load(object sender, EventArgs e)
 		{
-			var data = RepoManager.WasteType.ReadPage(2, 5).ToArray();
+			RepoManager.WasteType.OnChanged += RefreshData;
+			pagebarControl1.OnSet += RefreshData;
+		}
+
+		private void RefreshData()
+		{
+			pagebarControl1.Count = RepoManager.WasteType.Count();
+
+			var data = RepoManager.WasteType.ReadPage(pagebarControl1.Current, 5).ToArray();
 			wt_control1.Update(data[0]);
 			wt_control2.Update(data[1]);
 			wt_control3.Update(data[2]);
