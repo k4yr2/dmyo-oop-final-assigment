@@ -53,6 +53,21 @@ namespace dmyo_oop_final_assigment.Managers
 			}
 		}
 
+		public static void ExecuteCommand(string query)
+		{
+			try
+			{
+				OpenConnection();
+				using (SqlCommand command = new SqlCommand(query, Connection))
+				{
+
+				}
+			}
+			finally
+			{
+				CloseConnection();
+			}
+		}
 
 		public static void ExecuteCommand(string query, Action<SqlCommand> func)
 		{

@@ -86,6 +86,17 @@ namespace dmyo_oop_final_assigment.Repositories
 			}
 		}
 
+		public int Count()
+		{
+			int count = 0;
+			DataManager.ExecuteCommand($"SELECT COUNT(*) FROM {Name}", (SqlCommand command) =>
+			{
+				count = (int)command.ExecuteScalar();
+			});
+
+			return count;
+		}
+
 		public IEnumerable<DataObject<TModel>> ReadAll()
 		{
 			return DataManager.ExecuteCommand($"SELECT * FROM {Name}", DoRead);
