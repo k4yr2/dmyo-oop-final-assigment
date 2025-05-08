@@ -1,6 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using dmyo_oop_final_assigment.Models;
+using System.Windows.Forms;
 
-namespace dmyo_oop_final_assigment.Models
+namespace dmyo_oop_final_assigment.Providers
 {
 	public interface IDataReference<TModel> where TModel : class
 	{
