@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 			DataManager.ExecuteCommand($"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})", (SqlCommand command) =>
 			{
-				OnCreate(model, command);
+				OnParameters(model, command);
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
@@ -39,7 +39,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 				if (reader.Read())
 				{
-					model = OnRead(reader);
+					model = OnModel(reader);
 				}	
 			});
 
@@ -54,7 +54,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			DataManager.ExecuteCommand($"UPDATE {Name} SET {setParams} WHERE id = @id", (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
-				OnUpdate(model, command);
+				OnParameters(model, command);
 
 				affected = command.ExecuteNonQuery() > 0;
 			});
@@ -84,10 +84,8 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public abstract string[] Params { get; }
 
-		protected abstract void OnCreate(TModel model, SqlCommand command);
+		protected abstract void OnParameters(TModel model, SqlCommand command);
 
-		protected abstract TModel OnRead(SqlDataReader reader);
-
-		protected abstract void OnUpdate(TModel model, SqlCommand command);
+		protected abstract TModel OnModel(SqlDataReader reader);
 	}
 }

@@ -16,26 +16,15 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override string[] Params => new string[] { "name", "description" } ;
 
-		protected override void OnCreate(WasteType wasteType, SqlCommand command)
+		protected override void OnParameters(WasteType wasteType, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@name", wasteType.Name);
 			command.Parameters.AddWithValue("@description", wasteType.Description);
 		}
 
-		protected override WasteType OnRead(SqlDataReader reader)
+		protected override WasteType OnModel(SqlDataReader reader)
 		{
 			return new WasteType(reader.GetString(1), reader.GetString(2));
-		}
-
-		protected override void OnUpdate(WasteType model, SqlCommand command)
-		{
-			command.Parameters.AddWithValue("@name", model.Name);
-			command.Parameters.AddWithValue("@description", model.Description);
-		}
-
-		protected override bool OnDelete(int id)
-		{
-
 		}
 
 		protected override IEnumerable<DataObject<WasteType>> OnReadAll()
