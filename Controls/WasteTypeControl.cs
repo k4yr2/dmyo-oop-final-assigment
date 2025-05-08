@@ -39,7 +39,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void wt_delete_Click(object sender, EventArgs e)
 		{
-			RepoManager.WasteType.Delete(Data.Id);
+			RepoManager.WasteType.OnDelete(Data.Id);
 		}
 	}
 }

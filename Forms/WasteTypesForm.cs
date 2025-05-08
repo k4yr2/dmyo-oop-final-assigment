@@ -17,7 +17,7 @@ namespace dmyo_oop_final_assigment.Forms
 			wt_panel.Controls.Clear();
 			int top = 10;
 
-			foreach (var wt in RepoManager.WasteType.ReadAll())
+			foreach (var wt in RepoManager.WasteType.OnReadAll())
 			{
 				Control control = new WasteTypeControl(wt);
 				wt_panel.Controls.Add(control);

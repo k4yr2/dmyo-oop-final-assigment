@@ -11,7 +11,7 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public class WasteTypeRepo : BaseRepo<WasteType>
 	{
-		public override DataObject<WasteType> Create(WasteType model)
+		protected override DataObject<WasteType> OnCreate(WasteType model)
 		{
 			int id = -1;
 
@@ -25,7 +25,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new DataObject<WasteType>(id, model);
 		}
 
-		public override DataObject<WasteType> Read(int id)
+		protected override DataObject<WasteType> OnRead(int id)
 		{
 			WasteType wasteType = null;
 
@@ -41,7 +41,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new DataObject<WasteType>(id, wasteType);
 		}
 
-		public override bool Update(int id, WasteType model)
+		protected override bool OnUpdate(int id, WasteType model)
 		{
 			bool affected = false;
 			DataManager.ExecuteCommand("UPDATE WasteTypes SET name = @Name, description = @Description WHERE id = @Id", (SqlCommand command) =>
@@ -56,7 +56,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return affected;
 		}
 
-		public override bool Delete(int id)
+		protected override bool OnDelete(int id)
 		{
 			bool affected = false;
 			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE id = @Id", (SqlCommand command) =>
@@ -68,7 +68,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return affected;
 		}
 
-		public override IEnumerable<DataObject<WasteType>> ReadAll()
+		protected override IEnumerable<DataObject<WasteType>> OnReadAll()
 		{
 			List<DataObject<WasteType>> list = null;
 
