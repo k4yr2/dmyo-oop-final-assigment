@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
@@ -28,7 +29,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		{
 			WasteType wasteType = null;
 
-			DataManager.ExecuteCommand("SELECT * FROM WasteTypes WHERE Id = @Id", (SqlCommand command) =>
+			DataManager.ExecuteCommand("SELECT * FROM WasteTypes WHERE id = @Id", (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@Id", id);
 				SqlDataReader reader = command.ExecuteReader();
@@ -43,7 +44,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		public override bool Update(int id, WasteType model)
 		{
 			bool affected = false;
-			DataManager.ExecuteCommand("UPDATE WasteTypes SET Name = @Name, Description = @Description WHERE Id = @Id", (SqlCommand command) =>
+			DataManager.ExecuteCommand("UPDATE WasteTypes SET name = @Name, description = @Description WHERE id = @Id", (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@Id", id);
 				command.Parameters.AddWithValue("@Name", model.Name);
@@ -58,10 +59,10 @@ namespace dmyo_oop_final_assigment.Repositories
 		public override bool Delete(int id)
 		{
 			bool affected = false;
-			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE Id = @Id", (SqlCommand command) =>
+			DataManager.ExecuteCommand("DELETE FROM WasteTypes WHERE id = @Id", (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@Id", id);
-				//affected = command.ExecuteNonQuery() > 0;
+				affected = command.ExecuteNonQuery() > 0;
 			});
 
 			return affected;
