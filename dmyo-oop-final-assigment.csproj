@@ -71,8 +71,8 @@
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\RepoManager.cs" />
+    <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
-    <Compile Include="Providers\IDataReadonlyRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\DataManager.cs" />
     <Compile Include="Models\DataObject.cs" />

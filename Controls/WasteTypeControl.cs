@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class WasteTypeControl : UserControl, IDataRef<WasteType>
+	public partial class WasteTypeControl : UserControl, IDataLink<WasteType>
 	{
 		private DataObject<WasteType> m_data;
 
