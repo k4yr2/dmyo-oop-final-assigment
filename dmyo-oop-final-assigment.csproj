@@ -58,11 +58,20 @@
     <Compile Include="Forms\NewWasteTypeForm.Designer.cs">
       <DependentUpon>NewWasteTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WasteTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WasteTypesForm.Designer.cs">
+      <DependentUpon>WasteTypesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\SQLConnectionManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\NewWasteTypeForm.resx">
       <DependentUpon>NewWasteTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WasteTypesForm.resx">
+      <DependentUpon>WasteTypesForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
