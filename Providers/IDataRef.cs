@@ -9,6 +9,6 @@ namespace dmyo_oop_final_assigment.Providers
 {
 	public interface IDataRef<TModel> : IDataReadonlyRef<TModel> where TModel : class
 	{
-		void Update(DataObject<TModel> data);
+		void Bind(DataObject<TModel> data);
 	}
 }

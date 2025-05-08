@@ -18,12 +18,12 @@ namespace dmyo_oop_final_assigment.Controls
 		public WasteTypeControl(DataObject<WasteType> data)
 		{
 			InitializeComponent();
-			Update(data);
+			Bind(data);
 		}
 
 		public DataObject<WasteType> Data => m_data;
 
-		public void Update(DataObject<WasteType> data)
+		public void Bind(DataObject<WasteType> data)
 		{
 			m_data = data;
 			Visible = true;

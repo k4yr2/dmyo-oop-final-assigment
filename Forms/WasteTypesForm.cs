@@ -33,12 +33,12 @@ namespace dmyo_oop_final_assigment.Forms
 				.Concat(Enumerable.Repeat(DataObject<WasteType>.Blank, 5))
 				.Take(6).ToArray();
 			
-			wt_control1.Update(data[0]);
-			wt_control2.Update(data[1]);
-			wt_control3.Update(data[2]);
-			wt_control4.Update(data[3]);
-			wt_control5.Update(data[4]);
-			wt_controlX.Update(data[5]);
+			wt_control1.Bind(data[0]);
+			wt_control2.Bind(data[1]);
+			wt_control3.Bind(data[2]);
+			wt_control4.Bind(data[3]);
+			wt_control5.Bind(data[4]);
+			wt_controlX.Bind(data[5]);
 		}
 	}
 }
