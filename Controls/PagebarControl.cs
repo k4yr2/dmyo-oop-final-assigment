@@ -12,6 +12,12 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class PagebarControl : UserControl
 	{
+		private int m_current = 0;
+
+		private int m_count = 0;
+
+		public event Action OnSet;
+
 		public PagebarControl()
 		{
 			InitializeComponent();
@@ -20,8 +26,20 @@ namespace dmyo_oop_final_assigment.Controls
 		private void PagebarControl_Resize(object sender, EventArgs e)
 		{
 			pg_label.Anchor = AnchorStyles.None;
-			pg_label.Left = (this.Width - pg_label.Width) / 2;
-			pg_label.Top = (this.Height - pg_label.Height) / 2;
+			pg_label.Left = (Width - pg_label.Width) / 2;
+			pg_label.Top = (Height - pg_label.Height) / 2;
+		}
+
+		public void Set(int current, int count)
+		{
+			current = Math.Min(current, count);
+			current = Math.Max(current, 1);
+			count = Math.Max(count, 1);
+
+			m_current = current;
+			m_count = count;
+
+			OnSet?.Invoke();
 		}
 	}
 }
