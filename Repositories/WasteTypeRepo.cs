@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Repositories
@@ -8,7 +10,16 @@ namespace dmyo_oop_final_assigment.Repositories
 	{
 		public override DataObject<WasteType> Create(WasteType model)
 		{
-			throw new NotImplementedException();
+			int id = -1;
+
+			DataManager.ExecuteCommand("INSERT INTO WasteTypes (name, description) VALUES (@Name, @Description)", (SqlCommand command) =>
+			{
+				command.Parameters.AddWithValue("@Name", model.Name);
+				command.Parameters.AddWithValue("@Description", model.Description);
+				id = Convert.ToInt32(command.ExecuteScalar());
+			});
+
+			return new DataObject<WasteType>(id, model);
 		}
 
 		public override DataObject<WasteType> Read(int id)
