@@ -28,19 +28,32 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.wt_panel = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
+			// 
+			// wt_panel
+			// 
+			this.wt_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.wt_panel.Location = new System.Drawing.Point(0, 0);
+			this.wt_panel.Name = "wt_panel";
+			this.wt_panel.Size = new System.Drawing.Size(350, 362);
+			this.wt_panel.TabIndex = 0;
 			// 
 			// WasteTypesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(601, 362);
+			this.ClientSize = new System.Drawing.Size(350, 362);
+			this.Controls.Add(this.wt_panel);
 			this.Name = "WasteTypesForm";
-			this.Text = "WasteTypesForm";
+			this.Text = "Waste Types";
+			this.Load += new System.EventHandler(this.WasteTypesForm_Load);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Panel wt_panel;
 	}
 }
