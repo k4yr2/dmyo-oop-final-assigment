@@ -2,7 +2,7 @@
 
 namespace dmyo_oop_final_assigment.Managers
 {
-	internal static class DataConnection
+	internal static class DataManager
 	{
 		// Connection string
 		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assigment;Integrated Security=True;Trust Server Certificate=True";
