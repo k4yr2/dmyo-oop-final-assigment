@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.unitGrid = new System.Windows.Forms.DataGridView();
+			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.abbreviation = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.unitGrid)).BeginInit();
@@ -38,6 +39,7 @@
 			// 
 			this.unitGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.unitGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.name,
             this.abbreviation});
 			this.unitGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -46,6 +48,14 @@
 			this.unitGrid.Size = new System.Drawing.Size(586, 199);
 			this.unitGrid.TabIndex = 0;
 			this.unitGrid.TabStop = false;
+			this.unitGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitGrid_CellValueChanged);
+			// 
+			// Id
+			// 
+			this.Id.DataPropertyName = "id";
+			this.Id.HeaderText = "Id";
+			this.Id.Name = "Id";
+			this.Id.Visible = false;
 			// 
 			// name
 			// 
@@ -78,6 +88,7 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView unitGrid;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn name;
 		private System.Windows.Forms.DataGridViewTextBoxColumn abbreviation;
 	}

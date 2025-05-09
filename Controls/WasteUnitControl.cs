@@ -30,9 +30,33 @@ namespace dmyo_oop_final_assigment.Controls
 			table.Columns.Add("name", typeof(string));
 			table.Columns.Add("abbreviation", typeof(string));
 
-			DataManager.FillTable(table, $"SELECT name, abbreviation FROM {RepoManager.WasteUnit.Name}");
+			DataManager.FillTable(table, RepoManager.WasteUnit.ReadAllQuery);
 
 			unitGrid.DataSource = table;
+		}
+
+		private void UpdateCellValue(int rowIndex)
+		{
+			int id = Convert.ToInt32(unitGrid.Rows[rowIndex].Cells["Id"].Value);
+
+			string name = unitGrid.Rows[rowIndex].Cells["name"].Value?.ToString();
+			string abbreviation = unitGrid.Rows[rowIndex].Cells["abbreviation"].Value?.ToString();
+
+			MessageBox.Show($"id:{id} name:{name} abbreviation:{abbreviation}");
+			RepoManager.WasteUnit.Update(id, new Models.WasteUnit()
+			{
+				Name = name,
+				Abbreviation = abbreviation
+			});
+		}
+
+		private void unitGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+		{
+			int rowIndex = e.RowIndex;
+			if (rowIndex >= 0)
+			{
+				UpdateCellValue(rowIndex);
+			}
 		}
 	}
 }
