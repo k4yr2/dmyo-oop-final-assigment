@@ -65,6 +65,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\RepoManager.cs" />
+    <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
