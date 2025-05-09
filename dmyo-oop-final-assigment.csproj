@@ -52,12 +52,6 @@
     <Compile Include="Controls\PagebarControl.Designer.cs">
       <DependentUpon>PagebarControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\WasteTypeControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\WasteTypeControl.Designer.cs">
-      <DependentUpon>WasteTypeControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,9 +85,6 @@
     <Compile Include="Repositories\WasteTypeRepo.cs" />
     <EmbeddedResource Include="Controls\PagebarControl.resx">
       <DependentUpon>PagebarControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\WasteTypeControl.resx">
-      <DependentUpon>WasteTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WasteTypesForm.resx">
       <DependentUpon>WasteTypesForm.cs</DependentUpon>
