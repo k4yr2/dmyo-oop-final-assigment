@@ -1,0 +1,62 @@
+﻿namespace dmyo_oop_final_assigment.Controls
+{
+	partial class WasteUnitControl
+	{
+		/// <summary> 
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary> 
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Component Designer generated code
+
+		/// <summary> 
+		/// Required method for Designer support - do not modify 
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.unitGrid = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.unitGrid)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// unitGrid
+			// 
+			this.unitGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.unitGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.unitGrid.Location = new System.Drawing.Point(0, 199);
+			this.unitGrid.Name = "unitGrid";
+			this.unitGrid.Size = new System.Drawing.Size(586, 199);
+			this.unitGrid.TabIndex = 0;
+			this.unitGrid.TabStop = false;
+			// 
+			// WasteUnitControl
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.unitGrid);
+			this.Name = "WasteUnitControl";
+			this.Size = new System.Drawing.Size(586, 398);
+			this.Load += new System.EventHandler(this.WasteUnitControl_Load);
+			((System.ComponentModel.ISupportInitialize)(this.unitGrid)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+
+		#endregion
+
+		private System.Windows.Forms.DataGridView unitGrid;
+	}
+}
