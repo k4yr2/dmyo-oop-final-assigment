@@ -10,6 +10,15 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public abstract class BaseRepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
 	{
+		public abstract string Name { get; }
+
+		public abstract string[] Params { get; }
+
+		protected abstract void OnParameters(TModel model, SqlCommand command);
+
+		protected abstract TModel OnModel(SqlDataReader reader);
+
+
 		public event Action OnChanged;
 
 		public string CreateQuery
@@ -146,16 +155,5 @@ namespace dmyo_oop_final_assigment.Repositories
 		{
 			return DataManager.ExecuteCommand($"SELECT * FROM {Name} ORDER BY id OFFSET ({page} - 1) * {per} ROWS FETCH NEXT {per} ROWS ONLY", DoRead);
 		}
-
-
-		public abstract string Name { get; }
-
-		public abstract string[] Params { get; }
-
-		protected abstract void OnParameters(TModel model, SqlCommand command);
-
-		protected abstract TModel OnModel(SqlDataReader reader);
-
-
 	}
 }
