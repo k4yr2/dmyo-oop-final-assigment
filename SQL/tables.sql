@@ -19,3 +19,12 @@ BEGIN
 		recyclable BIT DEFAULT(0)
 	);
 END;
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteUnits' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteUnits (
+		id INT PRIMARY KEY IDENTITY(1,1),
+		name NVARCHAR(50) NOT NULL,
+		abbreviation  NVARCHAR(8)
+	);
+END;
