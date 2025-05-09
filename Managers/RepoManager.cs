@@ -1,15 +1,12 @@
 ﻿using dmyo_oop_final_assigment.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Managers
 {
 	public static class RepoManager
 	{
 		public static WasteTypeRepo m_wasteType = new WasteTypeRepo();
+
+		public static WasteUnitRepo m_wasteUnit = new WasteUnitRepo();
 
 		//
 
@@ -18,6 +15,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteType;
+			}
+		}
+
+		public static WasteUnitRepo WasteUnit
+		{
+			get
+			{
+				return m_wasteUnit;
 			}
 		}
 	}
