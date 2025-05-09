@@ -8,3 +8,14 @@ BEGIN
 		description NVARCHAR(500)
 	);
 END;
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCategories' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteCategories (
+		id INT PRIMARY KEY IDENTITY(1,1),
+		name NVARCHAR(50) NOT NULL,
+		description NVARCHAR(500),
+		hazardLevel INT DEFAULT(0),
+		recyclable BIT DEFAULT(0)
+	);
+END;
