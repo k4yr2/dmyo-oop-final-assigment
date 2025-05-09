@@ -1,14 +1,5 @@
 USE dmyo_oop_final_assigment;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteTypes' AND type = 'U')
-BEGIN
-	CREATE TABLE WasteTypes (
-		id INT PRIMARY KEY IDENTITY(1,1),
-		name NVARCHAR(50) NOT NULL,
-		description NVARCHAR(500)
-	);
-END;
-
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCategories' AND type = 'U')
 BEGIN
 	CREATE TABLE WasteCategories (
@@ -26,5 +17,16 @@ BEGIN
 		id INT PRIMARY KEY IDENTITY(1,1),
 		name NVARCHAR(50) NOT NULL,
 		abbreviation  NVARCHAR(8)
+	);
+END;
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteTypes' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteTypes (
+		id INT PRIMARY KEY IDENTITY(1,1),
+		name NVARCHAR(50) NOT NULL,
+		description NVARCHAR(500),
+		category INT FOREIGN KEY REFERENCES WasteCategories(id),
+		unit INT FOREIGN KEY REFERENCES WasteUnits(id),
 	);
 END;
