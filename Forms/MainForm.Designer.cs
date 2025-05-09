@@ -137,9 +137,10 @@ namespace dmyo_oop_final_assigment.Forms
 			// 
 			// wasteUnitControl1
 			// 
+			this.wasteUnitControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.wasteUnitControl1.Location = new System.Drawing.Point(0, 0);
 			this.wasteUnitControl1.Name = "wasteUnitControl1";
-			this.wasteUnitControl1.Size = new System.Drawing.Size(597, 320);
+			this.wasteUnitControl1.Size = new System.Drawing.Size(600, 320);
 			this.wasteUnitControl1.TabIndex = 0;
 			// 
 			// MainForm

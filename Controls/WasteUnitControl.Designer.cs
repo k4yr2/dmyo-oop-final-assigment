@@ -50,12 +50,15 @@
 			// name
 			// 
 			this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.name.DataPropertyName = "name";
 			this.name.HeaderText = "Name";
 			this.name.Name = "name";
+			this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			// 
 			// abbreviation
 			// 
 			this.abbreviation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.abbreviation.DataPropertyName = "abbreviation";
 			this.abbreviation.HeaderText = "Abbreviation";
 			this.abbreviation.Name = "abbreviation";
 			// 

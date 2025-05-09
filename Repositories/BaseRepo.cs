@@ -57,6 +57,14 @@ namespace dmyo_oop_final_assigment.Repositories
 			}
 		}
 
+		public string ReadAllQuery
+		{
+			get
+			{
+				return $"SELECT * FROM {Name}";
+			}
+		}
+
 
 		public DataObject<TModel> Create(TModel model)
 		{
@@ -148,7 +156,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public IEnumerable<DataObject<TModel>> ReadAll()
 		{
-			return DataManager.ExecuteCommand($"SELECT * FROM {Name}", DoRead);
+			return DataManager.ExecuteCommand(ReadAllQuery, DoRead);
 		}
 
 		public IEnumerable<DataObject<TModel>> ReadPage(int page, int per)
