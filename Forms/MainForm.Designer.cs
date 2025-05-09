@@ -28,53 +28,53 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.panel_top = new System.Windows.Forms.Panel();
-			this.panel_bottom = new System.Windows.Forms.Panel();
-			this.panel_left = new System.Windows.Forms.Panel();
+			this.panel_banner = new System.Windows.Forms.Panel();
+			this.panel_statusbar = new System.Windows.Forms.Panel();
+			this.panel_sidebar = new System.Windows.Forms.Panel();
 			this.panel_content = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
 			// 
-			// panel_top
+			// panel_banner
 			// 
-			this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel_top.Location = new System.Drawing.Point(0, 0);
-			this.panel_top.Name = "panel_top";
-			this.panel_top.Size = new System.Drawing.Size(800, 60);
-			this.panel_top.TabIndex = 1;
+			this.panel_banner.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel_banner.Location = new System.Drawing.Point(0, 0);
+			this.panel_banner.Name = "panel_banner";
+			this.panel_banner.Size = new System.Drawing.Size(800, 40);
+			this.panel_banner.TabIndex = 1;
 			// 
-			// panel_bottom
+			// panel_statusbar
 			// 
-			this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel_bottom.Location = new System.Drawing.Point(0, 361);
-			this.panel_bottom.Name = "panel_bottom";
-			this.panel_bottom.Size = new System.Drawing.Size(800, 40);
-			this.panel_bottom.TabIndex = 2;
+			this.panel_statusbar.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel_statusbar.Location = new System.Drawing.Point(0, 360);
+			this.panel_statusbar.Name = "panel_statusbar";
+			this.panel_statusbar.Size = new System.Drawing.Size(800, 40);
+			this.panel_statusbar.TabIndex = 2;
 			// 
-			// panel_left
+			// panel_sidebar
 			// 
-			this.panel_left.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel_left.Location = new System.Drawing.Point(0, 60);
-			this.panel_left.Name = "panel_left";
-			this.panel_left.Size = new System.Drawing.Size(200, 301);
-			this.panel_left.TabIndex = 3;
+			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel_sidebar.Location = new System.Drawing.Point(0, 40);
+			this.panel_sidebar.Name = "panel_sidebar";
+			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
+			this.panel_sidebar.TabIndex = 3;
 			// 
 			// panel_content
 			// 
 			this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_content.Location = new System.Drawing.Point(200, 60);
+			this.panel_content.Location = new System.Drawing.Point(200, 40);
 			this.panel_content.Name = "panel_content";
-			this.panel_content.Size = new System.Drawing.Size(600, 301);
+			this.panel_content.Size = new System.Drawing.Size(600, 320);
 			this.panel_content.TabIndex = 4;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 401);
+			this.ClientSize = new System.Drawing.Size(800, 400);
 			this.Controls.Add(this.panel_content);
-			this.Controls.Add(this.panel_left);
-			this.Controls.Add(this.panel_bottom);
-			this.Controls.Add(this.panel_top);
+			this.Controls.Add(this.panel_sidebar);
+			this.Controls.Add(this.panel_statusbar);
+			this.Controls.Add(this.panel_banner);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.ResumeLayout(false);
@@ -83,9 +83,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Panel panel_top;
-		private System.Windows.Forms.Panel panel_bottom;
-		private System.Windows.Forms.Panel panel_left;
+		private System.Windows.Forms.Panel panel_banner;
+		private System.Windows.Forms.Panel panel_statusbar;
+		private System.Windows.Forms.Panel panel_sidebar;
 		private System.Windows.Forms.Panel panel_content;
 	}
 }
