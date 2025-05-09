@@ -82,6 +82,7 @@
     <Compile Include="Providers\IDataQuery.cs" />
     <Compile Include="Repositories\BaseRepo.cs" />
     <Compile Include="Repositories\WasteTypeRepo.cs" />
+    <Compile Include="Repositories\WasteUnitRepo.cs" />
     <EmbeddedResource Include="Controls\PagebarControl.resx">
       <DependentUpon>PagebarControl.cs</DependentUpon>
     </EmbeddedResource>
