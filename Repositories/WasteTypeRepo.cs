@@ -12,7 +12,7 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public class WasteTypeRepo : BaseRepo<WasteType>
 	{
-		public override string Name => "WasteTypes";
+		public override string Name => "WasteType";
 
 		public override string[] Params => new string[] { "name", "description" } ;
 
