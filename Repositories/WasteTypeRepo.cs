@@ -24,7 +24,11 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		protected override WasteType OnModel(SqlDataReader reader)
 		{
-			return new WasteType(reader.GetString(1), reader.GetString(2));
+			return new WasteType()
+			{
+				Name = reader.GetString(1),
+				Description = reader.GetString(2)
+			};
 		}
 	}
 }

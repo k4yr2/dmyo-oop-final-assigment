@@ -12,10 +12,9 @@ namespace dmyo_oop_final_assigment.Models
 
 		private string m_description;
 
-		public WasteType(string name, string description)
+		public WasteType()
 		{
-			m_name = name;
-			m_description = description;
+
 		}
 
 
