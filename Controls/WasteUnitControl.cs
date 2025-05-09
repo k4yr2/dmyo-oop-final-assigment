@@ -42,7 +42,6 @@ namespace dmyo_oop_final_assigment.Controls
 			string name = unitGrid.Rows[rowIndex].Cells["name"].Value?.ToString();
 			string abbreviation = unitGrid.Rows[rowIndex].Cells["abbreviation"].Value?.ToString();
 
-			MessageBox.Show($"id:{id} name:{name} abbreviation:{abbreviation}");
 			RepoManager.WasteUnit.Update(id, new Models.WasteUnit()
 			{
 				Name = name,
@@ -57,6 +56,13 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				UpdateCellValue(rowIndex);
 			}
+		}
+
+		private void unitGrid_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+		{
+			int id = Convert.ToInt32(unitGrid.Rows[e.Row.Index].Cells["Id"].Value);
+
+			RepoManager.WasteUnit.Delete(id);
 		}
 	}
 }

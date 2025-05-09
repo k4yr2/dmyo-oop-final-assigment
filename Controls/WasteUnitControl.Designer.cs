@@ -49,6 +49,7 @@
 			this.unitGrid.TabIndex = 0;
 			this.unitGrid.TabStop = false;
 			this.unitGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitGrid_CellValueChanged);
+			this.unitGrid.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.unitGrid_UserDeletedRow);
 			// 
 			// Id
 			// 

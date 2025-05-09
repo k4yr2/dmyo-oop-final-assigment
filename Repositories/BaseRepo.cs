@@ -76,7 +76,7 @@ namespace dmyo_oop_final_assigment.Repositories
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
-			OnChanged.Invoke();
+			OnChanged?.Invoke();
 			return new DataObject<TModel>(id, model);
 		}
 
@@ -111,7 +111,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			});
 
 			if(affected)
-				OnChanged.Invoke();
+				OnChanged?.Invoke();
 
 			return affected;
 		}
@@ -126,7 +126,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			});
 
 			if (affected)
-				OnChanged.Invoke();
+				OnChanged?.Invoke();
 
 			return affected;
 		}
