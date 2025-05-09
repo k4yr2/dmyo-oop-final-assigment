@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
@@ -53,6 +54,7 @@ namespace dmyo_oop_final_assigment.Managers
 			}
 		}
 
+
 		public static void ExecuteCommand(string query)
 		{
 			try
@@ -94,6 +96,23 @@ namespace dmyo_oop_final_assigment.Managers
 				{
 					foreach (var item in func.Invoke(command))
 						yield return item;
+				}
+			}
+			finally
+			{
+				CloseConnection();
+			}
+		}
+	
+
+		public static void FillTable(DataTable table, string query)
+		{
+			try
+			{
+				OpenConnection();
+				using (SqlDataAdapter adapter = new SqlDataAdapter(query, connectionString))
+				{
+					adapter.Fill(table);
 				}
 			}
 			finally
