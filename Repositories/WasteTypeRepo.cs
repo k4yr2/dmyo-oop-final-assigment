@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using dmyo_oop_final_assigment.Managers;
+﻿using System.Data.SqlClient;
 using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Repositories
