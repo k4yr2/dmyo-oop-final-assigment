@@ -1,4 +1,6 @@
-﻿namespace dmyo_oop_final_assigment.Forms
+﻿using System.Drawing;
+
+namespace dmyo_oop_final_assigment.Forms
 {
 	partial class MainForm
 	{
@@ -41,6 +43,7 @@
 			this.panel_banner.Name = "panel_banner";
 			this.panel_banner.Size = new System.Drawing.Size(800, 40);
 			this.panel_banner.TabIndex = 1;
+			this.panel_banner.BackColor = ColorTranslator.FromHtml("#2C3E50");
 			// 
 			// panel_statusbar
 			// 
@@ -49,6 +52,7 @@
 			this.panel_statusbar.Name = "panel_statusbar";
 			this.panel_statusbar.Size = new System.Drawing.Size(800, 40);
 			this.panel_statusbar.TabIndex = 2;
+			this.panel_statusbar.BackColor = ColorTranslator.FromHtml("#95A5A6");
 			// 
 			// panel_sidebar
 			// 
@@ -57,6 +61,7 @@
 			this.panel_sidebar.Name = "panel_sidebar";
 			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
 			this.panel_sidebar.TabIndex = 3;
+			this.panel_sidebar.BackColor = ColorTranslator.FromHtml("#34495E");
 			// 
 			// panel_content
 			// 
@@ -65,6 +70,7 @@
 			this.panel_content.Name = "panel_content";
 			this.panel_content.Size = new System.Drawing.Size(600, 320);
 			this.panel_content.TabIndex = 4;
+			this.panel_content.BackColor = ColorTranslator.FromHtml("#ECF0F1");
 			// 
 			// MainForm
 			// 
