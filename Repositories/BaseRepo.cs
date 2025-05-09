@@ -12,14 +12,48 @@ namespace dmyo_oop_final_assigment.Repositories
 	{
 		public event Action OnChanged;
 
+		public string CreateQuery
+		{
+			get
+			{
+				var tableParams = string.Join(", ", Params);
+				var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
+
+				return $"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})";
+			}
+		}
+
+		public string ReadQuery
+		{
+			get
+			{
+				return $"SELECT * FROM {Name} WHERE id = @id";
+			}
+		}
+
+		public string UpdateQuery
+		{
+			get
+			{
+				var setParams = string.Join(", ", Params.Select(p => $"{p} = @{p}"));
+				return $"UPDATE {Name} SET {setParams} WHERE id = @id";
+			}
+		}
+
+		public string DeleteQuery
+		{
+			get
+			{
+				return $"DELETE FROM {Name} WHERE id = @id";
+			}
+		}
+
+
 		public DataObject<TModel> Create(TModel model)
 		{
 			int id = -1;
 
-			var tableParams = string.Join(", ", Params);
-			var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
-
-			DataManager.ExecuteCommand($"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})", (SqlCommand command) =>
+			DataManager.ExecuteCommand(CreateQuery, (SqlCommand command) =>
 			{
 				OnParameters(model, command);
 				id = Convert.ToInt32(command.ExecuteScalar());
@@ -33,7 +67,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		{
 			TModel model = null;
 
-			DataManager.ExecuteCommand($"SELECT * FROM {Name} WHERE id = @id", (SqlCommand command) =>
+			DataManager.ExecuteCommand(ReadQuery, (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
 				SqlDataReader reader = command.ExecuteReader();
@@ -50,9 +84,8 @@ namespace dmyo_oop_final_assigment.Repositories
 		public bool Update(int id, TModel model)
 		{
 			bool affected = false;
-			var setParams = string.Join(", ", Params.Select(p => $"{p} = @{p}"));
 
-			DataManager.ExecuteCommand($"UPDATE {Name} SET {setParams} WHERE id = @id", (SqlCommand command) =>
+			DataManager.ExecuteCommand(UpdateQuery, (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
 				OnParameters(model, command);
@@ -69,7 +102,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		public bool Delete(int id)
 		{
 			bool affected = false;
-			DataManager.ExecuteCommand($"DELETE FROM {Name} WHERE id = @id", (SqlCommand command) =>
+			DataManager.ExecuteCommand(DeleteQuery, (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("id", id);
 				affected = command.ExecuteNonQuery() > 0;
@@ -82,17 +115,6 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		private IEnumerable<DataObject<TModel>> DoRead(SqlCommand command)
-		{
-			SqlDataReader reader = command.ExecuteReader();
-
-			while (reader.Read())
-			{
-				int id = reader.GetInt32(0);
-				yield return new DataObject<TModel>(id, OnModel(reader));
-			}
-		}
-
 		public int Count()
 		{
 			int count = 0;
@@ -102,6 +124,17 @@ namespace dmyo_oop_final_assigment.Repositories
 			});
 
 			return count;
+		}
+
+		private IEnumerable<DataObject<TModel>> DoRead(SqlCommand command)
+		{
+			SqlDataReader reader = command.ExecuteReader();
+
+			while (reader.Read())
+			{
+				int id = reader.GetInt32(0);
+				yield return new DataObject<TModel>(id, OnModel(reader));
+			}
 		}
 
 		public IEnumerable<DataObject<TModel>> ReadAll()
