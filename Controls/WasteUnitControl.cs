@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,9 +24,6 @@ namespace dmyo_oop_final_assigment.Controls
 			unitGrid.AllowUserToAddRows = true;
 			unitGrid.AllowUserToDeleteRows = true;
 			unitGrid.ReadOnly = false;
-
-			unitGrid.Columns[0].HeaderText = "Name";
-			unitGrid.Columns[1].HeaderText = "Abbreviation";
 		}
 	}
 }
