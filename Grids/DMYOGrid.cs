@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace dmyo_oop_final_assigment.Grids
 {
 	public abstract class DMYOGrid<TModel> where TModel : class
 	{
+		public abstract void Columns(DataTable table);
 
+		public abstract TModel ToModel(DataRow row);
 	}
 }
