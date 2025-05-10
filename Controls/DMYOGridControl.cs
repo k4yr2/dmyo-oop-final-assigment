@@ -54,7 +54,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void SetView()
 		{
-			view.Columns.Add(new DataGridViewColumn()
+			view.Columns.Add(new DataGridViewTextBoxColumn()
 			{
 				Name = "ID",
 				DataPropertyName = "id",
