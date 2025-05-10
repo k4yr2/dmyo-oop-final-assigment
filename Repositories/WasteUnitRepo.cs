@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public class WasteUnitRepo : BaseRepo<WasteUnit>
+	public class WasteUnitRepo : DMYORepo<WasteUnit>
 	{
 		public override string Name => "WasteUnit";
 

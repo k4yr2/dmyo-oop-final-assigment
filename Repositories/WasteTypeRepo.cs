@@ -3,7 +3,7 @@ using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public class WasteTypeRepo : BaseRepo<WasteType>
+	public class WasteTypeRepo : DMYORepo<WasteType>
 	{
 		public override string Name => "WasteType";
 

@@ -9,7 +9,7 @@ namespace dmyo_oop_final_assigment.Grids
 {
 	public sealed class WasteUnitGrid : DMYOGrid<WasteUnit>
 	{
-		public override BaseRepo<WasteUnit> Repo
+		public override DMYORepo<WasteUnit> Repo
 		{
 			get
 			{

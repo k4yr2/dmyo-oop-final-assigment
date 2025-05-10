@@ -8,18 +8,14 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public abstract class BaseRepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
+	public abstract class DMYORepo
 	{
+		public event Action OnChanged;
+
 		public abstract string Name { get; }
 
 		public abstract string[] Params { get; }
 
-		protected abstract void OnParameters(TModel model, SqlCommand command);
-
-		protected abstract TModel OnModel(SqlDataReader reader);
-
-
-		public event Action OnChanged;
 
 		public string CreateQuery
 		{
@@ -64,6 +60,13 @@ namespace dmyo_oop_final_assigment.Repositories
 				return $"SELECT * FROM {Name}";
 			}
 		}
+	}
+
+	public abstract class DMYORepo<TModel> : DMYORepo, IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
+	{
+		protected abstract void OnParameters(TModel model, SqlCommand command);
+
+		protected abstract TModel OnModel(SqlDataReader reader);
 
 
 		public DMYOData<TModel> Create(TModel model)
@@ -76,7 +79,7 @@ namespace dmyo_oop_final_assigment.Repositories
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
-			OnChanged?.Invoke();
+			//OnChanged?.Invoke();
 			return new DMYOData<TModel>(id, model);
 		}
 
@@ -110,8 +113,8 @@ namespace dmyo_oop_final_assigment.Repositories
 				affected = command.ExecuteNonQuery() > 0;
 			});
 
-			if(affected)
-				OnChanged?.Invoke();
+			//if(affected)
+			//	OnChanged?.Invoke();
 
 			return affected;
 		}
@@ -125,8 +128,8 @@ namespace dmyo_oop_final_assigment.Repositories
 				affected = command.ExecuteNonQuery() > 0;
 			});
 
-			if (affected)
-				OnChanged?.Invoke();
+			//if (affected)
+			//	OnChanged?.Invoke();
 
 			return affected;
 		}
