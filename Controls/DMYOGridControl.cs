@@ -23,7 +23,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				Name = "ID",
 				DataPropertyName = "id",
-				Visible = true
+				Visible = false
 			});
 
 			Bind(source);
