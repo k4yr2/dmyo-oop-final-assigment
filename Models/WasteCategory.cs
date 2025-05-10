@@ -10,7 +10,7 @@ namespace dmyo_oop_final_assigment.Models
 	{
 		private string m_description;
 
-		private WasteHazardLevel m_hazardLevel;
+		private int m_hazardLevel;
 
 		private bool m_recyclable;
 
@@ -32,7 +32,7 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public WasteHazardLevel HazardLevel
+		public int HazardLevel
 		{
 			get
 			{
@@ -55,12 +55,5 @@ namespace dmyo_oop_final_assigment.Models
 				m_recyclable = value;
 			}
 		}
-	}
-
-	public enum WasteHazardLevel
-	{
-		Low = 0,
-		Medium = 1,
-		High = 2
 	}
 }

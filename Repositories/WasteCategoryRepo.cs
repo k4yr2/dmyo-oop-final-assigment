@@ -24,7 +24,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			{
 				Name = reader.GetString(1),
 				Description = reader.GetString(2),
-				HazardLevel = (WasteHazardLevel)reader.GetInt32(3),
+				HazardLevel = reader.GetInt32(3),
 				Recyclable = reader.GetBoolean(4)
 			};
 		}

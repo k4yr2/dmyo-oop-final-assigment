@@ -25,7 +25,7 @@ namespace dmyo_oop_final_assigment.Grids
 		{
 			table.Columns.Add("name", typeof(string));
 			table.Columns.Add("description", typeof(string));
-			table.Columns.Add("hazardLevel", typeof(WasteHazardLevel));
+			table.Columns.Add("hazardLevel", typeof(int));
 			table.Columns.Add("recyclable", typeof(bool));
 		}
 
@@ -47,13 +47,12 @@ namespace dmyo_oop_final_assigment.Grids
 				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
 			});
 
-			view.Columns.Add(new DataGridViewComboBoxColumn()
+			view.Columns.Add(new DataGridViewTextBoxColumn()
 			{
 				Name = "hazardLevel",
 				HeaderText = "Hazard Level",
 				DataPropertyName = "hazardLevel",
 				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
-				DataSource = Enum.GetValues(typeof(WasteHazardLevel)),
 			});
 
 			view.Columns.Add(new DataGridViewCheckBoxColumn()
@@ -71,7 +70,7 @@ namespace dmyo_oop_final_assigment.Grids
 			{
 				Name = row.Cells["name"].Value?.ToString(),
 				Description = row.Cells["description"].Value?.ToString(),
-				HazardLevel = (WasteHazardLevel)Enum.Parse(typeof(WasteHazardLevel), row.Cells["hazardLevel"].Value?.ToString()),
+				HazardLevel = Convert.ToInt32(row.Cells["hazardLevel"].Value),
 				Recyclable = Convert.ToBoolean(row.Cells["recyclable"].Value)
 			};
 		}
