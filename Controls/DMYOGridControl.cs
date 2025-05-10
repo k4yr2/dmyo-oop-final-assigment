@@ -8,21 +8,21 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class DMYOGridControl<TModel> : UserControl
 	{
-		private DMYOGrid<TModel> m_source;
+		private IDMYOGrid m_source;
 
 		public DMYOGridControl() : this(null)
 		{
 
 		}
 
-		public DMYOGridControl(DMYOGrid<TModel> source)
+		public DMYOGridControl(IDMYOGrid source)
 		{
 			InitializeComponent();
 			Bind(source);
 		}
 
 
-		public DMYOGrid<TModel> Source
+		public IDMYOGrid Source
 		{
 			get
 			{
@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public void Bind(DMYOGrid<TModel> source)
+		public void Bind(IDMYOGrid source)
 		{
 			if((m_source = source) == null)
 			{
