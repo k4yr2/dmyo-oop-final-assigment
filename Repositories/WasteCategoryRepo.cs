@@ -5,7 +5,7 @@ namespace dmyo_oop_final_assigment.Repositories
 {
 	public class WasteCategoryRepo : DMYORepo<WasteCategory>
 	{
-		public override string Name => "WasteUnit";
+		public override string Name => "WasteCategory";
 
 		public override string[] Params => new string[] { "name", "description", "hazardLevel", "recyclable" };
 

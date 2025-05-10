@@ -93,7 +93,7 @@ namespace dmyo_oop_final_assigment.Forms
 			// 
 			this.button_recycling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
 			this.button_recycling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button_recycling.Location = new System.Drawing.Point(20, 110);
+			this.button_recycling.Location = new System.Drawing.Point(19, 110);
 			this.button_recycling.Margin = new System.Windows.Forms.Padding(10);
 			this.button_recycling.Name = "button_recycling";
 			this.button_recycling.Size = new System.Drawing.Size(160, 25);
@@ -105,13 +105,14 @@ namespace dmyo_oop_final_assigment.Forms
 			// 
 			this.button_distribution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
 			this.button_distribution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button_distribution.Location = new System.Drawing.Point(20, 65);
+			this.button_distribution.Location = new System.Drawing.Point(19, 65);
 			this.button_distribution.Margin = new System.Windows.Forms.Padding(10);
 			this.button_distribution.Name = "button_distribution";
 			this.button_distribution.Size = new System.Drawing.Size(160, 25);
 			this.button_distribution.TabIndex = 0;
 			this.button_distribution.Text = "Distribution";
 			this.button_distribution.UseVisualStyleBackColor = false;
+			this.button_distribution.Click += new System.EventHandler(this.button_distribution_Click);
 			// 
 			// button_wastes
 			// 

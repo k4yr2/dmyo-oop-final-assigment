@@ -22,5 +22,10 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			dmyoGrid.Bind(new WasteUnitGrid());
 		}
+
+		private void button_distribution_Click(object sender, EventArgs e)
+		{
+			dmyoGrid.Bind(new WasteCategoryGrid());
+		}
 	}
 }
