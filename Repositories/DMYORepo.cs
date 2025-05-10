@@ -44,7 +44,7 @@ namespace dmyo_oop_final_assigment.Repositories
 				var tableParams = string.Join(", ", Params);
 				var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
 
-				return $"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams})";
+				return $"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams}); SELECT SCOPE_IDENTITY();";
 			}
 		}
 
