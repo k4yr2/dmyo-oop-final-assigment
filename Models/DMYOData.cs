@@ -1,12 +1,24 @@
 ﻿namespace dmyo_oop_final_assigment.Models
 {
-	public class DMYOData<TModel>
+	public interface IDMYOData
+	{
+		int Id { get; }
+		
+		object Model { get; set; }
+	}
+
+	public interface IDMYOData<TModel> : IDMYOData where TModel : DMYOModel
+	{
+		new TModel Model { get; set; }
+	}
+
+	public class DMYOData<TModel> : IDMYOData<TModel>, IDMYOData where TModel : DMYOModel
 	{
 		public static DMYOData<TModel> Blank
 		{
 			get
 			{
-				return new DMYOData<TModel>(-500, null);
+				return new DMYOData<TModel>(-500, default);
 			}
 		}
 
@@ -38,6 +50,18 @@
 			set
 			{
 				m_model = value;
+			}
+		}
+
+		object IDMYOData.Model
+		{
+			get
+			{
+				return m_model;
+			}
+			set
+			{
+				m_model = (TModel)value;
 			}
 		}
 	}
