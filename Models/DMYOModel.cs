@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Models
 {
-	public class WasteType : DMYOModel
+	public class DMYOModel
 	{
-		private string m_description;
+		private string m_name;
 
-		public WasteType()
+		public DMYOModel()
 		{
 
 		}
 
-		public string Description
+		public string Name
 		{
 			get
 			{
-				return m_description;
+				return m_name;
 			}
 			set
 			{
-				m_description = value;
+				m_name = value;
 			}
 		}
-	}	
+	}
 }
