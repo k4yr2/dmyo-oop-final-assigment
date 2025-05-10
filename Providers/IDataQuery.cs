@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace dmyo_oop_final_assigment.Providers
 {
-	internal interface IDataQuery<TModel> where TModel : class
+	internal interface IDataQuery<TModel> where TModel : DMYOModel
 	{
 		int Count();
 
