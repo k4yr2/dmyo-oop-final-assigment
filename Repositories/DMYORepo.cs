@@ -15,13 +15,17 @@ namespace dmyo_oop_final_assigment.Repositories
 		string Name { get; }
 
 		string[] Params { get; }
+
+		void SetParameters(DMYOModel model, SqlCommand command);
+
+		DMYOModel GetModel(SqlDataReader reader);
 	}
 
 	interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
 	{
 		void SetParameters(TModel model, SqlCommand command);
 
-		TModel GetModel(SqlDataReader reader);
+		new TModel GetModel(SqlDataReader reader);
 	}
 
 	public abstract class DMYORepo<TModel> : IDMYORepo<TModel> where TModel : DMYOModel
@@ -80,7 +84,17 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public abstract void SetParameters(TModel model, SqlCommand command);
 
+		void IDMYORepo.SetParameters(DMYOModel model, SqlCommand command)
+		{
+			SetParameters((TModel)model, command);
+		}
+
 		public abstract TModel GetModel(SqlDataReader reader);
+
+		DMYOModel IDMYORepo.GetModel(SqlDataReader reader)
+		{
+			return GetModel(reader);
+		}
 
 
 		public DMYOData<TModel> Create(TModel model)
