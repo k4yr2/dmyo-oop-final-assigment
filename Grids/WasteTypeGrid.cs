@@ -59,6 +59,12 @@ namespace dmyo_oop_final_assigment.Grids
 				Description = string.Empty
 			};
 		}
+
+		public override void FillRow(DataGridViewRow row, WasteType model)
+		{
+			row.Cells["name"].Value = model.Name;
+			row.Cells["description"].Value = model.Description;
+		}
 	}
 }
 

@@ -85,5 +85,13 @@ namespace dmyo_oop_final_assigment.Grids
 				Recyclable = false
 			};
 		}
+
+		public override void FillRow(DataGridViewRow row, WasteCategory model)
+		{
+			row.Cells["name"].Value = model.Name;
+			row.Cells["description"].Value = model.Description;
+			row.Cells["hazardLevel"].Value = model.HazardLevel;
+			row.Cells["recyclable"].Value = model.Recyclable;
+		}
 	}
 }

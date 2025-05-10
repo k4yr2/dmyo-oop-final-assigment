@@ -25,6 +25,8 @@ namespace dmyo_oop_final_assigment.Grids
 		DMYOModel GetBlankModel();
 
 		IDMYOData GetData(DataGridViewRow row);
+
+		void FillRow(DataGridViewRow row, DMYOModel model);
 	}
 
 	public interface IDMYOGrid<TModel> : IDMYOGrid where TModel : DMYOModel
@@ -36,6 +38,8 @@ namespace dmyo_oop_final_assigment.Grids
 		new TModel GetBlankModel();
 
 		new DMYOData<TModel> GetData(DataGridViewRow row);
+
+		new void FillRow(DataGridViewRow row, TModel model);
 	}
 
 	public abstract class DMYOGrid<TModel> : IDMYOGrid<TModel> where TModel : DMYOModel
@@ -86,6 +90,13 @@ namespace dmyo_oop_final_assigment.Grids
 		IDMYOData IDMYOGrid.GetData(DataGridViewRow row)
 		{
 			return GetData(row);
+		}
+
+		public abstract void FillRow(DataGridViewRow row, TModel model);
+
+		void IDMYOGrid.FillRow(DataGridViewRow row, DMYOModel model)
+		{
+			FillRow(row, (TModel)model);
 		}
 	}
 }
