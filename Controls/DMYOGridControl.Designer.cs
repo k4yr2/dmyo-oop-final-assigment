@@ -42,6 +42,7 @@
 			this.view.TabIndex = 0;
 			this.view.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_CellEndEdit);
 			this.view.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.view_UserAddedRow);
+			this.view.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.view_UserDeletingRow);
 			// 
 			// DMYOGridControl
 			// 

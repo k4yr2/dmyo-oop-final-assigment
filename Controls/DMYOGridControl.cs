@@ -87,5 +87,11 @@ namespace dmyo_oop_final_assigment.Controls
 			row.Cells["ID"].Value = data.Id;
 			m_source.FillRow(row, data.Model);
 		}
+
+		private void view_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+		{
+			m_source.Repo.Delete(m_source.GetID(e.Row));
+
+		}
 	}
 }
