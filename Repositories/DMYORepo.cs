@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	interface IDMYORepo : IDataCRUD, IDataQuery
+	interface IDMYORepo : IDataCRUD, IDataCollection
 	{
 		event Action OnChanged;
 
@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		DMYOModel GetModel(SqlDataReader reader);
 	}
 
-	interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
+	interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
 	{
 		void SetParameters(TModel model, SqlCommand command);
 
@@ -73,7 +73,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			}
 		}
 
-		public string ReadAllQuery
+		public string SelectQuery
 		{
 			get
 			{
@@ -178,7 +178,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		private IEnumerable<DMYOData<TModel>> DoRead(SqlCommand command)
+		private IEnumerable<DMYOData<TModel>> DoSelect(SqlCommand command)
 		{
 			SqlDataReader reader = command.ExecuteReader();
 
@@ -189,14 +189,14 @@ namespace dmyo_oop_final_assigment.Repositories
 			}
 		}
 
-		public IEnumerable<DMYOData<TModel>> ReadAll()
+		public IEnumerable<DMYOData<TModel>> Select()
 		{
-			return DataManager.ExecuteCommand(ReadAllQuery, DoRead);
+			return DataManager.ExecuteCommand(SelectQuery, DoSelect);
 		}
 
-		IEnumerable<IDMYOData> IDataQuery.ReadAll()
+		IEnumerable<IDMYOData> IDataCollection.Select()
 		{
-			return ReadAll();
+			return Select();
 		}
 	}
 }

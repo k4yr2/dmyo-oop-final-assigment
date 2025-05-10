@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Controls
 			table.Columns.Add("name", typeof(string));
 			table.Columns.Add("abbreviation", typeof(string));
 
-			DataManager.FillTable(table, RepoManager.WasteUnit.ReadAllQuery);
+			DataManager.FillTable(table, RepoManager.WasteUnit.SelectQuery);
 
 			unitGrid.DataSource = table;
 		}

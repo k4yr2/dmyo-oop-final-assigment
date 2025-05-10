@@ -19,7 +19,7 @@ namespace dmyo_oop_final_assigment.Grids
 			DataTable table = new DataTable();
 			Columns(table);
 
-			DataManager.FillTable(table, query ?? Repo.ReadAllQuery);
+			DataManager.FillTable(table, query ?? Repo.SelectQuery);
 			return table;
 		}
 
