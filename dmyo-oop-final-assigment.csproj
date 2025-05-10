@@ -74,6 +74,7 @@
     <Compile Include="Grids\WasteUnitGrid.cs" />
     <Compile Include="Managers\RepoManager.cs" />
     <Compile Include="Models\DMYOModel.cs" />
+    <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
