@@ -97,6 +97,11 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new DMYOData<TModel>(id, model);
 		}
 
+		IDMYOData IDataCRUD.Create(object model)
+		{
+			return Create((TModel)model);
+		}
+
 		public DMYOData<TModel> Read(int id)
 		{
 			TModel model = default;
@@ -115,6 +120,11 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new DMYOData<TModel>(id, model);
 		}
 
+		IDMYOData IDataCRUD.Read(int id)
+		{
+			return Read(id);
+		}
+
 		public bool Update(int id, TModel model)
 		{
 			bool affected = false;
@@ -131,6 +141,11 @@ namespace dmyo_oop_final_assigment.Repositories
 			//	OnChanged?.Invoke();
 
 			return affected;
+		}
+
+		bool IDataCRUD.Update(int id, object model)
+		{
+			return Update(id, (TModel)model);
 		}
 
 		public bool Delete(int id)
