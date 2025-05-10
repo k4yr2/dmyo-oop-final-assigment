@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public abstract class DMYORepo
+	public abstract class DMYORepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
 	{
 		public event Action OnChanged;
 
@@ -60,10 +60,8 @@ namespace dmyo_oop_final_assigment.Repositories
 				return $"SELECT * FROM {Name}";
 			}
 		}
-	}
 
-	public abstract class DMYORepo<TModel> : DMYORepo, IDataCRUD<TModel>, IDataQuery<TModel> where TModel : class
-	{
+
 		protected abstract void OnParameters(TModel model, SqlCommand command);
 
 		protected abstract TModel OnModel(SqlDataReader reader);
