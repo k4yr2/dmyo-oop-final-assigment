@@ -59,8 +59,8 @@ namespace dmyo_oop_final_assigment.Models
 
 	public enum WasteHazardLevel
 	{
-		Low,
-		Medium,
-		High
+		Low = 0,
+		Medium = 1,
+		High = 2
 	}
 }
