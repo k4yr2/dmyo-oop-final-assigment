@@ -36,7 +36,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		[Category("NavSub")]
 		[Browsable(false)]
-		public Panel SubPanel
+		public FlowLayoutPanel SubPanel
 		{
 			get
 			{
@@ -52,6 +52,11 @@ namespace dmyo_oop_final_assigment.Controls
 		private void button_Click(object sender, System.EventArgs e)
 		{
 			EnableSub = !EnableSub;
+		}
+
+		private void DMYONavSub_Resize(object sender, System.EventArgs e)
+		{
+			this.Width = this.Parent.Width;
 		}
 	}
 }

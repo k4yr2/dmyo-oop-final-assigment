@@ -33,7 +33,7 @@ namespace dmyo_oop_final_assigment.Controls
 			this.bodyPanel = new System.Windows.Forms.Panel();
 			this.label = new System.Windows.Forms.Label();
 			this.button = new System.Windows.Forms.Button();
-			this.subPanel = new System.Windows.Forms.Panel();
+			this.subPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.bodyPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -45,7 +45,7 @@ namespace dmyo_oop_final_assigment.Controls
 			this.bodyPanel.Location = new System.Drawing.Point(0, 0);
 			this.bodyPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.bodyPanel.Name = "bodyPanel";
-			this.bodyPanel.Size = new System.Drawing.Size(180, 30);
+			this.bodyPanel.Size = new System.Drawing.Size(90, 30);
 			this.bodyPanel.TabIndex = 0;
 			// 
 			// label
@@ -56,7 +56,7 @@ namespace dmyo_oop_final_assigment.Controls
 			this.label.Location = new System.Drawing.Point(30, 0);
 			this.label.Margin = new System.Windows.Forms.Padding(0);
 			this.label.Name = "label";
-			this.label.Size = new System.Drawing.Size(150, 30);
+			this.label.Size = new System.Drawing.Size(60, 30);
 			this.label.TabIndex = 2;
 			this.label.Text = "label1";
 			this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -80,22 +80,30 @@ namespace dmyo_oop_final_assigment.Controls
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.subPanel.AutoSize = true;
-			this.subPanel.BackColor = System.Drawing.Color.Gold;
-			this.subPanel.Location = new System.Drawing.Point(33, 30);
+			this.subPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.subPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.subPanel.Location = new System.Drawing.Point(30, 30);
 			this.subPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.subPanel.MinimumSize = new System.Drawing.Size(60, 30);
 			this.subPanel.Name = "subPanel";
-			this.subPanel.Size = new System.Drawing.Size(147, 60);
+			this.subPanel.Size = new System.Drawing.Size(60, 30);
 			this.subPanel.TabIndex = 1;
+			this.subPanel.WrapContents = false;
 			// 
 			// DMYONavSub
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.BackColor = System.Drawing.Color.Yellow;
 			this.Controls.Add(this.subPanel);
 			this.Controls.Add(this.bodyPanel);
+			this.Margin = new System.Windows.Forms.Padding(0);
+			this.MinimumSize = new System.Drawing.Size(90, 30);
 			this.Name = "DMYONavSub";
-			this.Size = new System.Drawing.Size(180, 90);
+			this.Size = new System.Drawing.Size(90, 60);
+			this.Resize += new System.EventHandler(this.DMYONavSub_Resize);
 			this.bodyPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -107,6 +115,6 @@ namespace dmyo_oop_final_assigment.Controls
 		private System.Windows.Forms.Panel bodyPanel;
 		private System.Windows.Forms.Button button;
 		private System.Windows.Forms.Label label;
-		private System.Windows.Forms.Panel subPanel;
+		private System.Windows.Forms.FlowLayoutPanel subPanel;
 	}
 }
