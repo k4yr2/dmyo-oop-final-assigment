@@ -34,6 +34,16 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		[Category("NavSub")]
+		[Browsable(false)]
+		public Panel SubPanel
+		{
+			get
+			{
+				return subPanel;
+			}
+		}
+
 		public DMYONavSub()
 		{
 			InitializeComponent();
