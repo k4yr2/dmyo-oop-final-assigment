@@ -28,33 +28,33 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.grid = new System.Windows.Forms.DataGridView();
-			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			this.view = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// grid
 			// 
-			this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grid.Location = new System.Drawing.Point(0, 0);
-			this.grid.Name = "grid";
-			this.grid.Size = new System.Drawing.Size(400, 200);
-			this.grid.TabIndex = 0;
+			this.view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.view.Location = new System.Drawing.Point(0, 0);
+			this.view.Name = "grid";
+			this.view.Size = new System.Drawing.Size(400, 200);
+			this.view.TabIndex = 0;
 			// 
 			// DataGridView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.grid);
+			this.Controls.Add(this.view);
 			this.Name = "DataGridView";
 			this.Size = new System.Drawing.Size(400, 200);
-			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.view)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView grid;
+		private System.Windows.Forms.DataGridView view;
 	}
 }

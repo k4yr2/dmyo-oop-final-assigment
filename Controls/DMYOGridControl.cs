@@ -21,6 +21,13 @@ namespace dmyo_oop_final_assigment.Controls
 			Bind(source);
 		}
 
+		public DataGridView View
+		{
+			get
+			{
+				return view;
+			}
+		}
 
 		public IDMYOGrid Source
 		{
@@ -34,11 +41,11 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			if((m_source = source) == null)
 			{
-				grid.DataSource = new DataTable();
+				view.DataSource = new DataTable();
 			}
 			else
 			{
-				grid.DataSource = source.GetTable();
+				view.DataSource = source.GetTable();
 			}
 		}
 	}
