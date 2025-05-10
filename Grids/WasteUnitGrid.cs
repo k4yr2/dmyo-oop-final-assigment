@@ -23,6 +23,25 @@ namespace dmyo_oop_final_assigment.Grids
 			table.Columns.Add("abbreviation", typeof(string));
 		}
 
+		public override void SetView(DataGridView view)
+		{
+			view.Columns.Add(new DataGridViewColumn()
+			{
+				Name = "name",
+				HeaderText = "Name",
+				DataPropertyName = "name",
+				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+			});
+
+			view.Columns.Add(new DataGridViewColumn()
+			{
+				Name = "abbreviation",
+				HeaderText = "Abbreviation",
+				DataPropertyName = "abbreviation",
+				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+			});
+		}
+
 		public override WasteUnit GetModel(DataGridViewRow row)
 		{
 			return new WasteUnit()

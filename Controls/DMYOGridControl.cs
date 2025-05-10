@@ -39,14 +39,29 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Bind(IDMYOGrid source)
 		{
-			if((m_source = source) == null)
+			view.Columns.Clear();
+
+			if ((m_source = source) == null)
 			{
 				view.DataSource = new DataTable();
 			}
 			else
 			{
+				SetView();
 				view.DataSource = source.GetTable();
 			}
+		}
+
+		private void SetView()
+		{
+			view.Columns.Add(new DataGridViewColumn()
+			{
+				Name = "ID",
+				DataPropertyName = "id",
+				Visible = false
+			});
+
+			Source.SetView(view);
 		}
 	}
 }

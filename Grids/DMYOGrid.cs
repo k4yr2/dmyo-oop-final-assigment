@@ -15,6 +15,8 @@ namespace dmyo_oop_final_assigment.Grids
 
 		void SetColumns(DataTable table);
 
+		void SetView(DataGridView view);
+
 
 		int GetID(DataGridViewRow row);
 
@@ -49,6 +51,8 @@ namespace dmyo_oop_final_assigment.Grids
 		}
 
 		public abstract void SetColumns(DataTable table);
+
+		public abstract void SetView(DataGridView view);
 
 
 		public virtual int GetID(DataGridViewRow row)
