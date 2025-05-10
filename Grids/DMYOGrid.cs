@@ -39,7 +39,7 @@ namespace dmyo_oop_final_assigment.Grids
 
 		new DMYOData<TModel> GetData(DataGridViewRow row);
 
-		new void FillRow(DataGridViewRow row, TModel model);
+		void FillRow(DataGridViewRow row, TModel model);
 	}
 
 	public abstract class DMYOGrid<TModel> : IDMYOGrid<TModel> where TModel : DMYOModel
