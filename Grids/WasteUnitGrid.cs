@@ -17,13 +17,13 @@ namespace dmyo_oop_final_assigment.Grids
 			}
 		}
 
-		public override void Columns(DataTable table)
+		public override void SetColumns(DataTable table)
 		{
 			table.Columns.Add("name", typeof(string));
 			table.Columns.Add("abbreviation", typeof(string));
 		}
 
-		public override WasteUnit ToModel(DataGridViewRow row)
+		public override WasteUnit GetModel(DataGridViewRow row)
 		{
 			return new WasteUnit()
 			{

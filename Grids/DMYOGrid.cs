@@ -7,33 +7,70 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Grids
 {
-	public abstract class DMYOGrid<TModel> where TModel : DMYOModel
+	public interface IDMYOGrid
+	{
+		IDMYORepo Repo { get; }
+
+		DataTable GetTable(string query = null);
+
+		void SetColumns(DataTable table);
+
+
+		int GetID(DataGridViewRow row);
+
+		DMYOModel GetModel(DataGridViewRow row);
+
+		IDMYOData GetData(DataGridViewRow row);
+	}
+
+	public interface IDMYOGrid<TModel> : IDMYOGrid where TModel : DMYOModel
+	{
+		new DMYORepo<TModel> Repo { get; }
+
+		new TModel GetModel(DataGridViewRow row);
+
+		new DMYOData<TModel> GetData(DataGridViewRow row);
+	}
+
+	public abstract class DMYOGrid<TModel> : IDMYOGrid<TModel> where TModel : DMYOModel
 	{
 		public abstract DMYORepo<TModel> Repo { get; }
 
+		IDMYORepo IDMYOGrid.Repo => Repo;
 
-		public abstract void Columns(DataTable table);
 
 		public DataTable GetTable(string query = null)
 		{
 			DataTable table = new DataTable();
-			Columns(table);
+			SetColumns(table);
 
 			DataManager.FillTable(table, query ?? Repo.SelectQuery);
 			return table;
 		}
 
+		public abstract void SetColumns(DataTable table);
 
-		public virtual int ToID(DataGridViewRow row)
+
+		public virtual int GetID(DataGridViewRow row)
 		{
 			return Convert.ToInt32(row.Cells["ID"].Value);
 		}
 
-		public abstract TModel ToModel(DataGridViewRow row);
+		public abstract TModel GetModel(DataGridViewRow row);
 
-		public DMYOData<TModel> ToData(DataGridViewRow row)
+		DMYOModel IDMYOGrid.GetModel(DataGridViewRow row)
 		{
-			return new DMYOData<TModel>(ToID(row), ToModel(row));
+			return GetModel(row);
+		}
+
+		public DMYOData<TModel> GetData(DataGridViewRow row)
+		{
+			return new DMYOData<TModel>(GetID(row), GetModel(row));
+		}
+
+		IDMYOData IDMYOGrid.GetData(DataGridViewRow row)
+		{
+			return GetData(row);
 		}
 	}
 }
