@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Grids
 {
@@ -6,6 +7,6 @@ namespace dmyo_oop_final_assigment.Grids
 	{
 		public abstract void Columns(DataTable table);
 
-		public abstract TModel ToModel(DataRow row);
+		public abstract TModel ToModel(DataGridViewRow row);
 	}
 }

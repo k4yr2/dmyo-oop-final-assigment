@@ -71,6 +71,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Grids\DMYOGrid.cs" />
+    <Compile Include="Grids\WasteUnitGrid.cs" />
     <Compile Include="Managers\RepoManager.cs" />
     <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
