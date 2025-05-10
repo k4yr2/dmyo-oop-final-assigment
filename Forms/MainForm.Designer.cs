@@ -39,10 +39,22 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_distribution = new System.Windows.Forms.Button();
 			this.button_wastes = new System.Windows.Forms.Button();
 			this.panel_content = new System.Windows.Forms.Panel();
-			this.dmyoGrid = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
+			this.dmyoTab = new System.Windows.Forms.TabControl();
+			this.page_wastes = new System.Windows.Forms.TabPage();
+			this.page_distribution = new System.Windows.Forms.TabPage();
+			this.wastesTab = new System.Windows.Forms.TabControl();
+			this.pageCategories = new System.Windows.Forms.TabPage();
+			this.pageTypes = new System.Windows.Forms.TabPage();
+			this.gridTypes = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
+			this.gridCategories = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
 			this.panel_banner.SuspendLayout();
 			this.panel_sidebar.SuspendLayout();
 			this.panel_content.SuspendLayout();
+			this.dmyoTab.SuspendLayout();
+			this.page_wastes.SuspendLayout();
+			this.wastesTab.SuspendLayout();
+			this.pageCategories.SuspendLayout();
+			this.pageTypes.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel_banner
@@ -112,7 +124,6 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_distribution.TabIndex = 0;
 			this.button_distribution.Text = "Distribution";
 			this.button_distribution.UseVisualStyleBackColor = false;
-			this.button_distribution.Click += new System.EventHandler(this.button_distribution_Click);
 			// 
 			// button_wastes
 			// 
@@ -125,12 +136,11 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wastes.TabIndex = 0;
 			this.button_wastes.Text = "Wastes";
 			this.button_wastes.UseVisualStyleBackColor = false;
-			this.button_wastes.Click += new System.EventHandler(this.button_wastes_Click);
 			// 
 			// panel_content
 			// 
 			this.panel_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-			this.panel_content.Controls.Add(this.dmyoGrid);
+			this.panel_content.Controls.Add(this.dmyoTab);
 			this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_content.Location = new System.Drawing.Point(200, 40);
 			this.panel_content.Margin = new System.Windows.Forms.Padding(20);
@@ -138,13 +148,91 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_content.Size = new System.Drawing.Size(600, 320);
 			this.panel_content.TabIndex = 4;
 			// 
-			// dmyoGrid
+			// dmyoTab
 			// 
-			this.dmyoGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dmyoGrid.Location = new System.Drawing.Point(0, 0);
-			this.dmyoGrid.Name = "dmyoGrid";
-			this.dmyoGrid.Size = new System.Drawing.Size(600, 320);
-			this.dmyoGrid.TabIndex = 0;
+			this.dmyoTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+			this.dmyoTab.Controls.Add(this.page_wastes);
+			this.dmyoTab.Controls.Add(this.page_distribution);
+			this.dmyoTab.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dmyoTab.ItemSize = new System.Drawing.Size(58, 18);
+			this.dmyoTab.Location = new System.Drawing.Point(0, 0);
+			this.dmyoTab.Name = "dmyoTab";
+			this.dmyoTab.SelectedIndex = 0;
+			this.dmyoTab.Size = new System.Drawing.Size(600, 320);
+			this.dmyoTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+			this.dmyoTab.TabIndex = 0;
+			// 
+			// page_wastes
+			// 
+			this.page_wastes.Controls.Add(this.wastesTab);
+			this.page_wastes.Location = new System.Drawing.Point(4, 22);
+			this.page_wastes.Name = "page_wastes";
+			this.page_wastes.Padding = new System.Windows.Forms.Padding(3);
+			this.page_wastes.Size = new System.Drawing.Size(592, 294);
+			this.page_wastes.TabIndex = 0;
+			this.page_wastes.Text = "Wastes";
+			this.page_wastes.UseVisualStyleBackColor = true;
+			// 
+			// page_distribution
+			// 
+			this.page_distribution.Location = new System.Drawing.Point(4, 22);
+			this.page_distribution.Name = "page_distribution";
+			this.page_distribution.Padding = new System.Windows.Forms.Padding(3);
+			this.page_distribution.Size = new System.Drawing.Size(592, 294);
+			this.page_distribution.TabIndex = 1;
+			this.page_distribution.Text = "Distribution";
+			this.page_distribution.UseVisualStyleBackColor = true;
+			// 
+			// wastesTab
+			// 
+			this.wastesTab.Controls.Add(this.pageTypes);
+			this.wastesTab.Controls.Add(this.pageCategories);
+			this.wastesTab.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.wastesTab.ItemSize = new System.Drawing.Size(58, 18);
+			this.wastesTab.Location = new System.Drawing.Point(3, 31);
+			this.wastesTab.Name = "wastesTab";
+			this.wastesTab.SelectedIndex = 0;
+			this.wastesTab.Size = new System.Drawing.Size(586, 260);
+			this.wastesTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+			this.wastesTab.TabIndex = 0;
+			// 
+			// pageCategories
+			// 
+			this.pageCategories.Controls.Add(this.gridCategories);
+			this.pageCategories.Location = new System.Drawing.Point(4, 22);
+			this.pageCategories.Name = "pageCategories";
+			this.pageCategories.Padding = new System.Windows.Forms.Padding(3);
+			this.pageCategories.Size = new System.Drawing.Size(578, 234);
+			this.pageCategories.TabIndex = 1;
+			this.pageCategories.Text = "Categories";
+			this.pageCategories.UseVisualStyleBackColor = true;
+			// 
+			// pageTypes
+			// 
+			this.pageTypes.Controls.Add(this.gridTypes);
+			this.pageTypes.Location = new System.Drawing.Point(4, 22);
+			this.pageTypes.Name = "pageTypes";
+			this.pageTypes.Padding = new System.Windows.Forms.Padding(3);
+			this.pageTypes.Size = new System.Drawing.Size(578, 234);
+			this.pageTypes.TabIndex = 0;
+			this.pageTypes.Text = "Types";
+			this.pageTypes.UseVisualStyleBackColor = true;
+			// 
+			// gridTypes
+			// 
+			this.gridTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gridTypes.Location = new System.Drawing.Point(3, 3);
+			this.gridTypes.Name = "gridTypes";
+			this.gridTypes.Size = new System.Drawing.Size(572, 228);
+			this.gridTypes.TabIndex = 0;
+			// 
+			// gridCategories
+			// 
+			this.gridCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gridCategories.Location = new System.Drawing.Point(3, 3);
+			this.gridCategories.Name = "gridCategories";
+			this.gridCategories.Size = new System.Drawing.Size(572, 228);
+			this.gridCategories.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -160,6 +248,11 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_banner.ResumeLayout(false);
 			this.panel_sidebar.ResumeLayout(false);
 			this.panel_content.ResumeLayout(false);
+			this.dmyoTab.ResumeLayout(false);
+			this.page_wastes.ResumeLayout(false);
+			this.wastesTab.ResumeLayout(false);
+			this.pageCategories.ResumeLayout(false);
+			this.pageTypes.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -174,6 +267,13 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Button button_wastes;
 		private System.Windows.Forms.Button button_recycling;
 		private System.Windows.Forms.Button button_distribution;
-		private DMYOGridControl dmyoGrid;
+		private System.Windows.Forms.TabControl dmyoTab;
+		private System.Windows.Forms.TabPage page_wastes;
+		private System.Windows.Forms.TabControl wastesTab;
+		private System.Windows.Forms.TabPage pageTypes;
+		private System.Windows.Forms.TabPage pageCategories;
+		private System.Windows.Forms.TabPage page_distribution;
+		private DMYOGridControl gridTypes;
+		private DMYOGridControl gridCategories;
 	}
 }

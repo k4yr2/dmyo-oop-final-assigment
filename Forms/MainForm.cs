@@ -16,16 +16,8 @@ namespace dmyo_oop_final_assigment.Forms
 		public MainForm()
 		{
 			InitializeComponent();
-		}
-
-		private void button_wastes_Click(object sender, EventArgs e)
-		{
-			dmyoGrid.Bind(new WasteTypeGrid());
-		}
-
-		private void button_distribution_Click(object sender, EventArgs e)
-		{
-			dmyoGrid.Bind(new WasteCategoryGrid());
+			gridTypes.Bind(new WasteTypeGrid());
+			gridCategories.Bind(new WasteCategoryGrid());
 		}
 	}
 }
