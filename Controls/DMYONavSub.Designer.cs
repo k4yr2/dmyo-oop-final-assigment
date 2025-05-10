@@ -79,6 +79,8 @@ namespace dmyo_oop_final_assigment.Controls
 			this.subPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.subPanel.AutoSize = true;
+			this.subPanel.BackColor = System.Drawing.Color.Gold;
 			this.subPanel.Location = new System.Drawing.Point(33, 30);
 			this.subPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.subPanel.Name = "subPanel";
@@ -89,12 +91,14 @@ namespace dmyo_oop_final_assigment.Controls
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.Controls.Add(this.subPanel);
 			this.Controls.Add(this.bodyPanel);
 			this.Name = "DMYONavSub";
 			this.Size = new System.Drawing.Size(180, 90);
 			this.bodyPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
