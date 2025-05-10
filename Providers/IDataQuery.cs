@@ -3,7 +3,16 @@ using System.Collections.Generic;
 
 namespace dmyo_oop_final_assigment.Providers
 {
-	internal interface IDataQuery<TModel> where TModel : DMYOModel
+	public interface IDataQuery
+	{
+		int CountQuery { get; }
+
+		string ReadAllQuery { get; }
+
+		string ReadPageQuery { get; }
+	}	
+
+	public interface IDataQuery<TModel> : IDataQuery where TModel : DMYOModel
 	{
 		int Count();
 
