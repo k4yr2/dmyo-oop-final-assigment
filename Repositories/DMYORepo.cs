@@ -179,5 +179,10 @@ namespace dmyo_oop_final_assigment.Repositories
 		{
 			return DataManager.ExecuteCommand(ReadAllQuery, DoRead);
 		}
+
+		IEnumerable<IDMYOData> IDataQuery.ReadAll()
+		{
+			return ReadAll();
+		}
 	}
 }
