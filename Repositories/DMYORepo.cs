@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	interface IDMYORepo : IDataCRUD, IDataCollection
+	public interface IDMYORepo : IDataCRUD, IDataCollection
 	{
 		event Action OnChanged;
 
@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		DMYOModel GetModel(SqlDataReader reader);
 	}
 
-	interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
+	public interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
 	{
 		void SetParameters(TModel model, SqlCommand command);
 
