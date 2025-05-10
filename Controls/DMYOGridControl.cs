@@ -66,5 +66,11 @@ namespace dmyo_oop_final_assigment.Controls
 				view.Visible = true;
 			}
 		}
+
+		private void view_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+		{
+			var row = View.Rows[e.RowIndex];
+			m_source.Repo.Update(m_source.GetID(row), m_source.GetModel(row));
+		}
 	}
 }
