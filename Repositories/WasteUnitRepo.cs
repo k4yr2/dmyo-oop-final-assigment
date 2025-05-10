@@ -9,13 +9,13 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override string[] Params => new string[] { "name", "abbreviation" };
 
-		protected override void OnParameters(WasteUnit wasteUnit, SqlCommand command)
+		public override void SetParameters(WasteUnit wasteUnit, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@name", wasteUnit.Name);
 			command.Parameters.AddWithValue("@abbreviation", wasteUnit.Abbreviation);
 		}
 
-		protected override WasteUnit OnModel(SqlDataReader reader)
+		public override WasteUnit GetModel(SqlDataReader reader)
 		{
 			return new WasteUnit()
 			{

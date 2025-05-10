@@ -8,7 +8,23 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public abstract class DMYORepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
+	interface IDMYORepo : IDataCRUD, IDataQuery
+	{
+		event Action OnChanged;
+
+		string Name { get; }
+
+		string[] Params { get; }
+	}
+
+	interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
+	{
+		void SetParameters(TModel model, SqlCommand command);
+
+		TModel GetModel(SqlDataReader reader);
+	}
+
+	public abstract class DMYORepo<TModel> : IDMYORepo<TModel> where TModel : DMYOModel
 	{
 		public event Action OnChanged;
 
@@ -62,9 +78,9 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		protected abstract void OnParameters(TModel model, SqlCommand command);
+		public abstract void SetParameters(TModel model, SqlCommand command);
 
-		protected abstract TModel OnModel(SqlDataReader reader);
+		public abstract TModel GetModel(SqlDataReader reader);
 
 
 		public DMYOData<TModel> Create(TModel model)
@@ -73,7 +89,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 			DataManager.ExecuteCommand(CreateQuery, (SqlCommand command) =>
 			{
-				OnParameters(model, command);
+				SetParameters(model, command);
 				id = Convert.ToInt32(command.ExecuteScalar());
 			});
 
@@ -92,7 +108,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 				if (reader.Read())
 				{
-					model = OnModel(reader);
+					model = GetModel(reader);
 				}	
 			});
 
@@ -106,7 +122,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			DataManager.ExecuteCommand(UpdateQuery, (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
-				OnParameters(model, command);
+				SetParameters(model, command);
 
 				affected = command.ExecuteNonQuery() > 0;
 			});
@@ -133,17 +149,6 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		public int Count()
-		{
-			int count = 0;
-			DataManager.ExecuteCommand($"SELECT COUNT(*) FROM {Name}", (SqlCommand command) =>
-			{
-				count = (int)command.ExecuteScalar();
-			});
-
-			return count;
-		}
-
 		private IEnumerable<DMYOData<TModel>> DoRead(SqlCommand command)
 		{
 			SqlDataReader reader = command.ExecuteReader();
@@ -151,18 +156,13 @@ namespace dmyo_oop_final_assigment.Repositories
 			while (reader.Read())
 			{
 				int id = reader.GetInt32(0);
-				yield return new DMYOData<TModel>(id, OnModel(reader));
+				yield return new DMYOData<TModel>(id, GetModel(reader));
 			}
 		}
 
 		public IEnumerable<DMYOData<TModel>> ReadAll()
 		{
 			return DataManager.ExecuteCommand(ReadAllQuery, DoRead);
-		}
-
-		public IEnumerable<DMYOData<TModel>> ReadPage(int page, int per)
-		{
-			return DataManager.ExecuteCommand($"SELECT * FROM {Name} ORDER BY id OFFSET ({page} - 1) * {per} ROWS FETCH NEXT {per} ROWS ONLY", DoRead);
 		}
 	}
 }

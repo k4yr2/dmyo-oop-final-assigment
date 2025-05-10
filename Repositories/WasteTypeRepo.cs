@@ -9,13 +9,13 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public override string[] Params => new string[] { "name", "description" } ;
 
-		protected override void OnParameters(WasteType wasteType, SqlCommand command)
+		public override void SetParameters(WasteType wasteType, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@name", wasteType.Name);
 			command.Parameters.AddWithValue("@description", wasteType.Description);
 		}
 
-		protected override WasteType OnModel(SqlDataReader reader)
+		public override WasteType GetModel(SqlDataReader reader)
 		{
 			return new WasteType()
 			{
