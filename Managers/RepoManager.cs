@@ -6,8 +6,6 @@ namespace dmyo_oop_final_assigment.Managers
 	{
 		public static WasteTypeRepo m_wasteType = new WasteTypeRepo();
 
-		public static WasteUnitRepo m_wasteUnit = new WasteUnitRepo();
-
 		public static WasteCategoryRepo m_wasteCategory = new WasteCategoryRepo();
 
 		//
@@ -17,14 +15,6 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteType;
-			}
-		}
-
-		public static WasteUnitRepo WasteUnit
-		{
-			get
-			{
-				return m_wasteUnit;
 			}
 		}
 

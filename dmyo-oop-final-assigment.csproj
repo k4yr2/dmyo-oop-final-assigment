@@ -58,12 +58,6 @@
     <Compile Include="Controls\PagebarControl.Designer.cs">
       <DependentUpon>PagebarControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\WasteUnitControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\WasteUnitControl.Designer.cs">
-      <DependentUpon>WasteUnitControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +66,10 @@
     </Compile>
     <Compile Include="Grids\DMYOGrid.cs" />
     <Compile Include="Grids\WasteCategoryGrid.cs" />
-    <Compile Include="Grids\WasteUnitGrid.cs" />
+    <Compile Include="Grids\WasteTypeGrid.cs" />
     <Compile Include="Managers\RepoManager.cs" />
     <Compile Include="Models\DMYOModel.cs" />
     <Compile Include="Models\WasteCategory.cs" />
-    <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
@@ -94,15 +87,11 @@
     <Compile Include="Repositories\DMYORepo.cs" />
     <Compile Include="Repositories\WasteCategoryRepo.cs" />
     <Compile Include="Repositories\WasteTypeRepo.cs" />
-    <Compile Include="Repositories\WasteUnitRepo.cs" />
     <EmbeddedResource Include="Controls\DMYOGridControl.resx">
       <DependentUpon>DMYOGridControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PagebarControl.resx">
       <DependentUpon>PagebarControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\WasteUnitControl.resx">
-      <DependentUpon>WasteUnitControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

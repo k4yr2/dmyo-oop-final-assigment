@@ -20,7 +20,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void button_wastes_Click(object sender, EventArgs e)
 		{
-			dmyoGrid.Bind(new WasteUnitGrid());
+			dmyoGrid.Bind(new WasteTypeGrid());
 		}
 
 		private void button_distribution_Click(object sender, EventArgs e)
