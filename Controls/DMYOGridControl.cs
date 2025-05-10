@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Grids;
 using dmyo_oop_final_assigment.Models;
+using System.Data;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -7,6 +8,11 @@ namespace dmyo_oop_final_assigment.Controls
 	public partial class DMYOGridControl : UserControl
 	{
 		private DMYOGrid<DMYOModel> m_source;
+
+		public DMYOGridControl() : this(null)
+		{
+
+		}
 
 		public DMYOGridControl(DMYOGrid<DMYOModel> source)
 		{
@@ -25,8 +31,14 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Bind(DMYOGrid<DMYOModel> source)
 		{
-			m_source = source;
-			grid.DataSource = source.GetTable();
+			if((m_source = source) == null)
+			{
+				grid.DataSource = new DataTable();
+			}
+			else
+			{
+				grid.DataSource = source.GetTable();
+			}
 		}
 	}
 }
