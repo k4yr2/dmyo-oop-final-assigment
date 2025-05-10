@@ -3,8 +3,8 @@
 	public interface IDMYOData
 	{
 		int Id { get; }
-		
-		object Model { get; set; }
+
+		DMYOModel Model { get; set; }
 	}
 
 	public interface IDMYOData<TModel> : IDMYOData where TModel : DMYOModel
@@ -53,7 +53,7 @@
 			}
 		}
 
-		object IDMYOData.Model
+		DMYOModel IDMYOData.Model
 		{
 			get
 			{
