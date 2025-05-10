@@ -7,14 +7,12 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Grids
 {
-	public abstract class DMYOGrid<TModel> where TModel : class
+	public abstract class DMYOGrid
 	{
-		public abstract DMYORepo<TModel> Repo { get; }
+		public abstract DMYORepo Repo { get; }
+
 
 		public abstract void Columns(DataTable table);
-
-		public abstract TModel ToModel(DataGridViewRow row);
-
 
 		public DataTable GetTable(string query = null)
 		{
@@ -29,6 +27,22 @@ namespace dmyo_oop_final_assigment.Grids
 		{
 			return Convert.ToInt32(row.Cells["ID"].Value);
 		}
+	}
+
+	public abstract class DMYOGrid<TModel> : DMYOGrid where TModel : class
+	{
+		public override DMYORepo Repo
+		{
+			get
+			{
+				return RepoX;
+			}
+		}
+
+		public abstract DMYORepo<TModel> RepoX { get; }
+
+
+		public abstract TModel ToModel(DataGridViewRow row);
 
 		public DMYOData<TModel> ToData(DataGridViewRow row)
 		{
