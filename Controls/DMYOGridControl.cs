@@ -26,6 +26,7 @@ namespace dmyo_oop_final_assigment.Controls
 		public void Bind(DMYOGrid<DMYOModel> source)
 		{
 			m_source = source;
+			grid.DataSource = source.GetTable();
 		}
 	}
 }
