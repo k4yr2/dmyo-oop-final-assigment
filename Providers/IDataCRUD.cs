@@ -2,7 +2,7 @@
 
 namespace dmyo_oop_final_assigment.Providers
 {
-	public interface IDataCRUD<TModel> where TModel : DMYOModel
+	public interface IDataCRUD<TModel>
 	{
 		DMYOData<TModel> Create(TModel model);
 

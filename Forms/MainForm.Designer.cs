@@ -38,8 +38,10 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_distribution = new System.Windows.Forms.Button();
 			this.button_wastes = new System.Windows.Forms.Button();
 			this.panel_content = new System.Windows.Forms.Panel();
+			this.dmyoGrid = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
 			this.panel_banner.SuspendLayout();
 			this.panel_sidebar.SuspendLayout();
+			this.panel_content.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel_banner
@@ -121,16 +123,26 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wastes.TabIndex = 0;
 			this.button_wastes.Text = "Wastes";
 			this.button_wastes.UseVisualStyleBackColor = false;
+			this.button_wastes.Click += new System.EventHandler(this.button_wastes_Click);
 			// 
 			// panel_content
 			// 
 			this.panel_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+			this.panel_content.Controls.Add(this.dmyoGrid);
 			this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel_content.Location = new System.Drawing.Point(200, 40);
 			this.panel_content.Margin = new System.Windows.Forms.Padding(20);
 			this.panel_content.Name = "panel_content";
 			this.panel_content.Size = new System.Drawing.Size(600, 320);
 			this.panel_content.TabIndex = 4;
+			// 
+			// dmyoGrid
+			// 
+			this.dmyoGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dmyoGrid.Location = new System.Drawing.Point(0, 0);
+			this.dmyoGrid.Name = "dmyoGrid";
+			this.dmyoGrid.Size = new System.Drawing.Size(600, 320);
+			this.dmyoGrid.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -145,6 +157,7 @@ namespace dmyo_oop_final_assigment.Forms
 			this.Text = "MainForm";
 			this.panel_banner.ResumeLayout(false);
 			this.panel_sidebar.ResumeLayout(false);
+			this.panel_content.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -159,5 +172,6 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Button button_wastes;
 		private System.Windows.Forms.Button button_recycling;
 		private System.Windows.Forms.Button button_distribution;
+		private Controls.DMYOGridControl dmyoGrid;
 	}
 }

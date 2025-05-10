@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Models
 {
-	public class DMYOData<TModel> where TModel : DMYOModel
+	public class DMYOData<TModel>
 	{
 		public static DMYOData<TModel> Blank
 		{

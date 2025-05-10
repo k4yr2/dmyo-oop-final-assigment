@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Grids;
 using dmyo_oop_final_assigment.Models;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -29,7 +30,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public void Bind(DMYOGrid<DMYOModel> source)
+		public void Bind(DMYOGrid<object> source)
 		{
 			if((m_source = source) == null)
 			{

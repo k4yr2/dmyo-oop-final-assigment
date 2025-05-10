@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Repositories
 {
-	public abstract class DMYORepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel> where TModel : DMYOModel
+	public abstract class DMYORepo<TModel> : IDataCRUD<TModel>, IDataQuery<TModel>
 	{
 		public event Action OnChanged;
 

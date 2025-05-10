@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Grids
 {
-	public abstract class DMYOGrid<TModel> where TModel : DMYOModel
+	public abstract class DMYOGrid<TModel>
 	{
 		public abstract DMYORepo<TModel> Repo { get; }
 
