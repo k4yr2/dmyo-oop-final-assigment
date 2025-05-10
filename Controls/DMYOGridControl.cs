@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class DMYOGridControl<TModel> : UserControl
+	public partial class DMYOGridControl : UserControl
 	{
 		private IDMYOGrid m_source;
 
