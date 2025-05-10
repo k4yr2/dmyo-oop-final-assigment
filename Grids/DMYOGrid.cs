@@ -22,6 +22,8 @@ namespace dmyo_oop_final_assigment.Grids
 
 		DMYOModel GetModel(DataGridViewRow row);
 
+		DMYOModel GetBlankModel(DataGridViewRow row);
+
 		IDMYOData GetData(DataGridViewRow row);
 	}
 
@@ -30,6 +32,8 @@ namespace dmyo_oop_final_assigment.Grids
 		new DMYORepo<TModel> Repo { get; }
 
 		new TModel GetModel(DataGridViewRow row);
+
+		new TModel GetBlankModel(DataGridViewRow row);
 
 		new DMYOData<TModel> GetData(DataGridViewRow row);
 	}
@@ -65,6 +69,13 @@ namespace dmyo_oop_final_assigment.Grids
 		DMYOModel IDMYOGrid.GetModel(DataGridViewRow row)
 		{
 			return GetModel(row);
+		}
+
+		public abstract TModel GetBlankModel(DataGridViewRow row);
+
+		DMYOModel IDMYOGrid.GetBlankModel(DataGridViewRow row)
+		{
+			return GetBlankModel(row);
 		}
 
 		public DMYOData<TModel> GetData(DataGridViewRow row)

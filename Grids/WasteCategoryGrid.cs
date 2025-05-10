@@ -74,5 +74,16 @@ namespace dmyo_oop_final_assigment.Grids
 				Recyclable = Convert.ToBoolean(row.Cells["recyclable"].Value)
 			};
 		}
+
+		public override WasteCategory GetBlankModel(DataGridViewRow row)
+		{
+			return new WasteCategory()
+			{
+				Name = string.Empty,
+				Description = string.Empty,
+				HazardLevel = 0,
+				Recyclable = false
+			};
+		}
 	}
 }

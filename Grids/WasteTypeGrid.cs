@@ -50,6 +50,15 @@ namespace dmyo_oop_final_assigment.Grids
 				Description = row.Cells["description"].Value?.ToString()
 			};
 		}
+
+		public override WasteType GetBlankModel(DataGridViewRow row)
+		{
+			return new WasteType()
+			{
+				Name = string.Empty,
+				Description = string.Empty
+			};
+		}
 	}
 }
 
