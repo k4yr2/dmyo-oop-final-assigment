@@ -6,23 +6,23 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class DMYOGridControl : UserControl
+	public partial class DMYOGridControl<TModel> : UserControl
 	{
-		private DMYOGrid<DMYOModel> m_source;
+		private DMYOGrid<TModel> m_source;
 
 		public DMYOGridControl() : this(null)
 		{
 
 		}
 
-		public DMYOGridControl(DMYOGrid<DMYOModel> source)
+		public DMYOGridControl(DMYOGrid<TModel> source)
 		{
 			InitializeComponent();
 			Bind(source);
 		}
 
 
-		public DMYOGrid<DMYOModel> Source
+		public DMYOGrid<TModel> Source
 		{
 			get
 			{
@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public void Bind(DMYOGrid<object> source)
+		public void Bind(DMYOGrid<TModel> source)
 		{
 			if((m_source = source) == null)
 			{

@@ -83,7 +83,7 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public DMYOData<TModel> Read(int id)
 		{
-			TModel model = null;
+			TModel model = default;
 
 			DataManager.ExecuteCommand(ReadQuery, (SqlCommand command) =>
 			{

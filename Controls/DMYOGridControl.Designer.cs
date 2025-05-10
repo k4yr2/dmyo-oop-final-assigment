@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Controls
 {
-	partial class DMYOGridControl
+	partial class DMYOGridControl<TModel>
 	{
 		/// <summary> 
 		/// Required designer variable.
