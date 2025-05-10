@@ -37,6 +37,7 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_sidebar = new System.Windows.Forms.Panel();
 			this.button_wastes = new System.Windows.Forms.Button();
 			this.dmyoPanel = new System.Windows.Forms.Panel();
+			this.dmyoNavSub1 = new dmyo_oop_final_assigment.Controls.DMYONavSub();
 			this.panel_banner.SuspendLayout();
 			this.panel_sidebar.SuspendLayout();
 			this.SuspendLayout();
@@ -74,6 +75,7 @@ namespace dmyo_oop_final_assigment.Forms
 			// panel_sidebar
 			// 
 			this.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+			this.panel_sidebar.Controls.Add(this.dmyoNavSub1);
 			this.panel_sidebar.Controls.Add(this.button_wastes);
 			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel_sidebar.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -105,6 +107,15 @@ namespace dmyo_oop_final_assigment.Forms
 			this.dmyoPanel.Size = new System.Drawing.Size(600, 320);
 			this.dmyoPanel.TabIndex = 4;
 			// 
+			// dmyoNavSub1
+			// 
+			this.dmyoNavSub1.EnableSub = true;
+			this.dmyoNavSub1.Location = new System.Drawing.Point(12, 67);
+			this.dmyoNavSub1.Name = "dmyoNavSub1";
+			this.dmyoNavSub1.Size = new System.Drawing.Size(180, 157);
+			this.dmyoNavSub1.TabIndex = 0;
+			this.dmyoNavSub1.Title = "label1";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +141,6 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Panel dmyoPanel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button_wastes;
+		private DMYONavSub dmyoNavSub1;
 	}
 }
