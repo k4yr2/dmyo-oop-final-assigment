@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Grids;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using System;
 using System.Data;
@@ -48,6 +49,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			view.Visible = false;
 			view.AutoGenerateColumns = false;
+			view.AllowUserToAddRows = false;
 
 			for (int i = view.Columns.Count - 1; i > 0; i--)
 			{
@@ -71,6 +73,12 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			var row = View.Rows[e.RowIndex];
 			m_source.Repo.Update(m_source.GetID(row), m_source.GetModel(row));
+		}
+
+		private void view_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+		{
+			var data = m_source.Repo.Create(m_source.GetModel(e.Row));
+			e.Row.Cells["ID"].Value = data.Id;
 		}
 	}
 }

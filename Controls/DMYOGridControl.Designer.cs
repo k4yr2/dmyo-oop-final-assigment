@@ -41,6 +41,7 @@
 			this.view.Size = new System.Drawing.Size(400, 200);
 			this.view.TabIndex = 0;
 			this.view.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_CellValueChanged);
+			this.view.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.view_UserAddedRow);
 			// 
 			// DMYOGridControl
 			// 
