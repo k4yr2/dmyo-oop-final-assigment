@@ -49,7 +49,8 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			view.Visible = false;
 			view.AutoGenerateColumns = false;
-			view.AllowUserToAddRows = false;
+			view.AllowUserToAddRows = true;
+
 
 			for (int i = view.Columns.Count - 1; i > 0; i--)
 			{
@@ -69,16 +70,20 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		private void view_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+		private void view_CellEndEdit(object sender, DataGridViewCellEventArgs e)
 		{
 			var row = View.Rows[e.RowIndex];
+
 			m_source.Repo.Update(m_source.GetID(row), m_source.GetModel(row));
 		}
 
 		private void view_UserAddedRow(object sender, DataGridViewRowEventArgs e)
 		{
-			var data = m_source.Repo.Create(m_source.GetModel(e.Row));
-			e.Row.Cells["ID"].Value = data.Id;
+			var data = m_source.Repo.Create(m_source.GetBlankModel());
+			var row = View.Rows[View.Rows.Count - 2];
+
+			row.Cells["ID"].Value = data.Id;
+			m_source.FillRow(row, data.Model);
 		}
 	}
 }
