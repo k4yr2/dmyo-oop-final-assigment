@@ -18,6 +18,13 @@ namespace dmyo_oop_final_assigment.Controls
 		public DMYOGridControl(IDMYOGrid source)
 		{
 			InitializeComponent();
+			view.Columns.Add(new DataGridViewTextBoxColumn()
+			{
+				Name = "ID",
+				DataPropertyName = "id",
+				Visible = false
+			});
+
 			Bind(source);
 		}
 
@@ -39,7 +46,13 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Bind(IDMYOGrid source)
 		{
-			view.Columns.Clear();
+			view.Visible = false;
+			view.AutoGenerateColumns = false;
+
+			for (int i = view.Columns.Count - 1; i > 0; i--)
+			{
+				view.Columns.RemoveAt(i);
+			}
 
 			if ((m_source = source) == null)
 			{
@@ -47,21 +60,11 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				SetView();
+				Source.SetView(view);
 				view.DataSource = source.GetTable();
+
+				view.Visible = true;
 			}
-		}
-
-		private void SetView()
-		{
-			view.Columns.Add(new DataGridViewTextBoxColumn()
-			{
-				Name = "ID",
-				DataPropertyName = "id",
-				Visible = false
-			});
-
-			Source.SetView(view);
 		}
 	}
 }
