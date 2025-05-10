@@ -23,7 +23,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				Name = "ID",
 				DataPropertyName = "id",
-				Visible = false
+				Visible = true
 			});
 
 			Bind(source);
@@ -73,8 +73,10 @@ namespace dmyo_oop_final_assigment.Controls
 		private void view_CellEndEdit(object sender, DataGridViewCellEventArgs e)
 		{
 			var row = View.Rows[e.RowIndex];
+			if (row.IsNewRow) return;
 
 			m_source.Repo.Update(m_source.GetID(row), m_source.GetModel(row));
+
 		}
 
 		private void view_UserAddedRow(object sender, DataGridViewRowEventArgs e)
