@@ -78,7 +78,7 @@
     <Compile Include="Providers\IDataRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\DataManager.cs" />
-    <Compile Include="Models\DataObject.cs" />
+    <Compile Include="Models\DMYOData.cs" />
     <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

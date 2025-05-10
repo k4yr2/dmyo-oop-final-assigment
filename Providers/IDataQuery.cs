@@ -7,8 +7,8 @@ namespace dmyo_oop_final_assigment.Providers
 	{
 		int Count();
 
-		IEnumerable<DataObject<TModel>> ReadAll();
+		IEnumerable<DMYOData<TModel>> ReadAll();
 
-		IEnumerable<DataObject<TModel>> ReadPage(int page, int per);
+		IEnumerable<DMYOData<TModel>> ReadPage(int page, int per);
 	}
 }

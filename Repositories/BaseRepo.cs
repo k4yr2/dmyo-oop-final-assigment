@@ -66,7 +66,7 @@ namespace dmyo_oop_final_assigment.Repositories
 		}
 
 
-		public DataObject<TModel> Create(TModel model)
+		public DMYOData<TModel> Create(TModel model)
 		{
 			int id = -1;
 
@@ -77,10 +77,10 @@ namespace dmyo_oop_final_assigment.Repositories
 			});
 
 			OnChanged?.Invoke();
-			return new DataObject<TModel>(id, model);
+			return new DMYOData<TModel>(id, model);
 		}
 
-		public DataObject<TModel> Read(int id)
+		public DMYOData<TModel> Read(int id)
 		{
 			TModel model = null;
 
@@ -95,7 +95,7 @@ namespace dmyo_oop_final_assigment.Repositories
 				}	
 			});
 
-			return new DataObject<TModel>(id, model);
+			return new DMYOData<TModel>(id, model);
 		}
 
 		public bool Update(int id, TModel model)
@@ -143,23 +143,23 @@ namespace dmyo_oop_final_assigment.Repositories
 			return count;
 		}
 
-		private IEnumerable<DataObject<TModel>> DoRead(SqlCommand command)
+		private IEnumerable<DMYOData<TModel>> DoRead(SqlCommand command)
 		{
 			SqlDataReader reader = command.ExecuteReader();
 
 			while (reader.Read())
 			{
 				int id = reader.GetInt32(0);
-				yield return new DataObject<TModel>(id, OnModel(reader));
+				yield return new DMYOData<TModel>(id, OnModel(reader));
 			}
 		}
 
-		public IEnumerable<DataObject<TModel>> ReadAll()
+		public IEnumerable<DMYOData<TModel>> ReadAll()
 		{
 			return DataManager.ExecuteCommand(ReadAllQuery, DoRead);
 		}
 
-		public IEnumerable<DataObject<TModel>> ReadPage(int page, int per)
+		public IEnumerable<DMYOData<TModel>> ReadPage(int page, int per)
 		{
 			return DataManager.ExecuteCommand($"SELECT * FROM {Name} ORDER BY id OFFSET ({page} - 1) * {per} ROWS FETCH NEXT {per} ROWS ONLY", DoRead);
 		}

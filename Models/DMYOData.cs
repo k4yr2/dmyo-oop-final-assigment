@@ -1,14 +1,12 @@
-﻿using System.Windows.Forms;
-
-namespace dmyo_oop_final_assigment.Models
+﻿namespace dmyo_oop_final_assigment.Models
 {
-	public class DataObject<TModel> where TModel : class
+	public class DMYOData<TModel> where TModel : class
 	{
-		public static DataObject<TModel> Blank
+		public static DMYOData<TModel> Blank
 		{
 			get
 			{
-				return new DataObject<TModel>(-500, null);
+				return new DMYOData<TModel>(-500, null);
 			}
 		}
 
@@ -16,7 +14,7 @@ namespace dmyo_oop_final_assigment.Models
 
 		private TModel m_model;
 
-		public DataObject(int id, TModel model)
+		public DMYOData(int id, TModel model)
 		{
 			m_id = id;
 			m_model = model;
