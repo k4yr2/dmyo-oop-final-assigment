@@ -51,7 +51,7 @@ namespace dmyo_oop_final_assigment.Grids
 			};
 		}
 
-		public override WasteType GetBlankModel(DataGridViewRow row)
+		public override WasteType GetBlankModel()
 		{
 			return new WasteType()
 			{
