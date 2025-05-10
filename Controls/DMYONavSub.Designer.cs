@@ -1,4 +1,6 @@
-﻿namespace dmyo_oop_final_assigment.Controls
+﻿using System.ComponentModel;
+
+namespace dmyo_oop_final_assigment.Controls
 {
 	partial class DMYONavSub
 	{
@@ -70,6 +72,7 @@
 			this.button.TabIndex = 1;
 			this.button.Text = ">";
 			this.button.UseVisualStyleBackColor = true;
+			this.button.Click += new System.EventHandler(this.button_Click);
 			// 
 			// subPanel
 			// 

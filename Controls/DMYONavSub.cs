@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -19,9 +20,28 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		[Category("NavSub")]
+		[Browsable(true)]
+		public bool EnableSub
+		{
+			get
+			{
+				return subPanel.Visible;
+			}
+			set
+			{
+				subPanel.Visible = value;
+			}
+		}
+
 		public DMYONavSub()
 		{
 			InitializeComponent();
+		}
+
+		private void button_Click(object sender, System.EventArgs e)
+		{
+			EnableSub = !EnableSub;
 		}
 	}
 }
