@@ -111,7 +111,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return new DMYOData<TModel>(id, model);
 		}
 
-		IDMYOData IDataCRUD.Create(object model)
+		IDMYOData IDataCRUD.Create(DMYOModel model)
 		{
 			return Create((TModel)model);
 		}
@@ -157,7 +157,7 @@ namespace dmyo_oop_final_assigment.Repositories
 			return affected;
 		}
 
-		bool IDataCRUD.Update(int id, object model)
+		bool IDataCRUD.Update(int id, DMYOModel model)
 		{
 			return Update(id, (TModel)model);
 		}

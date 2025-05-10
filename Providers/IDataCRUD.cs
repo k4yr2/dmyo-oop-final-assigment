@@ -13,11 +13,11 @@ namespace dmyo_oop_final_assigment.Providers
 		string DeleteQuery { get; }
 
 
-		IDMYOData Create(object model);
+		IDMYOData Create(DMYOModel model);
 
 		IDMYOData Read(int id);
 
-		bool Update(int id, object model);
+		bool Update(int id, DMYOModel model);
 
 		bool Delete(int id);
 	}
