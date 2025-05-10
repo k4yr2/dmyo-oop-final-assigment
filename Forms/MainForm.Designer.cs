@@ -35,8 +35,6 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel_statusbar = new System.Windows.Forms.Panel();
 			this.panel_sidebar = new System.Windows.Forms.Panel();
-			this.button_recycling = new System.Windows.Forms.Button();
-			this.button_distribution = new System.Windows.Forms.Button();
 			this.button_wastes = new System.Windows.Forms.Button();
 			this.dmyoPanel = new System.Windows.Forms.Panel();
 			this.panel_banner.SuspendLayout();
@@ -76,49 +74,23 @@ namespace dmyo_oop_final_assigment.Forms
 			// panel_sidebar
 			// 
 			this.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-			this.panel_sidebar.Controls.Add(this.button_recycling);
-			this.panel_sidebar.Controls.Add(this.button_distribution);
 			this.panel_sidebar.Controls.Add(this.button_wastes);
 			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel_sidebar.ForeColor = System.Drawing.SystemColors.HighlightText;
 			this.panel_sidebar.Location = new System.Drawing.Point(0, 40);
 			this.panel_sidebar.Name = "panel_sidebar";
-			this.panel_sidebar.Padding = new System.Windows.Forms.Padding(10);
 			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
 			this.panel_sidebar.TabIndex = 3;
-			// 
-			// button_recycling
-			// 
-			this.button_recycling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-			this.button_recycling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button_recycling.Location = new System.Drawing.Point(19, 110);
-			this.button_recycling.Margin = new System.Windows.Forms.Padding(10);
-			this.button_recycling.Name = "button_recycling";
-			this.button_recycling.Size = new System.Drawing.Size(160, 25);
-			this.button_recycling.TabIndex = 0;
-			this.button_recycling.Text = "Recycling ";
-			this.button_recycling.UseVisualStyleBackColor = false;
-			// 
-			// button_distribution
-			// 
-			this.button_distribution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-			this.button_distribution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button_distribution.Location = new System.Drawing.Point(19, 65);
-			this.button_distribution.Margin = new System.Windows.Forms.Padding(10);
-			this.button_distribution.Name = "button_distribution";
-			this.button_distribution.Size = new System.Drawing.Size(160, 25);
-			this.button_distribution.TabIndex = 0;
-			this.button_distribution.Text = "Distribution";
-			this.button_distribution.UseVisualStyleBackColor = false;
 			// 
 			// button_wastes
 			// 
 			this.button_wastes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+			this.button_wastes.FlatAppearance.BorderSize = 0;
 			this.button_wastes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button_wastes.Location = new System.Drawing.Point(20, 20);
-			this.button_wastes.Margin = new System.Windows.Forms.Padding(10);
+			this.button_wastes.Location = new System.Drawing.Point(0, 0);
+			this.button_wastes.Margin = new System.Windows.Forms.Padding(0);
 			this.button_wastes.Name = "button_wastes";
-			this.button_wastes.Size = new System.Drawing.Size(160, 25);
+			this.button_wastes.Size = new System.Drawing.Size(200, 25);
 			this.button_wastes.TabIndex = 0;
 			this.button_wastes.Text = "Wastes";
 			this.button_wastes.UseVisualStyleBackColor = false;
@@ -158,7 +130,5 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Panel dmyoPanel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button_wastes;
-		private System.Windows.Forms.Button button_recycling;
-		private System.Windows.Forms.Button button_distribution;
 	}
 }
