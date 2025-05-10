@@ -42,10 +42,10 @@
             this.Id,
             this.name,
             this.abbreviation});
-			this.unitGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.unitGrid.Location = new System.Drawing.Point(0, 199);
+			this.unitGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.unitGrid.Location = new System.Drawing.Point(0, 0);
 			this.unitGrid.Name = "unitGrid";
-			this.unitGrid.Size = new System.Drawing.Size(586, 199);
+			this.unitGrid.Size = new System.Drawing.Size(586, 398);
 			this.unitGrid.TabIndex = 0;
 			this.unitGrid.TabStop = false;
 			this.unitGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitGrid_CellValueChanged);
