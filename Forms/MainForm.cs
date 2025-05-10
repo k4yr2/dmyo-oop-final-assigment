@@ -16,8 +16,6 @@ namespace dmyo_oop_final_assigment.Forms
 		public MainForm()
 		{
 			InitializeComponent();
-			gridTypes.Bind(new WasteTypeGrid());
-			gridCategories.Bind(new WasteCategoryGrid());
 		}
 	}
 }
