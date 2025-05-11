@@ -1,9 +1,9 @@
 ﻿using System.Data.SqlClient;
 using dmyo_oop_final_assigment.Models;
 
-namespace dmyo_oop_final_assigment.Repositories
+namespace dmyo_oop_final_assigment.Table
 {
-	public class WasteTypeRepo : DMYORepo<WasteType>
+	public class WasteTypeTable : DMYOTable<WasteType>
 	{
 		public override string Name => "WasteType";
 

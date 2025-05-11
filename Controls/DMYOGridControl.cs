@@ -75,13 +75,13 @@ namespace dmyo_oop_final_assigment.Controls
 			var row = View.Rows[e.RowIndex];
 			if (row.IsNewRow) return;
 
-			m_source.Repo.Update(m_source.GetID(row), m_source.GetModel(row));
+			m_source.Table.Update(m_source.GetID(row), m_source.GetModel(row));
 
 		}
 
 		private void view_UserAddedRow(object sender, DataGridViewRowEventArgs e)
 		{
-			var data = m_source.Repo.Create(m_source.GetBlankModel());
+			var data = m_source.Table.Create(m_source.GetBlankModel());
 			var row = View.Rows[View.Rows.Count - 2];
 
 			row.Cells["ID"].Value = data.Id;
@@ -90,7 +90,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void view_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
 		{
-			m_source.Repo.Delete(m_source.GetID(e.Row));
+			m_source.Table.Delete(m_source.GetID(e.Row));
 
 		}
 	}

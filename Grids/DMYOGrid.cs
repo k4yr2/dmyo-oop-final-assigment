@@ -1,6 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
-using dmyo_oop_final_assigment.Repositories;
+using dmyo_oop_final_assigment.Table;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,7 +9,7 @@ namespace dmyo_oop_final_assigment.Grids
 {
 	public interface IDMYOGrid
 	{
-		IDMYORepo Repo { get; }
+		IDMYOTable Table { get; }
 
 		DataTable GetTable(string query = null);
 
@@ -31,7 +31,7 @@ namespace dmyo_oop_final_assigment.Grids
 
 	public interface IDMYOGrid<TModel> : IDMYOGrid where TModel : DMYOModel
 	{
-		new DMYORepo<TModel> Repo { get; }
+		new DMYOTable<TModel> Table { get; }
 
 		new TModel GetModel(DataGridViewRow row);
 
@@ -44,9 +44,9 @@ namespace dmyo_oop_final_assigment.Grids
 
 	public abstract class DMYOGrid<TModel> : IDMYOGrid<TModel> where TModel : DMYOModel
 	{
-		public abstract DMYORepo<TModel> Repo { get; }
+		public abstract DMYOTable<TModel> Table { get; }
 
-		IDMYORepo IDMYOGrid.Repo => Repo;
+		IDMYOTable IDMYOGrid.Table => Table;
 
 
 		public DataTable GetTable(string query = null)
@@ -54,7 +54,7 @@ namespace dmyo_oop_final_assigment.Grids
 			DataTable table = new DataTable();
 			SetColumns(table);
 
-			DataManager.FillTable(table, query ?? Repo.SelectQuery);
+			DataManager.FillTable(table, query ?? Table.SelectQuery);
 			return table;
 		}
 

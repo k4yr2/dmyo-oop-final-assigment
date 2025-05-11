@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace dmyo_oop_final_assigment.Repositories
+namespace dmyo_oop_final_assigment.Table
 {
-	public interface IDMYORepo : IDataCRUD, IDataCollection
+	public interface IDMYOTable : IDataCRUD, IDataCollection
 	{
 		event Action OnChanged;
 
@@ -21,14 +21,14 @@ namespace dmyo_oop_final_assigment.Repositories
 		DMYOModel GetModel(SqlDataReader reader);
 	}
 
-	public interface IDMYORepo<TModel> : IDMYORepo, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
+	public interface IDMYOTable<TModel> : IDMYOTable, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
 	{
 		void SetParameters(TModel model, SqlCommand command);
 
 		new TModel GetModel(SqlDataReader reader);
 	}
 
-	public abstract class DMYORepo<TModel> : IDMYORepo<TModel> where TModel : DMYOModel
+	public abstract class DMYOTable<TModel> : IDMYOTable<TModel> where TModel : DMYOModel
 	{
 		public event Action OnChanged;
 
@@ -84,14 +84,14 @@ namespace dmyo_oop_final_assigment.Repositories
 
 		public abstract void SetParameters(TModel model, SqlCommand command);
 
-		void IDMYORepo.SetParameters(DMYOModel model, SqlCommand command)
+		void IDMYOTable.SetParameters(DMYOModel model, SqlCommand command)
 		{
 			SetParameters((TModel)model, command);
 		}
 
 		public abstract TModel GetModel(SqlDataReader reader);
 
-		DMYOModel IDMYORepo.GetModel(SqlDataReader reader)
+		DMYOModel IDMYOTable.GetModel(SqlDataReader reader)
 		{
 			return GetModel(reader);
 		}

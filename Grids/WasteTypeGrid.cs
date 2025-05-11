@@ -1,6 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
-using dmyo_oop_final_assigment.Repositories;
+using dmyo_oop_final_assigment.Table;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,11 +9,11 @@ namespace dmyo_oop_final_assigment.Grids
 {
 	public sealed class WasteTypeGrid : DMYOGrid<WasteType>
 	{
-		public override DMYORepo<WasteType> Repo
+		public override DMYOTable<WasteType> Table
 		{
 			get
 			{
-				return RepoManager.WasteType;
+				return TableManager.WasteType;
 			}
 		}
 

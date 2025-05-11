@@ -80,7 +80,7 @@
     <Compile Include="Grids\DMYOGrid.cs" />
     <Compile Include="Grids\WasteCategoryGrid.cs" />
     <Compile Include="Grids\WasteTypeGrid.cs" />
-    <Compile Include="Managers\RepoManager.cs" />
+    <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Models\DMYOModel.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Providers\IDataLink.cs" />
@@ -97,9 +97,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
-    <Compile Include="Repositories\DMYORepo.cs" />
-    <Compile Include="Repositories\WasteCategoryRepo.cs" />
-    <Compile Include="Repositories\WasteTypeRepo.cs" />
+    <Compile Include="Tables\DMYOTable.cs" />
+    <Compile Include="Tables\WasteCategoryTable.cs" />
+    <Compile Include="Tables\WasteTypeTable.cs" />
     <EmbeddedResource Include="Controls\DMYOGridControl.resx">
       <DependentUpon>DMYOGridControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,6 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
-using dmyo_oop_final_assigment.Repositories;
+using dmyo_oop_final_assigment.Table;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,11 +13,11 @@ namespace dmyo_oop_final_assigment.Grids
 {
 	public sealed class WasteCategoryGrid : DMYOGrid<WasteCategory>
 	{
-		public override DMYORepo<WasteCategory> Repo
+		public override DMYOTable<WasteCategory> Table
 		{
 			get
 			{
-				return RepoManager.WasteCategory;
+				return TableManager.WasteCategory;
 			}
 		}
 
