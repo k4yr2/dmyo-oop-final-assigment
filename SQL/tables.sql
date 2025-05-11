@@ -30,6 +30,7 @@ BEGIN
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		description NVARCHAR(500),
 		category	INT				FOREIGN KEY REFERENCES WasteCategory(id),
+		unit		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
 	);
 END;
 
