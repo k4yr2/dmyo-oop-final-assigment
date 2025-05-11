@@ -32,8 +32,12 @@
 			this.panelAdmin = new System.Windows.Forms.Panel();
 			this.panel = new System.Windows.Forms.Panel();
 			this.panelUser = new System.Windows.Forms.Panel();
+			this.searchBox = new System.Windows.Forms.TextBox();
+			this.refreshButton = new System.Windows.Forms.Button();
+			this.searchLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
 			this.panel.SuspendLayout();
+			this.panelUser.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// view
@@ -71,12 +75,45 @@
 			// 
 			this.panelUser.AutoSize = true;
 			this.panelUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.panelUser.Controls.Add(this.searchLabel);
+			this.panelUser.Controls.Add(this.refreshButton);
+			this.panelUser.Controls.Add(this.searchBox);
 			this.panelUser.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelUser.Location = new System.Drawing.Point(120, 0);
+			this.panelUser.Margin = new System.Windows.Forms.Padding(0);
 			this.panelUser.MinimumSize = new System.Drawing.Size(240, 30);
 			this.panelUser.Name = "panelUser";
+			this.panelUser.Padding = new System.Windows.Forms.Padding(5);
 			this.panelUser.Size = new System.Drawing.Size(280, 30);
 			this.panelUser.TabIndex = 3;
+			// 
+			// searchBox
+			// 
+			this.searchBox.Location = new System.Drawing.Point(90, 5);
+			this.searchBox.Margin = new System.Windows.Forms.Padding(0);
+			this.searchBox.Name = "searchBox";
+			this.searchBox.Size = new System.Drawing.Size(120, 20);
+			this.searchBox.TabIndex = 0;
+			// 
+			// refreshButton
+			// 
+			this.refreshButton.Location = new System.Drawing.Point(215, 5);
+			this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+			this.refreshButton.Name = "refreshButton";
+			this.refreshButton.Size = new System.Drawing.Size(60, 20);
+			this.refreshButton.TabIndex = 1;
+			this.refreshButton.Text = "Refresh";
+			this.refreshButton.UseVisualStyleBackColor = true;
+			// 
+			// searchLabel
+			// 
+			this.searchLabel.Location = new System.Drawing.Point(41, 5);
+			this.searchLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.searchLabel.Name = "searchLabel";
+			this.searchLabel.Size = new System.Drawing.Size(49, 20);
+			this.searchLabel.TabIndex = 2;
+			this.searchLabel.Text = "Search :";
+			this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// DMYOGridControl
 			// 
@@ -88,6 +125,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.view)).EndInit();
 			this.panel.ResumeLayout(false);
 			this.panel.PerformLayout();
+			this.panelUser.ResumeLayout(false);
+			this.panelUser.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -98,5 +137,8 @@
 		private System.Windows.Forms.Panel panelAdmin;
 		private System.Windows.Forms.Panel panel;
 		private System.Windows.Forms.Panel panelUser;
+		private System.Windows.Forms.TextBox searchBox;
+		private System.Windows.Forms.Label searchLabel;
+		private System.Windows.Forms.Button refreshButton;
 	}
 }
