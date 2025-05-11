@@ -53,3 +53,15 @@ BEGIN
 	  ('Used Syringe',      'Single-use medical syringe',                   5, 3),
 	  ('Expired Medicine',  'Pharmaceutical products past expiration date', 5, 3);
 END;
+
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteRecord' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteRecord (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		name		NVARCHAR(50)	NOT NULL UNIQUE,
+		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
+		quantity	DECIMAL(10,2),
+		date		DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
