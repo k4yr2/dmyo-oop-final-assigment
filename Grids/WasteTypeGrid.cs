@@ -49,7 +49,7 @@ namespace dmyo_oop_final_assigment.Grids
 				HeaderText = "Category",
 				DataPropertyName = "category",
 				DataSource = TableManager.WasteCategory.Select().ToList(),
-				DisplayMember = "Model",
+				DisplayMember = "Name",
 				ValueMember = "Id",
 				FlatStyle = FlatStyle.Flat,
 				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
