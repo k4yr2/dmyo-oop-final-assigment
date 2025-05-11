@@ -36,7 +36,13 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_statusbar = new System.Windows.Forms.Panel();
 			this.dmyoPanel = new System.Windows.Forms.Panel();
 			this.sidebarPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.dmyoNavSub1 = new dmyo_oop_final_assigment.Controls.DMYONavSub();
+			this.button_wasteTypes = new System.Windows.Forms.Button();
+			this.button_wasteCategories = new System.Windows.Forms.Button();
 			this.panel_banner.SuspendLayout();
+			this.sidebarPanel.SuspendLayout();
+			this.dmyoNavSub1.SubPanel.SuspendLayout();
+			this.dmyoNavSub1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel_banner
@@ -82,12 +88,69 @@ namespace dmyo_oop_final_assigment.Forms
 			// sidebarPanel
 			// 
 			this.sidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+			this.sidebarPanel.Controls.Add(this.dmyoNavSub1);
 			this.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
 			this.sidebarPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.sidebarPanel.Location = new System.Drawing.Point(0, 40);
 			this.sidebarPanel.Name = "sidebarPanel";
 			this.sidebarPanel.Size = new System.Drawing.Size(200, 320);
 			this.sidebarPanel.TabIndex = 0;
+			// 
+			// dmyoNavSub1
+			// 
+			this.dmyoNavSub1.BackColor = System.Drawing.SystemColors.Control;
+			this.dmyoNavSub1.EnableSub = true;
+			this.dmyoNavSub1.Location = new System.Drawing.Point(0, 0);
+			this.dmyoNavSub1.Margin = new System.Windows.Forms.Padding(0);
+			this.dmyoNavSub1.MinimumSize = new System.Drawing.Size(180, 30);
+			this.dmyoNavSub1.Name = "dmyoNavSub1";
+			this.dmyoNavSub1.Size = new System.Drawing.Size(200, 80);
+			// 
+			// dmyoNavSub1.SubPanel
+			// 
+			this.dmyoNavSub1.SubPanel.Controls.Add(this.button_wasteTypes);
+			this.dmyoNavSub1.SubPanel.Controls.Add(this.button_wasteCategories);
+			this.dmyoNavSub1.SubPanel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.dmyoNavSub1.SubPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.dmyoNavSub1.SubPanel.Location = new System.Drawing.Point(30, 30);
+			this.dmyoNavSub1.SubPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.dmyoNavSub1.SubPanel.MinimumSize = new System.Drawing.Size(30, 30);
+			this.dmyoNavSub1.SubPanel.Name = "SubPanel";
+			this.dmyoNavSub1.SubPanel.Size = new System.Drawing.Size(170, 50);
+			this.dmyoNavSub1.SubPanel.TabIndex = 1;
+			this.dmyoNavSub1.SubPanel.WrapContents = false;
+			this.dmyoNavSub1.TabIndex = 1;
+			this.dmyoNavSub1.Title = "Waste";
+			// 
+			// button_wasteTypes
+			// 
+			this.button_wasteTypes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.button_wasteTypes.FlatAppearance.BorderSize = 0;
+			this.button_wasteTypes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button_wasteTypes.Location = new System.Drawing.Point(0, 0);
+			this.button_wasteTypes.Margin = new System.Windows.Forms.Padding(0);
+			this.button_wasteTypes.Name = "button_wasteTypes";
+			this.button_wasteTypes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.button_wasteTypes.Size = new System.Drawing.Size(170, 25);
+			this.button_wasteTypes.TabIndex = 0;
+			this.button_wasteTypes.Text = "Types";
+			this.button_wasteTypes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button_wasteTypes.UseVisualStyleBackColor = false;
+			// 
+			// button_wasteCategories
+			// 
+			this.button_wasteCategories.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.button_wasteCategories.FlatAppearance.BorderSize = 0;
+			this.button_wasteCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button_wasteCategories.Location = new System.Drawing.Point(0, 25);
+			this.button_wasteCategories.Margin = new System.Windows.Forms.Padding(0);
+			this.button_wasteCategories.Name = "button_wasteCategories";
+			this.button_wasteCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.button_wasteCategories.Size = new System.Drawing.Size(170, 25);
+			this.button_wasteCategories.TabIndex = 0;
+			this.button_wasteCategories.Text = "Categories";
+			this.button_wasteCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button_wasteCategories.UseVisualStyleBackColor = false;
 			// 
 			// MainForm
 			// 
@@ -100,8 +163,10 @@ namespace dmyo_oop_final_assigment.Forms
 			this.Controls.Add(this.panel_banner);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
-			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.panel_banner.ResumeLayout(false);
+			this.sidebarPanel.ResumeLayout(false);
+			this.dmyoNavSub1.SubPanel.ResumeLayout(false);
+			this.dmyoNavSub1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -113,5 +178,8 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Panel dmyoPanel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.FlowLayoutPanel sidebarPanel;
+		private DMYONavSub dmyoNavSub1;
+		private System.Windows.Forms.Button button_wasteTypes;
+		private System.Windows.Forms.Button button_wasteCategories;
 	}
 }
