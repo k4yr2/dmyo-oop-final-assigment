@@ -41,8 +41,8 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wasteTypes = new System.Windows.Forms.Button();
 			this.button_wasteCategories = new System.Windows.Forms.Button();
 			this.dmyoTab = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tab_wasteTypes = new System.Windows.Forms.TabPage();
+			this.tab_wasteCategories = new System.Windows.Forms.TabPage();
 			this.panel_banner.SuspendLayout();
 			this.dmyoPanel.SuspendLayout();
 			this.panel_content.SuspendLayout();
@@ -174,8 +174,8 @@ namespace dmyo_oop_final_assigment.Forms
 			// dmyoTab
 			// 
 			this.dmyoTab.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-			this.dmyoTab.Controls.Add(this.tabPage1);
-			this.dmyoTab.Controls.Add(this.tabPage2);
+			this.dmyoTab.Controls.Add(this.tab_wasteTypes);
+			this.dmyoTab.Controls.Add(this.tab_wasteCategories);
 			this.dmyoTab.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dmyoTab.Location = new System.Drawing.Point(200, 0);
 			this.dmyoTab.Margin = new System.Windows.Forms.Padding(0);
@@ -185,25 +185,25 @@ namespace dmyo_oop_final_assigment.Forms
 			this.dmyoTab.Size = new System.Drawing.Size(595, 320);
 			this.dmyoTab.TabIndex = 3;
 			// 
-			// tabPage1
+			// tab_wasteTypes
 			// 
-			this.tabPage1.Location = new System.Drawing.Point(4, 4);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(587, 294);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.tab_wasteTypes.Location = new System.Drawing.Point(4, 4);
+			this.tab_wasteTypes.Name = "tab_wasteTypes";
+			this.tab_wasteTypes.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_wasteTypes.Size = new System.Drawing.Size(587, 294);
+			this.tab_wasteTypes.TabIndex = 0;
+			this.tab_wasteTypes.Text = "types";
+			this.tab_wasteTypes.UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
+			// tab_wasteCategories
 			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 4);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(587, 294);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "tabPage2";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			this.tab_wasteCategories.Location = new System.Drawing.Point(4, 4);
+			this.tab_wasteCategories.Name = "tab_wasteCategories";
+			this.tab_wasteCategories.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_wasteCategories.Size = new System.Drawing.Size(587, 294);
+			this.tab_wasteCategories.TabIndex = 1;
+			this.tab_wasteCategories.Text = "categories";
+			this.tab_wasteCategories.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -234,8 +234,8 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panel_content;
 		private System.Windows.Forms.TabControl dmyoTab;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.TabPage tab_wasteTypes;
+		private System.Windows.Forms.TabPage tab_wasteCategories;
 		private System.Windows.Forms.FlowLayoutPanel panel_sidebar;
 		private DMYONavSub dmyoNavSub1;
 		private System.Windows.Forms.Button button_wasteTypes;
