@@ -55,6 +55,7 @@
 			this.panelAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelAdmin.Location = new System.Drawing.Point(0, 0);
+			this.panelAdmin.MaximumSize = new System.Drawing.Size(0, 30);
 			this.panelAdmin.MinimumSize = new System.Drawing.Size(120, 30);
 			this.panelAdmin.Name = "panelAdmin";
 			this.panelAdmin.Size = new System.Drawing.Size(120, 30);
@@ -81,6 +82,7 @@
 			this.panelUser.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelUser.Location = new System.Drawing.Point(120, 0);
 			this.panelUser.Margin = new System.Windows.Forms.Padding(0);
+			this.panelUser.MaximumSize = new System.Drawing.Size(0, 30);
 			this.panelUser.MinimumSize = new System.Drawing.Size(240, 30);
 			this.panelUser.Name = "panelUser";
 			this.panelUser.Padding = new System.Windows.Forms.Padding(5);
@@ -89,6 +91,8 @@
 			// 
 			// searchBox
 			// 
+			this.searchBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.searchBox.Location = new System.Drawing.Point(90, 5);
 			this.searchBox.Margin = new System.Windows.Forms.Padding(0);
 			this.searchBox.Name = "searchBox";
@@ -97,6 +101,7 @@
 			// 
 			// refreshButton
 			// 
+			this.refreshButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.refreshButton.Location = new System.Drawing.Point(215, 5);
 			this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
 			this.refreshButton.Name = "refreshButton";
@@ -104,9 +109,11 @@
 			this.refreshButton.TabIndex = 1;
 			this.refreshButton.Text = "Refresh";
 			this.refreshButton.UseVisualStyleBackColor = true;
+			this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
 			// 
 			// searchLabel
 			// 
+			this.searchLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.searchLabel.Location = new System.Drawing.Point(41, 5);
 			this.searchLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.searchLabel.Name = "searchLabel";

@@ -47,27 +47,27 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Bind(IDMYOGrid source)
 		{
+			m_source = source;
 			view.Visible = false;
 			view.AutoGenerateColumns = false;
 			view.AllowUserToAddRows = true;
-
 
 			for (int i = view.Columns.Count - 1; i > 0; i--)
 			{
 				view.Columns.RemoveAt(i);
 			}
 
-			if ((m_source = source) == null)
+			if ((m_source = Source) == null)
 			{
 				view.DataSource = new DataTable();
 			}
 			else
 			{
 				Source.SetView(view);
-				view.DataSource = source.GetTable();
-
 				view.Visible = true;
 			}
+
+			RefreshData();
 		}
 
 		private void view_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -81,17 +81,28 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void view_UserAddedRow(object sender, DataGridViewRowEventArgs e)
 		{
-			var data = m_source.Table.Create(m_source.GetBlankModel());
+			/*var data = m_source.Table.Create(m_source.GetBlankModel());
 			var row = View.Rows[View.Rows.Count - 2];
 
 			row.Cells["ID"].Value = data.Id;
-			m_source.FillRow(row, data.Model);
+			m_source.FillRow(row, data.Model);*/
 		}
 
 		private void view_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
 		{
 			m_source.Table.Delete(m_source.GetID(e.Row));
 
+		}
+
+		private void refreshButton_Click(object sender, EventArgs e)
+		{
+			RefreshData();
+		}
+
+		public void RefreshData()
+		{
+			if(Source != null)
+				view.DataSource = Source.GetTable();
 		}
 	}
 }
