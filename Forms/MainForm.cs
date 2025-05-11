@@ -12,6 +12,19 @@ namespace dmyo_oop_final_assigment.Forms
 			InitializeComponent();
 		}
 
+		public override void Refresh()
+		{
+			base.Refresh();
+			if (Program.HasAuthority)
+			{
+				authorityLink.Text = "Logout";
+			}
+			else
+			{
+				authorityLink.Text = "Authority";
+			}
+		}
+
 		private void LoadPage(DMYOPage page)
 		{
 			dmyoTab.SelectedIndex = (int)page;
