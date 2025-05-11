@@ -65,3 +65,13 @@ BEGIN
 		date		DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCollection' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteCollection (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		name		NVARCHAR(50)	NOT NULL UNIQUE,
+		date		DATETIME		NOT NULL DEFAULT GETDATE(),
+		location	NVARCHAR(100)	DEFAULT 'no location entered'
+	);
+END;
