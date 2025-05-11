@@ -82,6 +82,7 @@ namespace dmyo_oop_final_assigment.Forms
 			this.dmyoPanel.Location = new System.Drawing.Point(0, 40);
 			this.dmyoPanel.Margin = new System.Windows.Forms.Padding(20);
 			this.dmyoPanel.Name = "dmyoPanel";
+			this.dmyoPanel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
 			this.dmyoPanel.Size = new System.Drawing.Size(800, 320);
 			this.dmyoPanel.TabIndex = 4;
 			// 
@@ -130,7 +131,7 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wasteTypes.Location = new System.Drawing.Point(0, 0);
 			this.button_wasteTypes.Margin = new System.Windows.Forms.Padding(0);
 			this.button_wasteTypes.Name = "button_wasteTypes";
-			this.button_wasteTypes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.button_wasteTypes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
 			this.button_wasteTypes.Size = new System.Drawing.Size(170, 25);
 			this.button_wasteTypes.TabIndex = 0;
 			this.button_wasteTypes.Text = "Types";
@@ -145,7 +146,7 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wasteCategories.Location = new System.Drawing.Point(0, 25);
 			this.button_wasteCategories.Margin = new System.Windows.Forms.Padding(0);
 			this.button_wasteCategories.Name = "button_wasteCategories";
-			this.button_wasteCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.button_wasteCategories.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
 			this.button_wasteCategories.Size = new System.Drawing.Size(170, 25);
 			this.button_wasteCategories.TabIndex = 0;
 			this.button_wasteCategories.Text = "Categories";
