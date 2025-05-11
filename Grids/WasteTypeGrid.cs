@@ -22,6 +22,7 @@ namespace dmyo_oop_final_assigment.Grids
 		{
 			table.Columns.Add("name", typeof(string));
 			table.Columns.Add("description", typeof(string));
+			table.Columns.Add("category", typeof(int));
 		}
 
 		public override void SetView(DataGridView view)
@@ -60,7 +61,8 @@ namespace dmyo_oop_final_assigment.Grids
 			return new WasteType()
 			{
 				Name = row.Cells["name"].Value?.ToString(),
-				Description = row.Cells["description"].Value?.ToString()
+				Description = row.Cells["description"].Value?.ToString(),
+				Category = Convert.ToInt32(row.Cells["category"].Value)
 			};
 		}
 
@@ -69,7 +71,8 @@ namespace dmyo_oop_final_assigment.Grids
 			return new WasteType()
 			{
 				Name = string.Empty,
-				Description = string.Empty
+				Description = string.Empty,
+				Category = 0
 			};
 		}
 
@@ -77,6 +80,7 @@ namespace dmyo_oop_final_assigment.Grids
 		{
 			row.Cells["name"].Value = model.Name;
 			row.Cells["description"].Value = model.Description;
+			row.Cells["category"].Value = model.Category;
 		}
 	}
 }

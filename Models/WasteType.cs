@@ -10,6 +10,8 @@ namespace dmyo_oop_final_assigment.Models
 	{
 		private string m_description;
 
+		private int m_category;
+
 		public WasteType()
 		{
 
@@ -24,6 +26,18 @@ namespace dmyo_oop_final_assigment.Models
 			set
 			{
 				m_description = value;
+			}
+		}
+
+		public int Category
+		{
+			get
+			{
+				return m_category;
+			}
+			set
+			{
+				m_category = value;
 			}
 		}
 	}	
