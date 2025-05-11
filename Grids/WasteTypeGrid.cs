@@ -3,6 +3,7 @@ using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Table;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Grids
@@ -39,6 +40,18 @@ namespace dmyo_oop_final_assigment.Grids
 				HeaderText = "Description",
 				DataPropertyName = "description",
 				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+			});
+
+			view.Columns.Add(new DataGridViewComboBoxColumn()
+			{
+				Name = "category",
+				HeaderText = "Category",
+				DataPropertyName = "category",
+				DataSource = TableManager.WasteCategory.Select().ToList(),
+				DisplayMember = "Model",
+				ValueMember = "Id",
+				FlatStyle = FlatStyle.Flat,
+				AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
 			});
 		}
 
