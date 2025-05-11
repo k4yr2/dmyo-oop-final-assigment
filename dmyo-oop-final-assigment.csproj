@@ -81,6 +81,7 @@
     <Compile Include="Grids\WasteCategoryGrid.cs" />
     <Compile Include="Grids\WasteTypeGrid.cs" />
     <Compile Include="Managers\TableManager.cs" />
+    <Compile Include="Models\Authority.cs" />
     <Compile Include="Models\DMYOModel.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Providers\IDataLink.cs" />
