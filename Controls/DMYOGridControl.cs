@@ -29,6 +29,7 @@ namespace dmyo_oop_final_assigment.Controls
 			Bind(source);
 		}
 
+
 		public DataGridView View
 		{
 			get
@@ -44,6 +45,18 @@ namespace dmyo_oop_final_assigment.Controls
 				return m_source;
 			}
 		}
+
+		public string SearchText
+		{
+			get
+			{
+				return searchBox.Text;
+			}
+			set
+			{
+				searchBox.Text = value;
+			}
+		}	
 
 		public void Bind(IDMYOGrid source)
 		{
@@ -69,6 +82,17 @@ namespace dmyo_oop_final_assigment.Controls
 
 			RefreshData();
 		}
+
+
+		public void RefreshData()
+		{
+			if (Source != null)
+			{
+				string search = string.IsNullOrWhiteSpace(SearchText) ? "%" : $"%{SearchText}%";
+				view.DataSource = Source.GetTable($"SELECT * FROM {Source.Table.Name} WHERE name COLLATE Latin1_General_CI_AI LIKE '{search}'");
+			}
+		}
+
 
 		private void view_CellEndEdit(object sender, DataGridViewCellEventArgs e)
 		{
@@ -97,12 +121,6 @@ namespace dmyo_oop_final_assigment.Controls
 		private void refreshButton_Click(object sender, EventArgs e)
 		{
 			RefreshData();
-		}
-
-		public void RefreshData()
-		{
-			if(Source != null)
-				view.DataSource = Source.GetTable();
 		}
 	}
 }
