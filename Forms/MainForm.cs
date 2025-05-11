@@ -10,5 +10,16 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void LoadPage(DMYOPage page)
+		{
+
+		}
+	}
+
+	public enum DMYOPage
+	{
+		WasteTypes,
+		WasteCategories
 	}
 }
