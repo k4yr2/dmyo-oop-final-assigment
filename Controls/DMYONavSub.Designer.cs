@@ -79,26 +79,23 @@ namespace dmyo_oop_final_assigment.Controls
 			this.subPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.subPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.subPanel.Location = new System.Drawing.Point(30, 30);
 			this.subPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.subPanel.Name = "subPanel";
-			this.subPanel.Size = new System.Drawing.Size(150, 60);
+			this.subPanel.Size = new System.Drawing.Size(150, 30);
 			this.subPanel.TabIndex = 1;
 			// 
 			// DMYONavSub
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.YellowGreen;
 			this.Controls.Add(this.subPanel);
 			this.Controls.Add(this.bodyPanel);
 			this.Margin = new System.Windows.Forms.Padding(0);
-			this.MinimumSize = new System.Drawing.Size(90, 90);
 			this.Name = "DMYONavSub";
-			this.Size = new System.Drawing.Size(180, 90);
-			this.Resize += new System.EventHandler(this.DMYONavSub_Resize);
-			this.ParentChanged += new System.EventHandler(this.DMYONavSub_ParentChanged);
+			this.Size = new System.Drawing.Size(180, 60);
 			this.bodyPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 

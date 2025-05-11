@@ -56,18 +56,6 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			EnableSub = !EnableSub;
 		}
-
-		private void DMYONavSub_Resize(object sender, System.EventArgs e)
-		{
-			if(Parent != null)
-				Width = Parent.Width;
-		}
-
-		private void DMYONavSub_ParentChanged(object sender, System.EventArgs e)
-		{
-			if (Parent != null)
-				Width = Parent.Width;
-		}
 	}
 }
 
