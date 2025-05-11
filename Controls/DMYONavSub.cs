@@ -36,9 +36,16 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				if(subPanel.Visible != value)
 				{
-					subPanel.Visible = value;
-					var preferredSize = GetPreferredSize(new Size(Width, 0));
-					Height = preferredSize.Height;
+					if(subPanel.Visible = value)
+					{
+						Height = oldHeight;
+						oldHeight = 30;
+					}
+					else
+					{
+						oldHeight = Height;
+						Height = 30;
+					}
 				}
 			}
 		}
@@ -53,6 +60,8 @@ namespace dmyo_oop_final_assigment.Controls
 				return subPanel;
 			}
 		}
+
+		private int oldHeight = 0;
 
 		public DMYONavSub()
 		{
