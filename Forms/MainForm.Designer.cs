@@ -35,14 +35,21 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel_statusbar = new System.Windows.Forms.Panel();
 			this.dmyoPanel = new System.Windows.Forms.Panel();
-			this.sidebarPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.panel_content = new System.Windows.Forms.Panel();
+			this.panel_sidebar = new System.Windows.Forms.FlowLayoutPanel();
 			this.dmyoNavSub1 = new dmyo_oop_final_assigment.Controls.DMYONavSub();
 			this.button_wasteTypes = new System.Windows.Forms.Button();
 			this.button_wasteCategories = new System.Windows.Forms.Button();
+			this.dmyoTab = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.panel_banner.SuspendLayout();
-			this.sidebarPanel.SuspendLayout();
+			this.dmyoPanel.SuspendLayout();
+			this.panel_content.SuspendLayout();
+			this.panel_sidebar.SuspendLayout();
 			this.dmyoNavSub1.SubPanel.SuspendLayout();
 			this.dmyoNavSub1.SuspendLayout();
+			this.dmyoTab.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel_banner
@@ -78,6 +85,7 @@ namespace dmyo_oop_final_assigment.Forms
 			// dmyoPanel
 			// 
 			this.dmyoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+			this.dmyoPanel.Controls.Add(this.panel_content);
 			this.dmyoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dmyoPanel.Location = new System.Drawing.Point(0, 40);
 			this.dmyoPanel.Margin = new System.Windows.Forms.Padding(20);
@@ -86,16 +94,26 @@ namespace dmyo_oop_final_assigment.Forms
 			this.dmyoPanel.Size = new System.Drawing.Size(800, 320);
 			this.dmyoPanel.TabIndex = 4;
 			// 
-			// sidebarPanel
+			// panel_content
 			// 
-			this.sidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-			this.sidebarPanel.Controls.Add(this.dmyoNavSub1);
-			this.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
-			this.sidebarPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.sidebarPanel.Location = new System.Drawing.Point(0, 40);
-			this.sidebarPanel.Name = "sidebarPanel";
-			this.sidebarPanel.Size = new System.Drawing.Size(200, 320);
-			this.sidebarPanel.TabIndex = 0;
+			this.panel_content.Controls.Add(this.dmyoTab);
+			this.panel_content.Controls.Add(this.panel_sidebar);
+			this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel_content.Location = new System.Drawing.Point(5, 0);
+			this.panel_content.Name = "panel_content";
+			this.panel_content.Size = new System.Drawing.Size(795, 320);
+			this.panel_content.TabIndex = 0;
+			// 
+			// panel_sidebar
+			// 
+			this.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+			this.panel_sidebar.Controls.Add(this.dmyoNavSub1);
+			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel_sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.panel_sidebar.Location = new System.Drawing.Point(0, 0);
+			this.panel_sidebar.Name = "panel_sidebar";
+			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
+			this.panel_sidebar.TabIndex = 2;
 			// 
 			// dmyoNavSub1
 			// 
@@ -153,21 +171,57 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wasteCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.button_wasteCategories.UseVisualStyleBackColor = false;
 			// 
+			// dmyoTab
+			// 
+			this.dmyoTab.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+			this.dmyoTab.Controls.Add(this.tabPage1);
+			this.dmyoTab.Controls.Add(this.tabPage2);
+			this.dmyoTab.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dmyoTab.Location = new System.Drawing.Point(200, 0);
+			this.dmyoTab.Margin = new System.Windows.Forms.Padding(0);
+			this.dmyoTab.Multiline = true;
+			this.dmyoTab.Name = "dmyoTab";
+			this.dmyoTab.SelectedIndex = 0;
+			this.dmyoTab.Size = new System.Drawing.Size(595, 320);
+			this.dmyoTab.TabIndex = 3;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Location = new System.Drawing.Point(4, 4);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(587, 294);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "tabPage1";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Location = new System.Drawing.Point(4, 4);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(587, 294);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "tabPage2";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 400);
-			this.Controls.Add(this.sidebarPanel);
 			this.Controls.Add(this.dmyoPanel);
 			this.Controls.Add(this.panel_statusbar);
 			this.Controls.Add(this.panel_banner);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.panel_banner.ResumeLayout(false);
-			this.sidebarPanel.ResumeLayout(false);
+			this.dmyoPanel.ResumeLayout(false);
+			this.panel_content.ResumeLayout(false);
+			this.panel_sidebar.ResumeLayout(false);
 			this.dmyoNavSub1.SubPanel.ResumeLayout(false);
 			this.dmyoNavSub1.ResumeLayout(false);
+			this.dmyoTab.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -178,7 +232,11 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Panel panel_statusbar;
 		private System.Windows.Forms.Panel dmyoPanel;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.FlowLayoutPanel sidebarPanel;
+		private System.Windows.Forms.Panel panel_content;
+		private System.Windows.Forms.TabControl dmyoTab;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.FlowLayoutPanel panel_sidebar;
 		private DMYONavSub dmyoNavSub1;
 		private System.Windows.Forms.Button button_wasteTypes;
 		private System.Windows.Forms.Button button_wasteCategories;
