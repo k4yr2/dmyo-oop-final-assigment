@@ -8,7 +8,7 @@ BEGIN
 		password NVARCHAR(256) NOT NULL
 	);
 
-	INSERT INTO WasteCategory (name, password)
+	INSERT INTO Authority (name, password)
 		VALUES ('dmyo', '2025');
 END;
 
