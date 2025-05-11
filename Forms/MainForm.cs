@@ -14,11 +14,12 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void LoadPage(DMYOPage page)
 		{
+			dmyoTab.SelectedIndex = (int)page;
+
 			switch (page)
 			{
 				case DMYOPage.WasteTypes:
 					{
-						dmyoTab.SelectedIndex = 0;
 						if (grid_wasteTypes.Source == null)
 						{
 							grid_wasteTypes.Bind(new WasteTypeGrid());
@@ -26,6 +27,12 @@ namespace dmyo_oop_final_assigment.Forms
 					}
 					break;
 				case DMYOPage.WasteCategories:
+					{
+						if (grid_wasteCategories.Source == null)
+						{
+							grid_wasteCategories.Bind(new WasteCategoryGrid());
+						}
+					}
 					break;
 			}
 		}
@@ -34,11 +41,16 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			LoadPage(DMYOPage.WasteTypes);
 		}
+
+		private void button_wasteCategories_Click(object sender, EventArgs e)
+		{
+			LoadPage(DMYOPage.WasteCategories);
+		}
 	}
 
 	public enum DMYOPage
 	{
-		WasteTypes,
-		WasteCategories
+		WasteTypes = 0,
+		WasteCategories = 1
 	}
 }
