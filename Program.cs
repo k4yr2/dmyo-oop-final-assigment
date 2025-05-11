@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment
 {
-	internal static class Program
+	static internal class Program
 	{
+		static private Authority m_authority = null;
+
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -15,6 +18,15 @@ namespace dmyo_oop_final_assigment
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
+		}
+
+
+		static public Authority Authority
+		{
+			get
+			{
+				return m_authority;
+			}
 		}
 	}
 }
