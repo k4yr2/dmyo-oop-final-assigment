@@ -26,9 +26,9 @@ BEGIN
 	CREATE TABLE WasteCategory (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		description NVARCHAR(500),
 		hazardLevel INT				DEFAULT(0),
-		recyclable	BIT				DEFAULT(0)
+		recyclable	BIT				DEFAULT(0),
+		description NVARCHAR(500)
 	);
 END;
 
@@ -37,21 +37,9 @@ BEGIN
 	CREATE TABLE WasteType (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		description NVARCHAR(500),
 		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
-		category	INT				FOREIGN KEY REFERENCES WasteCategory(id)
-	);
-END;
-
-
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteRecord' AND type = 'U')
-BEGIN
-	CREATE TABLE WasteRecord (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
-		quantity	DECIMAL(10,2),
-		date		DATETIME		NOT NULL DEFAULT GETDATE()
+		category	INT				FOREIGN KEY REFERENCES WasteCategory(id),
+		description NVARCHAR(500),
 	);
 END;
 
@@ -62,5 +50,17 @@ BEGIN
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		location	NVARCHAR(100)	DEFAULT 'no location entered'
+	);
+END;
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteRecord' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteRecord (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		name		NVARCHAR(50)	NOT NULL UNIQUE,
+		date		DATETIME		NOT NULL DEFAULT GETDATE(),
+		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
+		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
+		quantity	DECIMAL(10,2),
 	);
 END;
