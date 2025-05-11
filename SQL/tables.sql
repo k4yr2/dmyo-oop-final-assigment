@@ -26,7 +26,7 @@ BEGIN
 	CREATE TABLE WasteCategory (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		hazardLevel INT				DEFAULT(0),
+		hazardLevel INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
 		recyclable	BIT				DEFAULT(0),
 		description NVARCHAR(500)
 	);
@@ -47,15 +47,15 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCollection' AND type 
 BEGIN
 	CREATE TABLE WasteCollection (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
+		name		NVARCHAR(50)	NOT NULL,
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		location	NVARCHAR(100)	DEFAULT 'no location entered'
 	);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteRecord' AND type = 'U')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteEntry' AND type = 'U')
 BEGIN
-	CREATE TABLE WasteRecord (
+	CREATE TABLE WasteEntry (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
