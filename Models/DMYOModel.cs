@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +26,11 @@ namespace dmyo_oop_final_assigment.Models
 			{
 				m_name = value;
 			}
+		}
+
+		public override string ToString()
+		{
+			return Name;
 		}
 	}
 }
