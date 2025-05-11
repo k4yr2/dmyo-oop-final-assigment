@@ -13,21 +13,21 @@ namespace dmyo_oop_final_assigment.Providers
 		string DeleteQuery { get; }
 
 
-		IDMYOData Create(DMYOModel model);
+		IDMYOData Create(DMYOModel model, string query = null);
 
-		IDMYOData Read(int id);
+		IDMYOData Read(int id, string query = null);
 
-		bool Update(int id, DMYOModel model);
+		bool Update(int id, DMYOModel model, string query = null);
 
-		bool Delete(int id);
+		bool Delete(int id, string query = null);
 	}
 
 	public interface IDataCRUD<TModel> : IDataCRUD where TModel : DMYOModel
 	{
-		DMYOData<TModel> Create(TModel model);
+		DMYOData<TModel> Create(TModel model, string query = null);
 
-		new DMYOData<TModel> Read(int id);
+		new DMYOData<TModel> Read(int id, string query = null);
 
-		bool Update(int id, TModel model);
+		bool Update(int id, TModel model, string query = null);
 	}
 }

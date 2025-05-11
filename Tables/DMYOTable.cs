@@ -97,11 +97,11 @@ namespace dmyo_oop_final_assigment.Table
 		}
 
 
-		public DMYOData<TModel> Create(TModel model)
+		public DMYOData<TModel> Create(TModel model, string query = null)
 		{
 			int id = -1;
 
-			DataManager.ExecuteCommand(CreateQuery, (SqlCommand command) =>
+			DataManager.ExecuteCommand(_Query(CreateQuery, query), (SqlCommand command) =>
 			{
 				SetParameters(model, command);
 				id = Convert.ToInt32(command.ExecuteScalar());
@@ -111,16 +111,16 @@ namespace dmyo_oop_final_assigment.Table
 			return new DMYOData<TModel>(id, model);
 		}
 
-		IDMYOData IDataCRUD.Create(DMYOModel model)
+		IDMYOData IDataCRUD.Create(DMYOModel model, string query)
 		{
-			return Create((TModel)model);
+			return Create((TModel)model, query);
 		}
 
-		public DMYOData<TModel> Read(int id)
+		public DMYOData<TModel> Read(int id, string query = null)
 		{
 			TModel model = default;
 
-			DataManager.ExecuteCommand(ReadQuery, (SqlCommand command) =>
+			DataManager.ExecuteCommand(_Query(ReadQuery, query), (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
 				SqlDataReader reader = command.ExecuteReader();
@@ -134,16 +134,16 @@ namespace dmyo_oop_final_assigment.Table
 			return new DMYOData<TModel>(id, model);
 		}
 
-		IDMYOData IDataCRUD.Read(int id)
+		IDMYOData IDataCRUD.Read(int id, string query)
 		{
-			return Read(id);
+			return Read(id, query);
 		}
 
-		public bool Update(int id, TModel model)
+		public bool Update(int id, TModel model, string query = null)
 		{
 			bool affected = false;
 
-			DataManager.ExecuteCommand(UpdateQuery, (SqlCommand command) =>
+			DataManager.ExecuteCommand(_Query(UpdateQuery, query), (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("@id", id);
 				SetParameters(model, command);
@@ -157,15 +157,15 @@ namespace dmyo_oop_final_assigment.Table
 			return affected;
 		}
 
-		bool IDataCRUD.Update(int id, DMYOModel model)
+		bool IDataCRUD.Update(int id, DMYOModel model, string query)
 		{
-			return Update(id, (TModel)model);
+			return Update(id, (TModel)model, query);
 		}
 
-		public bool Delete(int id)
+		public bool Delete(int id, string query = null)
 		{
 			bool affected = false;
-			DataManager.ExecuteCommand(DeleteQuery, (SqlCommand command) =>
+			DataManager.ExecuteCommand(_Query(DeleteQuery, query), (SqlCommand command) =>
 			{
 				command.Parameters.AddWithValue("id", id);
 				affected = command.ExecuteNonQuery() > 0;
@@ -189,14 +189,25 @@ namespace dmyo_oop_final_assigment.Table
 			}
 		}
 
-		public IEnumerable<DMYOData<TModel>> Select()
+		public IEnumerable<DMYOData<TModel>> Select(string query = null)
 		{
-			return DataManager.ExecuteCommand(SelectQuery, DoSelect);
+			return DataManager.ExecuteCommand(_Query(SelectQuery, query), DoSelect);
 		}
 
-		IEnumerable<IDMYOData> IDataCollection.Select()
+		IEnumerable<IDMYOData> IDataCollection.Select(string query)
 		{
-			return Select();
+			return Select(query);
+		}
+
+
+		private static string _Query(string q1, string q2 = null)
+		{
+			if(q2 == null)
+			{
+				return q1;
+			}
+
+			return $"{q1} {q2}";
 		}
 	}
 }

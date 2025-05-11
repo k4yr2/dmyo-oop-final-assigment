@@ -7,11 +7,11 @@ namespace dmyo_oop_final_assigment.Providers
 	{
 		string SelectQuery { get; }
 
-		IEnumerable<IDMYOData> Select();
+		IEnumerable<IDMYOData> Select(string query = null);
 	}
 
 	public interface IDataCollection<TModel> : IDataCollection where TModel : DMYOModel
 	{
-		new IEnumerable<DMYOData<TModel>> Select();
+		new IEnumerable<DMYOData<TModel>> Select(string query = null);
 	}
 }
