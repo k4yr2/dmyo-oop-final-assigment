@@ -87,6 +87,7 @@
 			this.searchBox.Name = "searchBox";
 			this.searchBox.Size = new System.Drawing.Size(120, 20);
 			this.searchBox.TabIndex = 0;
+			this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
 			// 
 			// refreshButton
 			// 

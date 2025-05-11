@@ -122,5 +122,10 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			RefreshData();
 		}
+
+		private void searchBox_TextChanged(object sender, EventArgs e)
+		{
+			RefreshData();
+		}
 	}
 }
