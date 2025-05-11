@@ -12,6 +12,15 @@ BEGIN
 		VALUES ('dmyo', '2025');
 END;
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteUnit' AND type = 'U')
+BEGIN
+	CREATE TABLE WasteUnit (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		name		NVARCHAR(50)	NOT NULL UNIQUE,
+		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
+	);
+END;
+
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCategory' AND type = 'U')
 BEGIN
 	CREATE TABLE WasteCategory (
@@ -29,8 +38,8 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		description NVARCHAR(500),
-		category	INT				FOREIGN KEY REFERENCES WasteCategory(id),
-		unit		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
+		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
+		category	INT				FOREIGN KEY REFERENCES WasteCategory(id)
 	);
 END;
 
