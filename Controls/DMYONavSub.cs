@@ -1,6 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Controls;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -33,7 +34,12 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			set
 			{
-				subPanel.Visible = value;
+				if(subPanel.Visible != value)
+				{
+					subPanel.Visible = value;
+					var preferredSize = GetPreferredSize(new Size(Width, 0));
+					Height = preferredSize.Height;
+				}
 			}
 		}
 
