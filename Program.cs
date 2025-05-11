@@ -7,6 +7,8 @@ namespace dmyo_oop_final_assigment
 {
 	static internal class Program
 	{
+		static private MainForm form = null;
+
 		static private DMYOData<Authority> m_authority = null;
 
 		/// <summary>
@@ -17,7 +19,7 @@ namespace dmyo_oop_final_assigment
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			Application.Run(form = new MainForm());
 		}
 
 
@@ -27,12 +29,29 @@ namespace dmyo_oop_final_assigment
 			{
 				return m_authority;
 			}
-			set
+			internal set
 			{
 				if (m_authority != value)
 				{
 					m_authority = value;
+					Form.Refresh();
 				}
+			}
+		}
+
+		static public bool HasAuthority
+		{
+			get
+			{
+				return m_authority != null;
+			}
+		}
+
+		static public MainForm Form
+		{
+			get
+			{
+				return form;
 			}
 		}
 	}
