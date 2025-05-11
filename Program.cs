@@ -7,7 +7,7 @@ namespace dmyo_oop_final_assigment
 {
 	static internal class Program
 	{
-		static private Authority m_authority = null;
+		static private DMYOData<Authority> m_authority = null;
 
 		/// <summary>
 		/// The main entry point for the application.
@@ -21,11 +21,18 @@ namespace dmyo_oop_final_assigment
 		}
 
 
-		static public Authority Authority
+		static public DMYOData<Authority> Authority
 		{
 			get
 			{
 				return m_authority;
+			}
+			set
+			{
+				if (m_authority != value)
+				{
+					m_authority = value;
+				}
 			}
 		}
 	}
