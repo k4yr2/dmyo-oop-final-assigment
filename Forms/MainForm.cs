@@ -18,7 +18,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var wastes = new DMYONavSub()
 			{
 				Title = "Wastes",
-				EnableSub = true,
+				EnableSub = false,
 				Dock = DockStyle.Top
 			};
 			sidebarPanel.Controls.Add(wastes);
@@ -26,7 +26,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var wastes_types = new DMYONavSub()
 			{
 				Title = "Types",
-				EnableSub = true,
+				EnableSub = false,
 				Dock = DockStyle.Top
 			};
 			wastes.SubPanel.Controls.Add(wastes_types);
@@ -34,7 +34,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var wastes_categories = new DMYONavSub()
 			{
 				Title = "Categories",
-				EnableSub = true,
+				EnableSub = false,
 				Dock = DockStyle.Top
 			};
 			wastes.SubPanel.Controls.Add(wastes_categories);
@@ -44,7 +44,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var distrubition = new DMYONavSub()
 			{
 				Title = "Disdisdis",
-				EnableSub = true,
+				EnableSub = false,
 				Dock = DockStyle.Top
 			};
 			sidebarPanel.Controls.Add(distrubition);
