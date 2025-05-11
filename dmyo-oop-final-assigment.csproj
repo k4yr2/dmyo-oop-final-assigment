@@ -52,6 +52,12 @@
     <Compile Include="Controls\DMYOGridControl.Designer.cs">
       <DependentUpon>DMYOGridControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DMYONav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DMYONav.Designer.cs">
+      <DependentUpon>DMYONav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DMYONavSub.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Repositories\WasteTypeRepo.cs" />
     <EmbeddedResource Include="Controls\DMYOGridControl.resx">
       <DependentUpon>DMYOGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DMYONav.resx">
+      <DependentUpon>DMYONav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DMYONavSub.resx">
       <DependentUpon>DMYONavSub.cs</DependentUpon>
