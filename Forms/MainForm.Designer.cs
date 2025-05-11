@@ -36,22 +36,24 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_statusbar = new System.Windows.Forms.Panel();
 			this.dmyoPanel = new System.Windows.Forms.Panel();
 			this.panel_content = new System.Windows.Forms.Panel();
-			this.panel_sidebar = new System.Windows.Forms.FlowLayoutPanel();
 			this.dmyoTab = new System.Windows.Forms.TabControl();
 			this.tab_wasteTypes = new System.Windows.Forms.TabPage();
-			this.tab_wasteCategories = new System.Windows.Forms.TabPage();
 			this.grid_wasteTypes = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
+			this.tab_wasteCategories = new System.Windows.Forms.TabPage();
+			this.grid_wasteCategories = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
+			this.panel_sidebar = new System.Windows.Forms.FlowLayoutPanel();
 			this.dmyoNavSub1 = new dmyo_oop_final_assigment.Controls.DMYONavSub();
 			this.button_wasteTypes = new System.Windows.Forms.Button();
 			this.button_wasteCategories = new System.Windows.Forms.Button();
-			this.grid_wasteCategories = new dmyo_oop_final_assigment.Controls.DMYOGridControl();
+			this.authorityLink = new System.Windows.Forms.LinkLabel();
 			this.panel_banner.SuspendLayout();
+			this.panel_statusbar.SuspendLayout();
 			this.dmyoPanel.SuspendLayout();
 			this.panel_content.SuspendLayout();
-			this.panel_sidebar.SuspendLayout();
 			this.dmyoTab.SuspendLayout();
 			this.tab_wasteTypes.SuspendLayout();
 			this.tab_wasteCategories.SuspendLayout();
+			this.panel_sidebar.SuspendLayout();
 			this.dmyoNavSub1.SubPanel.SuspendLayout();
 			this.dmyoNavSub1.SuspendLayout();
 			this.SuspendLayout();
@@ -80,9 +82,12 @@ namespace dmyo_oop_final_assigment.Forms
 			// panel_statusbar
 			// 
 			this.panel_statusbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
+			this.panel_statusbar.Controls.Add(this.authorityLink);
 			this.panel_statusbar.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel_statusbar.Location = new System.Drawing.Point(0, 360);
+			this.panel_statusbar.Margin = new System.Windows.Forms.Padding(0);
 			this.panel_statusbar.Name = "panel_statusbar";
+			this.panel_statusbar.Padding = new System.Windows.Forms.Padding(5);
 			this.panel_statusbar.Size = new System.Drawing.Size(800, 40);
 			this.panel_statusbar.TabIndex = 2;
 			// 
@@ -107,17 +112,6 @@ namespace dmyo_oop_final_assigment.Forms
 			this.panel_content.Name = "panel_content";
 			this.panel_content.Size = new System.Drawing.Size(795, 320);
 			this.panel_content.TabIndex = 0;
-			// 
-			// panel_sidebar
-			// 
-			this.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-			this.panel_sidebar.Controls.Add(this.dmyoNavSub1);
-			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel_sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.panel_sidebar.Location = new System.Drawing.Point(0, 0);
-			this.panel_sidebar.Name = "panel_sidebar";
-			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
-			this.panel_sidebar.TabIndex = 2;
 			// 
 			// dmyoTab
 			// 
@@ -144,6 +138,15 @@ namespace dmyo_oop_final_assigment.Forms
 			this.tab_wasteTypes.Text = "types";
 			this.tab_wasteTypes.UseVisualStyleBackColor = true;
 			// 
+			// grid_wasteTypes
+			// 
+			this.grid_wasteTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grid_wasteTypes.Location = new System.Drawing.Point(3, 3);
+			this.grid_wasteTypes.Name = "grid_wasteTypes";
+			this.grid_wasteTypes.SearchText = "";
+			this.grid_wasteTypes.Size = new System.Drawing.Size(581, 288);
+			this.grid_wasteTypes.TabIndex = 0;
+			// 
 			// tab_wasteCategories
 			// 
 			this.tab_wasteCategories.Controls.Add(this.grid_wasteCategories);
@@ -155,13 +158,25 @@ namespace dmyo_oop_final_assigment.Forms
 			this.tab_wasteCategories.Text = "categories";
 			this.tab_wasteCategories.UseVisualStyleBackColor = true;
 			// 
-			// grid_wasteTypes
+			// grid_wasteCategories
 			// 
-			this.grid_wasteTypes.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grid_wasteTypes.Location = new System.Drawing.Point(3, 3);
-			this.grid_wasteTypes.Name = "grid_wasteTypes";
-			this.grid_wasteTypes.Size = new System.Drawing.Size(581, 288);
-			this.grid_wasteTypes.TabIndex = 0;
+			this.grid_wasteCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grid_wasteCategories.Location = new System.Drawing.Point(3, 3);
+			this.grid_wasteCategories.Name = "grid_wasteCategories";
+			this.grid_wasteCategories.SearchText = "";
+			this.grid_wasteCategories.Size = new System.Drawing.Size(581, 288);
+			this.grid_wasteCategories.TabIndex = 1;
+			// 
+			// panel_sidebar
+			// 
+			this.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+			this.panel_sidebar.Controls.Add(this.dmyoNavSub1);
+			this.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel_sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.panel_sidebar.Location = new System.Drawing.Point(0, 0);
+			this.panel_sidebar.Name = "panel_sidebar";
+			this.panel_sidebar.Size = new System.Drawing.Size(200, 320);
+			this.panel_sidebar.TabIndex = 2;
 			// 
 			// dmyoNavSub1
 			// 
@@ -221,13 +236,18 @@ namespace dmyo_oop_final_assigment.Forms
 			this.button_wasteCategories.UseVisualStyleBackColor = false;
 			this.button_wasteCategories.Click += new System.EventHandler(this.button_wasteCategories_Click);
 			// 
-			// grid_wasteCategories
+			// authorityLink
 			// 
-			this.grid_wasteCategories.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.grid_wasteCategories.Location = new System.Drawing.Point(3, 3);
-			this.grid_wasteCategories.Name = "grid_wasteCategories";
-			this.grid_wasteCategories.Size = new System.Drawing.Size(581, 288);
-			this.grid_wasteCategories.TabIndex = 1;
+			this.authorityLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.authorityLink.Location = new System.Drawing.Point(743, 5);
+			this.authorityLink.Margin = new System.Windows.Forms.Padding(0);
+			this.authorityLink.Name = "authorityLink";
+			this.authorityLink.Size = new System.Drawing.Size(48, 30);
+			this.authorityLink.TabIndex = 0;
+			this.authorityLink.TabStop = true;
+			this.authorityLink.Text = "Authority";
+			this.authorityLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.authorityLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// MainForm
 			// 
@@ -240,12 +260,13 @@ namespace dmyo_oop_final_assigment.Forms
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.panel_banner.ResumeLayout(false);
+			this.panel_statusbar.ResumeLayout(false);
 			this.dmyoPanel.ResumeLayout(false);
 			this.panel_content.ResumeLayout(false);
-			this.panel_sidebar.ResumeLayout(false);
 			this.dmyoTab.ResumeLayout(false);
 			this.tab_wasteTypes.ResumeLayout(false);
 			this.tab_wasteCategories.ResumeLayout(false);
+			this.panel_sidebar.ResumeLayout(false);
 			this.dmyoNavSub1.SubPanel.ResumeLayout(false);
 			this.dmyoNavSub1.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -268,5 +289,6 @@ namespace dmyo_oop_final_assigment.Forms
 		private System.Windows.Forms.Button button_wasteCategories;
 		private DMYOGridControl grid_wasteTypes;
 		private DMYOGridControl grid_wasteCategories;
+		private System.Windows.Forms.LinkLabel authorityLink;
 	}
 }

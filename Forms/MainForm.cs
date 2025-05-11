@@ -46,6 +46,11 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			LoadPage(DMYOPage.WasteCategories);
 		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+
+		}
 	}
 
 	public enum DMYOPage
