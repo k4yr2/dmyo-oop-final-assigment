@@ -1,9 +1,12 @@
-﻿using System.ComponentModel;
+﻿using dmyo_oop_final_assigment.Controls;
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace dmyo_oop_final_assigment.Controls
 {
+	[Designer(typeof(DMYONavSubDesigner))]
 	public partial class DMYONavSub : UserControl
 	{
 		[Category("NavSub")]
@@ -64,6 +67,20 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			if (Parent != null)
 				Width = Parent.Width;
+		}
+	}
+}
+
+public class DMYONavSubDesigner : ControlDesigner
+{
+	public override void Initialize(IComponent component)
+	{
+		base.Initialize(component);
+
+		if (component is DMYONavSub control)
+		{
+			// SubPanel üzerinde çalışılmasına izin ver
+			EnableDesignMode(control.SubPanel, "SubPanel");
 		}
 	}
 }
