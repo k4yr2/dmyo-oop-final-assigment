@@ -27,8 +27,8 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		description NVARCHAR(500),
-		hazardLevel INT DEFAULT(0),
-		recyclable	BIT DEFAULT(0)
+		hazardLevel INT				DEFAULT(0),
+		recyclable	BIT				DEFAULT(0)
 	);
 END;
 
