@@ -45,6 +45,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		[Category("NavSub")]
 		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
 		public FlowLayoutPanel SubPanel
 		{
 			get
