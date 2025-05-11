@@ -49,7 +49,8 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-
+			var form = new AuthorityForm();
+			form.ShowDialog();
 		}
 	}
 
