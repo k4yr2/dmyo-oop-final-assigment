@@ -19,22 +19,6 @@ BEGIN
 	  ('Medical',     'Medical waste such as syringes and expired pharmaceuticals', 3, 0);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteUnit' AND type = 'U')
-BEGIN
-	CREATE TABLE WasteUnit (
-		id INT PRIMARY KEY IDENTITY(1,1),
-		name NVARCHAR(50) NOT NULL UNIQUE,
-		abbreviation  NVARCHAR(8)
-	);
-
-	INSERT INTO WasteUnit (name, abbreviation)  
-	VALUES  
-	  ('Kilogram', 'kg'),
-	  ('Liter',    'L'), 
-	  ('Piece',    'pcs'),
-	  ('Ton',      't');
-END;
-
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteType' AND type = 'U')
 BEGIN
 	CREATE TABLE WasteType (
@@ -42,7 +26,6 @@ BEGIN
 		name NVARCHAR(50) NOT NULL UNIQUE,
 		description NVARCHAR(500),
 		category INT FOREIGN KEY REFERENCES WasteCategory(id),
-		unit INT FOREIGN KEY REFERENCES WasteUnit(id),
 	);
 
 	INSERT INTO WasteType (name, description, category, unit)  
