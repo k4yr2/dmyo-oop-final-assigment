@@ -8,8 +8,8 @@ BEGIN
 		password NVARCHAR(256) NOT NULL
 	);
 
-	INSERT INTO WasteCategory (name, hash)
-		('dmyo', '2025');
+	INSERT INTO WasteCategory (name, password)
+		VALUES ('dmyo', '2025');
 END;
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCategory' AND type = 'U')
