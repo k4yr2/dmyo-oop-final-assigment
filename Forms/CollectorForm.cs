@@ -32,7 +32,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				case CollectorState.Idle:
 					break;
-				case CollectorState.Archive:
+				case CollectorState.Browsing:
 					break;
 				case CollectorState.Collecting:
 					break;
@@ -45,7 +45,7 @@ namespace dmyo_oop_final_assigment.Forms
 	public enum CollectorState
 	{
 		Idle,
-		Archive,
+		Browsing,
 		Collecting,
 		Distributing
 	}
