@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
     <Compile Include="DMYOTable.cs" />
+    <Compile Include="Tables\UserTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <EmbeddedResource Include="Forms\LoginForm.resx">
