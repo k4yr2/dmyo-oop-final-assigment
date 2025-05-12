@@ -28,12 +28,46 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.selectionPanel = new System.Windows.Forms.Panel();
+			this.newButton = new System.Windows.Forms.Button();
+			this.selectionPanel.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// selectionPanel
+			// 
+			this.selectionPanel.Controls.Add(this.newButton);
+			this.selectionPanel.Dock = System.Windows.Forms.DockStyle.Top;
+			this.selectionPanel.Location = new System.Drawing.Point(0, 0);
+			this.selectionPanel.Name = "selectionPanel";
+			this.selectionPanel.Size = new System.Drawing.Size(800, 40);
+			this.selectionPanel.TabIndex = 0;
+			// 
+			// newButton
+			// 
+			this.newButton.Location = new System.Drawing.Point(5, 5);
+			this.newButton.Margin = new System.Windows.Forms.Padding(5);
+			this.newButton.Name = "newButton";
+			this.newButton.Size = new System.Drawing.Size(120, 30);
+			this.newButton.TabIndex = 1;
+			this.newButton.Text = "New Collection";
+			this.newButton.UseVisualStyleBackColor = true;
+			// 
+			// CollectorForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.selectionPanel);
+			this.Name = "CollectorForm";
 			this.Text = "CollectorForm";
+			this.selectionPanel.ResumeLayout(false);
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Panel selectionPanel;
+		private System.Windows.Forms.Button newButton;
 	}
 }

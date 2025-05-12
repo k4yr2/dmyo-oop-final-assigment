@@ -86,6 +86,9 @@
     <Compile Include="Tables\UserTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
+    <EmbeddedResource Include="Forms\CollectorForm.resx">
+      <DependentUpon>CollectorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GatewayForm.resx">
       <DependentUpon>GatewayForm.cs</DependentUpon>
     </EmbeddedResource>
