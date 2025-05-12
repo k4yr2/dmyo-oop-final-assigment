@@ -19,7 +19,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void startButton_Click(object sender, EventArgs e)
 		{
-			new LoginForm().ShowDialog();
+			new GatewayForm().ShowDialog();
 		}
 	}
 }

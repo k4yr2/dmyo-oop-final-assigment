@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Forms
 {
-	partial class LoginForm
+	partial class GatewayForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -100,7 +100,7 @@
 			this.showBox.UseVisualStyleBackColor = true;
 			this.showBox.CheckedChanged += new System.EventHandler(this.showBox_CheckedChanged);
 			// 
-			// LoginForm
+			// GatewayForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,8 @@
 			this.Controls.Add(this.nameBox);
 			this.Controls.Add(this.passwordLabel);
 			this.Controls.Add(this.nameLabel);
-			this.Name = "LoginForm";
-			this.Text = "Login";
+			this.Name = "GatewayForm";
+			this.Text = "Gateway";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
