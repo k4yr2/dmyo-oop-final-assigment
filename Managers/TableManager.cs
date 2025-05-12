@@ -4,7 +4,7 @@ namespace dmyo_oop_final_assigment.Managers
 {
 	public static class TableManager
 	{
-		private static readonly UserTable m_userTable = new UserTable();
+		private static readonly UserTable m_user = new UserTable();
 
 		private static readonly WasteTypeTable m_wasteType = new WasteTypeTable();
 
@@ -18,7 +18,7 @@ namespace dmyo_oop_final_assigment.Managers
 		{
 			get
 			{
-				return m_userTable;
+				return m_user;
 			}
 		}
 
