@@ -69,7 +69,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				case CollectorState.Idle:
 					{
-						var collection = TableManager.WasteCollection.GetActive(User.Id);
+						var collection = TableManager.WasteCollection.GetCollection(User.Id);
 
 						if (collection != null)
 						{
@@ -94,7 +94,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				Date = DateTime.Now,
 				User = m_user.Id,
-				Active = true
+				Collection = true
 			});
 
 			m_state = CollectorState.Collecting;
