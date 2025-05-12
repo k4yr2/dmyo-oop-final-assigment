@@ -49,6 +49,7 @@ BEGIN
 	CREATE TABLE [WasteCollection] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL,
+		[user]		INT				FOREIGN KEY REFERENCES [User](id),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		location	NVARCHAR(100)	DEFAULT 'no location entered'
 	);
