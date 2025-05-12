@@ -54,7 +54,7 @@
 			this.nameBox.Location = new System.Drawing.Point(71, 12);
 			this.nameBox.Margin = new System.Windows.Forms.Padding(2);
 			this.nameBox.Name = "nameBox";
-			this.nameBox.Size = new System.Drawing.Size(100, 20);
+			this.nameBox.Size = new System.Drawing.Size(120, 20);
 			this.nameBox.TabIndex = 1;
 			// 
 			// passwordLabel
@@ -84,7 +84,7 @@
 			this.loginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
 			this.loginButton.Location = new System.Drawing.Point(12, 61);
 			this.loginButton.Name = "loginButton";
-			this.loginButton.Size = new System.Drawing.Size(159, 23);
+			this.loginButton.Size = new System.Drawing.Size(179, 23);
 			this.loginButton.TabIndex = 2;
 			this.loginButton.Text = "Log in";
 			this.loginButton.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
 			// showBox
 			// 
 			this.showBox.AutoSize = true;
-			this.showBox.Location = new System.Drawing.Point(176, 39);
+			this.showBox.Location = new System.Drawing.Point(176, 40);
 			this.showBox.Name = "showBox";
 			this.showBox.Size = new System.Drawing.Size(15, 14);
 			this.showBox.TabIndex = 3;
