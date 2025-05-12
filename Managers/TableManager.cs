@@ -10,6 +10,8 @@ namespace dmyo_oop_final_assigment.Managers
 
 		public static WasteCategoryTable m_wasteCategory = new WasteCategoryTable();
 
+		public static WasteCollectionTable m_wasteCollection = new WasteCollectionTable();
+
 		//
 
 		public static UserTable User
@@ -33,6 +35,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteCategory;
+			}
+		}
+
+		public static WasteCollectionTable WasteCollection
+		{
+			get
+			{
+				return m_wasteCollection;
 			}
 		}
 	}
