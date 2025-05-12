@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Forms;
 
 namespace dmyo_oop_final_assigment
 {
@@ -14,7 +14,7 @@ namespace dmyo_oop_final_assigment
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run();
+			Application.Run(new LoginForm());
 		}
 
 	}
