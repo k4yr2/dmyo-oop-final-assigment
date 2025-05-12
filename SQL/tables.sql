@@ -4,9 +4,9 @@ IF OBJECT_ID('User', 'U') IS NULL
 BEGIN
 	CREATE TABLE [User] (
 		id			INT PRIMARY		KEY IDENTITY(1,1),
-		role		INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
 		name		NVARCHAR(100)	NOT NULL UNIQUE,
-		password	NVARCHAR(32)	NOT NULL
+		password	NVARCHAR(32)	NOT NULL,
+		role		INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
 	);
 
 	INSERT INTO [User] (name, password, role)
