@@ -29,6 +29,21 @@ namespace dmyo_oop_final_assigment.Forms
 			else
 			{
 				Program.User = user;
+
+				switch(user.Model.Role)
+				{
+					case Models.UserRole.Collector:
+						new CollectorForm().Show();
+						break;
+					case Models.UserRole.Recycler:
+						//new RecyclerForm().Show();
+						break;
+					case Models.UserRole.Admin:
+						//new AdminForm().Show();
+						break;
+				}
+
+				Close();
 			}
 		}
 	}
