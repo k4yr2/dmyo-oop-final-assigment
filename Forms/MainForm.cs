@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dmyo_oop_final_assigment.Managers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,35 @@ namespace dmyo_oop_final_assigment.Forms
 			InitializeComponent();
 		}
 
-		private void startButton_Click(object sender, EventArgs e)
+
+		private void loginButton_Click(object sender, EventArgs e)
 		{
-			new GatewayForm().ShowDialog();
+			var user = TableManager.User.Select($"WHERE name = '{nameBox.Text}' and password = '{passwordBox.Text}'")
+				.FirstOrDefault();
+
+			if (user == null)
+			{
+				MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				Form form;
+				switch (user.Model.Role)
+				{
+					case Models.UserRole.Collector:
+						form = new CollectorForm(user);
+						break;
+					default:
+						form = null;
+						break;
+				}
+
+				if (form != null)
+				{
+					form.Show();
+					form.Focus();
+				}
+			}
 		}
 	}
 }
