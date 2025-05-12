@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Models;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -22,6 +23,13 @@ namespace dmyo_oop_final_assigment.Tables
 				Date = reader.GetDateTime(1),
 				User = reader.GetInt32(2)
 			};
+		}
+
+		//
+
+		public DMYOData<WasteCollection> GetActive(int user)
+		{
+			return Select($"WHERE active and user = {user}").FirstOrDefault();
 		}
 	}
 }
