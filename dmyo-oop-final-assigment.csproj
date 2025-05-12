@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\TableManager.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
