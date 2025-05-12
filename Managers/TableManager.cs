@@ -4,11 +4,21 @@ namespace dmyo_oop_final_assigment.Managers
 {
 	public static class TableManager
 	{
+		public static UserTable m_userTable = new UserTable();
+
 		public static WasteTypeTable m_wasteType = new WasteTypeTable();
 
 		public static WasteCategoryTable m_wasteCategory = new WasteCategoryTable();
 
 		//
+
+		public static UserTable User
+		{
+			get
+			{
+				return m_userTable;
+			}
+		}
 
 		public static WasteTypeTable WasteType
 		{
