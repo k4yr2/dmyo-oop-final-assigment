@@ -1,15 +1,16 @@
 USE dmyo_oop_final_assigment;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'Authority' AND type = 'U')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'Account' AND type = 'U')
 BEGIN
-	CREATE TABLE Authority (
+	CREATE TABLE Account (
 		id			INT PRIMARY		KEY IDENTITY(1,1),
 		name		NVARCHAR(100)	NOT NULL UNIQUE,
-		password	NVARCHAR(256)	NOT NULL
+		password	NVARCHAR(32)	NOT NULL,
+		role		VARCHAR(20)		NOT NULL CHECK (role IN ('collector', 'recycler', 'admin'))
 	);
 
-	INSERT INTO Authority (name, password)
-		VALUES ('dmyo', '2025');
+	INSERT INTO Account (name, password, role)
+	VALUES ('dmyo', '2025', 'admin'), ('sinan', 'demirci', 'collector'), ('serhat', 'genc', 'recycler');
 END;
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteUnit' AND type = 'U')
