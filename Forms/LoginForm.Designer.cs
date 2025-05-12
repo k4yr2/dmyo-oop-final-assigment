@@ -97,6 +97,7 @@
 			this.showBox.Size = new System.Drawing.Size(15, 14);
 			this.showBox.TabIndex = 3;
 			this.showBox.UseVisualStyleBackColor = true;
+			this.showBox.CheckedChanged += new System.EventHandler(this.showBox_CheckedChanged);
 			// 
 			// LoginForm
 			// 
