@@ -12,7 +12,7 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "User";
 
-		public override string[] Params => new string[] { "name", "password", "role", "recyclable" };
+		public override string[] Params => new string[] { "name", "password", "role" };
 
 
 		public override void SetParameters(User user, SqlCommand command)
