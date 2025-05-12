@@ -8,12 +8,13 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "WasteCollection";
 
-		public override string[] Params => new string[] { "date", "user"};
+		public override string[] Params => new string[] { "date", "user, active"};
 
 		public override void SetParameters(WasteCollection collection, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@date", collection.Date);
 			command.Parameters.AddWithValue("@user", collection.User);
+			command.Parameters.AddWithValue("@active", collection.Active);
 		}
 
 		public override WasteCollection GetModel(SqlDataReader reader)
@@ -21,7 +22,8 @@ namespace dmyo_oop_final_assigment.Tables
 			return new WasteCollection()
 			{
 				Date = reader.GetDateTime(1),
-				User = reader.GetInt32(2)
+				User = reader.GetInt32(2),
+				Active = reader.GetBoolean(3)
 			};
 		}
 
