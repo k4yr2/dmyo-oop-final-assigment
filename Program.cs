@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment
 {
 	static internal class Program
 	{
+		static private DMYOData<User> m_user;
+
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -17,5 +20,17 @@ namespace dmyo_oop_final_assigment
 			Application.Run(new LoginForm());
 		}
 
+
+		static public DMYOData<User> User
+		{
+			get
+			{
+				return m_user;
+			}
+			set
+			{
+				m_user = value;
+			}
+		}
 	}
 }

@@ -28,7 +28,7 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 			else
 			{
-
+				Program.User = user;
 			}
 		}
 	}
