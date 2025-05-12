@@ -13,18 +13,18 @@ BEGIN
 	VALUES ('dmyo', '2025', 'admin'), ('sinan', 'demirci', 'collector'), ('serhat', 'genc', 'recycler');
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteUnit' AND type = 'U')
+IF OBJECT_ID('WasteUnit', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteUnit (
+	CREATE TABLE [WasteUnit] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
 	);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCategory' AND type = 'U')
+IF OBJECT_ID('WasteCategory', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteCategory (
+	CREATE TABLE [WasteCategory] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		hazardLevel INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
@@ -33,9 +33,9 @@ BEGIN
 	);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteType' AND type = 'U')
+IF OBJECT_ID('WasteType', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteType (
+	CREATE TABLE [WasteType] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
@@ -44,9 +44,9 @@ BEGIN
 	);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteCollection' AND type = 'U')
+IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteCollection (
+	CREATE TABLE [WasteCollection] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL,
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
@@ -54,9 +54,9 @@ BEGIN
 	);
 END;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'WasteEntry' AND type = 'U')
+IF OBJECT_ID('WasteEntry', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteEntry (
+	CREATE TABLE [WasteEntry] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
