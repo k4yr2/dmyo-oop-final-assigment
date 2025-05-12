@@ -1,15 +1,15 @@
 USE dmyo_oop_final_assigment;
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = 'Account' AND type = 'U')
+IF OBJECT_ID('User', 'U') IS NULL
 BEGIN
-	CREATE TABLE Account (
+	CREATE TABLE [User] (
 		id			INT PRIMARY		KEY IDENTITY(1,1),
 		name		NVARCHAR(100)	NOT NULL UNIQUE,
 		password	NVARCHAR(32)	NOT NULL,
 		role		VARCHAR(20)		NOT NULL CHECK (role IN ('collector', 'recycler', 'admin'))
 	);
 
-	INSERT INTO Account (name, password, role)
+	INSERT INTO [User] (name, password, role)
 	VALUES ('dmyo', '2025', 'admin'), ('sinan', 'demirci', 'collector'), ('serhat', 'genc', 'recycler');
 END;
 
