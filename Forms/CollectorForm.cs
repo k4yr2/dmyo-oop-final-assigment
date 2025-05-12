@@ -10,6 +10,8 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private CollectorState m_state = CollectorState.Idle;
 
+		private DMYOData<WasteCollection> m_current;
+
 		public CollectorForm(DMYOData<User> user)
 		{
 			m_user = user;
@@ -38,6 +40,19 @@ namespace dmyo_oop_final_assigment.Forms
 			set
 			{
 				m_state = value;
+				Refresh();
+			}
+		}
+
+		public DMYOData<WasteCollection> Current
+		{
+			get
+			{
+				return m_current;
+			}
+			set
+			{
+				m_current = value;
 			}
 		}
 
@@ -49,6 +64,16 @@ namespace dmyo_oop_final_assigment.Forms
 			switch (m_state)
 			{
 				case CollectorState.Idle:
+					{
+						var collection = TableManager.WasteCollection.GetActive(User.Id);
+
+						if (collection != null)
+						{
+							m_current = collection;
+							m_state = CollectorState.Collecting;
+							return;
+						}
+					}
 					break;
 				case CollectorState.Browsing:
 					break;
