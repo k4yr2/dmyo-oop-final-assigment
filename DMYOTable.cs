@@ -43,7 +43,7 @@ namespace dmyo_oop_final_assigment
 				var tableParams = string.Join(", ", Params);
 				var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
 
-				return $"INSERT INTO {Name} ({tableParams}) VALUES ({valueParams}); SELECT SCOPE_IDENTITY();";
+				return $"INSERT INTO [{Name}] ({tableParams}) VALUES ({valueParams}); SELECT SCOPE_IDENTITY();";
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace dmyo_oop_final_assigment
 		{
 			get
 			{
-				return $"SELECT * FROM {Name} WHERE id = @id";
+				return $"SELECT * FROM [{Name}] WHERE id = @id";
 			}
 		}
 
@@ -60,7 +60,7 @@ namespace dmyo_oop_final_assigment
 			get
 			{
 				var setParams = string.Join(", ", Params.Select(p => $"{p} = @{p}"));
-				return $"UPDATE {Name} SET {setParams} WHERE id = @id";
+				return $"UPDATE [{Name}] SET {setParams} WHERE id = @id";
 			}
 		}
 
@@ -68,7 +68,7 @@ namespace dmyo_oop_final_assigment
 		{
 			get
 			{
-				return $"DELETE FROM {Name} WHERE id = @id";
+				return $"DELETE FROM [{Name}] WHERE id = @id";
 			}
 		}
 
@@ -76,7 +76,7 @@ namespace dmyo_oop_final_assigment
 		{
 			get
 			{
-				return $"SELECT * FROM {Name}";
+				return $"SELECT * FROM [{Name}]";
 			}
 		}
 
