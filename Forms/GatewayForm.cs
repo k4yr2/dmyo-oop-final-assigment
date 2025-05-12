@@ -28,17 +28,21 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 			else
 			{
-				switch(user.Model.Role)
+				Form form;
+				switch (user.Model.Role)
 				{
 					case Models.UserRole.Collector:
-						new CollectorForm(user).Show();
+						form = new CollectorForm(user);
 						break;
-					case Models.UserRole.Recycler:
-						//new RecyclerForm().Show();
+					default:
+						form = null;
 						break;
-					case Models.UserRole.Admin:
-						//new AdminForm().Show();
-						break;
+				}
+
+				if (form != null)
+				{
+					form.Show();
+					form.Focus();
 				}
 
 				Close();
