@@ -10,7 +10,7 @@ BEGIN
 	);
 
 	INSERT INTO [User] (name, password, role)
-	VALUES ('dmyo', '2025', 'admin'), ('sinan', 'demirci', 'collector'), ('serhat', 'genc', 'recycler');
+	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('serhat', 'genc', 1);
 END;
 
 IF OBJECT_ID('WasteUnit', 'U') IS NULL
