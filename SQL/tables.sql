@@ -58,9 +58,9 @@ IF OBJECT_ID('WasteEntry', 'U') IS NULL
 BEGIN
 	CREATE TABLE [WasteEntry] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
 		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
+		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		quantity	DECIMAL(10,2),
 	);
 END;
