@@ -63,7 +63,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
-    <Compile Include="Tables\DMYOTable.cs" />
+    <Compile Include="DMYOTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,12 +1,11 @@
 ﻿using dmyo_oop_final_assigment.Managers;
-using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace dmyo_oop_final_assigment.Tables
+namespace dmyo_oop_final_assigment
 {
 	public interface IDMYOTable : IDataCRUD, IDataCollection
 	{
