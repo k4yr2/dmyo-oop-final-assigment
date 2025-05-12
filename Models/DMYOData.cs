@@ -4,15 +4,15 @@
 	{
 		int Id { get; }
 
-		DMYOModel Model { get; set; }
+		object Model { get; set; }
 	}
 
-	public interface IDMYOData<TModel> : IDMYOData where TModel : DMYOModel
+	public interface IDMYOData<TModel> : IDMYOData
 	{
 		new TModel Model { get; set; }
 	}
 
-	public class DMYOData<TModel> : IDMYOData<TModel>, IDMYOData where TModel : DMYOModel
+	public class DMYOData<TModel> : IDMYOData<TModel>, IDMYOData
 	{
 		public static DMYOData<TModel> Blank
 		{
@@ -53,7 +53,7 @@
 			}
 		}
 
-		DMYOModel IDMYOData.Model
+		object IDMYOData.Model
 		{
 			get
 			{

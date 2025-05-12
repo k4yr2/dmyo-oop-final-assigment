@@ -1,5 +1,4 @@
-﻿using dmyo_oop_final_assigment.Table;
-using dmyo_oop_final_assigment.Tables;
+﻿using dmyo_oop_final_assigment.Tables;
 
 namespace dmyo_oop_final_assigment.Managers
 {

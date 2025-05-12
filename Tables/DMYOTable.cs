@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace dmyo_oop_final_assigment.Table
+namespace dmyo_oop_final_assigment.Tables
 {
 	public interface IDMYOTable : IDataCRUD, IDataCollection
 	{
@@ -16,19 +16,19 @@ namespace dmyo_oop_final_assigment.Table
 
 		string[] Params { get; }
 
-		void SetParameters(DMYOModel model, SqlCommand command);
+		void SetParameters(object model, SqlCommand command);
 
-		DMYOModel GetModel(SqlDataReader reader);
+		object GetModel(SqlDataReader reader);
 	}
 
-	public interface IDMYOTable<TModel> : IDMYOTable, IDataCRUD<TModel>, IDataCollection<TModel> where TModel : DMYOModel
+	public interface IDMYOTable<TModel> : IDMYOTable, IDataCRUD<TModel>, IDataCollection<TModel>
 	{
 		void SetParameters(TModel model, SqlCommand command);
 
 		new TModel GetModel(SqlDataReader reader);
 	}
 
-	public abstract class DMYOTable<TModel> : IDMYOTable<TModel> where TModel : DMYOModel
+	public abstract class DMYOTable<TModel> : IDMYOTable<TModel>
 	{
 		public event Action OnChanged;
 
@@ -84,14 +84,14 @@ namespace dmyo_oop_final_assigment.Table
 
 		public abstract void SetParameters(TModel model, SqlCommand command);
 
-		void IDMYOTable.SetParameters(DMYOModel model, SqlCommand command)
+		void IDMYOTable.SetParameters(object model, SqlCommand command)
 		{
 			SetParameters((TModel)model, command);
 		}
 
 		public abstract TModel GetModel(SqlDataReader reader);
 
-		DMYOModel IDMYOTable.GetModel(SqlDataReader reader)
+		object IDMYOTable.GetModel(SqlDataReader reader)
 		{
 			return GetModel(reader);
 		}
@@ -111,7 +111,7 @@ namespace dmyo_oop_final_assigment.Table
 			return new DMYOData<TModel>(id, model);
 		}
 
-		IDMYOData IDataCRUD.Create(DMYOModel model, string query)
+		IDMYOData IDataCRUD.Create(object model, string query)
 		{
 			return Create((TModel)model, query);
 		}
@@ -157,7 +157,7 @@ namespace dmyo_oop_final_assigment.Table
 			return affected;
 		}
 
-		bool IDataCRUD.Update(int id, DMYOModel model, string query)
+		bool IDataCRUD.Update(int id, object model, string query)
 		{
 			return Update(id, (TModel)model, query);
 		}
