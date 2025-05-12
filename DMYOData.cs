@@ -1,4 +1,4 @@
-﻿namespace dmyo_oop_final_assigment.Models
+﻿namespace dmyo_oop_final_assigment
 {
 	public interface IDMYOData
 	{
