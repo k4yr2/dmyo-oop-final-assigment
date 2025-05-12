@@ -6,7 +6,7 @@ BEGIN
 		id			INT PRIMARY		KEY IDENTITY(1,1),
 		name		NVARCHAR(100)	NOT NULL UNIQUE,
 		password	NVARCHAR(32)	NOT NULL,
-		role		VARCHAR(20)		NOT NULL CHECK (role IN ('collector', 'recycler', 'admin'))
+		role		INT				NOT NULL CHECK (role BETWEEN 0 AND 2)
 	);
 
 	INSERT INTO [User] (name, password, role)
