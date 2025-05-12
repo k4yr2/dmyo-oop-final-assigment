@@ -53,14 +53,6 @@
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return m_model.Name;
-			}
-		}
-
 		DMYOModel IDMYOData.Model
 		{
 			get
