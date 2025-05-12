@@ -50,7 +50,7 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		[user]		INT				FOREIGN KEY REFERENCES [User](id),
-		active		BIT				DEFAULT(0)
+		collecting	BIT				DEFAULT(0)
 	);
 END;
 
