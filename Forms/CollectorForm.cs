@@ -23,6 +23,24 @@ namespace dmyo_oop_final_assigment.Forms
 				m_state = value;
 			}
 		}
+
+		public override void Refresh()
+		{
+			base.Refresh();
+
+			switch (m_state)
+			{
+				case CollectorState.Idle:
+
+					break;
+				case CollectorState.Collecting:
+
+					break;
+				case CollectorState.Distributing:
+
+					break;
+			}
+		}
 	}
 
 	public enum CollectorState
