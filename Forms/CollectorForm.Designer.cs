@@ -51,6 +51,7 @@
 			this.newButton.TabIndex = 1;
 			this.newButton.Text = "New Collection";
 			this.newButton.UseVisualStyleBackColor = true;
+			this.newButton.Click += new System.EventHandler(this.newButton_Click);
 			// 
 			// CollectorForm
 			// 

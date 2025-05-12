@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
+using System;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
@@ -82,6 +83,18 @@ namespace dmyo_oop_final_assigment.Forms
 				case CollectorState.Distributing:
 					break;
 			}
+		}
+
+		private void newButton_Click(object sender, EventArgs e)
+		{
+			m_current = TableManager.WasteCollection.Create(new WasteCollection()
+			{
+				Date = DateTime.Now,
+				User = m_user.Id,
+				Active = true
+			});
+
+			State = CollectorState.Collecting;
 		}
 	}
 
