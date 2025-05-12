@@ -16,5 +16,10 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void startButton_Click(object sender, EventArgs e)
+		{
+			new LoginForm().ShowDialog();
+		}
 	}
 }

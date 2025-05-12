@@ -30,6 +30,7 @@
 		{
 			this.bannerPanel = new System.Windows.Forms.Panel();
 			this.bannerTitle = new System.Windows.Forms.Label();
+			this.startButton = new System.Windows.Forms.Button();
 			this.bannerPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,11 +56,22 @@
 			this.bannerTitle.TabIndex = 1;
 			this.bannerTitle.Text = "DMYO 2025 Waste-Recycling Project";
 			// 
+			// startButton
+			// 
+			this.startButton.Location = new System.Drawing.Point(713, 209);
+			this.startButton.Name = "startButton";
+			this.startButton.Size = new System.Drawing.Size(75, 23);
+			this.startButton.TabIndex = 1;
+			this.startButton.Text = "Start";
+			this.startButton.UseVisualStyleBackColor = true;
+			this.startButton.Click += new System.EventHandler(this.startButton_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 244);
+			this.Controls.Add(this.startButton);
 			this.Controls.Add(this.bannerPanel);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
@@ -73,5 +85,6 @@
 
 		private System.Windows.Forms.Panel bannerPanel;
 		private System.Windows.Forms.Label bannerTitle;
+		private System.Windows.Forms.Button startButton;
 	}
 }
