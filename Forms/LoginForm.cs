@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using dmyo_oop_final_assigment.Managers;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
 {
@@ -12,6 +14,22 @@ namespace dmyo_oop_final_assigment.Forms
 		private void showBox_CheckedChanged(object sender, System.EventArgs e)
 		{
 			passwordBox.PasswordChar = showBox.Checked ? '\0' : '*';
+		}
+
+		private void loginButton_Click(object sender, System.EventArgs e)
+		{
+			var user =
+			TableManager.User.Select($"WHERE name = '{nameBox.Text}' and password = '{passwordBox.Text}'")
+				.FirstOrDefault();
+
+			if (user == null)
+			{
+				MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+
+			}
 		}
 	}
 }
