@@ -40,8 +40,11 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 			set
 			{
-				m_state = value;
-				Refresh();
+				if(m_state != value)
+				{
+					m_state = value;
+					Refresh();
+				}
 			}
 		}
 
@@ -94,7 +97,7 @@ namespace dmyo_oop_final_assigment.Forms
 				Active = true
 			});
 
-			State = CollectorState.Collecting;
+			m_state = CollectorState.Collecting;
 		}
 	}
 
