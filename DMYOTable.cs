@@ -40,7 +40,7 @@ namespace dmyo_oop_final_assigment
 		{
 			get
 			{
-				var tableParams = string.Join(", ", Params);
+				var tableParams = string.Join(", ", Params.Select(p => $"[{p}]"));
 				var valueParams = string.Join(", ", Params.Select(p => $"@{p}"));
 
 				return $"INSERT INTO [{Name}] ({tableParams}) VALUES ({valueParams}); SELECT SCOPE_IDENTITY();";

@@ -8,7 +8,7 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "WasteCollection";
 
-		public override string[] Params => new string[] { "date", "user, collecting" };
+		public override string[] Params => new string[] { "date", "user", "collecting" };
 
 		public override void SetParameters(WasteCollection collection, SqlCommand command)
 		{
