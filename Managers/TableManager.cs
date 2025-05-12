@@ -4,13 +4,13 @@ namespace dmyo_oop_final_assigment.Managers
 {
 	public static class TableManager
 	{
-		private static UserTable m_userTable = new UserTable();
+		private static readonly UserTable m_userTable = new UserTable();
 
-		private static WasteTypeTable m_wasteType = new WasteTypeTable();
+		private static readonly WasteTypeTable m_wasteType = new WasteTypeTable();
 
-		private static WasteCategoryTable m_wasteCategory = new WasteCategoryTable();
+		private static readonly WasteCategoryTable m_wasteCategory = new WasteCategoryTable();
 
-		private static WasteCollectionTable m_wasteCollection = new WasteCollectionTable();
+		private static readonly WasteCollectionTable m_wasteCollection = new WasteCollectionTable();
 
 		//
 
