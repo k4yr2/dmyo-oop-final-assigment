@@ -54,9 +54,9 @@ BEGIN
 	);
 END;
 
-IF OBJECT_ID('WasteEntry', 'U') IS NULL
+IF OBJECT_ID('Waste', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteEntry] (
+	CREATE TABLE [Waste] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
