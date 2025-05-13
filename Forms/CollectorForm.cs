@@ -123,14 +123,6 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			var form = new WasteForm(collectingControl);
 			form.ShowDialog();
-
-			var control = form.Control; 
-			
-			if(control != null)
-			{
-				control.Width = dataPanel.Width;
-				dataPanel.Controls.Add(control);
-			}
 		}
 
 		private void completeButton_Click(object sender, EventArgs e)

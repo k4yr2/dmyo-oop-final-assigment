@@ -58,6 +58,7 @@ namespace dmyo_oop_final_assigment.Forms
 			if (m_control == null)
 			{
 				m_control = new WasteControl(m_collection, TableManager.Waste.Create(waste));
+				m_collection.Panel.Controls.Add(m_control);
 			}
 			else
 			{
