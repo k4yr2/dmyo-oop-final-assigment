@@ -30,6 +30,14 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		public Panel Panel
+		{
+			get
+			{
+				return panel;
+			}
+		}
+
 		
 		public void Bind(DMYOData<WasteCollection> data)
 		{
