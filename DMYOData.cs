@@ -64,5 +64,13 @@
 				m_model = (TModel)value;
 			}
 		}
+
+		public string Display
+		{
+			get
+			{
+				return Model?.ToString() ?? "BLANK";
+			}
+		}
 	}
 }
