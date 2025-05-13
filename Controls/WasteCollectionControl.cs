@@ -1,30 +1,39 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class WasteCollectionControl : UserControl
+	public partial class WasteCollectionControl : UserControl, IDataLink<WasteCollection> 
 	{
-		private WasteCollection m_collection = null;
+		private DMYOData<WasteCollection> m_source = null;
 
-		public WasteCollectionControl(WasteCollection collection)
+		public WasteCollectionControl(DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
-			m_collection = collection;
+			m_source = source;
 		}
 
 
-		public WasteCollection Collection
+		public DMYOData<WasteCollection> Data
 		{
 			get
 			{
-				return m_collection;
+				return m_source;
 			}
-			set
-			{
-				m_collection = value;
-				Refresh();
-			}
+		}
+
+		
+		public void Bind(DMYOData<WasteCollection> data)
+		{
+			Refresh();
+		}
+
+		public override void Refresh()
+		{
+			base.Refresh();
+
+
 		}
 	}
 }
