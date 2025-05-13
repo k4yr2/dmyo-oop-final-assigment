@@ -11,7 +11,7 @@ namespace dmyo_oop_final_assigment.Forms
 	{
 		private WasteControl m_control = null;
 
-		private DMYOData<WasteCollection> m_collection = null;
+		private WasteCollectionControl m_collection = null;
 
 		public WasteForm()
 		{
@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Forms
 			typeBox.DisplayMember = "Display";
 		}
 
-		public WasteForm(DMYOData<WasteCollection> collection) : this()
+		public WasteForm(WasteCollectionControl collection) : this()
 		{
 			m_control = null;
 			m_collection = collection;
@@ -50,7 +50,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var waste = new Waste()
 			{
 				Date = DateTime.Now,
-				Collection = m_collection.Id,
+				Collection = m_collection.Data.Id,
 				Type = (int)typeBox.SelectedValue,
 				Quantity = quantity,
 			};
