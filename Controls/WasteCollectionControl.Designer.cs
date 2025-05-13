@@ -33,6 +33,8 @@
 			// 
 			// panel
 			// 
+			this.panel.AutoScroll = true;
+			this.panel.AutoScrollMargin = new System.Drawing.Size(30, 30);
 			this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.panel.Location = new System.Drawing.Point(0, 0);
@@ -40,6 +42,7 @@
 			this.panel.Size = new System.Drawing.Size(524, 365);
 			this.panel.TabIndex = 0;
 			this.panel.WrapContents = false;
+			this.panel.Resize += new System.EventHandler(this.panel_Resize);
 			// 
 			// WasteCollectionControl
 			// 

@@ -1,6 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -50,9 +51,20 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
 				{
-					var control = new WasteControl(this, waste);
+					var control = new WasteControl(this, waste)
+					{
+						Width = Width - 25
+					};
 					panel.Controls.Add(control);
 				}
+			}
+		}
+
+		private void panel_Resize(object sender, System.EventArgs e)
+		{
+			foreach (var item in panel.Controls.OfType<WasteControl>())
+			{
+				item.Width = Width - 25;
 			}
 		}
 	}
