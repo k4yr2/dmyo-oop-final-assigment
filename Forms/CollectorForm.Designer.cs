@@ -32,12 +32,14 @@
 			this.newButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.Panel();
 			this.managePanel = new System.Windows.Forms.Panel();
-			this.dataPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.completeButton = new System.Windows.Forms.Button();
 			this.addButton = new System.Windows.Forms.Button();
+			this.completeButton = new System.Windows.Forms.Button();
+			this.dataPanel = new System.Windows.Forms.Panel();
+			this.collectingControl = new dmyo_oop_final_assigment.Controls.WasteCollectionControl();
 			this.selectionPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
 			this.managePanel.SuspendLayout();
+			this.dataPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// selectionPanel
@@ -84,14 +86,16 @@
 			this.managePanel.Size = new System.Drawing.Size(800, 40);
 			this.managePanel.TabIndex = 0;
 			// 
-			// dataPanel
+			// addButton
 			// 
-			this.dataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.dataPanel.Location = new System.Drawing.Point(0, 40);
-			this.dataPanel.Name = "dataPanel";
-			this.dataPanel.Size = new System.Drawing.Size(800, 370);
-			this.dataPanel.TabIndex = 1;
+			this.addButton.Location = new System.Drawing.Point(94, 5);
+			this.addButton.Margin = new System.Windows.Forms.Padding(5);
+			this.addButton.Name = "addButton";
+			this.addButton.Size = new System.Drawing.Size(50, 30);
+			this.addButton.TabIndex = 1;
+			this.addButton.Text = "Add";
+			this.addButton.UseVisualStyleBackColor = true;
+			this.addButton.Click += new System.EventHandler(this.addButton_Click);
 			// 
 			// completeButton
 			// 
@@ -104,16 +108,22 @@
 			this.completeButton.UseVisualStyleBackColor = true;
 			this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
 			// 
-			// addButton
+			// dataPanel
 			// 
-			this.addButton.Location = new System.Drawing.Point(94, 5);
-			this.addButton.Margin = new System.Windows.Forms.Padding(5);
-			this.addButton.Name = "addButton";
-			this.addButton.Size = new System.Drawing.Size(50, 30);
-			this.addButton.TabIndex = 1;
-			this.addButton.Text = "Add";
-			this.addButton.UseVisualStyleBackColor = true;
-			this.addButton.Click += new System.EventHandler(this.addButton_Click);
+			this.dataPanel.Controls.Add(this.collectingControl);
+			this.dataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataPanel.Location = new System.Drawing.Point(0, 40);
+			this.dataPanel.Name = "dataPanel";
+			this.dataPanel.Size = new System.Drawing.Size(800, 370);
+			this.dataPanel.TabIndex = 1;
+			// 
+			// collectingControl
+			// 
+			this.collectingControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.collectingControl.Location = new System.Drawing.Point(0, 0);
+			this.collectingControl.Name = "collectingControl";
+			this.collectingControl.Size = new System.Drawing.Size(800, 370);
+			this.collectingControl.TabIndex = 0;
 			// 
 			// CollectorForm
 			// 
@@ -127,6 +137,7 @@
 			this.selectionPanel.ResumeLayout(false);
 			this.contentPanel.ResumeLayout(false);
 			this.managePanel.ResumeLayout(false);
+			this.dataPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -136,9 +147,10 @@
 		private System.Windows.Forms.Panel selectionPanel;
 		private System.Windows.Forms.Button newButton;
 		private System.Windows.Forms.Panel contentPanel;
-		private System.Windows.Forms.FlowLayoutPanel dataPanel;
 		private System.Windows.Forms.Panel managePanel;
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Button completeButton;
+		private System.Windows.Forms.Panel dataPanel;
+		private Controls.WasteCollectionControl collectingControl;
 	}
 }

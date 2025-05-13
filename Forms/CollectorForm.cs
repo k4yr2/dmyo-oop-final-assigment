@@ -12,8 +12,6 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private CollectorState m_state = CollectorState.Idle;
 
-		private DMYOData<WasteCollection> m_current;
-
 		public CollectorForm(DMYOData<Person> person)
 		{
 			m_person = person;
@@ -50,15 +48,11 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
-		public DMYOData<WasteCollection> Current
+		public WasteCollectionControl Current
 		{
 			get
 			{
-				return m_current;
-			}
-			set
-			{
-				m_current = value;
+				return collectingControl;
 			}
 		}
 
@@ -70,7 +64,6 @@ namespace dmyo_oop_final_assigment.Forms
 			completeButton.Visible = false;
 			addButton.Visible = false;
 			managePanel.Visible = true;
-			dataPanel.Controls.Clear();
 
 			switch (m_state)
 			{
@@ -80,7 +73,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 						if (collection != null)
 						{
-							m_current = collection;
+							collectingControl.Bind(collection);
 							State = CollectorState.Collecting;
 							return;
 						}
@@ -100,9 +93,9 @@ namespace dmyo_oop_final_assigment.Forms
 						completeButton.Visible = true;
 						addButton.Visible = true;
 
-						foreach (var data in TableManager.Waste.Select($"where collection = {m_current.Id}"))
+						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Data.Id}"))
 						{
-							var control = new WasteControl(m_current, data);
+							var control = new WasteControl(collectingControl, data);
 							control.Width = dataPanel.Width;
 
 							dataPanel.Controls.Add(control);
@@ -116,19 +109,19 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void newButton_Click(object sender, EventArgs e)
 		{
-			m_current = TableManager.WasteCollection.Create(new WasteCollection()
+			collectingControl.Bind(TableManager.WasteCollection.Create(new WasteCollection()
 			{
 				Date = DateTime.Now,
 				Person = Person.Id,
 				Collecting = true
-			});
+			}));
 
 			State = CollectorState.Collecting;
 		}
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-			var form = new WasteForm(m_current);
+			var form = new WasteForm(collectingControl);
 			form.ShowDialog();
 
 			var control = form.Control; 
