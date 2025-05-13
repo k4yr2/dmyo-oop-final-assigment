@@ -30,8 +30,11 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			InitializeComponent();
 			m_collection = collection;
+
 			Bind(data);
 		}
+
+		//
 
 		public WasteCollectionControl Collection
 		{
@@ -57,10 +60,19 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		//
 
 		public void Bind(DMYOData<Waste> data)
 		{
-			if((m_data = data) == null)
+			m_data = data;
+			Refresh();
+		}
+
+		public override void Refresh()
+		{
+			base.Refresh();
+
+			if (m_data== null)
 			{
 				deleteButton.Enabled = false;
 				typeLabel.Text = "Blank Type";
@@ -78,9 +90,9 @@ namespace dmyo_oop_final_assigment.Controls
 				abbrLabel.Text = "pcs";
 				updateButton.Enabled = false;
 			}
-
 		}
 
+		//
 
 		private void WasteControl_Load(object sender, EventArgs e)
 		{
