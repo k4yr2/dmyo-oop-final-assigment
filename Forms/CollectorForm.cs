@@ -103,6 +103,8 @@ namespace dmyo_oop_final_assigment.Forms
 						foreach (var data in TableManager.Waste.Select($"where collection = {m_current.Id}"))
 						{
 							var control = new WasteControl(m_current, data);
+							control.Width = dataPanel.Width;
+
 							dataPanel.Controls.Add(control);
 						}
 					}
@@ -129,8 +131,13 @@ namespace dmyo_oop_final_assigment.Forms
 			var form = new WasteForm(m_current);
 			form.ShowDialog();
 
-			var control = form.Control;
-			dataPanel.Controls.Add(control);
+			var control = form.Control; 
+			
+			if(control != null)
+			{
+				control.Width = dataPanel.Width;
+				dataPanel.Controls.Add(control);
+			}
 		}
 
 		private void completeButton_Click(object sender, EventArgs e)
