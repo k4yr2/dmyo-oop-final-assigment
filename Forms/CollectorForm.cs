@@ -117,7 +117,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-
+			new WasteForm(m_current).ShowDialog();
 		}
 
 		private void completeButton_Click(object sender, EventArgs e)
