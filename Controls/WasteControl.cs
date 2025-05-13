@@ -98,5 +98,24 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 
 		}
+
+		private void deleteButton_Click(object sender, EventArgs e)
+		{
+			if(m_data == null)
+			{
+				MessageBox.Show("No data to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				if(TableManager.Waste.Delete(m_data.Id))
+				{
+					m_collection.Refresh();
+				}
+				else
+				{
+					MessageBox.Show("Failed to delete data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
 	}
 }
