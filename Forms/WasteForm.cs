@@ -63,7 +63,9 @@ namespace dmyo_oop_final_assigment.Forms
 			else
 			{
 				TableManager.Waste.Update(m_control.Data.Id, waste);
-				Control.Bind(Control.Data);
+
+				Control.Data.Model = waste;
+				Control.Refresh();
 			}
 
 			Close();
