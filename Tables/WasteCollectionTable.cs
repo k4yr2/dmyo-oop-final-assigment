@@ -8,12 +8,12 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "WasteCollection";
 
-		public override string[] Params => new string[] { "date", "user", "collecting" };
+		public override string[] Params => new string[] { "date", "person", "collecting" };
 
 		public override void SetParameters(WasteCollection collection, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@date", collection.Date);
-			command.Parameters.AddWithValue("@user", collection.Person);
+			command.Parameters.AddWithValue("@person", collection.Person);
 			command.Parameters.AddWithValue("@collecting", collection.Collecting);
 		}
 
