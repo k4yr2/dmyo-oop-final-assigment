@@ -33,6 +33,8 @@ namespace dmyo_oop_final_assigment.Forms
 			m_control = control;
 			m_collection = control.Collection;
 			button.Text = "Update";
+			typeBox.SelectedValue = control.Data.Model.Type;
+			quantityBox.Text = control.Data.Model.Quantity.ToString();
 		}
 
 
@@ -41,7 +43,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void button_Click(object sender, EventArgs e)
 		{
-			if(!int.TryParse(quantityBox.Text, out int quantity))
+			if(!decimal.TryParse(quantityBox.Text, out decimal quantity))
 			{
 				MessageBox.Show("Invalid quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
