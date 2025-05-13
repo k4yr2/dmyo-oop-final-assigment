@@ -69,6 +69,7 @@
     <Compile Include="Managers\RepoManager.cs" />
     <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Waste.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Models\WasteCollection.cs" />
     <Compile Include="Providers\IDataLink.cs" />
