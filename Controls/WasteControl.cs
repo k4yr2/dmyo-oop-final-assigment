@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Managers;
+﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
@@ -88,7 +89,7 @@ namespace dmyo_oop_final_assigment.Controls
 				typeLabel.Text = m_type?.Model.Name ?? "Blank Type";
 				quantityLabel.Text = (m_data?.Model.Quantity ?? 0).ToString();
 				abbrLabel.Text = "pcs";
-				updateButton.Enabled = false;
+				updateButton.Enabled = true;
 			}
 		}
 
@@ -115,6 +116,18 @@ namespace dmyo_oop_final_assigment.Controls
 				{
 					MessageBox.Show("Failed to delete data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
+			}
+		}
+
+		private void updateButton_Click(object sender, EventArgs e)
+		{
+			if (m_data == null)
+			{
+				MessageBox.Show("No data to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				new WasteForm(this).ShowDialog();
 			}
 		}
 	}

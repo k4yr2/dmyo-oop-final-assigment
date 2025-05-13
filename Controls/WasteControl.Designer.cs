@@ -77,6 +77,7 @@
 			this.updateButton.TabIndex = 0;
 			this.updateButton.Text = "🖊️";
 			this.updateButton.UseVisualStyleBackColor = true;
+			this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
 			// 
 			// abbrLabel
 			// 
