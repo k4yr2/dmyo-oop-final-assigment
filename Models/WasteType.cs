@@ -49,5 +49,11 @@
 				m_category = value;
 			}
 		}
+
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}	
 }
