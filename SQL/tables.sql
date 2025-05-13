@@ -20,6 +20,9 @@ BEGIN
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
 	);
+
+	INSERT INTO WasteUnit (name, abbr)
+	VALUES ('Kilogram', 'kg'), ('Liter', 'lt'), ('Piece', 'pcs');
 END;
 
 IF OBJECT_ID('WasteCategory', 'U') IS NULL
@@ -31,6 +34,11 @@ BEGIN
 		hazardLevel INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
 		recyclable	BIT				DEFAULT(0)
 	);
+
+	INSERT INTO WasteCategory (name, description, hazardLevel, recyclable) VALUES 
+	('Organic', 'Organic content such as food waste.', 1, 1),
+	('Chemical', 'Industrial chemical waste.', 4, 0),
+	('Electronic', 'Electronic device parts.', 2, 1);
 END;
 
 IF OBJECT_ID('WasteType', 'U') IS NULL
@@ -42,6 +50,11 @@ BEGIN
 		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
 		category	INT				FOREIGN KEY REFERENCES WasteCategory(id)
 	);
+
+	INSERT INTO WasteType (name, description, unit, category) VALUES
+	('Food Waste', 'Leftover food materials', 1, 1),
+	('Acid Solution', 'Laboratory acids', 2, 2),
+	('Broken Phone', 'Non-functioning cell phones', 3, 3);
 END;
 
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
