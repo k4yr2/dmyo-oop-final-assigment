@@ -6,6 +6,8 @@ namespace dmyo_oop_final_assigment.Managers
 	{
 		static readonly DMYORepo<Person> m_person = new DMYORepo<Person>(TableManager.Person);
 
+		static readonly DMYORepo<Waste> m_waste = new DMYORepo<Waste>(TableManager.Waste);
+
 		static readonly DMYORepo<WasteType> m_wasteType = new DMYORepo<WasteType>(TableManager.WasteType);
 
 		static readonly DMYORepo<WasteCategory> m_wasteCategory = new DMYORepo<WasteCategory>(TableManager.WasteCategory);
@@ -18,6 +20,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_person;
+			}
+		}
+
+		public static DMYORepo<Waste> Waste
+		{
+			get
+			{
+				return m_waste;
 			}
 		}
 
