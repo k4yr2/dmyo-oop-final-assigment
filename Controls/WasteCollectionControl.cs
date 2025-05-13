@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
 
@@ -33,7 +34,12 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			base.Refresh();
 
-
+			panel.Controls.Clear();
+			foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
+			{
+				var control = new WasteControl(this, waste);
+				panel.Controls.Add(control);
+			}
 		}
 	}
 }
