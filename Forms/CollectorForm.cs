@@ -102,7 +102,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				Date = DateTime.Now,
 				User = m_user.Id,
-				Collection = true
+				Collecting = true
 			});
 
 			m_state = CollectorState.Collecting;
