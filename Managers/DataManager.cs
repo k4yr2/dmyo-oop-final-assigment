@@ -79,13 +79,13 @@ namespace dmyo_oop_final_assigment.Managers
 
 		public static void FillTable(DataTable table, string query)
 		{
-			using (SqlConnection connection = new SqlConnection(connectionString))
+			UseConnection((connection) =>
 			{
 				using (SqlDataAdapter adapter = new SqlDataAdapter(query, connectionString))
 				{
 					adapter.Fill(table);
 				}
-			}
+			});
 		}
 	}
 }
