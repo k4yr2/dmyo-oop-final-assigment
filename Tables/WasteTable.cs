@@ -24,7 +24,7 @@ namespace dmyo_oop_final_assigment.Tables
 				Date = reader.GetDateTime(1),
 				Collection = reader.GetInt32(2),
 				Type = reader.GetInt32(3),
-				Quantity = reader.GetInt32(4)
+				Quantity = reader.GetDecimal(4)
 			};
 		}
 	}

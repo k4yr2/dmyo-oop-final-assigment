@@ -10,7 +10,7 @@ namespace dmyo_oop_final_assigment.Models
 
 		private int m_type;
 
-		private double m_quantity;
+		private decimal m_quantity;
 
 		public Waste()
 		{
@@ -54,7 +54,7 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public double Quantity
+		public decimal Quantity
 		{
 			get
 			{
