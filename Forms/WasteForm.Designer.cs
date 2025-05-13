@@ -79,6 +79,7 @@
 			this.button.TabIndex = 3;
 			this.button.Text = "Add Waste";
 			this.button.UseVisualStyleBackColor = true;
+			this.button.Click += new System.EventHandler(this.button_Click);
 			// 
 			// WasteForm
 			// 

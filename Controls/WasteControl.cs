@@ -15,21 +15,31 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class WasteControl : UserControl, IDataLink<Waste>
 	{
+		private DMYOData<WasteCollection> m_collection = null;
+
 		private DMYOData<Waste> m_data = null;
 
 		private DMYOData<WasteType> m_type = null;
 
-		public WasteControl() : this(null)
+		public WasteControl(DMYOData<WasteCollection> collection) : this(collection, null)
 		{
 
 		}
 
-		public WasteControl(DMYOData<Waste> data)
+		public WasteControl(DMYOData<WasteCollection> collection, DMYOData<Waste> data)
 		{
 			InitializeComponent();
+			m_collection = collection;
 			Bind(data);
 		}
 
+		public DMYOData<WasteCollection> Collection
+		{
+			get
+			{
+				return m_collection;
+			}
+		}
 
 		public DMYOData<Waste> Data
 		{
