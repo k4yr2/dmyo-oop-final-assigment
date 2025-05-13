@@ -9,6 +9,11 @@ namespace dmyo_oop_final_assigment.Controls
 	{
 		private DMYOData<WasteCollection> m_source = null;
 
+		public WasteCollectionControl() : this(null)
+		{
+
+		}
+
 		public WasteCollectionControl(DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
@@ -35,10 +40,18 @@ namespace dmyo_oop_final_assigment.Controls
 			base.Refresh();
 
 			panel.Controls.Clear();
-			foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
+
+			if(m_source == null)
 			{
-				var control = new WasteControl(this, waste);
-				panel.Controls.Add(control);
+				
+			}
+			else
+			{
+				foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
+				{
+					var control = new WasteControl(this, waste);
+					panel.Controls.Add(control);
+				}
 			}
 		}
 	}
