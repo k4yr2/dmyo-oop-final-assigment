@@ -53,6 +53,7 @@
     <Compile Include="Controls\WasteControl.Designer.cs">
       <DependentUpon>WasteControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DMYORepo.cs" />
     <Compile Include="Forms\CollectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
