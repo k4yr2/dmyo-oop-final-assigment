@@ -17,6 +17,7 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			m_user = user;
 			InitializeComponent();
+			Refresh();
 		}
 
 
@@ -77,11 +78,18 @@ namespace dmyo_oop_final_assigment.Forms
 							m_state = CollectorState.Collecting;
 							return;
 						}
+
+						newButton.Enabled = true;
+						newButton.Text = "Collect";
 					}
 					break;
 				case CollectorState.Browsing:
 					break;
 				case CollectorState.Collecting:
+					{
+						newButton.Enabled = false;
+						newButton.Text = "Collecting";
+					}
 					break;
 				case CollectorState.Distributing:
 					break;
