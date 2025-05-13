@@ -114,6 +114,16 @@ namespace dmyo_oop_final_assigment.Forms
 
 			State = CollectorState.Collecting;
 		}
+
+		private void addButton_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void completeButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 
 	public enum CollectorState

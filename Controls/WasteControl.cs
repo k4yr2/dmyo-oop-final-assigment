@@ -1,4 +1,7 @@
-﻿using System;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Providers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +13,64 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class WasteControl : UserControl
+	public partial class WasteControl : UserControl, IDataLink<Waste>
 	{
-		public WasteControl()
+		private DMYOData<Waste> m_data = null;
+
+		private DMYOData<WasteType> m_type = null;
+
+		public WasteControl() : this(null)
+		{
+
+		}
+
+		public WasteControl(DMYOData<Waste> data)
 		{
 			InitializeComponent();
+			Bind(data);
 		}
+
+
+		public DMYOData<Waste> Data
+		{
+			get
+			{
+				return m_data;
+			}
+		}
+
+		public DMYOData<WasteType> Type
+		{
+			get
+			{
+				return m_type;
+			}
+		}
+
+
+		public void Bind(DMYOData<Waste> data)
+		{
+			if((m_data = data) == null)
+			{
+				deleteButton.Enabled = false;
+				typeLabel.Text = "Blank Type";
+				quantityLabel.Text = "0";
+				abbrLabel.Text = "pcs";
+				updateButton.Enabled = false;
+			}
+			else
+			{
+				m_type = TableManager.WasteType.Read(m_data.Model.Type);
+
+				deleteButton.Enabled = true;
+				typeLabel.Text = m_type?.Model.Name ?? "Blank Type";
+				quantityLabel.Text = (m_data?.Model.Quantity ?? 0).ToString();
+				abbrLabel.Text = "pcs";
+				updateButton.Enabled = false;
+			}
+
+		}
+
 
 		private void WasteControl_Load(object sender, EventArgs e)
 		{

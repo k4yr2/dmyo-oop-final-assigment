@@ -102,7 +102,7 @@
 			this.completeButton.TabIndex = 1;
 			this.completeButton.Text = "Complete";
 			this.completeButton.UseVisualStyleBackColor = true;
-			this.completeButton.Click += new System.EventHandler(this.newButton_Click);
+			this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
 			// 
 			// addButton
 			// 
@@ -113,7 +113,7 @@
 			this.addButton.TabIndex = 1;
 			this.addButton.Text = "Add";
 			this.addButton.UseVisualStyleBackColor = true;
-			this.addButton.Click += new System.EventHandler(this.newButton_Click);
+			this.addButton.Click += new System.EventHandler(this.addButton_Click);
 			// 
 			// CollectorForm
 			// 
