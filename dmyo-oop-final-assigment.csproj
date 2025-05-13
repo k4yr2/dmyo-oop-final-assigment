@@ -90,6 +90,7 @@
     <Compile Include="Tables\PersonTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteCollectionTable.cs" />
+    <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <EmbeddedResource Include="Controls\WasteControl.resx">
       <DependentUpon>WasteControl.cs</DependentUpon>
