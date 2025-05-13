@@ -14,7 +14,7 @@ namespace dmyo_oop_final_assigment.Tables
 		{
 			command.Parameters.AddWithValue("@date", collection.Date);
 			command.Parameters.AddWithValue("@user", collection.User);
-			command.Parameters.AddWithValue("@collecting", collection.Collection);
+			command.Parameters.AddWithValue("@collecting", collection.Collecting);
 		}
 
 		public override WasteCollection GetModel(SqlDataReader reader)
@@ -23,7 +23,7 @@ namespace dmyo_oop_final_assigment.Tables
 			{
 				Date = reader.GetDateTime(1),
 				User = reader.GetInt32(2),
-				Collection = reader.GetBoolean(3)
+				Collecting = reader.GetBoolean(3)
 			};
 		}
 
@@ -31,7 +31,7 @@ namespace dmyo_oop_final_assigment.Tables
 
 		public DMYOData<WasteCollection> GetCollection(int user)
 		{
-			return Select($"WHERE collecting = 1 and user = {user}").FirstOrDefault();
+			return Select($"WHERE collecting = 1 and [user] = {user}").FirstOrDefault();
 		}
 	}
 }

@@ -8,7 +8,7 @@ namespace dmyo_oop_final_assigment.Models
 
 		private DateTime m_date;
 
-		private bool m_collection;
+		private bool m_collecting;
 
 		public WasteCollection()
 		{
@@ -40,15 +40,15 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public bool Collection
+		public bool Collecting
 		{
 			get
 			{
-				return m_collection;
+				return m_collecting;
 			}
 			set
 			{
-				m_collection = value;
+				m_collecting = value;
 			}
 		}
 	}
