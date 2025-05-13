@@ -40,5 +40,10 @@ namespace dmyo_oop_final_assigment
 			m_list.Clear();
 			m_list.AddRange(m_table.Select());
 		}
+
+		public DMYOData<TModel> Find(int id)
+		{
+			return Datas.Where(d => d.Id == id).FirstOrDefault();
+		}
 	}
 }
