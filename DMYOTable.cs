@@ -117,6 +117,7 @@ namespace dmyo_oop_final_assigment
 
 		public DMYOData<TModel> Read(int id, string query = null)
 		{
+			bool found = false;
 			TModel model = default;
 
 			DataManager.ExecuteCommand(_Query(ReadQuery, query), (SqlCommand command) =>
@@ -127,10 +128,16 @@ namespace dmyo_oop_final_assigment
 				if (reader.Read())
 				{
 					model = GetModel(reader);
+					found = true;
 				}	
 			});
 
-			return new DMYOData<TModel>(id, model);
+			if(found)
+			{
+				return new DMYOData<TModel>(id, model);
+			}
+
+			return null;
 		}
 
 		IDMYOData IDataCRUD.Read(int id, string query)
