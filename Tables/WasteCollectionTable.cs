@@ -13,7 +13,7 @@ namespace dmyo_oop_final_assigment.Tables
 		public override void SetParameters(WasteCollection collection, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@date", collection.Date);
-			command.Parameters.AddWithValue("@user", collection.User);
+			command.Parameters.AddWithValue("@user", collection.Person);
 			command.Parameters.AddWithValue("@collecting", collection.Collecting);
 		}
 
@@ -22,7 +22,7 @@ namespace dmyo_oop_final_assigment.Tables
 			return new WasteCollection()
 			{
 				Date = reader.GetDateTime(1),
-				User = reader.GetInt32(2),
+				Person = reader.GetInt32(2),
 				Collecting = reader.GetBoolean(3)
 			};
 		}

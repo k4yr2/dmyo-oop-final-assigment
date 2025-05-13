@@ -7,8 +7,6 @@ namespace dmyo_oop_final_assigment
 {
 	static internal class Program
 	{
-		static private DMYOData<User> m_user;
-
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -18,19 +16,6 @@ namespace dmyo_oop_final_assigment
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
-		}
-
-
-		static public DMYOData<User> User
-		{
-			get
-			{
-				return m_user;
-			}
-			set
-			{
-				m_user = value;
-			}
 		}
 	}
 }

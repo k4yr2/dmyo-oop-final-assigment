@@ -1,14 +1,14 @@
 ﻿namespace dmyo_oop_final_assigment.Models
 {
-	public class User
+	public class Person
 	{
 		private string m_name;
 
 		private string m_password;
 
-		private UserRole m_role;
+		private PersonRole m_role;
 
-		public User()
+		public Person()
 		{
 
 		}
@@ -38,7 +38,7 @@
 			}
 		}
 
-		public UserRole Role
+		public PersonRole Role
 		{
 			get
 			{
@@ -51,7 +51,7 @@
 		}	
 	}
 
-	public enum UserRole
+	public enum PersonRole
 	{
 		Collector = 0,
 		Recycler = 1,

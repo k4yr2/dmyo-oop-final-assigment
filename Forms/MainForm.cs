@@ -21,20 +21,20 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void loginButton_Click(object sender, EventArgs e)
 		{
-			var user = TableManager.User.Select($"WHERE name = '{nameBox.Text}' and password = '{passwordBox.Text}'")
+			var person = TableManager.Person.Select($"WHERE name = '{nameBox.Text}' and password = '{passwordBox.Text}'")
 				.FirstOrDefault();
 
-			if (user == null)
+			if (person == null)
 			{
 				MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
 			{
 				Form form;
-				switch (user.Model.Role)
+				switch (person.Model.Role)
 				{
-					case Models.UserRole.Collector:
-						form = new CollectorForm(user);
+					case Models.PersonRole.Collector:
+						form = new CollectorForm(person);
 						break;
 					default:
 						form = null;

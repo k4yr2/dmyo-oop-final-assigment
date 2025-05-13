@@ -4,7 +4,7 @@ namespace dmyo_oop_final_assigment.Models
 {
 	public class WasteCollection
 	{
-		private int m_user;
+		private int m_person;
 
 		private DateTime m_date;
 
@@ -16,15 +16,15 @@ namespace dmyo_oop_final_assigment.Models
 		}
 
 
-		public int User
+		public int Person
 		{
 			get
 			{
-				return m_user;
+				return m_person;
 			}
 			set
 			{
-				m_user = value;
+				m_person = value;
 			}
 		}
 

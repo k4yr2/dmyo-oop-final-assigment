@@ -1,15 +1,15 @@
 USE dmyo_oop_final_assigment;
 
-IF OBJECT_ID('User', 'U') IS NULL
+IF OBJECT_ID('Person', 'U') IS NULL
 BEGIN
-	CREATE TABLE [User] (
+	CREATE TABLE Person (
 		id			INT PRIMARY		KEY IDENTITY(1,1),
 		name		NVARCHAR(100)	NOT NULL UNIQUE,
 		password	NVARCHAR(32)	NOT NULL,
 		role		INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
 	);
 
-	INSERT INTO [User] (name, password, role)
+	INSERT INTO Person (name, password, role)
 	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('serhat', 'genc', 1);
 END;
 

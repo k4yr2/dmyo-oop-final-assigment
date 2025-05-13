@@ -60,7 +60,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\TableManager.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Models\WasteCollection.cs" />
     <Compile Include="Providers\IDataLink.cs" />
@@ -78,7 +78,7 @@
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
     <Compile Include="DMYOTable.cs" />
-    <Compile Include="Tables\UserTable.cs" />
+    <Compile Include="Tables\PersonTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteCollectionTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />

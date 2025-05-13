@@ -7,29 +7,29 @@ namespace dmyo_oop_final_assigment.Forms
 {
 	public partial class CollectorForm : Form
 	{
-		private DMYOData<User> m_user = null;
+		private DMYOData<Person> m_person = null;
 
 		private CollectorState m_state = CollectorState.Idle;
 
 		private DMYOData<WasteCollection> m_current;
 
-		public CollectorForm(DMYOData<User> user)
+		public CollectorForm(DMYOData<Person> person)
 		{
-			m_user = user;
+			m_person = person;
 			InitializeComponent();
 			Refresh();
 		}
 
 
-		public DMYOData<User> User
+		public DMYOData<Person> Person
 		{
 			get
 			{
-				return m_user;
+				return m_person;
 			}
 			set
 			{
-				m_user = value;
+				m_person = value;
 			}
 		}
 
@@ -70,12 +70,12 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				case CollectorState.Idle:
 					{
-						var collection = TableManager.WasteCollection.GetCollection(User.Id);
+						var collection = TableManager.WasteCollection.GetCollection(Person.Id);
 
 						if (collection != null)
 						{
 							m_current = collection;
-							m_state = CollectorState.Collecting;
+							State = CollectorState.Collecting;
 							return;
 						}
 
@@ -101,11 +101,11 @@ namespace dmyo_oop_final_assigment.Forms
 			m_current = TableManager.WasteCollection.Create(new WasteCollection()
 			{
 				Date = DateTime.Now,
-				User = m_user.Id,
+				Person = Person.Id,
 				Collecting = true
 			});
 
-			m_state = CollectorState.Collecting;
+			State = CollectorState.Collecting;
 		}
 	}
 
