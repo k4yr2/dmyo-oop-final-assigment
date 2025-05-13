@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Managers;
+﻿using dmyo_oop_final_assigment.Controls;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using System;
 using System.Windows.Forms;
@@ -65,9 +66,11 @@ namespace dmyo_oop_final_assigment.Forms
 		public override void Refresh()
 		{
 			base.Refresh();
+
 			completeButton.Visible = false;
 			addButton.Visible = false;
 			managePanel.Visible = true;
+			dataPanel.Controls.Clear();
 
 			switch (m_state)
 			{
@@ -96,6 +99,12 @@ namespace dmyo_oop_final_assigment.Forms
 
 						completeButton.Visible = true;
 						addButton.Visible = true;
+
+						foreach (var data in TableManager.Waste.Select($"where collection = {m_current.Id}"))
+						{
+							var control = new WasteControl(m_current, data);
+							dataPanel.Controls.Add(control);
+						}
 					}
 					break;
 				case CollectorState.Distributing:
@@ -117,7 +126,11 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-			new WasteForm(m_current).ShowDialog();
+			var form = new WasteForm(m_current);
+			form.ShowDialog();
+
+			var control = form.Control;
+			dataPanel.Controls.Add(control);
 		}
 
 		private void completeButton_Click(object sender, EventArgs e)
