@@ -15,7 +15,7 @@ END;
 
 IF OBJECT_ID('WasteUnit', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteUnit] (
+	CREATE TABLE WasteUnit (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
@@ -24,7 +24,7 @@ END;
 
 IF OBJECT_ID('WasteCategory', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteCategory] (
+	CREATE TABLE WasteCategory (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		description NVARCHAR(500),
@@ -35,7 +35,7 @@ END;
 
 IF OBJECT_ID('WasteType', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteType] (
+	CREATE TABLE WasteType (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		name		NVARCHAR(50)	NOT NULL UNIQUE,
 		description NVARCHAR(500),
@@ -46,7 +46,7 @@ END;
 
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteCollection] (
+	CREATE TABLE WasteCollection (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		person		INT				FOREIGN KEY REFERENCES Person(id),
@@ -56,7 +56,7 @@ END;
 
 IF OBJECT_ID('Waste', 'U') IS NULL
 BEGIN
-	CREATE TABLE [Waste] (
+	CREATE TABLE Waste (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
