@@ -49,7 +49,7 @@ BEGIN
 	CREATE TABLE [WasteCollection] (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		[user]		INT				FOREIGN KEY REFERENCES [User](id),
+		person		INT				FOREIGN KEY REFERENCES Person(id),
 		collecting	BIT				DEFAULT(0)
 	);
 END;
