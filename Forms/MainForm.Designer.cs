@@ -31,11 +31,11 @@
 			this.bannerPanel = new System.Windows.Forms.Panel();
 			this.bannerTitle = new System.Windows.Forms.Label();
 			this.loginPanel = new System.Windows.Forms.Panel();
-			this.nameLabel = new System.Windows.Forms.Label();
+			this.loginButton = new System.Windows.Forms.Button();
+			this.passwordBox = new System.Windows.Forms.TextBox();
 			this.nameBox = new System.Windows.Forms.TextBox();
 			this.passwordLabel = new System.Windows.Forms.Label();
-			this.passwordBox = new System.Windows.Forms.TextBox();
-			this.loginButton = new System.Windows.Forms.Button();
+			this.nameLabel = new System.Windows.Forms.Label();
 			this.bannerPanel.SuspendLayout();
 			this.loginPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -74,16 +74,24 @@
 			this.loginPanel.Size = new System.Drawing.Size(200, 92);
 			this.loginPanel.TabIndex = 2;
 			// 
-			// nameLabel
+			// loginButton
 			// 
-			this.nameLabel.Location = new System.Drawing.Point(0, 0);
-			this.nameLabel.Margin = new System.Windows.Forms.Padding(0);
-			this.nameLabel.Name = "nameLabel";
-			this.nameLabel.Padding = new System.Windows.Forms.Padding(5);
-			this.nameLabel.Size = new System.Drawing.Size(90, 30);
-			this.nameLabel.TabIndex = 3;
-			this.nameLabel.Text = "Name";
-			this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.loginButton.Location = new System.Drawing.Point(95, 63);
+			this.loginButton.Name = "loginButton";
+			this.loginButton.Size = new System.Drawing.Size(100, 24);
+			this.loginButton.TabIndex = 5;
+			this.loginButton.Text = "Log in";
+			this.loginButton.UseVisualStyleBackColor = true;
+			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+			// 
+			// passwordBox
+			// 
+			this.passwordBox.Location = new System.Drawing.Point(95, 35);
+			this.passwordBox.Margin = new System.Windows.Forms.Padding(5);
+			this.passwordBox.Name = "passwordBox";
+			this.passwordBox.Size = new System.Drawing.Size(100, 20);
+			this.passwordBox.TabIndex = 4;
+			this.passwordBox.Text = "demirci";
 			// 
 			// nameBox
 			// 
@@ -92,6 +100,7 @@
 			this.nameBox.Name = "nameBox";
 			this.nameBox.Size = new System.Drawing.Size(100, 20);
 			this.nameBox.TabIndex = 4;
+			this.nameBox.Text = "sinan";
 			// 
 			// passwordLabel
 			// 
@@ -104,23 +113,16 @@
 			this.passwordLabel.Text = "Password";
 			this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// passwordBox
+			// nameLabel
 			// 
-			this.passwordBox.Location = new System.Drawing.Point(95, 35);
-			this.passwordBox.Margin = new System.Windows.Forms.Padding(5);
-			this.passwordBox.Name = "passwordBox";
-			this.passwordBox.Size = new System.Drawing.Size(100, 20);
-			this.passwordBox.TabIndex = 4;
-			// 
-			// loginButton
-			// 
-			this.loginButton.Location = new System.Drawing.Point(95, 63);
-			this.loginButton.Name = "loginButton";
-			this.loginButton.Size = new System.Drawing.Size(100, 24);
-			this.loginButton.TabIndex = 5;
-			this.loginButton.Text = "Log in";
-			this.loginButton.UseVisualStyleBackColor = true;
-			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+			this.nameLabel.Location = new System.Drawing.Point(0, 0);
+			this.nameLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.nameLabel.Name = "nameLabel";
+			this.nameLabel.Padding = new System.Windows.Forms.Padding(5);
+			this.nameLabel.Size = new System.Drawing.Size(90, 30);
+			this.nameLabel.TabIndex = 3;
+			this.nameLabel.Text = "Name";
+			this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// MainForm
 			// 
