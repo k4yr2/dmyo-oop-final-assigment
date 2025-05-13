@@ -17,7 +17,7 @@ namespace dmyo_oop_final_assigment.Controls
 		public WasteCollectionControl(DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
-			m_source = source;
+			Bind(source);
 		}
 
 
@@ -32,6 +32,7 @@ namespace dmyo_oop_final_assigment.Controls
 		
 		public void Bind(DMYOData<WasteCollection> data)
 		{
+			m_source = data;
 			Refresh();
 		}
 
