@@ -18,7 +18,7 @@ namespace dmyo_oop_final_assigment.Forms
 		public WasteForm()
 		{
 			InitializeComponent();
-			typeBox.DataSource = TableManager.WasteCategory.Select().ToList();
+			typeBox.DataSource = TableManager.WasteType.Select().ToList();
 			typeBox.ValueMember = "Id";
 			typeBox.DisplayMember = "Display";
 		}
@@ -52,6 +52,7 @@ namespace dmyo_oop_final_assigment.Forms
 			var waste = new Waste()
 			{
 				Date = DateTime.Now,
+				Collection = m_collection.Id,
 				Type = (int)typeBox.SelectedValue,
 				Quantity = quantity,
 			};
