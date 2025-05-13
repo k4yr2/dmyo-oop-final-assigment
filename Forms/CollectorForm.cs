@@ -65,6 +65,8 @@ namespace dmyo_oop_final_assigment.Forms
 		public override void Refresh()
 		{
 			base.Refresh();
+			completeButton.Visible = false;
+			addButton.Visible = false;
 
 			switch (m_state)
 			{
@@ -89,6 +91,9 @@ namespace dmyo_oop_final_assigment.Forms
 					{
 						newButton.Enabled = false;
 						newButton.Text = "Collecting";
+
+						completeButton.Visible = true;
+						addButton.Visible = true;
 					}
 					break;
 				case CollectorState.Distributing:
