@@ -67,6 +67,7 @@ namespace dmyo_oop_final_assigment.Forms
 			base.Refresh();
 			completeButton.Visible = false;
 			addButton.Visible = false;
+			managePanel.Visible = true;
 
 			switch (m_state)
 			{
@@ -83,6 +84,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 						newButton.Enabled = true;
 						newButton.Text = "Collect";
+						managePanel.Visible = false;
 					}
 					break;
 				case CollectorState.Browsing:

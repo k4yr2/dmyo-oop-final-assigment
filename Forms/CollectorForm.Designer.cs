@@ -30,18 +30,19 @@
 		{
 			this.selectionPanel = new System.Windows.Forms.Panel();
 			this.newButton = new System.Windows.Forms.Button();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.contentPanel = new System.Windows.Forms.Panel();
 			this.managePanel = new System.Windows.Forms.Panel();
 			this.dataPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.completeButton = new System.Windows.Forms.Button();
 			this.addButton = new System.Windows.Forms.Button();
 			this.selectionPanel.SuspendLayout();
-			this.panel1.SuspendLayout();
+			this.contentPanel.SuspendLayout();
 			this.managePanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// selectionPanel
 			// 
+			this.selectionPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.selectionPanel.CausesValidation = false;
 			this.selectionPanel.Controls.Add(this.newButton);
 			this.selectionPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -62,25 +63,25 @@
 			this.newButton.UseVisualStyleBackColor = true;
 			this.newButton.Click += new System.EventHandler(this.newButton_Click);
 			// 
-			// panel1
+			// contentPanel
 			// 
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.dataPanel);
-			this.panel1.Controls.Add(this.managePanel);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(0, 40);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(800, 410);
-			this.panel1.TabIndex = 1;
+			this.contentPanel.Controls.Add(this.dataPanel);
+			this.contentPanel.Controls.Add(this.managePanel);
+			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentPanel.Location = new System.Drawing.Point(0, 40);
+			this.contentPanel.Name = "contentPanel";
+			this.contentPanel.Size = new System.Drawing.Size(800, 410);
+			this.contentPanel.TabIndex = 1;
 			// 
 			// managePanel
 			// 
+			this.managePanel.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.managePanel.Controls.Add(this.addButton);
 			this.managePanel.Controls.Add(this.completeButton);
 			this.managePanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.managePanel.Location = new System.Drawing.Point(0, 0);
 			this.managePanel.Name = "managePanel";
-			this.managePanel.Size = new System.Drawing.Size(798, 40);
+			this.managePanel.Size = new System.Drawing.Size(800, 40);
 			this.managePanel.TabIndex = 0;
 			// 
 			// dataPanel
@@ -89,7 +90,7 @@
 			this.dataPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.dataPanel.Location = new System.Drawing.Point(0, 40);
 			this.dataPanel.Name = "dataPanel";
-			this.dataPanel.Size = new System.Drawing.Size(798, 368);
+			this.dataPanel.Size = new System.Drawing.Size(800, 370);
 			this.dataPanel.TabIndex = 1;
 			// 
 			// completeButton
@@ -119,12 +120,12 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.contentPanel);
 			this.Controls.Add(this.selectionPanel);
 			this.Name = "CollectorForm";
 			this.Text = "CollectorForm";
 			this.selectionPanel.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
+			this.contentPanel.ResumeLayout(false);
 			this.managePanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -134,7 +135,7 @@
 
 		private System.Windows.Forms.Panel selectionPanel;
 		private System.Windows.Forms.Button newButton;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel contentPanel;
 		private System.Windows.Forms.FlowLayoutPanel dataPanel;
 		private System.Windows.Forms.Panel managePanel;
 		private System.Windows.Forms.Button addButton;
