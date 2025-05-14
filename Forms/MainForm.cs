@@ -18,10 +18,9 @@ namespace dmyo_oop_final_assigment.Forms
 			InitializeComponent();
 		}
 
-
-		private void loginButton_Click(object sender, EventArgs e)
+		private void Login(string name, string password)
 		{
-			var person = TableManager.Person.Select($"WHERE name = '{nameBox.Text}' and password = '{passwordBox.Text}'")
+			var person = TableManager.Person.Select($"WHERE name = '{name}' and password = '{password}'")
 				.FirstOrDefault();
 
 			if (person == null)
@@ -49,6 +48,11 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
+		private void loginButton_Click(object sender, EventArgs e)
+		{
+			Login(nameBox.Text, passwordBox.Text);
+		}
+
 		private void contentPanel_Paint(object sender, PaintEventArgs e)
 		{
 			quickAdminPanel.Width = (Width - 200) / 3;
@@ -61,6 +65,11 @@ namespace dmyo_oop_final_assigment.Forms
 			quickAdminPanel.Width = (Width - 200) / 3;
 			quickCollectorPanel.Width = (Width - 200) / 3;
 			quickRecyclerPanel.Width = (Width - 200) / 3;
+		}
+
+		private void quickCollectorButton_SinanDemirci_Click(object sender, EventArgs e)
+		{
+			Login("sinan", "demirci");
 		}
 	}
 }
