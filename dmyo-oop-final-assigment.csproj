@@ -84,6 +84,7 @@
     <Compile Include="Models\Waste.cs" />
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Models\WasteCollection.cs" />
+    <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Tables\WasteCollectionTable.cs" />
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
+    <Compile Include="Tables\WasteUnitTable.cs" />
     <EmbeddedResource Include="Controls\CollectingContainer.resx">
       <DependentUpon>CollectingContainer.cs</DependentUpon>
     </EmbeddedResource>

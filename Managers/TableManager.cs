@@ -16,6 +16,8 @@ namespace dmyo_oop_final_assigment.Managers
 
 		private static readonly WasteCategoryTable m_wasteCategory = new WasteCategoryTable();
 
+		private static readonly WasteUnitTable m_wasteUnit = new WasteUnitTable();
+
 		private static readonly WasteCollectionTable m_wasteCollection = new WasteCollectionTable();
 
 		//
@@ -65,6 +67,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteCategory;
+			}
+		}
+
+		public static WasteUnitTable WasteUnit
+		{
+			get
+			{
+				return m_wasteUnit;
 			}
 		}
 
