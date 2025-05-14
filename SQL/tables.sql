@@ -13,6 +13,25 @@ BEGIN
 	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('serhat', 'genc', 1);
 END;
 
+IF OBJECT_ID('Factory', 'U') IS NULL
+BEGIN
+	CREATE TABLE Factory (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+	);
+END;
+
+IF OBJECT_ID('FactoryAccess', 'U') IS NULL
+BEGIN
+	CREATE TABLE FactoryAccess (
+		person		INT				FOREIGN KEY REFERENCES Person(id),
+		factory		INT				FOREIGN KEY REFERENCES Factory(id),
+
+		PRIMARY	KEY (person, factory)
+	);
+END;
+
+--
+
 IF OBJECT_ID('WasteUnit', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteUnit (
