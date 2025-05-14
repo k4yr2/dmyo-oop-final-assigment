@@ -25,6 +25,7 @@ BEGIN
 	CREATE TABLE FactoryAccess (
 		person		INT				FOREIGN KEY REFERENCES Person(id),
 		factory		INT				FOREIGN KEY REFERENCES Factory(id),
+		access		INT				NOT NULL CHECK (access BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin,
 
 		PRIMARY	KEY (person, factory)
 	);
