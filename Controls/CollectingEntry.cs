@@ -16,23 +16,24 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class CollectingEntry : UserControl, IDataLink<Waste>
 	{
-		private CollectingContainer m_collection = null;
+		private CollectingContainer m_container = null;
 
-		private DMYOData<Waste> m_data = null;
+		private DMYOData<Waste> m_source = null;
 
 		private DMYOData<WasteType> m_type = null;
 
-		public CollectingEntry(CollectingContainer collection) : this(collection, null)
+
+		public CollectingEntry(CollectingContainer container) : this(container, null)
 		{
 
 		}
 
-		public CollectingEntry(CollectingContainer collection, DMYOData<Waste> data)
+		public CollectingEntry(CollectingContainer collection, DMYOData<Waste> source)
 		{
 			InitializeComponent();
-			m_collection = collection;
+			m_container = collection;
 
-			Bind(data);
+			Bind(source);
 		}
 
 		//
@@ -41,7 +42,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			get
 			{
-				return m_collection;
+				return m_container;
 			}
 		}
 
@@ -49,7 +50,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			get
 			{
-				return m_data;
+				return m_source;
 			}
 		}
 
@@ -65,7 +66,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void Bind(DMYOData<Waste> data)
 		{
-			m_data = data;
+			m_source = data;
 			Refresh();
 		}
 
@@ -73,7 +74,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			base.Refresh();
 
-			if (m_data== null)
+			if (m_source== null)
 			{
 				deleteButton.Enabled = false;
 				typeLabel.Text = "Blank Type";
@@ -83,11 +84,11 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				m_type = TableManager.WasteType.Read(m_data.Model.Type);
+				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 
 				deleteButton.Enabled = true;
 				typeLabel.Text = m_type?.Model.Name ?? "Blank Type";
-				quantityLabel.Text = (m_data?.Model.Quantity ?? 0).ToString();
+				quantityLabel.Text = (m_source?.Model.Quantity ?? 0).ToString();
 				abbrLabel.Text = "pcs";
 				updateButton.Enabled = true;
 			}
@@ -102,15 +103,15 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void deleteButton_Click(object sender, EventArgs e)
 		{
-			if(m_data == null)
+			if(m_source == null)
 			{
 				MessageBox.Show("No data to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
 			{
-				if(TableManager.Waste.Delete(m_data.Id))
+				if(TableManager.Waste.Delete(m_source.Id))
 				{
-					m_collection.Refresh();
+					m_container.Refresh();
 				}
 				else
 				{
@@ -121,7 +122,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void updateButton_Click(object sender, EventArgs e)
 		{
-			if (m_data == null)
+			if (m_source == null)
 			{
 				MessageBox.Show("No data to update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
