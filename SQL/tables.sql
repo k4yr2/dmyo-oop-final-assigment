@@ -25,11 +25,12 @@ END;
 IF OBJECT_ID('FactoryAccess', 'U') IS NULL
 BEGIN
 	CREATE TABLE FactoryAccess (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
 		person		INT				FOREIGN KEY REFERENCES Person(id),
 		factory		INT				FOREIGN KEY REFERENCES Factory(id),
 		access		INT				NOT NULL CHECK (access BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin,
 
-		PRIMARY	KEY (person, factory)
+		UNIQUE (person, factory)
 	);
 END;
 
