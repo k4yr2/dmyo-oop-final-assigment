@@ -7,13 +7,13 @@ using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Forms
 {
-	public partial class WasteForm : Form
+	public partial class CollectingForm : Form
 	{
-		private WasteControl m_control = null;
+		private CollectingEntry m_control = null;
 
-		private WasteCollectionControl m_collection = null;
+		private CollectingContainer m_collection = null;
 
-		public WasteForm()
+		public CollectingForm()
 		{
 			InitializeComponent();
 			typeBox.DataSource = TableManager.WasteType.Select().ToList();
@@ -21,24 +21,24 @@ namespace dmyo_oop_final_assigment.Forms
 			typeBox.DisplayMember = "Display";
 		}
 
-		public WasteForm(WasteCollectionControl collection) : this()
+		public CollectingForm(CollectingContainer collection) : this()
 		{
 			m_control = null;
 			m_collection = collection;
 			button.Text = "Add";
 		}
 
-		public WasteForm(WasteControl control) : this()
+		public CollectingForm(CollectingEntry control) : this()
 		{
 			m_control = control;
 			m_collection = control.Collection;
 			button.Text = "Update";
-			typeBox.SelectedValue = control.Data.Model.Type;
-			quantityBox.Text = control.Data.Model.Quantity.ToString();
+			typeBox.SelectedValue = control.Source.Model.Type;
+			quantityBox.Text = control.Source.Model.Quantity.ToString();
 		}
 
 
-		public WasteControl Control => m_control;
+		public CollectingEntry Control => m_control;
 
 
 		private void button_Click(object sender, EventArgs e)
@@ -52,21 +52,21 @@ namespace dmyo_oop_final_assigment.Forms
 			var waste = new Waste()
 			{
 				Date = DateTime.Now,
-				Collection = m_collection.Data.Id,
+				Collection = m_collection.Source.Id,
 				Type = (int)typeBox.SelectedValue,
 				Quantity = quantity,
 			};
 
 			if (m_control == null)
 			{
-				m_control = new WasteControl(m_collection, TableManager.Waste.Create(waste));
+				m_control = new CollectingEntry(m_collection, TableManager.Waste.Create(waste));
 				m_collection.Panel.Controls.Add(m_control);
 			}
 			else
 			{
-				TableManager.Waste.Update(m_control.Data.Id, waste);
+				TableManager.Waste.Update(m_control.Source.Id, waste);
 
-				Control.Data.Model = waste;
+				Control.Source.Model = waste;
 				Control.Refresh();
 			}
 

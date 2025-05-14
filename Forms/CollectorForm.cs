@@ -93,7 +93,7 @@ namespace dmyo_oop_final_assigment.Forms
 						completeButton.Visible = true;
 						addButton.Visible = true;
 
-						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Data.Id}"))
+						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Source.Id}"))
 						{
 							var control = new CollectingEntry(collectingControl, data);
 							control.Width = dataPanel.Width;

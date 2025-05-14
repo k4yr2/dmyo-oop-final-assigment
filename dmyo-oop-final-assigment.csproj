@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\WasteCollectionControl.cs">
+    <Compile Include="Controls\CollectingContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\WasteCollectionControl.Designer.cs">
-      <DependentUpon>WasteCollectionControl.cs</DependentUpon>
+    <Compile Include="Controls\CollectingContainer.Designer.cs">
+      <DependentUpon>CollectingContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\WasteControl.cs">
+    <Compile Include="Controls\CollectingEntry.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\WasteControl.Designer.cs">
-      <DependentUpon>WasteControl.cs</DependentUpon>
+    <Compile Include="Controls\CollectingEntry.Designer.cs">
+      <DependentUpon>CollectingEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CollectorForm.cs">
       <SubType>Form</SubType>
@@ -71,11 +71,11 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WasteForm.cs">
+    <Compile Include="Forms\CollectingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WasteForm.Designer.cs">
-      <DependentUpon>WasteForm.cs</DependentUpon>
+    <Compile Include="Forms\CollectingForm.Designer.cs">
+      <DependentUpon>CollectingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Models\Person.cs" />
@@ -102,11 +102,11 @@
     <Compile Include="Tables\WasteCollectionTable.cs" />
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
-    <EmbeddedResource Include="Controls\WasteCollectionControl.resx">
-      <DependentUpon>WasteCollectionControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CollectingContainer.resx">
+      <DependentUpon>CollectingContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\WasteControl.resx">
-      <DependentUpon>WasteControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CollectingEntry.resx">
+      <DependentUpon>CollectingEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CollectorForm.resx">
       <DependentUpon>CollectorForm.cs</DependentUpon>
@@ -114,8 +114,8 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WasteForm.resx">
-      <DependentUpon>WasteForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CollectingForm.resx">
+      <DependentUpon>CollectingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
