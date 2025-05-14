@@ -8,6 +8,8 @@ namespace dmyo_oop_final_assigment.Managers
 
 		private static readonly FactoryTable m_factory = new FactoryTable();
 
+		private static readonly FactoryAccessTable m_factoryAccess = new FactoryAccessTable();
+
 		private static readonly WasteTable m_waste = new WasteTable();
 
 		private static readonly WasteTypeTable m_wasteType = new WasteTypeTable();
@@ -31,6 +33,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_factory;
+			}
+		}
+
+		public static FactoryAccessTable FactoryAccess
+		{
+			get
+			{
+				return m_factoryAccess;
 			}
 		}
 
