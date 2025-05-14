@@ -76,6 +76,8 @@ BEGIN
 	('Broken Phone', 'Non-functioning cell phones', 3, 3);
 END;
 
+--
+
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteCollection (
@@ -94,5 +96,17 @@ BEGIN
 		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
 		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
 		quantity	DECIMAL(10, 2)
+	);
+END;
+
+--
+
+IF OBJECT_ID('WasteDistribution', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteDistribution (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		date		DATETIME		NOT NULL DEFAULT GETDATE(),
+		factory		INT				FOREIGN KEY REFERENCES Factory(id),
+		active		BIT				DEFAULT(0)
 	);
 END;
