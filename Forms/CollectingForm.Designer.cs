@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Forms
 {
-	partial class WasteForm
+	partial class CollectingForm
 	{
 		/// <summary>
 		/// Required designer variable.
