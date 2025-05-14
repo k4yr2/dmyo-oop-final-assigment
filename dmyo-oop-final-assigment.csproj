@@ -85,6 +85,7 @@
     <Compile Include="Models\WasteCategory.cs" />
     <Compile Include="Models\WasteCollection.cs" />
     <Compile Include="Models\WasteDistribution.cs" />
+    <Compile Include="Models\WasteLoad.cs" />
     <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteCollectionTable.cs" />
     <Compile Include="Tables\WasteDistributionTable.cs" />
+    <Compile Include="Tables\WasteLoadTable.cs" />
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <Compile Include="Tables\WasteUnitTable.cs" />
