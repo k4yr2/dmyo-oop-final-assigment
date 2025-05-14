@@ -24,6 +24,8 @@ namespace dmyo_oop_final_assigment.Managers
 
 		private static readonly WasteLoadTable m_wasteLoad = new WasteLoadTable();
 
+		private static readonly WasteRecyclingTable m_wasteRecycling = new WasteRecyclingTable();
+
 		//
 
 		public static PersonTable Person
@@ -103,6 +105,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteLoad;
+			}
+		}
+
+		public static WasteRecyclingTable WasteRecycling
+		{
+			get
+			{
+				return m_wasteRecycling;
 			}
 		}
 	}
