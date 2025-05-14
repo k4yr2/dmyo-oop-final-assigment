@@ -95,7 +95,7 @@ BEGIN
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id),
 		type		INT				FOREIGN KEY REFERENCES WasteType(id),
-		quantity	DECIMAL(10, 2)
+		quantity	DECIMAL(10, 2)	NOT NULL DEFAULT 0,
 	);
 END;
 
@@ -117,7 +117,7 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		waste		INT				FOREIGN KEY REFERENCES Waste(id),
-		demand		INT				NOT NULL DEFAULT(0),
-		granted		INT				NOT NULL DEFAULT(0),
+		demand		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		granted		DECIMAL(10, 2)	NOT NULL DEFAULT(-1),
 	);
 END;
