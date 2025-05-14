@@ -95,7 +95,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Data.Id}"))
 						{
-							var control = new CollectingControl(collectingControl, data);
+							var control = new CollectingEntry(collectingControl, data);
 							control.Width = dataPanel.Width;
 
 							dataPanel.Controls.Add(control);
