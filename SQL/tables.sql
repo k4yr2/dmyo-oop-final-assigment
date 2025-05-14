@@ -110,7 +110,7 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		factory		INT				FOREIGN KEY REFERENCES Factory(id),
-		active		BIT				DEFAULT(0)
+		state		INT				NOT NULL DEFAULT(0) CHECK (state BETWEEN 0 AND 2)
 	);
 END;
 
