@@ -48,7 +48,7 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
-		public WasteCollectionControl Current
+		public CollectingContainer Current
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Data.Id}"))
 						{
-							var control = new WasteControl(collectingControl, data);
+							var control = new CollectingControl(collectingControl, data);
 							control.Width = dataPanel.Width;
 
 							dataPanel.Controls.Add(control);

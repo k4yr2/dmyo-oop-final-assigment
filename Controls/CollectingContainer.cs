@@ -6,16 +6,16 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class WasteCollectionControl : UserControl, IDataLink<WasteCollection> 
+	public partial class CollectingContainer : UserControl, IDataLink<WasteCollection> 
 	{
 		private DMYOData<WasteCollection> m_source = null;
 
-		public WasteCollectionControl() : this(null)
+		public CollectingContainer() : this(null)
 		{
 
 		}
 
-		public WasteCollectionControl(DMYOData<WasteCollection> source)
+		public CollectingContainer(DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
 			Bind(source);
@@ -59,7 +59,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
 				{
-					var control = new WasteControl(this, waste)
+					var control = new CollectingControl(this, waste)
 					{
 						Width = Width - 25
 					};
@@ -70,7 +70,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void panel_Resize(object sender, System.EventArgs e)
 		{
-			foreach (var item in panel.Controls.OfType<WasteControl>())
+			foreach (var item in panel.Controls.OfType<CollectingControl>())
 			{
 				item.Width = Width - 25;
 			}
