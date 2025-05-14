@@ -110,3 +110,14 @@ BEGIN
 		active		BIT				DEFAULT(0)
 	);
 END;
+
+IF OBJECT_ID('WasteLoad', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteLoad (
+		id			INT				PRIMARY KEY IDENTITY(1,1),
+		date		DATETIME		NOT NULL DEFAULT GETDATE(),
+		waste		INT				FOREIGN KEY REFERENCES Waste(id),
+		demand		INT				NOT NULL DEFAULT(0),
+		granted		INT				NOT NULL DEFAULT(0),
+	);
+END;
