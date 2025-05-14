@@ -28,7 +28,7 @@ BEGIN
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		person		INT				FOREIGN KEY REFERENCES Person(id),
 		factory		INT				FOREIGN KEY REFERENCES Factory(id),
-		access		INT				NOT NULL CHECK (access BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin,
+		mode		INT				NOT NULL CHECK (mode BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin,
 
 		UNIQUE (person, factory)
 	);
