@@ -6,6 +6,8 @@ namespace dmyo_oop_final_assigment.Managers
 	{
 		private static readonly PersonTable m_person = new PersonTable();
 
+		private static readonly FactoryTable m_factory = new FactoryTable();
+
 		private static readonly WasteTable m_waste = new WasteTable();
 
 		private static readonly WasteTypeTable m_wasteType = new WasteTypeTable();
@@ -21,6 +23,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_person;
+			}
+		}
+
+		public static FactoryTable Factory
+		{
+			get
+			{
+				return m_factory;
 			}
 		}
 

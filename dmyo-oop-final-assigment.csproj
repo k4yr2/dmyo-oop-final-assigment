@@ -78,6 +78,7 @@
       <DependentUpon>CollectingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\TableManager.cs" />
+    <Compile Include="Models\Factory.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Waste.cs" />
     <Compile Include="Models\WasteCategory.cs" />
@@ -97,6 +98,7 @@
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
     <Compile Include="DMYOTable.cs" />
+    <Compile Include="Tables\FactoryTable.cs" />
     <Compile Include="Tables\PersonTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
     <Compile Include="Tables\WasteCollectionTable.cs" />
