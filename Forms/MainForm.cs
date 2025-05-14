@@ -48,5 +48,19 @@ namespace dmyo_oop_final_assigment.Forms
 				}
 			}
 		}
+
+		private void contentPanel_Paint(object sender, PaintEventArgs e)
+		{
+			quickAdminPanel.Width = (Width - 200) / 3;
+			quickCollectorPanel.Width = (Width - 200) / 3;
+			quickRecyclerPanel.Width = (Width - 200) / 3;
+		}
+
+		private void contentPanel_Resize(object sender, EventArgs e)
+		{
+			quickAdminPanel.Width = (Width - 200) / 3;
+			quickCollectorPanel.Width = (Width - 200) / 3;
+			quickRecyclerPanel.Width = (Width - 200) / 3;
+		}
 	}
 }

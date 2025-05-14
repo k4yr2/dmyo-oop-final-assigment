@@ -42,12 +42,20 @@
 			this.loginTopPanel = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.bodyPanel = new System.Windows.Forms.Panel();
+			this.dynamicLoginLabel = new System.Windows.Forms.Label();
+			this.quickLoginLabel = new System.Windows.Forms.Label();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickAdminPanel = new System.Windows.Forms.Panel();
+			this.quickCollectorPanel = new System.Windows.Forms.Panel();
+			this.quickRecyclerPanel = new System.Windows.Forms.Panel();
 			this.bannerPanel.SuspendLayout();
 			this.loginControlPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
 			this.loginPanel.SuspendLayout();
 			this.loginContentPanel.SuspendLayout();
+			this.loginTopPanel.SuspendLayout();
 			this.bodyPanel.SuspendLayout();
+			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// bannerPanel
@@ -58,7 +66,7 @@
 			this.bannerPanel.Location = new System.Drawing.Point(0, 0);
 			this.bannerPanel.Name = "bannerPanel";
 			this.bannerPanel.Padding = new System.Windows.Forms.Padding(10);
-			this.bannerPanel.Size = new System.Drawing.Size(741, 60);
+			this.bannerPanel.Size = new System.Drawing.Size(726, 60);
 			this.bannerPanel.TabIndex = 0;
 			// 
 			// bannerTitle
@@ -80,6 +88,7 @@
 			this.loginControlPanel.Controls.Add(this.nameBox);
 			this.loginControlPanel.Controls.Add(this.passwordLabel);
 			this.loginControlPanel.Controls.Add(this.nameLabel);
+			this.loginControlPanel.Dock = System.Windows.Forms.DockStyle.Left;
 			this.loginControlPanel.Location = new System.Drawing.Point(0, 0);
 			this.loginControlPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.loginControlPanel.Name = "loginControlPanel";
@@ -143,8 +152,10 @@
 			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.contentPanel.Location = new System.Drawing.Point(0, 0);
 			this.contentPanel.Name = "contentPanel";
-			this.contentPanel.Size = new System.Drawing.Size(741, 344);
+			this.contentPanel.Size = new System.Drawing.Size(726, 344);
 			this.contentPanel.TabIndex = 4;
+			this.contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.contentPanel_Paint);
+			this.contentPanel.Resize += new System.EventHandler(this.contentPanel_Resize);
 			// 
 			// loginPanel
 			// 
@@ -154,25 +165,28 @@
 			this.loginPanel.Location = new System.Drawing.Point(0, 182);
 			this.loginPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.loginPanel.Name = "loginPanel";
-			this.loginPanel.Size = new System.Drawing.Size(741, 132);
+			this.loginPanel.Size = new System.Drawing.Size(726, 132);
 			this.loginPanel.TabIndex = 4;
 			// 
 			// loginContentPanel
 			// 
+			this.loginContentPanel.Controls.Add(this.flowLayoutPanel1);
 			this.loginContentPanel.Controls.Add(this.loginControlPanel);
 			this.loginContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.loginContentPanel.Location = new System.Drawing.Point(0, 40);
 			this.loginContentPanel.Name = "loginContentPanel";
-			this.loginContentPanel.Size = new System.Drawing.Size(741, 92);
+			this.loginContentPanel.Size = new System.Drawing.Size(726, 92);
 			this.loginContentPanel.TabIndex = 4;
 			// 
 			// loginTopPanel
 			// 
+			this.loginTopPanel.Controls.Add(this.quickLoginLabel);
+			this.loginTopPanel.Controls.Add(this.dynamicLoginLabel);
 			this.loginTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.loginTopPanel.Location = new System.Drawing.Point(0, 0);
 			this.loginTopPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.loginTopPanel.Name = "loginTopPanel";
-			this.loginTopPanel.Size = new System.Drawing.Size(741, 40);
+			this.loginTopPanel.Size = new System.Drawing.Size(726, 40);
 			this.loginTopPanel.TabIndex = 3;
 			// 
 			// panel1
@@ -182,7 +196,7 @@
 			this.panel1.Location = new System.Drawing.Point(0, 314);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(741, 30);
+			this.panel1.Size = new System.Drawing.Size(726, 30);
 			this.panel1.TabIndex = 3;
 			// 
 			// bodyPanel
@@ -191,18 +205,81 @@
 			this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.bodyPanel.Location = new System.Drawing.Point(0, 60);
 			this.bodyPanel.Name = "bodyPanel";
-			this.bodyPanel.Size = new System.Drawing.Size(741, 344);
+			this.bodyPanel.Size = new System.Drawing.Size(726, 344);
 			this.bodyPanel.TabIndex = 3;
+			// 
+			// dynamicLoginLabel
+			// 
+			this.dynamicLoginLabel.Dock = System.Windows.Forms.DockStyle.Left;
+			this.dynamicLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.dynamicLoginLabel.Location = new System.Drawing.Point(0, 0);
+			this.dynamicLoginLabel.Name = "dynamicLoginLabel";
+			this.dynamicLoginLabel.Size = new System.Drawing.Size(200, 40);
+			this.dynamicLoginLabel.TabIndex = 0;
+			this.dynamicLoginLabel.Text = "Dynamic Login";
+			this.dynamicLoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// quickLoginLabel
+			// 
+			this.quickLoginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.quickLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.quickLoginLabel.Location = new System.Drawing.Point(200, 0);
+			this.quickLoginLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickLoginLabel.Name = "quickLoginLabel";
+			this.quickLoginLabel.Size = new System.Drawing.Size(526, 40);
+			this.quickLoginLabel.TabIndex = 0;
+			this.quickLoginLabel.Text = "Quick Login";
+			this.quickLoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.Controls.Add(this.quickAdminPanel);
+			this.flowLayoutPanel1.Controls.Add(this.quickCollectorPanel);
+			this.flowLayoutPanel1.Controls.Add(this.quickRecyclerPanel);
+			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 0);
+			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(526, 92);
+			this.flowLayoutPanel1.TabIndex = 3;
+			this.flowLayoutPanel1.WrapContents = false;
+			// 
+			// quickAdminPanel
+			// 
+			this.quickAdminPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
+			this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickAdminPanel.Name = "quickAdminPanel";
+			this.quickAdminPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickAdminPanel.TabIndex = 0;
+			// 
+			// quickCollectorPanel
+			// 
+			this.quickCollectorPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+			this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
+			this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickCollectorPanel.Name = "quickCollectorPanel";
+			this.quickCollectorPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickCollectorPanel.TabIndex = 0;
+			// 
+			// quickRecyclerPanel
+			// 
+			this.quickRecyclerPanel.BackColor = System.Drawing.SystemColors.Desktop;
+			this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
+			this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickRecyclerPanel.Name = "quickRecyclerPanel";
+			this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickRecyclerPanel.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(741, 404);
+			this.ClientSize = new System.Drawing.Size(726, 404);
 			this.Controls.Add(this.bodyPanel);
 			this.Controls.Add(this.bannerPanel);
 			this.Name = "MainForm";
-			this.Text = "5";
+			this.Text = "0";
 			this.bannerPanel.ResumeLayout(false);
 			this.bannerPanel.PerformLayout();
 			this.loginControlPanel.ResumeLayout(false);
@@ -210,7 +287,9 @@
 			this.contentPanel.ResumeLayout(false);
 			this.loginPanel.ResumeLayout(false);
 			this.loginContentPanel.ResumeLayout(false);
+			this.loginTopPanel.ResumeLayout(false);
 			this.bodyPanel.ResumeLayout(false);
+			this.flowLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -231,5 +310,11 @@
 		private System.Windows.Forms.Panel loginPanel;
 		private System.Windows.Forms.Panel loginContentPanel;
 		private System.Windows.Forms.Panel loginTopPanel;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.Label quickLoginLabel;
+		private System.Windows.Forms.Label dynamicLoginLabel;
+		private System.Windows.Forms.Panel quickAdminPanel;
+		private System.Windows.Forms.Panel quickCollectorPanel;
+		private System.Windows.Forms.Panel quickRecyclerPanel;
 	}
 }
