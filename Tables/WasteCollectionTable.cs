@@ -29,9 +29,9 @@ namespace dmyo_oop_final_assigment.Tables
 
 		//
 
-		public DMYOData<WasteCollection> GetCollecting(int person)
+		public DMYOData<WasteCollection> GetCurrent(int person)
 		{
-			return Select($"WHERE collecting = 1 and person = {person}").FirstOrDefault();
+			return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
 		}
 	}
 }

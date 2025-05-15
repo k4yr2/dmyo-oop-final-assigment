@@ -69,7 +69,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				case CollectorState.Idle:
 					{
-						var collection = TableManager.WasteCollection.GetCollecting(Person.Id);
+						var collection = TableManager.WasteCollection.GetCurrent(Person.Id);
 
 						if (collection != null)
 						{
