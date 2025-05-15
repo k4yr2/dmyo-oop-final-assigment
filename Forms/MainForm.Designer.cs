@@ -39,24 +39,26 @@
 			this.contentPanel = new System.Windows.Forms.Panel();
 			this.loginPanel = new System.Windows.Forms.Panel();
 			this.loginContentPanel = new System.Windows.Forms.Panel();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickCollectorButton_SinanDemirci = new System.Windows.Forms.Button();
 			this.loginTopPanel = new System.Windows.Forms.Panel();
+			this.quickLoginLabel = new System.Windows.Forms.Label();
+			this.loginLabel = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.bodyPanel = new System.Windows.Forms.Panel();
-			this.loginLabel = new System.Windows.Forms.Label();
-			this.quickLoginLabel = new System.Windows.Forms.Label();
-			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.quickAdminPanel = new System.Windows.Forms.Panel();
-			this.quickCollectorPanel = new System.Windows.Forms.Panel();
-			this.quickRecyclerPanel = new System.Windows.Forms.Panel();
-			this.quickCollectorButton_SinanDemirci = new System.Windows.Forms.Button();
+			this.quickAdminPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.bannerPanel.SuspendLayout();
 			this.loginControlPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
 			this.loginPanel.SuspendLayout();
 			this.loginContentPanel.SuspendLayout();
+			this.flowLayoutPanel1.SuspendLayout();
 			this.loginTopPanel.SuspendLayout();
 			this.bodyPanel.SuspendLayout();
-			this.flowLayoutPanel1.SuspendLayout();
 			this.quickCollectorPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -178,6 +180,30 @@
 			this.loginContentPanel.Size = new System.Drawing.Size(726, 92);
 			this.loginContentPanel.TabIndex = 4;
 			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.Controls.Add(this.quickAdminPanel);
+			this.flowLayoutPanel1.Controls.Add(this.quickCollectorPanel);
+			this.flowLayoutPanel1.Controls.Add(this.quickRecyclerPanel);
+			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 0);
+			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(526, 92);
+			this.flowLayoutPanel1.TabIndex = 3;
+			this.flowLayoutPanel1.WrapContents = false;
+			// 
+			// quickCollectorButton_SinanDemirci
+			// 
+			this.quickCollectorButton_SinanDemirci.Location = new System.Drawing.Point(5, 5);
+			this.quickCollectorButton_SinanDemirci.Margin = new System.Windows.Forms.Padding(5);
+			this.quickCollectorButton_SinanDemirci.Name = "quickCollectorButton_SinanDemirci";
+			this.quickCollectorButton_SinanDemirci.Size = new System.Drawing.Size(120, 30);
+			this.quickCollectorButton_SinanDemirci.TabIndex = 5;
+			this.quickCollectorButton_SinanDemirci.Text = "Sinan Demirci";
+			this.quickCollectorButton_SinanDemirci.UseVisualStyleBackColor = true;
+			this.quickCollectorButton_SinanDemirci.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
+			// 
 			// loginTopPanel
 			// 
 			this.loginTopPanel.Controls.Add(this.quickLoginLabel);
@@ -188,6 +214,29 @@
 			this.loginTopPanel.Name = "loginTopPanel";
 			this.loginTopPanel.Size = new System.Drawing.Size(726, 40);
 			this.loginTopPanel.TabIndex = 3;
+			// 
+			// quickLoginLabel
+			// 
+			this.quickLoginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.quickLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.quickLoginLabel.Location = new System.Drawing.Point(200, 0);
+			this.quickLoginLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickLoginLabel.Name = "quickLoginLabel";
+			this.quickLoginLabel.Size = new System.Drawing.Size(526, 40);
+			this.quickLoginLabel.TabIndex = 0;
+			this.quickLoginLabel.Text = "Quick Login";
+			this.quickLoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// loginLabel
+			// 
+			this.loginLabel.Dock = System.Windows.Forms.DockStyle.Left;
+			this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.loginLabel.Location = new System.Drawing.Point(0, 0);
+			this.loginLabel.Name = "loginLabel";
+			this.loginLabel.Size = new System.Drawing.Size(200, 40);
+			this.loginLabel.TabIndex = 0;
+			this.loginLabel.Text = "Login";
+			this.loginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel1
 			// 
@@ -208,80 +257,55 @@
 			this.bodyPanel.Size = new System.Drawing.Size(726, 344);
 			this.bodyPanel.TabIndex = 3;
 			// 
-			// loginLabel
-			// 
-			this.loginLabel.Dock = System.Windows.Forms.DockStyle.Left;
-			this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.loginLabel.Location = new System.Drawing.Point(0, 0);
-			this.loginLabel.Name = "loginLabel";
-			this.loginLabel.Size = new System.Drawing.Size(200, 40);
-			this.loginLabel.TabIndex = 0;
-			this.loginLabel.Text = "Login";
-			this.loginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// quickLoginLabel
-			// 
-			this.quickLoginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.quickLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.quickLoginLabel.Location = new System.Drawing.Point(200, 0);
-			this.quickLoginLabel.Margin = new System.Windows.Forms.Padding(0);
-			this.quickLoginLabel.Name = "quickLoginLabel";
-			this.quickLoginLabel.Size = new System.Drawing.Size(526, 40);
-			this.quickLoginLabel.TabIndex = 0;
-			this.quickLoginLabel.Text = "Quick Login";
-			this.quickLoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// flowLayoutPanel1
-			// 
-			this.flowLayoutPanel1.Controls.Add(this.quickAdminPanel);
-			this.flowLayoutPanel1.Controls.Add(this.quickCollectorPanel);
-			this.flowLayoutPanel1.Controls.Add(this.quickRecyclerPanel);
-			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 0);
-			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(526, 92);
-			this.flowLayoutPanel1.TabIndex = 3;
-			this.flowLayoutPanel1.WrapContents = false;
-			// 
 			// quickAdminPanel
 			// 
-			this.quickAdminPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
 			this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.quickAdminPanel.Name = "quickAdminPanel";
 			this.quickAdminPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickAdminPanel.TabIndex = 0;
+			this.quickAdminPanel.TabIndex = 6;
 			// 
 			// quickCollectorPanel
 			// 
-			this.quickCollectorPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+			this.quickCollectorPanel.AutoScroll = true;
 			this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
+			this.quickCollectorPanel.Controls.Add(this.button1);
+			this.quickCollectorPanel.Controls.Add(this.button2);
 			this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
 			this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.quickCollectorPanel.Name = "quickCollectorPanel";
 			this.quickCollectorPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickCollectorPanel.TabIndex = 0;
+			this.quickCollectorPanel.TabIndex = 6;
 			// 
 			// quickRecyclerPanel
 			// 
-			this.quickRecyclerPanel.BackColor = System.Drawing.SystemColors.Desktop;
 			this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
 			this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.quickRecyclerPanel.Name = "quickRecyclerPanel";
 			this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickRecyclerPanel.TabIndex = 0;
+			this.quickRecyclerPanel.TabIndex = 6;
 			// 
-			// quickCollectorButton_SinanDemirci
+			// button1
 			// 
-			this.quickCollectorButton_SinanDemirci.Location = new System.Drawing.Point(5, 5);
-			this.quickCollectorButton_SinanDemirci.Margin = new System.Windows.Forms.Padding(5);
-			this.quickCollectorButton_SinanDemirci.Name = "quickCollectorButton_SinanDemirci";
-			this.quickCollectorButton_SinanDemirci.Size = new System.Drawing.Size(120, 30);
-			this.quickCollectorButton_SinanDemirci.TabIndex = 5;
-			this.quickCollectorButton_SinanDemirci.Text = "Sinan Demirci";
-			this.quickCollectorButton_SinanDemirci.UseVisualStyleBackColor = true;
-			this.quickCollectorButton_SinanDemirci.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
+			this.button1.Location = new System.Drawing.Point(5, 45);
+			this.button1.Margin = new System.Windows.Forms.Padding(5);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(120, 30);
+			this.button1.TabIndex = 5;
+			this.button1.Text = "Sinan Demirci";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(5, 85);
+			this.button2.Margin = new System.Windows.Forms.Padding(5);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(120, 30);
+			this.button2.TabIndex = 5;
+			this.button2.Text = "Sinan Demirci";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
 			// 
 			// MainForm
 			// 
@@ -299,9 +323,9 @@
 			this.contentPanel.ResumeLayout(false);
 			this.loginPanel.ResumeLayout(false);
 			this.loginContentPanel.ResumeLayout(false);
+			this.flowLayoutPanel1.ResumeLayout(false);
 			this.loginTopPanel.ResumeLayout(false);
 			this.bodyPanel.ResumeLayout(false);
-			this.flowLayoutPanel1.ResumeLayout(false);
 			this.quickCollectorPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -326,9 +350,11 @@
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Label quickLoginLabel;
 		private System.Windows.Forms.Label loginLabel;
-		private System.Windows.Forms.Panel quickAdminPanel;
-		private System.Windows.Forms.Panel quickCollectorPanel;
-		private System.Windows.Forms.Panel quickRecyclerPanel;
 		private System.Windows.Forms.Button quickCollectorButton_SinanDemirci;
+		private System.Windows.Forms.FlowLayoutPanel quickAdminPanel;
+		private System.Windows.Forms.FlowLayoutPanel quickCollectorPanel;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
 	}
 }
