@@ -145,7 +145,7 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
-		stockt			INT				FOREIGN KEY REFERENCES WasteStock(id),
+		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
 		dispatch		INT				FOREIGN KEY REFERENCES WasteDispatch(id),
 	);
 END;
@@ -158,18 +158,17 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		active			BIT				NOT NULL DEFAULT 0
-		factory			INT				FOREIGN KEY REFERENCES Factory(id),
-		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
+		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
 	);
 END;
 
-IF OBJECT_ID('WasteProduct', 'U') IS NULL
+IF OBJECT_ID('WasteGain', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteProduct (
+	CREATE TABLE WasteGain (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
-		load			INT				FOREIGN KEY REFERENCES WasteLoad(id),
+		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id),
 	);
 END;
