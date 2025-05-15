@@ -97,9 +97,9 @@ BEGIN
 	CREATE TABLE Waste (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		amount			DECIMAL(10, 2)	NOT NULL DEFAULT 0,
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
 		type			INT				FOREIGN KEY REFERENCES WasteType(id),
-		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT 0,
 	);
 END;
 
@@ -121,9 +121,9 @@ BEGIN
 	CREATE TABLE WasteLoad (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		amount			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 		waste			INT				FOREIGN KEY REFERENCES Waste(id),
-		demand			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 	);
 END;
 
@@ -145,8 +145,8 @@ BEGIN
 	CREATE TABLE WasteProduct (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		amount			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
 		load			INT				FOREIGN KEY REFERENCES WasteLoad(id),
-		gain			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 	);
 END;
