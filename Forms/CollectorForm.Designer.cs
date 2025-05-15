@@ -31,15 +31,15 @@
 			this.selectionPanel = new System.Windows.Forms.Panel();
 			this.newButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.Panel();
+			this.dataPanel = new System.Windows.Forms.Panel();
+			this.collectingControl = new dmyo_oop_final_assigment.Controls.CollectingContainer();
 			this.managePanel = new System.Windows.Forms.Panel();
 			this.addButton = new System.Windows.Forms.Button();
 			this.completeButton = new System.Windows.Forms.Button();
-			this.dataPanel = new System.Windows.Forms.Panel();
-			this.collectingControl = new dmyo_oop_final_assigment.Controls.CollectingContainer();
 			this.selectionPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
-			this.managePanel.SuspendLayout();
 			this.dataPanel.SuspendLayout();
+			this.managePanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// selectionPanel
@@ -75,6 +75,23 @@
 			this.contentPanel.Size = new System.Drawing.Size(800, 410);
 			this.contentPanel.TabIndex = 1;
 			// 
+			// dataPanel
+			// 
+			this.dataPanel.Controls.Add(this.collectingControl);
+			this.dataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataPanel.Location = new System.Drawing.Point(0, 40);
+			this.dataPanel.Name = "dataPanel";
+			this.dataPanel.Size = new System.Drawing.Size(800, 370);
+			this.dataPanel.TabIndex = 1;
+			// 
+			// collectingControl
+			// 
+			this.collectingControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.collectingControl.Location = new System.Drawing.Point(0, 0);
+			this.collectingControl.Name = "collectingControl";
+			this.collectingControl.Size = new System.Drawing.Size(800, 370);
+			this.collectingControl.TabIndex = 0;
+			// 
 			// managePanel
 			// 
 			this.managePanel.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -108,23 +125,6 @@
 			this.completeButton.UseVisualStyleBackColor = true;
 			this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
 			// 
-			// dataPanel
-			// 
-			this.dataPanel.Controls.Add(this.collectingControl);
-			this.dataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataPanel.Location = new System.Drawing.Point(0, 40);
-			this.dataPanel.Name = "dataPanel";
-			this.dataPanel.Size = new System.Drawing.Size(800, 370);
-			this.dataPanel.TabIndex = 1;
-			// 
-			// collectingControl
-			// 
-			this.collectingControl.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.collectingControl.Location = new System.Drawing.Point(0, 0);
-			this.collectingControl.Name = "collectingControl";
-			this.collectingControl.Size = new System.Drawing.Size(800, 370);
-			this.collectingControl.TabIndex = 0;
-			// 
 			// CollectorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,10 +134,11 @@
 			this.Controls.Add(this.selectionPanel);
 			this.Name = "CollectorForm";
 			this.Text = "CollectorForm";
+			this.Load += new System.EventHandler(this.CollectorForm_Load);
 			this.selectionPanel.ResumeLayout(false);
 			this.contentPanel.ResumeLayout(false);
-			this.managePanel.ResumeLayout(false);
 			this.dataPanel.ResumeLayout(false);
+			this.managePanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
