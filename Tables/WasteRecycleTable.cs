@@ -7,22 +7,24 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => nameof(WasteRecycle);
 
-		public override string[] Params => new string[] { "date", "factory", "recycling" };
+		public override string[] Params => new string[] { "factory", "person", "active", "date" };
 
-		public override void SetParameters(WasteRecycle recycling, SqlCommand command)
+		public override void SetParameters(WasteRecycle recycle, SqlCommand command)
 		{
-			command.Parameters.AddWithValue("@date", recycling.Date);
-			command.Parameters.AddWithValue("@factory", recycling.Factory);
-			command.Parameters.AddWithValue("@recycling", recycling.Recycling);
+			command.Parameters.AddWithValue("@factory", recycle.Factory);
+			command.Parameters.AddWithValue("@person", recycle.Person);
+			command.Parameters.AddWithValue("@active", recycle.Active);
+			command.Parameters.AddWithValue("@date", recycle.Date);
 		}
 
 		public override WasteRecycle GetModel(SqlDataReader reader)
 		{
 			return new WasteRecycle()
 			{
-				Date = reader.GetDateTime(1),
-				Factory = reader.GetInt32(2),
-				Recycling = reader.GetBoolean(3),
+				Factory = reader.GetInt32(1),
+				Person = reader.GetInt32(2),
+				Active = reader.GetBoolean(3),
+				Date = reader.GetDateTime(4),
 			};
 		}
 	}

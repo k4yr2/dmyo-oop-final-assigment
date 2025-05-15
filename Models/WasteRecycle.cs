@@ -4,29 +4,19 @@ namespace dmyo_oop_final_assigment.Models
 {
 	public class WasteRecycle
 	{
-		private DateTime m_date;
-
 		private int m_factory;
 
-		private bool m_recycling;
+		private int m_person;
+
+		private bool m_active;
+
+		private DateTime m_date;
 
 		public WasteRecycle()
 		{
 
 		}
 
-
-		public DateTime Date
-		{
-			get
-			{
-				return m_date;
-			}
-			set
-			{
-				m_date = value;
-			}
-		}
 
 		public int Factory
 		{
@@ -40,15 +30,39 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public bool Recycling
+		public int Person
 		{
 			get
 			{
-				return m_recycling;
+				return m_person;
 			}
 			set
 			{
-				m_recycling = value;
+				m_person = value;
+			}
+		}
+
+		public bool Active
+		{
+			get
+			{
+				return m_active;
+			}
+			set
+			{
+				m_active = value;
+			}
+		}
+
+		public DateTime Date
+		{
+			get
+			{
+				return m_date;
+			}
+			set
+			{
+				m_date = value;
 			}
 		}
 	}
