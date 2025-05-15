@@ -129,6 +129,11 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 
 		}
+
+		private void CollectorForm_Load(object sender, EventArgs e)
+		{
+			Text = Person.Model.Name;
+		}
 	}
 
 	public enum CollectorState
