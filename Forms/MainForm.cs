@@ -79,6 +79,11 @@ namespace dmyo_oop_final_assigment.Forms
 			Login("dmyo", "2025");
 		}
 
+		private void quickCollectorButton_SinanDemirci_Click_1(object sender, EventArgs e)
+		{
+			Login("semih", "altun");
+		}
+
 		private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			Process.Start(new ProcessStartInfo

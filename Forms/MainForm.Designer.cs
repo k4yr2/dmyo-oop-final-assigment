@@ -40,29 +40,30 @@
 			this.loginPanel = new System.Windows.Forms.Panel();
 			this.loginContentPanel = new System.Windows.Forms.Panel();
 			this.quickPresetPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickAdminPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
+			this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.quickCollectorButton_SinanDemirci = new System.Windows.Forms.Button();
+			this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.loginTopPanel = new System.Windows.Forms.Panel();
 			this.quickLoginLabel = new System.Windows.Forms.Label();
 			this.loginLabel = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.bodyPanel = new System.Windows.Forms.Panel();
-			this.quickAdminPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
-			this.githubLink = new System.Windows.Forms.LinkLabel();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.githubLink = new System.Windows.Forms.LinkLabel();
+			this.bodyPanel = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.bannerPanel.SuspendLayout();
 			this.loginControlPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
 			this.loginPanel.SuspendLayout();
 			this.loginContentPanel.SuspendLayout();
 			this.quickPresetPanel.SuspendLayout();
+			this.quickAdminPanel.SuspendLayout();
+			this.quickCollectorPanel.SuspendLayout();
 			this.loginTopPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.bodyPanel.SuspendLayout();
-			this.quickAdminPanel.SuspendLayout();
-			this.quickCollectorPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// bannerPanel
@@ -197,16 +198,58 @@
 			this.quickPresetPanel.TabIndex = 3;
 			this.quickPresetPanel.WrapContents = false;
 			// 
+			// quickAdminPanel
+			// 
+			this.quickAdminPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.quickAdminPanel.Controls.Add(this.quickAdminButton_dmyo2025);
+			this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
+			this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickAdminPanel.Name = "quickAdminPanel";
+			this.quickAdminPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickAdminPanel.TabIndex = 6;
+			// 
+			// quickAdminButton_dmyo2025
+			// 
+			this.quickAdminButton_dmyo2025.Location = new System.Drawing.Point(5, 5);
+			this.quickAdminButton_dmyo2025.Margin = new System.Windows.Forms.Padding(5);
+			this.quickAdminButton_dmyo2025.Name = "quickAdminButton_dmyo2025";
+			this.quickAdminButton_dmyo2025.Size = new System.Drawing.Size(120, 30);
+			this.quickAdminButton_dmyo2025.TabIndex = 5;
+			this.quickAdminButton_dmyo2025.Text = "dmyo 2025";
+			this.quickAdminButton_dmyo2025.UseVisualStyleBackColor = true;
+			this.quickAdminButton_dmyo2025.Click += new System.EventHandler(this.quickAdminButton_dmyo2025_Click);
+			// 
+			// quickCollectorPanel
+			// 
+			this.quickCollectorPanel.AutoScroll = true;
+			this.quickCollectorPanel.BackColor = System.Drawing.Color.Gainsboro;
+			this.quickCollectorPanel.Controls.Add(this.button1);
+			this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
+			this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
+			this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickCollectorPanel.Name = "quickCollectorPanel";
+			this.quickCollectorPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickCollectorPanel.TabIndex = 6;
+			// 
 			// quickCollectorButton_SinanDemirci
 			// 
-			this.quickCollectorButton_SinanDemirci.Location = new System.Drawing.Point(5, 5);
+			this.quickCollectorButton_SinanDemirci.Location = new System.Drawing.Point(5, 45);
 			this.quickCollectorButton_SinanDemirci.Margin = new System.Windows.Forms.Padding(5);
 			this.quickCollectorButton_SinanDemirci.Name = "quickCollectorButton_SinanDemirci";
 			this.quickCollectorButton_SinanDemirci.Size = new System.Drawing.Size(120, 30);
 			this.quickCollectorButton_SinanDemirci.TabIndex = 5;
-			this.quickCollectorButton_SinanDemirci.Text = "Sinan Demirci";
+			this.quickCollectorButton_SinanDemirci.Text = "Semih Altun";
 			this.quickCollectorButton_SinanDemirci.UseVisualStyleBackColor = true;
-			this.quickCollectorButton_SinanDemirci.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
+			this.quickCollectorButton_SinanDemirci.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click_1);
+			// 
+			// quickRecyclerPanel
+			// 
+			this.quickRecyclerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
+			this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
+			this.quickRecyclerPanel.Name = "quickRecyclerPanel";
+			this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
+			this.quickRecyclerPanel.TabIndex = 6;
 			// 
 			// loginTopPanel
 			// 
@@ -257,55 +300,23 @@
 			this.panel1.Size = new System.Drawing.Size(726, 30);
 			this.panel1.TabIndex = 3;
 			// 
-			// bodyPanel
+			// linkLabel1
 			// 
-			this.bodyPanel.Controls.Add(this.contentPanel);
-			this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.bodyPanel.Location = new System.Drawing.Point(0, 60);
-			this.bodyPanel.Name = "bodyPanel";
-			this.bodyPanel.Size = new System.Drawing.Size(726, 344);
-			this.bodyPanel.TabIndex = 3;
-			// 
-			// quickAdminPanel
-			// 
-			this.quickAdminPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.quickAdminPanel.Controls.Add(this.quickAdminButton_dmyo2025);
-			this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
-			this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
-			this.quickAdminPanel.Name = "quickAdminPanel";
-			this.quickAdminPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickAdminPanel.TabIndex = 6;
-			// 
-			// quickCollectorPanel
-			// 
-			this.quickCollectorPanel.AutoScroll = true;
-			this.quickCollectorPanel.BackColor = System.Drawing.Color.Gainsboro;
-			this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
-			this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
-			this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
-			this.quickCollectorPanel.Name = "quickCollectorPanel";
-			this.quickCollectorPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickCollectorPanel.TabIndex = 6;
-			// 
-			// quickRecyclerPanel
-			// 
-			this.quickRecyclerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
-			this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
-			this.quickRecyclerPanel.Name = "quickRecyclerPanel";
-			this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
-			this.quickRecyclerPanel.TabIndex = 6;
-			// 
-			// quickAdminButton_dmyo2025
-			// 
-			this.quickAdminButton_dmyo2025.Location = new System.Drawing.Point(5, 5);
-			this.quickAdminButton_dmyo2025.Margin = new System.Windows.Forms.Padding(5);
-			this.quickAdminButton_dmyo2025.Name = "quickAdminButton_dmyo2025";
-			this.quickAdminButton_dmyo2025.Size = new System.Drawing.Size(120, 30);
-			this.quickAdminButton_dmyo2025.TabIndex = 5;
-			this.quickAdminButton_dmyo2025.Text = "dmyo 2025";
-			this.quickAdminButton_dmyo2025.UseVisualStyleBackColor = true;
-			this.quickAdminButton_dmyo2025.Click += new System.EventHandler(this.quickAdminButton_dmyo2025_Click);
+			this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
+			this.linkLabel1.Location = new System.Drawing.Point(642, 0);
+			this.linkLabel1.Margin = new System.Windows.Forms.Padding(0);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+			this.linkLabel1.Size = new System.Drawing.Size(84, 30);
+			this.linkLabel1.TabIndex = 0;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "k4yr2";
+			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// githubLink
 			// 
@@ -325,23 +336,25 @@
 			this.githubLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
 			// 
-			// linkLabel1
+			// bodyPanel
 			// 
-			this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
-			this.linkLabel1.Location = new System.Drawing.Point(642, 0);
-			this.linkLabel1.Margin = new System.Windows.Forms.Padding(0);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-			this.linkLabel1.Size = new System.Drawing.Size(84, 30);
-			this.linkLabel1.TabIndex = 0;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "k4yr2";
-			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+			this.bodyPanel.Controls.Add(this.contentPanel);
+			this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.bodyPanel.Location = new System.Drawing.Point(0, 60);
+			this.bodyPanel.Name = "bodyPanel";
+			this.bodyPanel.Size = new System.Drawing.Size(726, 344);
+			this.bodyPanel.TabIndex = 3;
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(5, 5);
+			this.button1.Margin = new System.Windows.Forms.Padding(5);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(120, 30);
+			this.button1.TabIndex = 5;
+			this.button1.Text = "Sinan Demirci";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
 			// 
 			// MainForm
 			// 
@@ -360,11 +373,11 @@
 			this.loginPanel.ResumeLayout(false);
 			this.loginContentPanel.ResumeLayout(false);
 			this.quickPresetPanel.ResumeLayout(false);
+			this.quickAdminPanel.ResumeLayout(false);
+			this.quickCollectorPanel.ResumeLayout(false);
 			this.loginTopPanel.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.bodyPanel.ResumeLayout(false);
-			this.quickAdminPanel.ResumeLayout(false);
-			this.quickCollectorPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -395,5 +408,6 @@
 		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
 		private System.Windows.Forms.LinkLabel githubLink;
 		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.Button button1;
 	}
 }
