@@ -48,7 +48,7 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
-		public WasteCollectionControl Current
+		public CollectorWasteCollection Current
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 						foreach (var data in TableManager.Waste.Select($"where collection = {collectingControl.Source.Id}"))
 						{
-							var control = new WasteControl(collectingControl, data);
+							var control = new CollectorWaste(collectingControl, data);
 							control.Width = dataPanel.Width;
 
 							dataPanel.Controls.Add(control);
@@ -121,7 +121,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-			var form = new WasteDetailForm(collectingControl);
+			var form = new CollectorWasteForm(collectingControl);
 			form.ShowDialog();
 		}
 

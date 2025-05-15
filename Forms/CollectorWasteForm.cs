@@ -7,13 +7,13 @@ using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Forms
 {
-	public partial class WasteDetailForm : Form
+	public partial class CollectorWasteForm : Form
 	{
-		private WasteCollectionControl m_collection = null;
+		private CollectorWasteCollection m_collection = null;
 
-		private WasteControl m_waste = null;
+		private CollectorWaste m_waste = null;
 
-		public WasteDetailForm()
+		public CollectorWasteForm()
 		{
 			InitializeComponent();
 			typeBox.DataSource = TableManager.WasteType.Select().ToList();
@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Forms
 			typeBox.DisplayMember = "Display";
 		}
 
-		public WasteDetailForm(WasteCollectionControl container) : this()
+		public CollectorWasteForm(CollectorWasteCollection container) : this()
 		{
 			m_collection = container;
 			m_waste = null;
@@ -29,7 +29,7 @@ namespace dmyo_oop_final_assigment.Forms
 			button.Text = "Add";
 		}
 
-		public WasteDetailForm(WasteControl entry) : this()
+		public CollectorWasteForm(CollectorWaste entry) : this()
 		{
 			m_collection = entry.Collection;
 			m_waste = entry;
@@ -40,7 +40,7 @@ namespace dmyo_oop_final_assigment.Forms
 		}
 
 
-		public WasteControl Control => m_waste;
+		public CollectorWaste Control => m_waste;
 
 
 		private void button_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 			if (m_waste == null)
 			{
-				m_waste = new WasteControl(m_collection, TableManager.Waste.Create(waste));
+				m_waste = new CollectorWaste(m_collection, TableManager.Waste.Create(waste));
 				m_collection.Panel.Controls.Add(m_waste);
 			}
 			else

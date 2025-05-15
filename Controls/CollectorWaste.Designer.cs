@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Controls
 {
-	partial class WasteControl
+	partial class CollectorWaste
 	{
 		/// <summary> 
 		/// Required designer variable.

@@ -14,21 +14,21 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class WasteControl : UserControl, IDataLink<Waste>
+	public partial class CollectorWaste : UserControl, IDataLink<Waste>
 	{
-		private WasteCollectionControl m_collection = null;
+		private CollectorWasteCollection m_collection = null;
 
 		private DMYOData<Waste> m_source = null;
 
 		private DMYOData<WasteType> m_type = null;
 
 
-		public WasteControl(WasteCollectionControl container) : this(container, null)
+		public CollectorWaste(CollectorWasteCollection container) : this(container, null)
 		{
 
 		}
 
-		public WasteControl(WasteCollectionControl collection, DMYOData<Waste> source)
+		public CollectorWaste(CollectorWasteCollection collection, DMYOData<Waste> source)
 		{
 			InitializeComponent();
 			m_collection = collection;
@@ -38,7 +38,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		//
 
-		public WasteCollectionControl Collection
+		public CollectorWasteCollection Collection
 		{
 			get
 			{
@@ -128,7 +128,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				new WasteDetailForm(this).ShowDialog();
+				new CollectorWasteForm(this).ShowDialog();
 			}
 		}
 	}
