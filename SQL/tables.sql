@@ -87,8 +87,8 @@ BEGIN
 	CREATE TABLE WasteCollection (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		person			INT				FOREIGN KEY REFERENCES Person(id),
-		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3) -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
 
