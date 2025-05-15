@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dmyo_oop_final_assigment.Models
 {
-	public class WasteRecycling
+	public class WasteRecycle
 	{
 		private DateTime m_date;
 
 		private int m_factory;
 
-		private bool m_active;
+		private bool m_recycling;
 
-		public WasteRecycling()
+		public WasteRecycle()
 		{
 
 		}
@@ -44,15 +40,15 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public bool Active
+		public bool Recycling
 		{
 			get
 			{
-				return m_active;
+				return m_recycling;
 			}
 			set
 			{
-				m_active = value;
+				m_recycling = value;
 			}
 		}
 	}
