@@ -71,5 +71,10 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			Login("sinan", "demirci");
 		}
+
+		private void quickAdminButton_dmyo2025_Click(object sender, EventArgs e)
+		{
+			Login("dmyo", "2025");
+		}
 	}
 }
