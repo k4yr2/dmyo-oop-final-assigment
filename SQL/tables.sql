@@ -51,11 +51,11 @@ END;
 IF OBJECT_ID('WasteCategory', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteCategory (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		description NVARCHAR(500),
-		hazardLevel INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
-		recyclable	BIT				DEFAULT(0)
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		description		NVARCHAR(500),
+		hazardLevel		INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
+		recyclable		BIT				DEFAULT(0)
 	);
 
 	INSERT INTO WasteCategory (name, description, hazardLevel, recyclable) VALUES 
@@ -67,11 +67,11 @@ END;
 IF OBJECT_ID('WasteType', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteType (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		description NVARCHAR(500),
-		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
-		category	INT				FOREIGN KEY REFERENCES WasteCategory(id)
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		description		NVARCHAR(500),
+		unit			INT				FOREIGN KEY REFERENCES WasteUnit(id),
+		category		INT				FOREIGN KEY REFERENCES WasteCategory(id)
 	);
 
 	INSERT INTO WasteType (name, description, unit, category) VALUES
@@ -85,21 +85,21 @@ END;
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteCollection (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		person		INT				FOREIGN KEY REFERENCES Person(id),
-		collecting	BIT				DEFAULT(0)
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
+		collecting		BIT				DEFAULT(0)
 	);
 END;
 
 IF OBJECT_ID('Waste', 'U') IS NULL
 BEGIN
 	CREATE TABLE Waste (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id),
-		type		INT				FOREIGN KEY REFERENCES WasteType(id),
-		quantity	DECIMAL(10, 2)	NOT NULL DEFAULT 0,
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT 0,
 	);
 END;
 
@@ -108,10 +108,11 @@ END;
 IF OBJECT_ID('WasteDistribution', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteDistribution (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		factory		INT				FOREIGN KEY REFERENCES Factory(id),
-		status		INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 2)
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 2)
 	);
 END;
 
@@ -132,20 +133,21 @@ END;
 IF OBJECT_ID('WasteRecycle', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteRecycle (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		factory		INT				FOREIGN KEY REFERENCES Factory(id),
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 		recycling		BIT				DEFAULT 0
 	);
 END;
 
-IF OBJECT_ID('WasteRecyclate', 'U') IS NULL
+IF OBJECT_ID('WasteProduct', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteRecyclate (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		recycle		INT				FOREIGN KEY REFERENCES WasteRecycle(id),
-		load		INT				FOREIGN KEY REFERENCES WasteLoad(id),
-		gain		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+	CREATE TABLE WasteProduct (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
+		load			INT				FOREIGN KEY REFERENCES WasteLoad(id),
+		gain			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 	);
 END;
