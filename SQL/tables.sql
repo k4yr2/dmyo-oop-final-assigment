@@ -120,7 +120,7 @@ IF OBJECT_ID('WasteDispatch', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteDispatch (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		waste			INT				FOREIGN KEY REFERENCES Waste(id)
+		waste			INT				FOREIGN KEY REFERENCES Waste(id),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
@@ -170,6 +170,6 @@ BEGIN
 		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
 		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
-		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
