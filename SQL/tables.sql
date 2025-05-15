@@ -112,7 +112,7 @@ BEGIN
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
-		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 2)
+		active			BIT				NOT NULL DEFAULT(0)
 	);
 END;
 
