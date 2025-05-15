@@ -129,13 +129,13 @@ END;
 
 --
 
-IF OBJECT_ID('WasteRecycling', 'U') IS NULL
+IF OBJECT_ID('WasteRecycle', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteRecycling (
+	CREATE TABLE WasteRecycle (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
 		factory		INT				FOREIGN KEY REFERENCES Factory(id),
-		active		BIT				DEFAULT 0
+		recycling		BIT				DEFAULT 0
 	);
 END;
 
@@ -144,7 +144,7 @@ BEGIN
 	CREATE TABLE WasteRecyclate (
 		id			INT				PRIMARY KEY IDENTITY(1,1),
 		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		recycling	INT				FOREIGN KEY REFERENCES WasteRecycling(id),
+		recycle		INT				FOREIGN KEY REFERENCES WasteRecycle(id),
 		load		INT				FOREIGN KEY REFERENCES WasteLoad(id),
 		gain		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 	);
