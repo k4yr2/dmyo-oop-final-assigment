@@ -53,11 +53,11 @@
     <Compile Include="Controls\CollectingContainer.Designer.cs">
       <DependentUpon>CollectingContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CollectingEntry.cs">
+    <Compile Include="Controls\WasteControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CollectingEntry.Designer.cs">
-      <DependentUpon>CollectingEntry.cs</DependentUpon>
+    <Compile Include="Controls\WasteControl.Designer.cs">
+      <DependentUpon>WasteControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CollectorForm.cs">
       <SubType>Form</SubType>
@@ -119,8 +119,8 @@
     <EmbeddedResource Include="Controls\CollectingContainer.resx">
       <DependentUpon>CollectingContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CollectingEntry.resx">
-      <DependentUpon>CollectingEntry.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\WasteControl.resx">
+      <DependentUpon>WasteControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CollectorForm.resx">
       <DependentUpon>CollectorForm.cs</DependentUpon>

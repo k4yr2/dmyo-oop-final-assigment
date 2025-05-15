@@ -59,7 +59,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				foreach (var waste in TableManager.Waste.Select($"where collection = {m_source.Id}"))
 				{
-					var control = new CollectingEntry(this, waste)
+					var control = new WasteControl(this, waste)
 					{
 						Width = Width - 25
 					};
@@ -70,7 +70,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void panel_Resize(object sender, System.EventArgs e)
 		{
-			foreach (var item in panel.Controls.OfType<CollectingEntry>())
+			foreach (var item in panel.Controls.OfType<WasteControl>())
 			{
 				item.Width = Width - 25;
 			}

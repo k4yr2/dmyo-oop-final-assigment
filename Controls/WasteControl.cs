@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class CollectingEntry : UserControl, IDataLink<Waste>
+	public partial class WasteControl : UserControl, IDataLink<Waste>
 	{
 		private CollectingContainer m_container = null;
 
@@ -23,12 +23,12 @@ namespace dmyo_oop_final_assigment.Controls
 		private DMYOData<WasteType> m_type = null;
 
 
-		public CollectingEntry(CollectingContainer container) : this(container, null)
+		public WasteControl(CollectingContainer container) : this(container, null)
 		{
 
 		}
 
-		public CollectingEntry(CollectingContainer collection, DMYOData<Waste> source)
+		public WasteControl(CollectingContainer collection, DMYOData<Waste> source)
 		{
 			InitializeComponent();
 			m_container = collection;
