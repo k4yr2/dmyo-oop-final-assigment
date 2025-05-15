@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -75,6 +77,15 @@ namespace dmyo_oop_final_assigment.Forms
 		private void quickAdminButton_dmyo2025_Click(object sender, EventArgs e)
 		{
 			Login("dmyo", "2025");
+		}
+
+		private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start(new ProcessStartInfo
+			{
+				FileName = "https://github.com/k4yr2/dmyo-oop-final-assigment",
+				UseShellExecute = true
+			});
 		}
 	}
 }

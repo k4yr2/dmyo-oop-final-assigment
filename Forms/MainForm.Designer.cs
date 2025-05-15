@@ -50,6 +50,7 @@
 			this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
+			this.githubLink = new System.Windows.Forms.LinkLabel();
 			this.bannerPanel.SuspendLayout();
 			this.loginControlPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
@@ -57,6 +58,7 @@
 			this.loginContentPanel.SuspendLayout();
 			this.quickPresetPanel.SuspendLayout();
 			this.loginTopPanel.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.bodyPanel.SuspendLayout();
 			this.quickAdminPanel.SuspendLayout();
 			this.quickCollectorPanel.SuspendLayout();
@@ -86,7 +88,7 @@
 			// 
 			// loginControlPanel
 			// 
-			this.loginControlPanel.BackColor = System.Drawing.Color.Silver;
+			this.loginControlPanel.BackColor = System.Drawing.Color.Gainsboro;
 			this.loginControlPanel.Controls.Add(this.loginButton);
 			this.loginControlPanel.Controls.Add(this.passwordBox);
 			this.loginControlPanel.Controls.Add(this.nameBox);
@@ -244,7 +246,8 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.Gray;
+			this.panel1.BackColor = System.Drawing.Color.DarkGray;
+			this.panel1.Controls.Add(this.githubLink);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel1.Location = new System.Drawing.Point(0, 314);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
@@ -263,7 +266,7 @@
 			// 
 			// quickAdminPanel
 			// 
-			this.quickAdminPanel.BackColor = System.Drawing.Color.MistyRose;
+			this.quickAdminPanel.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.quickAdminPanel.Controls.Add(this.quickAdminButton_dmyo2025);
 			this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
 			this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -274,7 +277,7 @@
 			// quickCollectorPanel
 			// 
 			this.quickCollectorPanel.AutoScroll = true;
-			this.quickCollectorPanel.BackColor = System.Drawing.Color.PaleTurquoise;
+			this.quickCollectorPanel.BackColor = System.Drawing.Color.Gainsboro;
 			this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
 			this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
 			this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -284,7 +287,7 @@
 			// 
 			// quickRecyclerPanel
 			// 
-			this.quickRecyclerPanel.BackColor = System.Drawing.Color.PaleGreen;
+			this.quickRecyclerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
 			this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.quickRecyclerPanel.Name = "quickRecyclerPanel";
@@ -301,6 +304,22 @@
 			this.quickAdminButton_dmyo2025.Text = "dmyo 2025";
 			this.quickAdminButton_dmyo2025.UseVisualStyleBackColor = true;
 			this.quickAdminButton_dmyo2025.Click += new System.EventHandler(this.quickAdminButton_dmyo2025_Click);
+			// 
+			// githubLink
+			// 
+			this.githubLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.githubLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.githubLink.LinkColor = System.Drawing.Color.Blue;
+			this.githubLink.Location = new System.Drawing.Point(0, 0);
+			this.githubLink.Margin = new System.Windows.Forms.Padding(0);
+			this.githubLink.Name = "githubLink";
+			this.githubLink.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+			this.githubLink.Size = new System.Drawing.Size(353, 30);
+			this.githubLink.TabIndex = 0;
+			this.githubLink.TabStop = true;
+			this.githubLink.Text = "k4yr2/dmyo-oop-final-assigment";
+			this.githubLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
 			// 
 			// MainForm
 			// 
@@ -320,6 +339,7 @@
 			this.loginContentPanel.ResumeLayout(false);
 			this.quickPresetPanel.ResumeLayout(false);
 			this.loginTopPanel.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.bodyPanel.ResumeLayout(false);
 			this.quickAdminPanel.ResumeLayout(false);
 			this.quickCollectorPanel.ResumeLayout(false);
@@ -351,5 +371,6 @@
 		private System.Windows.Forms.FlowLayoutPanel quickCollectorPanel;
 		private System.Windows.Forms.Button quickAdminButton_dmyo2025;
 		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
+		private System.Windows.Forms.LinkLabel githubLink;
 	}
 }
