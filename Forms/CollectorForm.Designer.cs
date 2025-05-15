@@ -32,7 +32,7 @@
 			this.newButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.Panel();
 			this.dataPanel = new System.Windows.Forms.Panel();
-			this.collectingControl = new dmyo_oop_final_assigment.Controls.CollectingContainer();
+			this.collectingControl = new dmyo_oop_final_assigment.Controls.WasteCollectionControl();
 			this.managePanel = new System.Windows.Forms.Panel();
 			this.addButton = new System.Windows.Forms.Button();
 			this.completeButton = new System.Windows.Forms.Button();
@@ -152,6 +152,6 @@
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Button completeButton;
 		private System.Windows.Forms.Panel dataPanel;
-		private Controls.CollectingContainer collectingControl;
+		private Controls.WasteCollectionControl collectingControl;
 	}
 }

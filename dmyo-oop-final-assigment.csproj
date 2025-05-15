@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\CollectingContainer.cs">
+    <Compile Include="Controls\WasteCollectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CollectingContainer.Designer.cs">
-      <DependentUpon>CollectingContainer.cs</DependentUpon>
+    <Compile Include="Controls\WasteCollectionControl.Designer.cs">
+      <DependentUpon>WasteCollectionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WasteControl.cs">
       <SubType>UserControl</SubType>
@@ -116,8 +116,8 @@
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <Compile Include="Tables\WasteUnitTable.cs" />
-    <EmbeddedResource Include="Controls\CollectingContainer.resx">
-      <DependentUpon>CollectingContainer.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\WasteCollectionControl.resx">
+      <DependentUpon>WasteCollectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WasteControl.resx">
       <DependentUpon>WasteControl.cs</DependentUpon>

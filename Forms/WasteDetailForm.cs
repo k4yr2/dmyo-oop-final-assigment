@@ -9,7 +9,7 @@ namespace dmyo_oop_final_assigment.Forms
 {
 	public partial class WasteDetailForm : Form
 	{
-		private CollectingContainer m_container = null;
+		private WasteCollectionControl m_collection = null;
 
 		private WasteControl m_waste = null;
 
@@ -21,9 +21,9 @@ namespace dmyo_oop_final_assigment.Forms
 			typeBox.DisplayMember = "Display";
 		}
 
-		public WasteDetailForm(CollectingContainer container) : this()
+		public WasteDetailForm(WasteCollectionControl container) : this()
 		{
-			m_container = container;
+			m_collection = container;
 			m_waste = null;
 
 			button.Text = "Add";
@@ -31,7 +31,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		public WasteDetailForm(WasteControl entry) : this()
 		{
-			m_container = entry.Collection;
+			m_collection = entry.Collection;
 			m_waste = entry;
 
 			button.Text = "Update";
@@ -54,15 +54,15 @@ namespace dmyo_oop_final_assigment.Forms
 			var waste = new Waste()
 			{
 				Date = DateTime.Now,
-				Collection = m_container.Source.Id,
+				Collection = m_collection.Source.Id,
 				Type = (int)typeBox.SelectedValue,
 				Quantity = quantity,
 			};
 
 			if (m_waste == null)
 			{
-				m_waste = new WasteControl(m_container, TableManager.Waste.Create(waste));
-				m_container.Panel.Controls.Add(m_waste);
+				m_waste = new WasteControl(m_collection, TableManager.Waste.Create(waste));
+				m_collection.Panel.Controls.Add(m_waste);
 			}
 			else
 			{

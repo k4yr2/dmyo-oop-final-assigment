@@ -48,7 +48,7 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
-		public CollectingContainer Current
+		public WasteCollectionControl Current
 		{
 			get
 			{

@@ -16,33 +16,33 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class WasteControl : UserControl, IDataLink<Waste>
 	{
-		private CollectingContainer m_container = null;
+		private WasteCollectionControl m_collection = null;
 
 		private DMYOData<Waste> m_source = null;
 
 		private DMYOData<WasteType> m_type = null;
 
 
-		public WasteControl(CollectingContainer container) : this(container, null)
+		public WasteControl(WasteCollectionControl container) : this(container, null)
 		{
 
 		}
 
-		public WasteControl(CollectingContainer collection, DMYOData<Waste> source)
+		public WasteControl(WasteCollectionControl collection, DMYOData<Waste> source)
 		{
 			InitializeComponent();
-			m_container = collection;
+			m_collection = collection;
 
 			Bind(source);
 		}
 
 		//
 
-		public CollectingContainer Collection
+		public WasteCollectionControl Collection
 		{
 			get
 			{
-				return m_container;
+				return m_collection;
 			}
 		}
 
@@ -111,7 +111,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				if(TableManager.Waste.Delete(m_source.Id))
 				{
-					m_container.Refresh();
+					m_collection.Refresh();
 				}
 				else
 				{

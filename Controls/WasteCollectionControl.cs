@@ -6,16 +6,16 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class CollectingContainer : UserControl, IDataLink<WasteCollection> 
+	public partial class WasteCollectionControl : UserControl, IDataLink<WasteCollection> 
 	{
 		private DMYOData<WasteCollection> m_source = null;
 
-		public CollectingContainer() : this(null)
+		public WasteCollectionControl() : this(null)
 		{
 
 		}
 
-		public CollectingContainer(DMYOData<WasteCollection> source)
+		public WasteCollectionControl(DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
 			Bind(source);
