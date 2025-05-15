@@ -116,9 +116,9 @@ BEGIN
 	);
 END;
 
-IF OBJECT_ID('WasteLoad', 'U') IS NULL
+IF OBJECT_ID('WasteDispatch', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteLoad (
+	CREATE TABLE WasteDispatch (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
