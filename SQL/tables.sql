@@ -156,10 +156,10 @@ IF OBJECT_ID('WasteRecycle', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteRecycle (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
 		active			BIT				NOT NULL DEFAULT(0),
-		factory			INT				FOREIGN KEY REFERENCES Factory(id)
-		person			INT				FOREIGN KEY REFERENCES Person(id)
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
 
@@ -167,9 +167,9 @@ IF OBJECT_ID('WasteGain', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteGain (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
-		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id)
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 	);
 END;
