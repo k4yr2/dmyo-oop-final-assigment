@@ -128,7 +128,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				new CollectingForm(this).ShowDialog();
+				new WasteDetailForm(this).ShowDialog();
 			}
 		}
 	}

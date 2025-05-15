@@ -7,13 +7,13 @@ using dmyo_oop_final_assigment.Models;
 
 namespace dmyo_oop_final_assigment.Forms
 {
-	public partial class CollectingForm : Form
+	public partial class WasteDetailForm : Form
 	{
 		private CollectingContainer m_container = null;
 
 		private CollectingEntry m_entry = null;
 
-		public CollectingForm()
+		public WasteDetailForm()
 		{
 			InitializeComponent();
 			typeBox.DataSource = TableManager.WasteType.Select().ToList();
@@ -21,7 +21,7 @@ namespace dmyo_oop_final_assigment.Forms
 			typeBox.DisplayMember = "Display";
 		}
 
-		public CollectingForm(CollectingContainer container) : this()
+		public WasteDetailForm(CollectingContainer container) : this()
 		{
 			m_container = container;
 			m_entry = null;
@@ -29,7 +29,7 @@ namespace dmyo_oop_final_assigment.Forms
 			button.Text = "Add";
 		}
 
-		public CollectingForm(CollectingEntry entry) : this()
+		public WasteDetailForm(CollectingEntry entry) : this()
 		{
 			m_container = entry.Collection;
 			m_entry = entry;

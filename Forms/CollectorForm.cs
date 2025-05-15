@@ -121,7 +121,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-			var form = new CollectingForm(collectingControl);
+			var form = new WasteDetailForm(collectingControl);
 			form.ShowDialog();
 		}
 
