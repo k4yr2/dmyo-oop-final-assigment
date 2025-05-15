@@ -26,6 +26,8 @@ namespace dmyo_oop_final_assigment.Managers
 
 		private static readonly WasteStockTable m_wasteStock = new WasteStockTable();
 
+		private static readonly WasteReceiptTable m_wasteReceipt = new WasteReceiptTable();
+
 		private static readonly WasteRecycleTable m_wasteRecycle = new WasteRecycleTable();
 
 		private static readonly WasteRecyclateTable m_wasteRecyclateTable = new WasteRecyclateTable();
@@ -117,6 +119,14 @@ namespace dmyo_oop_final_assigment.Managers
 			get
 			{
 				return m_wasteStock;
+			}
+		}
+
+		public static WasteReceiptTable WasteReceipt
+		{
+			get
+			{
+				return m_wasteReceipt;
 			}
 		}
 
