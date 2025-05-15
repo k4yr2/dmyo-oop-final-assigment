@@ -6,9 +6,10 @@ namespace dmyo_oop_final_assigment.Models
 	{
 		private int m_person;
 
+		private WasteStatus m_status;
+
 		private DateTime m_date;
 
-		private bool m_collecting;
 
 		public WasteCollection()
 		{
@@ -28,6 +29,18 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
+		public WasteStatus Status
+		{
+			get
+			{
+				return m_status;
+			}
+			set
+			{
+				m_status = value;
+			}
+		}
+
 		public DateTime Date
 		{
 			get
@@ -39,17 +52,13 @@ namespace dmyo_oop_final_assigment.Models
 				m_date = value;
 			}
 		}
+	}
 
-		public bool Collecting
-		{
-			get
-			{
-				return m_collecting;
-			}
-			set
-			{
-				m_collecting = value;
-			}
-		}
+	public enum WasteStatus
+	{
+		Active = 0,
+		Processing = 1,
+		Completed = 2,
+		Cancelled = 3,
 	}
 }

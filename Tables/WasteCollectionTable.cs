@@ -8,22 +8,22 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "WasteCollection";
 
-		public override string[] Params => new string[] { "date", "person", "collecting" };
+		public override string[] Params => new string[] { "person", "status", "date" };
 
 		public override void SetParameters(WasteCollection collection, SqlCommand command)
 		{
-			command.Parameters.AddWithValue("@date", collection.Date);
 			command.Parameters.AddWithValue("@person", collection.Person);
-			command.Parameters.AddWithValue("@collecting", collection.Collecting);
+			command.Parameters.AddWithValue("@status", collection.Status);
+			command.Parameters.AddWithValue("@date", collection.Date);
 		}
 
 		public override WasteCollection GetModel(SqlDataReader reader)
 		{
 			return new WasteCollection()
 			{
-				Date = reader.GetDateTime(1),
-				Person = reader.GetInt32(2),
-				Collecting = reader.GetBoolean(3)
+				Person = reader.GetInt32(1),
+				Status = (WasteStatus)reader.GetInt32(2),
+				Date = reader.GetDateTime(3),
 			};
 		}
 
