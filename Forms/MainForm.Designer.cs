@@ -51,6 +51,7 @@
 			this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
 			this.githubLink = new System.Windows.Forms.LinkLabel();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.bannerPanel.SuspendLayout();
 			this.loginControlPanel.SuspendLayout();
 			this.contentPanel.SuspendLayout();
@@ -247,6 +248,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.DarkGray;
+			this.panel1.Controls.Add(this.linkLabel1);
 			this.panel1.Controls.Add(this.githubLink);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel1.Location = new System.Drawing.Point(0, 314);
@@ -317,9 +319,25 @@
 			this.githubLink.Size = new System.Drawing.Size(353, 30);
 			this.githubLink.TabIndex = 0;
 			this.githubLink.TabStop = true;
-			this.githubLink.Text = "k4yr2/dmyo-oop-final-assigment";
+			this.githubLink.Text = "dmyo-oop-final-assigment";
 			this.githubLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.githubLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubLink_LinkClicked);
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
+			this.linkLabel1.Location = new System.Drawing.Point(642, 0);
+			this.linkLabel1.Margin = new System.Windows.Forms.Padding(0);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+			this.linkLabel1.Size = new System.Drawing.Size(84, 30);
+			this.linkLabel1.TabIndex = 0;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "k4yr2";
+			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// MainForm
 			// 
@@ -372,5 +390,6 @@
 		private System.Windows.Forms.Button quickAdminButton_dmyo2025;
 		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
 		private System.Windows.Forms.LinkLabel githubLink;
+		private System.Windows.Forms.LinkLabel linkLabel1;
 	}
 }

@@ -87,5 +87,14 @@ namespace dmyo_oop_final_assigment.Forms
 				UseShellExecute = true
 			});
 		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start(new ProcessStartInfo
+			{
+				FileName = "https://github.com/k4yr2",
+				UseShellExecute = true
+			});
+		}
 	}
 }
