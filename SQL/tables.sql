@@ -87,7 +87,7 @@ BEGIN
 	CREATE TABLE WasteCollection (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
 		person			INT				FOREIGN KEY REFERENCES Person(id)
 	);
 END;
@@ -110,7 +110,7 @@ BEGIN
 	CREATE TABLE WasteDistribution (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id)
 	);
@@ -134,7 +134,6 @@ BEGIN
 	CREATE TABLE WasteStock (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 	);
 END;
@@ -142,11 +141,11 @@ END;
 IF OBJECT_ID('WasteReceipt', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteReceipt (
-		id				INT					PRIMARY KEY IDENTITY(1,1),
-		date			DATETIME			NOT NULL DEFAULT GETDATE(),
-		quantity		DECIMAL(10, 2)		NOT NULL DEFAULT(0),
-		stock			INT					FOREIGN KEY REFERENCES WasteStock(id),
-		dispatch		INT					FOREIGN KEY REFERENCES WasteDispatch(id)
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
+		dispatch		INT				FOREIGN KEY REFERENCES WasteDispatch(id)
 	);
 END;
 
@@ -158,7 +157,8 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		active			BIT				NOT NULL DEFAULT(0),
-		stock			INT				FOREIGN KEY REFERENCES WasteStock(id)
+		factory			INT				FOREIGN KEY REFERENCES Factory(id)
+		person			INT				FOREIGN KEY REFERENCES Person(id)
 	);
 END;
 
