@@ -3,10 +3,10 @@ USE dmyo_oop_final_assigment;
 IF OBJECT_ID('Person', 'U') IS NULL
 BEGIN
 	CREATE TABLE Person (
-		id			INT PRIMARY		KEY IDENTITY(1,1),
-		name		NVARCHAR(100)	NOT NULL UNIQUE,
-		password	NVARCHAR(32)	NOT NULL,
-		role		INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(100)	NOT NULL UNIQUE,
+		password		NVARCHAR(32)	NOT NULL,
+		role			INT				NOT NULL CHECK (role BETWEEN 0 AND 2)
 	);
 
 	INSERT INTO Person (name, password, role)
@@ -16,32 +16,32 @@ END;
 IF OBJECT_ID('Factory', 'U') IS NULL
 BEGIN
 	CREATE TABLE Factory (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL DEFAULT 'My Factory',
-		location	NVARCHAR(200)	NOT NULL DEFAULT 'No location entered',
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL DEFAULT 'My Factory',
+		location		NVARCHAR(200)	NOT NULL DEFAULT 'No location entered'
 	);
 END;
 
 IF OBJECT_ID('FactoryAccess', 'U') IS NULL
 BEGIN
 	CREATE TABLE FactoryAccess (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		person		INT				FOREIGN KEY REFERENCES Person(id),
-		factory		INT				FOREIGN KEY REFERENCES Factory(id),
-		mode		INT				NOT NULL CHECK (mode BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin,
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		mode			INT				NOT NULL CHECK (mode BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin
 
 		UNIQUE (person, factory)
 	);
 END;
 
---
+-- Waste Unit ve Kategori
 
 IF OBJECT_ID('WasteUnit', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteUnit (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		abbr			NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
 	);
 
 	INSERT INTO WasteUnit (name, abbr)
@@ -80,15 +80,15 @@ BEGIN
 	('Broken Phone', 'Non-functioning cell phones', 3, 3);
 END;
 
---
+-- Waste Collection & Waste
 
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteCollection (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0)
-		person			INT				FOREIGN KEY REFERENCES Person(id),
+		active			BIT				NOT NULL DEFAULT(0),
+		person			INT				FOREIGN KEY REFERENCES Person(id)
 	);
 END;
 
@@ -99,20 +99,20 @@ BEGIN
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT 0,
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
-		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id)
 	);
 END;
 
---
+-- Waste Distribution & Waste Dispatch
 
 IF OBJECT_ID('WasteDistribution', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteDistribution (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0)
+		active			BIT				NOT NULL DEFAULT(0),
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
-		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id)
 	);
 END;
 
@@ -121,20 +121,20 @@ BEGIN
 	CREATE TABLE WasteDispatch (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
-		waste			INT				FOREIGN KEY REFERENCES Waste(id),
+		waste			INT				FOREIGN KEY REFERENCES Waste(id)
 	);
 END;
 
---
+-- Waste Stock & Waste Receipt
 
 IF OBJECT_ID('WasteStock', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteStock (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT(0)
+		active			BIT				NOT NULL DEFAULT(0),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 	);
 END;
@@ -142,23 +142,23 @@ END;
 IF OBJECT_ID('WasteReceipt', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteReceipt (
-		id				INT				PRIMARY KEY IDENTITY(1,1),
-		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
-		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
-		dispatch		INT				FOREIGN KEY REFERENCES WasteDispatch(id),
+		id				INT					PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME			NOT NULL DEFAULT GETDATE(),
+		quantity		DECIMAL(10, 2)		NOT NULL DEFAULT(0),
+		stock			INT					FOREIGN KEY REFERENCES WasteStock(id),
+		dispatch		INT					FOREIGN KEY REFERENCES WasteDispatch(id)
 	);
 END;
 
---
+-- Waste Recycle & Waste Gain
 
 IF OBJECT_ID('WasteRecycle', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteRecycle (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		active			BIT				NOT NULL DEFAULT 0
-		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
+		active			BIT				NOT NULL DEFAULT(0),
+		stock			INT				FOREIGN KEY REFERENCES WasteStock(id)
 	);
 END;
 
@@ -167,8 +167,8 @@ BEGIN
 	CREATE TABLE WasteGain (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
-		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id),
+		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id)
 	);
 END;
