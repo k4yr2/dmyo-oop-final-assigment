@@ -88,7 +88,7 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		person			INT				FOREIGN KEY REFERENCES Person(id),
-		collecting		BIT				DEFAULT(0)
+		active			BIT				NOT NULL DEFAULT(0)
 	);
 END;
 
@@ -124,7 +124,6 @@ BEGIN
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 		waste			INT				FOREIGN KEY REFERENCES Waste(id),
 		demand			DECIMAL(10, 2)	NOT NULL DEFAULT(0),
-		granted			DECIMAL(10, 2)	NOT NULL DEFAULT(0)
 	);
 END;
 
@@ -137,7 +136,7 @@ BEGIN
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
-		recycling		BIT				DEFAULT 0
+		active			BIT				NOT NULL DEFAULT 0
 	);
 END;
 
