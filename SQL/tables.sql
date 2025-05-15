@@ -10,7 +10,7 @@ BEGIN
 	);
 
 	INSERT INTO Person (name, password, role)
-	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('serhat', 'genc', 1);
+	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('semih', 'altun', 0), ('serhat', 'genc', 1);
 END;
 
 IF OBJECT_ID('Factory', 'U') IS NULL
