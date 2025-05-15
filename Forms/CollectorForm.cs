@@ -113,7 +113,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				Date = DateTime.Now,
 				Person = Person.Id,
-				Collecting = true
+				Status = WasteStatus.Active
 			}));
 
 			State = CollectorState.Collecting;
