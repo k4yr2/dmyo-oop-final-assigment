@@ -4,31 +4,19 @@ namespace dmyo_oop_final_assigment.Models
 {
 	public class Waste
 	{
-		private DateTime m_date;
-
 		private int m_collection;
 
 		private int m_type;
 
 		private decimal m_quantity;
 
+		private DateTime m_date;
+
 		public Waste()
 		{
 
 		}
 
-
-		public DateTime Date
-		{
-			get
-			{
-				return m_date;
-			}
-			set
-			{
-				m_date = value;
-			}
-		}
 
 		public int Collection
 		{
@@ -63,6 +51,18 @@ namespace dmyo_oop_final_assigment.Models
 			set
 			{
 				m_quantity = value;
+			}
+		}
+
+		public DateTime Date
+		{
+			get
+			{
+				return m_date;
+			}
+			set
+			{
+				m_date = value;
 			}
 		}
 	}
