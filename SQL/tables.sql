@@ -87,8 +87,8 @@ BEGIN
 	CREATE TABLE WasteCollection (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
-		person			INT				FOREIGN KEY REFERENCES Person(id),
 		active			BIT				NOT NULL DEFAULT(0)
+		person			INT				FOREIGN KEY REFERENCES Person(id),
 	);
 END;
 
@@ -110,9 +110,9 @@ BEGIN
 	CREATE TABLE WasteDistribution (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		active			BIT				NOT NULL DEFAULT(0)
 		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
-		active			BIT				NOT NULL DEFAULT(0)
 	);
 END;
 
@@ -134,9 +134,9 @@ BEGIN
 	CREATE TABLE WasteRecycle (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		active			BIT				NOT NULL DEFAULT 0
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
-		active			BIT				NOT NULL DEFAULT 0
 	);
 END;
 
