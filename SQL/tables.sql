@@ -129,6 +129,29 @@ END;
 
 --
 
+IF OBJECT_ID('WasteStock', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteStock (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		active			BIT				NOT NULL DEFAULT(0)
+		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
+	);
+END;
+
+IF OBJECT_ID('WasteReceipt', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteReceipt (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		date			DATETIME		NOT NULL DEFAULT GETDATE(),
+		quantity 		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		stockt			INT				FOREIGN KEY REFERENCES WasteStock(id),
+		dispatch		INT				FOREIGN KEY REFERENCES WasteDispatch(id),
+	);
+END;
+
+--
+
 IF OBJECT_ID('WasteRecycle', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteRecycle (
