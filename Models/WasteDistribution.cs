@@ -4,11 +4,13 @@ namespace dmyo_oop_final_assigment.Models
 {
 	public class WasteDistribution
 	{
-		private DateTime m_date;
+		private int m_collection;
 
 		private int m_factory;
 
-		private WasteDistributionStatus m_status;
+		private WasteStatus m_status;
+
+		private DateTime m_date;
 
 		public WasteDistribution()
 		{
@@ -16,15 +18,15 @@ namespace dmyo_oop_final_assigment.Models
 		}
 
 
-		public DateTime Date
+		public int Collection
 		{
 			get
 			{
-				return m_date;
+				return m_collection;
 			}
 			set
 			{
-				m_date = value;
+				m_collection = value;
 			}
 		}
 
@@ -40,7 +42,7 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public WasteDistributionStatus Status
+		public WasteStatus Status
 		{
 			get
 			{
@@ -51,12 +53,17 @@ namespace dmyo_oop_final_assigment.Models
 				m_status = value;
 			}
 		}
-	}
 
-	public enum WasteDistributionStatus
-	{
-		Demand = 0,
-		Grant = 1,
-		Complete = 2,
+		public DateTime Date
+		{
+			get
+			{
+				return m_date;
+			}
+			set
+			{
+				m_date = value;
+			}
+		}
 	}
 }
