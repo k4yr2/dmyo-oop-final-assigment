@@ -1,4 +1,6 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace dmyo_oop_final_assigment.Tables
@@ -26,6 +28,25 @@ namespace dmyo_oop_final_assigment.Tables
 				Quantity = reader.GetDecimal(3),
 				Date = reader.GetDateTime(4),
 			};
+		}
+
+
+		public IEnumerable<DMYOData<Waste>> OfCollectionType(int collection, int type)
+		{
+			string query = $@"
+				SELECT *
+				FROM Waste
+				WHERE collection = {collection}
+				  AND type = {type}
+				  AND id IN (
+					  SELECT MIN(id)
+					  FROM Waste
+					  WHERE collection = {collection}
+					    AND type = {type}
+					  GROUP BY date
+				  );";
+
+			return DataManager.ExecuteCommand(query, DoSelect);
 		}
 	}
 }
