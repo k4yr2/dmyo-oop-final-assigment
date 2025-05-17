@@ -2,13 +2,7 @@
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -19,9 +13,9 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteType> m_source;
 
-		private DMYOData<WasteCategory> m_category;
-
 		private DMYOData<WasteUnit> m_unit;
+
+		private DMYOData<Waste>[] m_wastes;
 
 		public CollectorDistributionItem(CollectorDistribution distribution) : this(distribution, null)
 		{
@@ -60,13 +54,13 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if (m_source == null)
 			{
-				m_category = null;
 				m_unit = null;
+				m_wastes = Array.Empty<DMYOData<Waste>>();
 			}
 			else
 			{
-				m_category = TableManager.WasteCategory.Read(m_source.Model.Category);
 				m_unit = TableManager.WasteUnit.Read(m_source.Model.Unit);
+				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_source.Id).ToArray();
 			}
 
 			Refresh();
@@ -87,7 +81,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				typeLabel.Text = m_source.Model.Name;
 				dispatchBox.Enabled = true;
-				quantityLabel.Text = "0";
+				quantityLabel.Text = m_wastes.Sum(w => w.Model.Quantity).ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
 			}
 		}
