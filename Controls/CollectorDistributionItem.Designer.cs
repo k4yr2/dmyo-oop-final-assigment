@@ -30,7 +30,7 @@
 		{
 			this.abbrLabel = new System.Windows.Forms.Label();
 			this.typeLabel = new System.Windows.Forms.Label();
-			this.quantityLabel = new System.Windows.Forms.Label();
+			this.capacityLabel = new System.Windows.Forms.Label();
 			this.dispatchBox = new System.Windows.Forms.TextBox();
 			this.seperatorLabel = new System.Windows.Forms.Label();
 			this.percentLabel = new System.Windows.Forms.Label();
@@ -60,14 +60,14 @@
 			// 
 			// quantityLabel
 			// 
-			this.quantityLabel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.quantityLabel.Location = new System.Drawing.Point(346, 0);
-			this.quantityLabel.Name = "quantityLabel";
-			this.quantityLabel.Size = new System.Drawing.Size(40, 40);
-			this.quantityLabel.TabIndex = 2;
-			this.quantityLabel.Text = "0";
-			this.quantityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.capacityLabel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.capacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.capacityLabel.Location = new System.Drawing.Point(346, 0);
+			this.capacityLabel.Name = "quantityLabel";
+			this.capacityLabel.Size = new System.Drawing.Size(40, 40);
+			this.capacityLabel.TabIndex = 2;
+			this.capacityLabel.Text = "0";
+			this.capacityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// dispatchBox
 			// 
@@ -77,6 +77,7 @@
 			this.dispatchBox.Name = "dispatchBox";
 			this.dispatchBox.Size = new System.Drawing.Size(60, 20);
 			this.dispatchBox.TabIndex = 3;
+			this.dispatchBox.TextChanged += new System.EventHandler(this.dispatchBox_TextChanged);
 			// 
 			// seperatorLabel
 			// 
@@ -107,7 +108,7 @@
 			this.Controls.Add(this.percentLabel);
 			this.Controls.Add(this.seperatorLabel);
 			this.Controls.Add(this.dispatchBox);
-			this.Controls.Add(this.quantityLabel);
+			this.Controls.Add(this.capacityLabel);
 			this.Controls.Add(this.abbrLabel);
 			this.Controls.Add(this.typeLabel);
 			this.Margin = new System.Windows.Forms.Padding(0);
@@ -121,7 +122,7 @@
 		#endregion
 
 		private System.Windows.Forms.Label typeLabel;
-		private System.Windows.Forms.Label quantityLabel;
+		private System.Windows.Forms.Label capacityLabel;
 		private System.Windows.Forms.TextBox dispatchBox;
 		private System.Windows.Forms.Label seperatorLabel;
 		private System.Windows.Forms.Label percentLabel;

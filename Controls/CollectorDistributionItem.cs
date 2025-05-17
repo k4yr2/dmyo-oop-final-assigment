@@ -17,6 +17,12 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<Waste>[] m_wastes;
 
+		private decimal m_dispatch = 0;
+
+		private double m_percent = 0;
+
+		private decimal m_capacity = 0;
+
 		public CollectorDistributionItem(CollectorDistribution distribution) : this(distribution, null)
 		{
 
@@ -56,11 +62,15 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_unit = null;
 				m_wastes = Array.Empty<DMYOData<Waste>>();
+				m_capacity = 0;
+				m_dispatch = 0;
 			}
 			else
 			{
 				m_unit = TableManager.WasteUnit.Read(m_source.Model.Unit);
 				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_source.Id).ToArray();
+				m_capacity = m_wastes.Sum(w => w.Model.Quantity);
+				m_dispatch = Math.Min(m_dispatch, m_capacity);
 			}
 
 			Refresh();
@@ -74,16 +84,32 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				typeLabel.Text = "BLANK";
 				dispatchBox.Enabled = false;
-				quantityLabel.Text = "0";
+				percentLabel.Text = $"%{m_percent:0.00}";
+				capacityLabel.Text = "0";
 				abbrLabel.Text = "pcs";
 			}
 			else
 			{
 				typeLabel.Text = m_source.Model.Name;
 				dispatchBox.Enabled = true;
-				quantityLabel.Text = m_wastes.Sum(w => w.Model.Quantity).ToString();
+				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
 			}
+		}
+
+		private void dispatchBox_TextChanged(object sender, EventArgs e)
+		{
+			if(!decimal.TryParse(dispatchBox.Text, out decimal dispatch))
+			{
+				dispatch = m_capacity;
+				dispatchBox.Text = dispatch.ToString();
+			}
+
+			m_dispatch = Math.Min(dispatch, m_capacity);
+			m_percent = m_capacity == 0 ? 0 : (double)(m_dispatch / m_capacity) * 100;
+			
+			percentLabel.Text = $"%{m_percent:0.00}";
+			dispatchBox.Text = m_dispatch.ToString();
 		}
 	}
 }
