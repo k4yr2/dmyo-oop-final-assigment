@@ -41,6 +41,29 @@ namespace dmyo_oop_final_assigment.Forms
 				}
 			}
 		}
+
+
+		public override void Refresh()
+		{
+			base.Refresh();
+			idlePanel.Visible = false;
+
+			switch (m_status)
+			{
+				case CollectorStatus.View:
+					break;
+				case CollectorStatus.ViewAll:
+					break;
+				case CollectorStatus.Collection:
+					break;
+				case CollectorStatus.Distrubution:
+					break;
+				case CollectorStatus.Idle:
+				default:
+					idlePanel.Visible = true;
+					break;
+			}	
+		}
 	}
 
 	public enum CollectorStatus
