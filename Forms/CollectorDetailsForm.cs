@@ -12,10 +12,15 @@ namespace dmyo_oop_final_assigment.Forms
 
 		public CollectorDetailsForm(CollectorCollection collection) : this(collection, null)
 		{
-
+			applyButton.Text = "Create";
 		}
 
-		public CollectorDetailsForm(CollectorCollection collection, CollectorWaste waste)
+		public CollectorDetailsForm(CollectorWaste waste) : this(waste.Collection, waste)
+		{
+			applyButton.Text = "Update";
+		}
+
+		private CollectorDetailsForm(CollectorCollection collection, CollectorWaste waste)
 		{
 			InitializeComponent();
 
