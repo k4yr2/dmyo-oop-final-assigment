@@ -87,8 +87,11 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 			else
 			{
-				m_waste.Refresh();
+				waste.Date = m_waste.Source.Model.Date;
 				TableManager.Waste.Update(m_waste.Source.Id, waste);
+
+				m_waste.Source.Model = waste;
+				m_waste.Refresh();
 			}
 
 			Close();
