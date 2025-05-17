@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
@@ -8,6 +9,11 @@ namespace dmyo_oop_final_assigment.Forms
 		private DMYOData<Person> m_person;
 
 		private CollectorStatus m_status;
+
+		public CollectorForm() : this(null) 
+		{ 
+
+		}
 
 		public CollectorForm(DMYOData<Person> person)
 		{
@@ -46,21 +52,24 @@ namespace dmyo_oop_final_assigment.Forms
 		public override void Refresh()
 		{
 			base.Refresh();
-			idlePanel.Visible = false;
 
 			switch (m_status)
 			{
 				case CollectorStatus.View:
+					collectorTab.SelectedIndex = 1;
 					break;
 				case CollectorStatus.ViewAll:
+					collectorTab.SelectedIndex = 2;
 					break;
 				case CollectorStatus.Collection:
+					collectorTab.SelectedIndex = 3;
 					break;
 				case CollectorStatus.Distrubution:
+					collectorTab.SelectedIndex = 4;
 					break;
 				case CollectorStatus.Idle:
 				default:
-					idlePanel.Visible = true;
+					collectorTab.SelectedIndex = 0;
 					break;
 			}	
 		}
