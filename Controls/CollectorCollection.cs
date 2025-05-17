@@ -114,6 +114,7 @@ namespace dmyo_oop_final_assigment.Pages
 		private void addButton_Click(object sender, System.EventArgs e)
 		{
 			var form = new CollectorDetailsForm(this);
+			form.StartPosition = FormStartPosition.CenterScreen;
 			form.ShowDialog(this);
 		}
 

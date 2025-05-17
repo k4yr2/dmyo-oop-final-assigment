@@ -4,6 +4,7 @@ using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Pages;
 using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace dmyo_oop_final_assigment.Controls
 {
@@ -96,6 +97,7 @@ namespace dmyo_oop_final_assigment.Controls
 		private void detailButton_Click(object sender, System.EventArgs e)
 		{
 			var form = new CollectorDetailsForm(this);
+			form.StartPosition = FormStartPosition.CenterScreen;
 			form.ShowDialog();
 		}
 
