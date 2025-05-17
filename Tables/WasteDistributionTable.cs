@@ -23,7 +23,7 @@ namespace dmyo_oop_final_assigment.Tables
 			return new WasteDistribution()
 			{
 				Collection = reader.GetInt32(1),
-				Factory = reader.GetInt32(2),
+				Factory = reader.IsDBNull(2) ? (int?)null : reader.GetInt32(2),
 				Status = (WasteStatus)reader.GetInt32(3),
 				Date = reader.GetDateTime(4),
 			};

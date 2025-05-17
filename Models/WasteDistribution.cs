@@ -6,7 +6,7 @@ namespace dmyo_oop_final_assigment.Models
 	{
 		private int m_collection;
 
-		private int m_factory;
+		private int? m_factory;
 
 		private WasteStatus m_status;
 
@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public int Factory
+		public int? Factory
 		{
 			get
 			{
