@@ -1,17 +1,30 @@
-﻿using System.Windows.Forms;
+﻿using dmyo_oop_final_assigment.Models;
+using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
 {
 	public partial class CollectorForm : Form
 	{
+		private Person m_person;
+
 		private CollectorStatus m_status;
 
-		public CollectorForm()
+		public CollectorForm(Person person)
 		{
 			InitializeComponent();
+
+			m_person = person;
 			Status = CollectorStatus.Idle;
 		}
 
+
+		public Person Person
+		{
+			get
+			{
+				return m_person;
+			}
+		}
 
 		public CollectorStatus Status
 		{
