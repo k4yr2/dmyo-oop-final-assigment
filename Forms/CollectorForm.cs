@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Managers;
+﻿using dmyo_oop_final_assigment.Controls;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Pages;
 using System.ComponentModel;
@@ -72,6 +73,9 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				case CollectorStatus.Collection:
 					control = new CollectorCollection(this, collection);
+					break;
+				case CollectorStatus.Distrubution:
+					control = new CollectorDistribution(this, collection);
 					break;
 				case CollectorStatus.Idle:
 				default:
