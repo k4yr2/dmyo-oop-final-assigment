@@ -44,6 +44,7 @@ namespace dmyo_oop_final_assigment.Forms
 
 				if (form != null)
 				{
+					form.StartPosition = FormStartPosition.CenterScreen;
 					form.Show();
 					form.Focus();
 				}
