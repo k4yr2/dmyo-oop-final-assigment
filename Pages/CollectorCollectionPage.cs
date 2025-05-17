@@ -2,23 +2,23 @@
 using dmyo_oop_final_assigment.Forms;
 using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Pages
 {
-	public partial class CollectorCollectionPage : UserControl
+	public partial class CollectorCollectionPage : UserControl, IDataLink<WasteCollection>
 	{
 		private CollectorForm m_form;
 
-		private DMYOData<WasteCollection> m_collection;
+		private DMYOData<WasteCollection> m_source;
 
-		public CollectorCollectionPage(CollectorForm form, DMYOData<WasteCollection> collection)
+		public CollectorCollectionPage(CollectorForm form, DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
 
 			m_form = form;
-			m_collection = collection;
-			Refresh();
+			Bind(source);
 		}
 
 
@@ -30,14 +30,20 @@ namespace dmyo_oop_final_assigment.Pages
 			}
 		}
 
-		public DMYOData<WasteCollection> Collection
+		public DMYOData<WasteCollection> Source
 		{
 			get
 			{
-				return m_collection;
+				return m_source;
 			}
 		}
 
+
+		public void Bind(DMYOData<WasteCollection> source)
+		{
+			m_source = source;
+			Refresh();
+		}
 
 		public override void Refresh()
 		{
@@ -45,7 +51,7 @@ namespace dmyo_oop_final_assigment.Pages
 
 			contentPanel.Controls.Clear();
 
-			foreach (var waste in TableManager.WasteCollection.GetWastes(Collection.Id))
+			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
 				contentPanel.Controls.Add(new CollectorWaste(waste));
 			}
