@@ -98,5 +98,31 @@ namespace dmyo_oop_final_assigment.Controls
 			var form = new CollectorDetailsForm(this);
 			form.ShowDialog();
 		}
+
+		private void deleteButton_Click(object sender, System.EventArgs e)
+		{
+			DialogResult result = MessageBox.Show(
+				"Are you sure you want to delete this waste?", 
+				"Delete Waste", 
+				MessageBoxButtons.YesNo, 
+				MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				int index = Collection.Panel.Controls.IndexOf(this);
+				if (index >= 0)
+				{
+					if (TableManager.Waste.Delete(Source.Id))
+					{
+						Collection.Panel.Controls.RemoveAt(index);
+						Collection.RefreshBackgrounds();
+					}
+					else
+					{
+						MessageBox.Show(Collection, "Failed to delete waste.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+		}
 	}
 }

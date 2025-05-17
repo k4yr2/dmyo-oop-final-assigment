@@ -48,6 +48,7 @@
 			this.deleteButton.TabIndex = 0;
 			this.deleteButton.Text = "X";
 			this.deleteButton.UseVisualStyleBackColor = true;
+			this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
 			// 
 			// typeLabel
 			// 
