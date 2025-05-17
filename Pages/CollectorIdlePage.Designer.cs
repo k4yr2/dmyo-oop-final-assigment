@@ -56,6 +56,8 @@
 			// 
 			// startButton
 			// 
+			this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.startButton.Location = new System.Drawing.Point(479, 3);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(100, 24);
@@ -77,22 +79,21 @@
 			// 
 			// statisticLabel
 			// 
+			this.statisticLabel.BackColor = System.Drawing.Color.Gainsboro;
 			this.statisticLabel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.statisticLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.statisticLabel.Location = new System.Drawing.Point(0, 0);
 			this.statisticLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.statisticLabel.Name = "statisticLabel";
-			this.statisticLabel.Padding = new System.Windows.Forms.Padding(110, 0, 0, 0);
+			this.statisticLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
 			this.statisticLabel.Size = new System.Drawing.Size(582, 30);
 			this.statisticLabel.TabIndex = 0;
 			this.statisticLabel.Text = "See all your collection statistics";
-			this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// statisticButton
 			// 
-			this.statisticButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.statisticButton.Location = new System.Drawing.Point(5, 3);
+			this.statisticButton.Location = new System.Drawing.Point(479, 3);
 			this.statisticButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
 			this.statisticButton.Name = "statisticButton";
 			this.statisticButton.Size = new System.Drawing.Size(100, 24);
@@ -102,19 +103,20 @@
 			// 
 			// archiveLabel
 			// 
+			this.archiveLabel.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.archiveLabel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.archiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.archiveLabel.Location = new System.Drawing.Point(0, 30);
 			this.archiveLabel.Name = "archiveLabel";
-			this.archiveLabel.Padding = new System.Windows.Forms.Padding(110, 0, 0, 0);
+			this.archiveLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
 			this.archiveLabel.Size = new System.Drawing.Size(582, 30);
 			this.archiveLabel.TabIndex = 1;
 			this.archiveLabel.Text = "Select a collection from the archive and browse";
-			this.archiveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.archiveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// archiveButton
 			// 
-			this.archiveButton.Location = new System.Drawing.Point(5, 33);
+			this.archiveButton.Location = new System.Drawing.Point(479, 33);
 			this.archiveButton.Name = "archiveButton";
 			this.archiveButton.Size = new System.Drawing.Size(100, 24);
 			this.archiveButton.TabIndex = 2;
