@@ -184,7 +184,7 @@ namespace dmyo_oop_final_assigment
 		}
 
 
-		private IEnumerable<DMYOData<TModel>> DoSelect(SqlCommand command)
+		protected IEnumerable<DMYOData<TModel>> DoSelect(SqlCommand command)
 		{
 			SqlDataReader reader = command.ExecuteReader();
 
