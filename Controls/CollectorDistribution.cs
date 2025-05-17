@@ -93,14 +93,25 @@ namespace dmyo_oop_final_assigment.Controls
 						Status = WasteStatus.Active,
 						Date = DateTime.Now
 					}));
-
-					Index = 0;
 				}
+
+				m_distributions = distributions.ToArray();
+				RefreshPage();
 			}
 		}
 
 		public void RefreshPage()
 		{
+			contentPanel.Controls.Clear();
+			var page = Distributions[Index];
+
+			if(page.Model.Status == WasteStatus.Active)
+			{
+				foreach (var waste in TableManager.Waste.Select())
+				{
+					contentPanel.Controls.Add(new Button() { Text = waste.Model.Quantity.ToString()});
+				}
+			}
 
 		}
 
