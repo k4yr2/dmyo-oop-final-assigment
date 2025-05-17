@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dmyo_oop_final_assigment.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace dmyo_oop_final_assigment.Pages
 {
 	public partial class CollectorIdlePage : UserControl
 	{
-		public CollectorIdlePage()
+		private CollectorForm m_form;
+
+		public CollectorIdlePage(CollectorForm form)
 		{
 			InitializeComponent();
+			m_form = form;
+		}
+
+
+		public CollectorForm Form
+		{
+			get
+			{
+				return m_form;
+			}
 		}
 	}
 }

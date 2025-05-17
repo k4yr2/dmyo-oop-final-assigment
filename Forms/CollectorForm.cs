@@ -72,7 +72,7 @@ namespace dmyo_oop_final_assigment.Forms
 					break;
 				case CollectorStatus.Idle:
 				default:
-					control = new CollectorIdlePage();
+					control = new CollectorIdlePage(this);
 					break;
 			}
 
