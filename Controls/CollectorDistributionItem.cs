@@ -35,6 +35,14 @@ namespace dmyo_oop_final_assigment.Controls
 			InitializeComponent();
 
 			m_distribution = distribution;
+			m_distribution.Form.FormClosed += (s, e) => {
+				if(m_source != null)
+				{
+					m_source.Model.Quantity = m_dispatch;
+					TableManager.WasteDispatch.Update(m_source.Id, m_source.Model);
+				}
+			};
+
 			Bind(source);
 		}
 
@@ -72,7 +80,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_source.Id).ToArray();
+				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_type.Id).ToArray();
 				m_capacity = m_wastes.Sum(w => w.Model.Quantity);
 				m_dispatch = Math.Min(m_dispatch, m_capacity);
 			}
@@ -88,6 +96,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				typeLabel.Text = "BLANK";
 				dispatchBox.Enabled = false;
+				dispatchBox.Text = "0";
 				percentLabel.Text = $"%{m_percent:0.00}";
 				capacityLabel.Text = "0";
 				abbrLabel.Text = "pcs";
@@ -96,6 +105,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				typeLabel.Text = m_type.Model.Name;
 				dispatchBox.Enabled = true;
+				dispatchBox.Text = m_source.Model.Quantity.ToString();
 				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
 			}
