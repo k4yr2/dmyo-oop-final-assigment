@@ -93,5 +93,11 @@ namespace dmyo_oop_final_assigment.Pages
 				Form.Status = CollectorStatus.Idle;
 			}
 		}
+
+		private void addButton_Click(object sender, System.EventArgs e)
+		{
+			var form = new CollectorDetailsForm(this);
+			form.ShowDialog(this);
+		}
 	}
 }
