@@ -44,7 +44,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			get
 			{
-				return contentPanel;
+				return contentContainer.Panel;
 			}
 		}
 
@@ -59,18 +59,18 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			base.Refresh();
 
-			contentPanel.Controls.Clear();
+			contentContainer.Controls.Clear();
 			completeButton.Enabled = false;
 
 			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
-				contentPanel.Controls.Add(new CollectorWaste(this, waste));
+				contentContainer.Controls.Add(new CollectorWaste(this, waste));
 			}
 		}
 
 		public void RefreshBackgrounds()
 		{
-			var controls = contentPanel.Controls.OfType<Control>().ToArray();
+			var controls = contentContainer.Controls.OfType<Control>().ToArray();
 			for (int i = 0; i < controls.Length; i++)
 			{
 				if (i % 2 == 0)
@@ -81,22 +81,6 @@ namespace dmyo_oop_final_assigment.Controls
 				{
 					controls[i].BackColor = Color.WhiteSmoke;
 				}
-			}
-		}
-
-		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
-		{
-			e.Control.Width = contentPanel.Width;
-			completeButton.Enabled = true;
-
-			RefreshBackgrounds();
-		}
-
-		private void contentPanel_Resize(object sender, System.EventArgs e)
-		{
-			foreach (var control in contentPanel.Controls.OfType<Control>())
-			{
-				control.Width = contentPanel.Width;
 			}
 		}
 
@@ -118,14 +102,6 @@ namespace dmyo_oop_final_assigment.Controls
 			form.ShowDialog(this);
 		}
 
-		private void contentPanel_ControlRemoved(object sender, ControlEventArgs e)
-		{
-			if(contentPanel.Controls.Count == 0)
-			{
-				completeButton.Enabled = false;
-			}
-		}
-
 		private void completeButton_Click(object sender, System.EventArgs e)
 		{
 			DialogResult result = MessageBox.Show("Are you sure you want to complete the collection?", "Complete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -141,6 +117,22 @@ namespace dmyo_oop_final_assigment.Controls
 					MessageBox.Show("You cannot complete a collection that is not active.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
+		}
+
+		private void contentContainer_Load(object sender, System.EventArgs e)
+		{
+			Panel.ControlAdded += (s, _) =>
+			{
+				completeButton.Enabled = true;
+			};
+
+			Panel.ControlRemoved += (s, _) =>
+			{
+				if (Panel.Controls.Count == 0)
+				{
+					completeButton.Enabled = false;
+				}
+			};
 		}
 	}
 }

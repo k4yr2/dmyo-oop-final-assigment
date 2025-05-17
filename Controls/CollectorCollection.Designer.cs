@@ -34,7 +34,7 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.addButton = new System.Windows.Forms.Button();
 			this.completeButton = new System.Windows.Forms.Button();
-			this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
 			this.topPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -111,24 +111,20 @@
 			this.completeButton.UseVisualStyleBackColor = true;
 			this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
 			// 
-			// contentPanel
+			// contentContainer
 			// 
-			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.contentPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.contentPanel.Location = new System.Drawing.Point(0, 40);
-			this.contentPanel.Name = "contentPanel";
-			this.contentPanel.Size = new System.Drawing.Size(600, 380);
-			this.contentPanel.TabIndex = 3;
-			this.contentPanel.WrapContents = false;
-			this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlAdded);
-			this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlRemoved);
-			this.contentPanel.Resize += new System.EventHandler(this.contentPanel_Resize);
+			this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentContainer.Location = new System.Drawing.Point(0, 40);
+			this.contentContainer.Name = "contentContainer";
+			this.contentContainer.Size = new System.Drawing.Size(600, 380);
+			this.contentContainer.TabIndex = 3;
+			this.contentContainer.Load += new System.EventHandler(this.contentContainer_Load);
 			// 
 			// CollectorCollection
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.contentPanel);
+			this.Controls.Add(this.contentContainer);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.topPanel);
 			this.Name = "CollectorCollection";
@@ -147,6 +143,6 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Button completeButton;
-		private System.Windows.Forms.FlowLayoutPanel contentPanel;
+		private ContentContainer contentContainer;
 	}
 }
