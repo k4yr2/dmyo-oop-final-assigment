@@ -37,6 +37,7 @@
 			this.previousButton = new System.Windows.Forms.Button();
 			this.firstButton = new System.Windows.Forms.Button();
 			this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
+			this.pageLabel = new System.Windows.Forms.Label();
 			this.topPanel.SuspendLayout();
 			this.bottomPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -49,7 +50,7 @@
 			this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.topPanel.Location = new System.Drawing.Point(0, 0);
 			this.topPanel.Name = "topPanel";
-			this.topPanel.Size = new System.Drawing.Size(568, 40);
+			this.topPanel.Size = new System.Drawing.Size(598, 40);
 			this.topPanel.TabIndex = 1;
 			// 
 			// distributionLabel
@@ -82,6 +83,7 @@
 			// bottomPanel
 			// 
 			this.bottomPanel.BackColor = System.Drawing.Color.Silver;
+			this.bottomPanel.Controls.Add(this.pageLabel);
 			this.bottomPanel.Controls.Add(this.nextButton);
 			this.bottomPanel.Controls.Add(this.lastButton);
 			this.bottomPanel.Controls.Add(this.previousButton);
@@ -89,13 +91,13 @@
 			this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.bottomPanel.Location = new System.Drawing.Point(0, 424);
 			this.bottomPanel.Name = "bottomPanel";
-			this.bottomPanel.Size = new System.Drawing.Size(568, 30);
+			this.bottomPanel.Size = new System.Drawing.Size(598, 30);
 			this.bottomPanel.TabIndex = 3;
 			// 
 			// nextButton
 			// 
 			this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.nextButton.Location = new System.Drawing.Point(487, 3);
+			this.nextButton.Location = new System.Drawing.Point(517, 3);
 			this.nextButton.Name = "nextButton";
 			this.nextButton.Size = new System.Drawing.Size(36, 24);
 			this.nextButton.TabIndex = 1;
@@ -106,7 +108,7 @@
 			// lastButton
 			// 
 			this.lastButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lastButton.Location = new System.Drawing.Point(529, 3);
+			this.lastButton.Location = new System.Drawing.Point(559, 3);
 			this.lastButton.Name = "lastButton";
 			this.lastButton.Size = new System.Drawing.Size(36, 24);
 			this.lastButton.TabIndex = 1;
@@ -140,8 +142,21 @@
 			this.contentContainer.Location = new System.Drawing.Point(0, 40);
 			this.contentContainer.Margin = new System.Windows.Forms.Padding(0);
 			this.contentContainer.Name = "contentContainer";
-			this.contentContainer.Size = new System.Drawing.Size(568, 384);
+			this.contentContainer.Size = new System.Drawing.Size(598, 384);
 			this.contentContainer.TabIndex = 4;
+			// 
+			// pageLabel
+			// 
+			this.pageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.pageLabel.Location = new System.Drawing.Point(82, 0);
+			this.pageLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.pageLabel.Name = "pageLabel";
+			this.pageLabel.Size = new System.Drawing.Size(432, 30);
+			this.pageLabel.TabIndex = 2;
+			this.pageLabel.Text = "1/1";
+			this.pageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// CollectorDistribution
 			// 
@@ -151,7 +166,7 @@
 			this.Controls.Add(this.bottomPanel);
 			this.Controls.Add(this.topPanel);
 			this.Name = "CollectorDistribution";
-			this.Size = new System.Drawing.Size(568, 454);
+			this.Size = new System.Drawing.Size(598, 454);
 			this.topPanel.ResumeLayout(false);
 			this.bottomPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -169,5 +184,6 @@
 		private System.Windows.Forms.Button previousButton;
 		private System.Windows.Forms.Button firstButton;
 		private ContentContainer contentContainer;
+		private System.Windows.Forms.Label pageLabel;
 	}
 }
