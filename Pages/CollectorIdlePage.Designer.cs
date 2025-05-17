@@ -30,15 +30,15 @@
 		{
 			this.startButton = new System.Windows.Forms.Button();
 			this.navPanel = new System.Windows.Forms.Panel();
-			this.statisticLabel = new System.Windows.Forms.Label();
-			this.statisticButton = new System.Windows.Forms.Button();
-			this.archiveLabel = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.archiveButton = new System.Windows.Forms.Button();
+			this.archiveLabel = new System.Windows.Forms.Label();
+			this.statisticButton = new System.Windows.Forms.Button();
+			this.statisticLabel = new System.Windows.Forms.Label();
 			this.topPanel = new System.Windows.Forms.Panel();
+			this.idleButton = new System.Windows.Forms.Button();
 			this.titleLabel = new System.Windows.Forms.Label();
 			this.infoPanel = new System.Windows.Forms.Panel();
-			this.idleButton = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
 			this.navPanel.SuspendLayout();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -52,6 +52,7 @@
 			this.startButton.TabIndex = 0;
 			this.startButton.Text = "Collection";
 			this.startButton.UseVisualStyleBackColor = true;
+			this.startButton.Click += new System.EventHandler(this.startButton_Click);
 			// 
 			// navPanel
 			// 
@@ -67,30 +68,28 @@
 			this.navPanel.Size = new System.Drawing.Size(900, 90);
 			this.navPanel.TabIndex = 5;
 			// 
-			// statisticLabel
+			// label1
 			// 
-			this.statisticLabel.BackColor = System.Drawing.Color.Gainsboro;
-			this.statisticLabel.Dock = System.Windows.Forms.DockStyle.Top;
-			this.statisticLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.statisticLabel.Location = new System.Drawing.Point(0, 0);
-			this.statisticLabel.Margin = new System.Windows.Forms.Padding(0);
-			this.statisticLabel.Name = "statisticLabel";
-			this.statisticLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
-			this.statisticLabel.Size = new System.Drawing.Size(900, 30);
-			this.statisticLabel.TabIndex = 0;
-			this.statisticLabel.Text = "See all your collection statistics";
-			this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.label1.BackColor = System.Drawing.Color.Gainsboro;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label1.Location = new System.Drawing.Point(0, 60);
+			this.label1.Name = "label1";
+			this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
+			this.label1.Size = new System.Drawing.Size(900, 30);
+			this.label1.TabIndex = 3;
+			this.label1.Text = "Start a new collection";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// statisticButton
+			// archiveButton
 			// 
-			this.statisticButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.statisticButton.Location = new System.Drawing.Point(797, 3);
-			this.statisticButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-			this.statisticButton.Name = "statisticButton";
-			this.statisticButton.Size = new System.Drawing.Size(100, 24);
-			this.statisticButton.TabIndex = 1;
-			this.statisticButton.Text = "Statistics";
-			this.statisticButton.UseVisualStyleBackColor = true;
+			this.archiveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.archiveButton.Location = new System.Drawing.Point(797, 33);
+			this.archiveButton.Name = "archiveButton";
+			this.archiveButton.Size = new System.Drawing.Size(100, 24);
+			this.archiveButton.TabIndex = 2;
+			this.archiveButton.Text = "Archive";
+			this.archiveButton.UseVisualStyleBackColor = true;
 			// 
 			// archiveLabel
 			// 
@@ -105,15 +104,30 @@
 			this.archiveLabel.Text = "Browse collection from archive";
 			this.archiveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// archiveButton
+			// statisticButton
 			// 
-			this.archiveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.archiveButton.Location = new System.Drawing.Point(797, 33);
-			this.archiveButton.Name = "archiveButton";
-			this.archiveButton.Size = new System.Drawing.Size(100, 24);
-			this.archiveButton.TabIndex = 2;
-			this.archiveButton.Text = "Archive";
-			this.archiveButton.UseVisualStyleBackColor = true;
+			this.statisticButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.statisticButton.Location = new System.Drawing.Point(797, 3);
+			this.statisticButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+			this.statisticButton.Name = "statisticButton";
+			this.statisticButton.Size = new System.Drawing.Size(100, 24);
+			this.statisticButton.TabIndex = 1;
+			this.statisticButton.Text = "Statistics";
+			this.statisticButton.UseVisualStyleBackColor = true;
+			// 
+			// statisticLabel
+			// 
+			this.statisticLabel.BackColor = System.Drawing.Color.Gainsboro;
+			this.statisticLabel.Dock = System.Windows.Forms.DockStyle.Top;
+			this.statisticLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.statisticLabel.Location = new System.Drawing.Point(0, 0);
+			this.statisticLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.statisticLabel.Name = "statisticLabel";
+			this.statisticLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
+			this.statisticLabel.Size = new System.Drawing.Size(900, 30);
+			this.statisticLabel.TabIndex = 0;
+			this.statisticLabel.Text = "See all your collection statistics";
+			this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// topPanel
 			// 
@@ -124,6 +138,16 @@
 			this.topPanel.Name = "topPanel";
 			this.topPanel.Size = new System.Drawing.Size(900, 40);
 			this.topPanel.TabIndex = 7;
+			// 
+			// idleButton
+			// 
+			this.idleButton.Location = new System.Drawing.Point(5, 5);
+			this.idleButton.Margin = new System.Windows.Forms.Padding(5);
+			this.idleButton.Name = "idleButton";
+			this.idleButton.Size = new System.Drawing.Size(30, 30);
+			this.idleButton.TabIndex = 0;
+			this.idleButton.Text = "I";
+			this.idleButton.UseVisualStyleBackColor = true;
 			// 
 			// titleLabel
 			// 
@@ -146,29 +170,6 @@
 			this.infoPanel.Name = "infoPanel";
 			this.infoPanel.Size = new System.Drawing.Size(900, 260);
 			this.infoPanel.TabIndex = 9;
-			// 
-			// idleButton
-			// 
-			this.idleButton.Location = new System.Drawing.Point(5, 5);
-			this.idleButton.Margin = new System.Windows.Forms.Padding(5);
-			this.idleButton.Name = "idleButton";
-			this.idleButton.Size = new System.Drawing.Size(30, 30);
-			this.idleButton.TabIndex = 0;
-			this.idleButton.Text = "I";
-			this.idleButton.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this.label1.BackColor = System.Drawing.Color.Gainsboro;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.label1.Location = new System.Drawing.Point(0, 60);
-			this.label1.Name = "label1";
-			this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
-			this.label1.Size = new System.Drawing.Size(900, 30);
-			this.label1.TabIndex = 3;
-			this.label1.Text = "Start a new collection";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// CollectorIdlePage
 			// 

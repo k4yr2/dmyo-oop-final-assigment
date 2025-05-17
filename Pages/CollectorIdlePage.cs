@@ -1,12 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Pages
@@ -28,6 +22,13 @@ namespace dmyo_oop_final_assigment.Pages
 			{
 				return m_form;
 			}
+		}
+
+
+		private void startButton_Click(object sender, EventArgs e)
+		{
+			if(TableManager.WasteCollection.Start(m_form.Person.Id) != null)
+				Form.Refresh();
 		}
 	}
 }
