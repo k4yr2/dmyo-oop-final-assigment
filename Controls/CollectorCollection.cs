@@ -40,6 +40,14 @@ namespace dmyo_oop_final_assigment.Pages
 			}
 		}
 
+		public FlowLayoutPanel Panel
+		{
+			get
+			{
+				return contentPanel;
+			}
+		}
+
 
 		public void Bind(DMYOData<WasteCollection> source)
 		{
