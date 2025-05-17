@@ -91,7 +91,7 @@ namespace dmyo_oop_final_assigment.Forms
 				TableManager.Waste.Update(m_waste.Source.Id, waste);
 
 				m_waste.Source.Model = waste;
-				m_waste.Refresh();
+				m_waste.Bind(m_waste.Source);
 			}
 
 			Close();
