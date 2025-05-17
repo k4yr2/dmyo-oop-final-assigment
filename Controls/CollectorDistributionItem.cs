@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace dmyo_oop_final_assigment.Controls
 			InitializeComponent();
 
 			m_distribution = distribution;
-			m_source = source;
+			Bind(source);
 		}
 
 
@@ -56,12 +57,39 @@ namespace dmyo_oop_final_assigment.Controls
 		public void Bind(DMYOData<WasteType> source)
 		{
 			m_source = source;
+
+			if (m_source == null)
+			{
+				m_category = null;
+				m_unit = null;
+			}
+			else
+			{
+				m_category = TableManager.WasteCategory.Read(m_source.Model.Category);
+				m_unit = TableManager.WasteUnit.Read(m_source.Model.Unit);
+			}
+
 			Refresh();
 		}
 
 		public override void Refresh()
 		{
 			base.Refresh();
+
+			if(m_source == null)
+			{
+				typeLabel.Text = "BLANK";
+				dispatchBox.Enabled = false;
+				quantityLabel.Text = "0";
+				abbrLabel.Text = "pcs";
+			}
+			else
+			{
+				typeLabel.Text = m_source.Model.Name;
+				dispatchBox.Enabled = true;
+				quantityLabel.Text = "0";
+				abbrLabel.Text = m_unit.Model.Abbr;
+			}
 		}
 	}
 }

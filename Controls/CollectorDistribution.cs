@@ -107,9 +107,9 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if(page.Model.Status == WasteStatus.Active)
 			{
-				foreach (var waste in TableManager.Waste.Select())
+				foreach (var type in TableManager.WasteType.OfCollection(m_source.Id))
 				{
-					contentPanel.Controls.Add(new CollectorDistributionItem() { Text = waste.Model.Quantity.ToString()});
+					contentPanel.Controls.Add(new CollectorDistributionItem(this, type));
 				}
 			}
 
