@@ -32,11 +32,11 @@
 			this.distributionLabel = new System.Windows.Forms.Label();
 			this.cancelButton = new System.Windows.Forms.Button();
 			this.bottomPanel = new System.Windows.Forms.Panel();
-			this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
-			this.firstButton = new System.Windows.Forms.Button();
-			this.previousButton = new System.Windows.Forms.Button();
-			this.lastButton = new System.Windows.Forms.Button();
 			this.nextButton = new System.Windows.Forms.Button();
+			this.lastButton = new System.Windows.Forms.Button();
+			this.previousButton = new System.Windows.Forms.Button();
+			this.firstButton = new System.Windows.Forms.Button();
+			this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
 			this.topPanel.SuspendLayout();
 			this.bottomPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -91,35 +91,16 @@
 			this.bottomPanel.Size = new System.Drawing.Size(568, 30);
 			this.bottomPanel.TabIndex = 3;
 			// 
-			// contentPanel
+			// nextButton
 			// 
-			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.contentPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.contentPanel.Location = new System.Drawing.Point(0, 40);
-			this.contentPanel.Name = "contentPanel";
-			this.contentPanel.Size = new System.Drawing.Size(568, 384);
-			this.contentPanel.TabIndex = 4;
-			this.contentPanel.WrapContents = false;
-			// 
-			// firstButton
-			// 
-			this.firstButton.Location = new System.Drawing.Point(3, 3);
-			this.firstButton.Name = "firstButton";
-			this.firstButton.Size = new System.Drawing.Size(36, 24);
-			this.firstButton.TabIndex = 1;
-			this.firstButton.Text = "<<";
-			this.firstButton.UseVisualStyleBackColor = true;
-			this.firstButton.Click += new System.EventHandler(this.firstButton_Click);
-			// 
-			// previousButton
-			// 
-			this.previousButton.Location = new System.Drawing.Point(43, 3);
-			this.previousButton.Name = "previousButton";
-			this.previousButton.Size = new System.Drawing.Size(36, 24);
-			this.previousButton.TabIndex = 1;
-			this.previousButton.Text = "<";
-			this.previousButton.UseVisualStyleBackColor = true;
-			this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
+			this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.nextButton.Location = new System.Drawing.Point(487, 3);
+			this.nextButton.Name = "nextButton";
+			this.nextButton.Size = new System.Drawing.Size(36, 24);
+			this.nextButton.TabIndex = 1;
+			this.nextButton.Text = ">";
+			this.nextButton.UseVisualStyleBackColor = true;
+			this.nextButton.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// lastButton
 			// 
@@ -132,22 +113,40 @@
 			this.lastButton.UseVisualStyleBackColor = true;
 			this.lastButton.Click += new System.EventHandler(this.lastButton_Click);
 			// 
-			// nextButton
+			// previousButton
 			// 
-			this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.nextButton.Location = new System.Drawing.Point(487, 3);
-			this.nextButton.Name = "nextButton";
-			this.nextButton.Size = new System.Drawing.Size(36, 24);
-			this.nextButton.TabIndex = 1;
-			this.nextButton.Text = ">";
-			this.nextButton.UseVisualStyleBackColor = true;
-			this.nextButton.Click += new System.EventHandler(this.button1_Click);
+			this.previousButton.Location = new System.Drawing.Point(43, 3);
+			this.previousButton.Name = "previousButton";
+			this.previousButton.Size = new System.Drawing.Size(36, 24);
+			this.previousButton.TabIndex = 1;
+			this.previousButton.Text = "<";
+			this.previousButton.UseVisualStyleBackColor = true;
+			this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
+			// 
+			// firstButton
+			// 
+			this.firstButton.Location = new System.Drawing.Point(3, 3);
+			this.firstButton.Name = "firstButton";
+			this.firstButton.Size = new System.Drawing.Size(36, 24);
+			this.firstButton.TabIndex = 1;
+			this.firstButton.Text = "<<";
+			this.firstButton.UseVisualStyleBackColor = true;
+			this.firstButton.Click += new System.EventHandler(this.firstButton_Click);
+			// 
+			// contentContainer
+			// 
+			this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentContainer.Location = new System.Drawing.Point(0, 40);
+			this.contentContainer.Margin = new System.Windows.Forms.Padding(0);
+			this.contentContainer.Name = "contentContainer";
+			this.contentContainer.Size = new System.Drawing.Size(568, 384);
+			this.contentContainer.TabIndex = 4;
 			// 
 			// CollectorDistribution
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.contentPanel);
+			this.Controls.Add(this.contentContainer);
 			this.Controls.Add(this.bottomPanel);
 			this.Controls.Add(this.topPanel);
 			this.Name = "CollectorDistribution";
@@ -164,10 +163,10 @@
 		private System.Windows.Forms.Label distributionLabel;
 		private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.Panel bottomPanel;
-		private System.Windows.Forms.FlowLayoutPanel contentPanel;
 		private System.Windows.Forms.Button nextButton;
 		private System.Windows.Forms.Button lastButton;
 		private System.Windows.Forms.Button previousButton;
 		private System.Windows.Forms.Button firstButton;
+		private ContentContainer contentContainer;
 	}
 }

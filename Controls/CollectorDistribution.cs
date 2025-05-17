@@ -51,6 +51,14 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		public FlowLayoutPanel Panel
+		{
+			get
+			{
+				return contentContainer.Panel;
+			}
+		}
+
 		public int Index
 		{
 			get
@@ -74,7 +82,7 @@ namespace dmyo_oop_final_assigment.Controls
 		public override void Refresh()
 		{
 			base.Refresh();
-			contentPanel.Controls.Clear();
+			Panel.Controls.Clear();
 
 			if (m_source == null)
 			{
@@ -102,14 +110,14 @@ namespace dmyo_oop_final_assigment.Controls
 
 		public void RefreshPage()
 		{
-			contentPanel.Controls.Clear();
+			Panel.Controls.Clear();
 			var page = Distributions[Index];
 
 			if(page.Model.Status == WasteStatus.Active)
 			{
 				foreach (var type in TableManager.WasteType.OfCollection(m_source.Id))
 				{
-					contentPanel.Controls.Add(new CollectorDistributionItem(this, type));
+					Panel.Controls.Add(new CollectorDistributionItem(this, type));
 				}
 			}
 
