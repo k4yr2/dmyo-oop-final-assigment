@@ -36,7 +36,7 @@
 			this.firstButton = new System.Windows.Forms.Button();
 			this.previousButton = new System.Windows.Forms.Button();
 			this.lastButton = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.nextButton = new System.Windows.Forms.Button();
 			this.topPanel.SuspendLayout();
 			this.bottomPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -81,7 +81,7 @@
 			// bottomPanel
 			// 
 			this.bottomPanel.BackColor = System.Drawing.Color.Silver;
-			this.bottomPanel.Controls.Add(this.button1);
+			this.bottomPanel.Controls.Add(this.nextButton);
 			this.bottomPanel.Controls.Add(this.lastButton);
 			this.bottomPanel.Controls.Add(this.previousButton);
 			this.bottomPanel.Controls.Add(this.firstButton);
@@ -107,6 +107,7 @@
 			this.firstButton.TabIndex = 1;
 			this.firstButton.Text = "<<";
 			this.firstButton.UseVisualStyleBackColor = true;
+			this.firstButton.Click += new System.EventHandler(this.firstButton_Click);
 			// 
 			// previousButton
 			// 
@@ -116,6 +117,7 @@
 			this.previousButton.TabIndex = 1;
 			this.previousButton.Text = "<";
 			this.previousButton.UseVisualStyleBackColor = true;
+			this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
 			// 
 			// lastButton
 			// 
@@ -126,16 +128,18 @@
 			this.lastButton.TabIndex = 1;
 			this.lastButton.Text = ">>";
 			this.lastButton.UseVisualStyleBackColor = true;
+			this.lastButton.Click += new System.EventHandler(this.lastButton_Click);
 			// 
-			// button1
+			// nextButton
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(487, 3);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(36, 24);
-			this.button1.TabIndex = 1;
-			this.button1.Text = ">";
-			this.button1.UseVisualStyleBackColor = true;
+			this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.nextButton.Location = new System.Drawing.Point(487, 3);
+			this.nextButton.Name = "nextButton";
+			this.nextButton.Size = new System.Drawing.Size(36, 24);
+			this.nextButton.TabIndex = 1;
+			this.nextButton.Text = ">";
+			this.nextButton.UseVisualStyleBackColor = true;
+			this.nextButton.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// CollectorDistribution
 			// 
@@ -159,7 +163,7 @@
 		private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.Panel bottomPanel;
 		private System.Windows.Forms.FlowLayoutPanel contentPanel;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button nextButton;
 		private System.Windows.Forms.Button lastButton;
 		private System.Windows.Forms.Button previousButton;
 		private System.Windows.Forms.Button firstButton;

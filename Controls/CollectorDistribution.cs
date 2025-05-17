@@ -16,6 +16,8 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteDistribution>[] m_distributions;
 
+		private int m_index = 0;
+
 		public CollectorDistribution(CollectorForm form, DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
@@ -40,6 +42,27 @@ namespace dmyo_oop_final_assigment.Controls
 				return m_source;
 			}
 		}
+
+		public DMYOData<WasteDistribution>[] Distributions
+		{
+			get
+			{
+				return m_distributions;
+			}
+		}
+
+		public int Index
+		{
+			get
+			{
+				return m_index;
+			}
+			set
+			{
+				m_index = value;
+				RefreshPage();
+			}
+		}	
 
 
 		public void Bind(DMYOData<WasteCollection> source)
@@ -70,8 +93,35 @@ namespace dmyo_oop_final_assigment.Controls
 						Status = WasteStatus.Active,
 						Date = DateTime.Now
 					}));
+
+					Index = 0;
 				}
 			}
+		}
+
+		public void RefreshPage()
+		{
+
+		}
+
+		private void firstButton_Click(object sender, EventArgs e)
+		{
+			Index = 0;
+		}
+
+		private void previousButton_Click(object sender, EventArgs e)
+		{
+			Index = Math.Max(0, Index - 1);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Index = Math.Min(Distributions.Length - 1, Index + 1);
+		}
+
+		private void lastButton_Click(object sender, EventArgs e)
+		{
+			Index = Distributions.Length - 1;
 		}
 	}
 }
