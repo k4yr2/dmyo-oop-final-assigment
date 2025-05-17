@@ -45,5 +45,18 @@ namespace dmyo_oop_final_assigment.Tables
 
 			return TableManager.Waste.Select($"WHERE collection = {collection.Id}");
 		}
+
+		public bool Cancel(int person)
+		{
+			var collection = GetCurrent(person);
+
+			if (collection == null)
+				return false;
+
+			collection.Model.Status = WasteStatus.Cancelled;
+			Update(collection.Id, collection.Model);
+
+			return true;
+		}	
 	}
 }
