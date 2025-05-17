@@ -28,13 +28,24 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.topPanel = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
+			// 
+			// topPanel
+			// 
+			this.topPanel.BackColor = System.Drawing.Color.LightSlateGray;
+			this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+			this.topPanel.Location = new System.Drawing.Point(0, 0);
+			this.topPanel.Name = "topPanel";
+			this.topPanel.Size = new System.Drawing.Size(603, 40);
+			this.topPanel.TabIndex = 0;
 			// 
 			// CollectorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(603, 338);
+			this.Controls.Add(this.topPanel);
 			this.Name = "CollectorForm";
 			this.Text = "CollectorForm";
 			this.ResumeLayout(false);
@@ -42,5 +53,7 @@
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Panel topPanel;
 	}
 }
