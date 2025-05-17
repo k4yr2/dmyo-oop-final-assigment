@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -10,12 +11,12 @@ namespace dmyo_oop_final_assigment.Tables
 
 		public override string[] Params => new string[] { "collection", "factory", "status", "date" };
 
-		public override void SetParameters(WasteDistribution waste, SqlCommand command)
+		public override void SetParameters(WasteDistribution distribution, SqlCommand command)
 		{
-			command.Parameters.AddWithValue("@collection", waste.Collection);
-			command.Parameters.AddWithValue("@factory", waste.Factory);
-			command.Parameters.AddWithValue("@status", waste.Status);
-			command.Parameters.AddWithValue("@date", waste.Date);
+			command.Parameters.AddWithValue("@collection", distribution.Collection);
+			command.Parameters.AddWithValue("@factory", (object)distribution.Factory ?? DBNull.Value);
+			command.Parameters.AddWithValue("@status", distribution.Status);
+			command.Parameters.AddWithValue("@date", distribution.Date);
 		}
 
 		public override WasteDistribution GetModel(SqlDataReader reader)
