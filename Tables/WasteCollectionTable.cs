@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -58,5 +59,22 @@ namespace dmyo_oop_final_assigment.Tables
 
 			return true;
 		}	
+
+		public DMYOData<WasteCollection> Start(int person)
+		{
+			var collection = GetCurrent(person);
+
+			if (collection == null)
+			{
+				return Create(new WasteCollection()
+				{
+					Person = person,
+					Status = WasteStatus.Active,
+					Date = DateTime.Now
+				});
+			}
+
+			return null;
+		}
 	}
 }
