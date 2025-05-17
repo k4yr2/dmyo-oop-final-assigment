@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Pages;
 using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
 
@@ -7,6 +8,8 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class CollectorWaste : UserControl, IDataLink<Waste>
 	{
+		private CollectorCollection m_collection;
+
 		private DMYOData<Waste> m_source;
 
 		private DMYOData<WasteType> m_type;
@@ -15,14 +18,16 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteUnit> m_unit;
 
-		public CollectorWaste() : this(null)
+		public CollectorWaste(CollectorCollection collection) : this(collection, null)
 		{
 
 		}
 
-		public CollectorWaste(DMYOData<Waste> source)
+		public CollectorWaste(CollectorCollection collection, DMYOData<Waste> source)
 		{
 			InitializeComponent();
+
+			m_collection = collection;
 			Bind(source);
 		}
 
