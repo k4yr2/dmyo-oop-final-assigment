@@ -1,7 +1,9 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -34,6 +36,42 @@ namespace dmyo_oop_final_assigment.Tables
 		public IEnumerable<DMYOData<WasteDistribution>> GetDistributions(int collection)
 		{
 			return Select($"where collection = {collection} and status IN (0, 1, 2) order by status desc");
+		}
+
+		public DMYOData<WasteDistribution> GetCurrent(int collection)
+		{
+			return Select($"WHERE status IN (0, 1) and collection = {collection}").FirstOrDefault();
+		}
+
+		public DMYOData<WasteDistribution> GetInstance(int collection)
+		{
+			if(GetCurrent(collection) == null)
+			{
+				var distribution = Create(new WasteDistribution()
+				{
+					Collection = collection,
+					Factory = null,
+					Status = WasteStatus.Active,
+					Date = DateTime.Now
+				});
+
+				foreach (var type in TableManager.WasteType.OfCollection(collection))
+				{
+					if(TableManager.Waste.CapacityOfType(collection, type.Id, distribution.Id) > 0)
+					{
+						TableManager.WasteDispatch.Create(new WasteDispatch()
+						{
+							Distribution = distribution.Id,
+							Type = type.Id,
+							Quantity = 0,
+							Capacity = TableManager.Waste.CapacityOfType(collection, type.Id, distribution.Id),
+							Date = DateTime.Now
+						});
+					}
+				}
+			}
+
+			return null;
 		}
 	}
 }
