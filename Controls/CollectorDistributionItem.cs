@@ -4,15 +4,16 @@ using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class CollectorDistributionItem : UserControl, IDataLink<WasteType>
+	public partial class CollectorDistributionItem : UserControl, IDataLink<WasteDispatch>
 	{
 		private CollectorDistribution m_distribution;
 
-		private DMYOData<WasteType> m_source;
+		private DMYOData<WasteDispatch> m_source;
+
+		private DMYOData<WasteType> m_type;
 
 		private DMYOData<WasteUnit> m_unit;
 
@@ -29,7 +30,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		}
 
-		public CollectorDistributionItem(CollectorDistribution distribution, DMYOData<WasteType> source)
+		public CollectorDistributionItem(CollectorDistribution distribution, DMYOData<WasteDispatch> source)
 		{
 			InitializeComponent();
 
@@ -46,7 +47,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public DMYOData<WasteType> Source
+		public DMYOData<WasteDispatch> Source
 		{
 			get
 			{
@@ -55,12 +56,13 @@ namespace dmyo_oop_final_assigment.Controls
 		}
 
 
-		public void Bind(DMYOData<WasteType> source)
+		public void Bind(DMYOData<WasteDispatch> source)
 		{
 			m_source = source;
 
 			if (m_source == null)
 			{
+				m_type = null;
 				m_unit = null;
 				m_wastes = Array.Empty<DMYOData<Waste>>();
 				m_capacity = 0;
@@ -68,7 +70,8 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				m_unit = TableManager.WasteUnit.Read(m_source.Model.Unit);
+				m_type = TableManager.WasteType.Read(m_source.Model.Type);
+				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
 				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_source.Id).ToArray();
 				m_capacity = m_wastes.Sum(w => w.Model.Quantity);
 				m_dispatch = Math.Min(m_dispatch, m_capacity);
@@ -91,7 +94,7 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				typeLabel.Text = m_source.Model.Name;
+				typeLabel.Text = m_type.Model.Name;
 				dispatchBox.Enabled = true;
 				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;

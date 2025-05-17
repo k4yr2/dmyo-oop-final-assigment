@@ -101,6 +101,17 @@ namespace dmyo_oop_final_assigment.Controls
 						Status = WasteStatus.Active,
 						Date = DateTime.Now
 					}));
+
+					foreach (var type in TableManager.WasteType.OfCollection(m_source.Id))
+					{
+						TableManager.WasteDispatch.Create(new WasteDispatch()
+						{
+							Type = type.Id,
+							Distribution = distributions.Last().Id,
+							Quantity = 0,
+							Date = DateTime.Now
+						});
+					}
 				}
 
 				m_distributions = distributions.ToArray();
@@ -115,7 +126,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if(page.Model.Status == WasteStatus.Active)
 			{
-				foreach (var type in TableManager.WasteType.OfCollection(m_source.Id))
+				foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {page.Id}"))
 				{
 					Panel.Controls.Add(new CollectorDistributionItem(this, type));
 				}
