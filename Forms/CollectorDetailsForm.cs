@@ -66,8 +66,12 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 			else
 			{
+				quantityBox.Text = m_waste.Source.Model.Quantity.ToString();
+				typeBox.SelectedValue = m_waste.Source.Model.Type;
 				applyButton.Text = "Update";
 			}
+
+			quantityBox.Focus();
 		}
 
 		private void applyButton_Click(object sender, System.EventArgs e)
