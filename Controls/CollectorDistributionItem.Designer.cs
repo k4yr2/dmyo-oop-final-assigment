@@ -40,7 +40,7 @@
 			// 
 			this.abbrLabel.Dock = System.Windows.Forms.DockStyle.Right;
 			this.abbrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.abbrLabel.Location = new System.Drawing.Point(386, 0);
+			this.abbrLabel.Location = new System.Drawing.Point(360, 0);
 			this.abbrLabel.Name = "abbrLabel";
 			this.abbrLabel.Size = new System.Drawing.Size(40, 40);
 			this.abbrLabel.TabIndex = 1;
@@ -53,17 +53,18 @@
 			this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.typeLabel.Location = new System.Drawing.Point(0, 0);
 			this.typeLabel.Name = "typeLabel";
-			this.typeLabel.Size = new System.Drawing.Size(90, 40);
+			this.typeLabel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+			this.typeLabel.Size = new System.Drawing.Size(160, 40);
 			this.typeLabel.TabIndex = 0;
 			this.typeLabel.Text = "BLANK";
-			this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// quantityLabel
+			// capacityLabel
 			// 
 			this.capacityLabel.Dock = System.Windows.Forms.DockStyle.Right;
 			this.capacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.capacityLabel.Location = new System.Drawing.Point(346, 0);
-			this.capacityLabel.Name = "quantityLabel";
+			this.capacityLabel.Location = new System.Drawing.Point(320, 0);
+			this.capacityLabel.Name = "capacityLabel";
 			this.capacityLabel.Size = new System.Drawing.Size(40, 40);
 			this.capacityLabel.TabIndex = 2;
 			this.capacityLabel.Text = "0";
@@ -72,7 +73,7 @@
 			// dispatchBox
 			// 
 			this.dispatchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.dispatchBox.Location = new System.Drawing.Point(258, 11);
+			this.dispatchBox.Location = new System.Drawing.Point(232, 11);
 			this.dispatchBox.Margin = new System.Windows.Forms.Padding(5);
 			this.dispatchBox.Name = "dispatchBox";
 			this.dispatchBox.Size = new System.Drawing.Size(60, 20);
@@ -82,7 +83,7 @@
 			// seperatorLabel
 			// 
 			this.seperatorLabel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.seperatorLabel.Location = new System.Drawing.Point(326, 0);
+			this.seperatorLabel.Location = new System.Drawing.Point(300, 0);
 			this.seperatorLabel.Name = "seperatorLabel";
 			this.seperatorLabel.Size = new System.Drawing.Size(20, 40);
 			this.seperatorLabel.TabIndex = 4;
@@ -96,7 +97,7 @@
 			this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.percentLabel.Location = new System.Drawing.Point(220, 5);
 			this.percentLabel.Name = "percentLabel";
-			this.percentLabel.Size = new System.Drawing.Size(30, 30);
+			this.percentLabel.Size = new System.Drawing.Size(4, 30);
 			this.percentLabel.TabIndex = 5;
 			this.percentLabel.Text = "%0";
 			this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,8 +113,9 @@
 			this.Controls.Add(this.abbrLabel);
 			this.Controls.Add(this.typeLabel);
 			this.Margin = new System.Windows.Forms.Padding(0);
+			this.MinimumSize = new System.Drawing.Size(400, 40);
 			this.Name = "CollectorDistributionItem";
-			this.Size = new System.Drawing.Size(426, 40);
+			this.Size = new System.Drawing.Size(400, 40);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
