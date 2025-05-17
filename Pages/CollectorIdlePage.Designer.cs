@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.bottomPanel = new System.Windows.Forms.Panel();
 			this.startButton = new System.Windows.Forms.Button();
 			this.navPanel = new System.Windows.Forms.Panel();
 			this.statisticLabel = new System.Windows.Forms.Label();
@@ -39,20 +39,20 @@
 			this.titleLabel = new System.Windows.Forms.Label();
 			this.infoPanel = new System.Windows.Forms.Panel();
 			this.idleButton = new System.Windows.Forms.Button();
-			this.panel1.SuspendLayout();
+			this.bottomPanel.SuspendLayout();
 			this.navPanel.SuspendLayout();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// panel1
+			// bottomPanel
 			// 
-			this.panel1.BackColor = System.Drawing.Color.LightGray;
-			this.panel1.Controls.Add(this.startButton);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 408);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(582, 30);
-			this.panel1.TabIndex = 0;
+			this.bottomPanel.BackColor = System.Drawing.Color.LightGray;
+			this.bottomPanel.Controls.Add(this.startButton);
+			this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.bottomPanel.Location = new System.Drawing.Point(0, 408);
+			this.bottomPanel.Name = "bottomPanel";
+			this.bottomPanel.Size = new System.Drawing.Size(582, 30);
+			this.bottomPanel.TabIndex = 0;
 			// 
 			// startButton
 			// 
@@ -171,10 +171,10 @@
 			this.Controls.Add(this.titleLabel);
 			this.Controls.Add(this.topPanel);
 			this.Controls.Add(this.navPanel);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.bottomPanel);
 			this.Name = "CollectorIdlePage";
 			this.Size = new System.Drawing.Size(582, 438);
-			this.panel1.ResumeLayout(false);
+			this.bottomPanel.ResumeLayout(false);
 			this.navPanel.ResumeLayout(false);
 			this.topPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -183,7 +183,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel bottomPanel;
 		private System.Windows.Forms.Button startButton;
 		private System.Windows.Forms.Panel navPanel;
 		private System.Windows.Forms.Button statisticButton;

@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using dmyo_oop_final_assigment.Pages;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -20,7 +21,8 @@ namespace dmyo_oop_final_assigment.Forms
 			InitializeComponent();
 
 			m_person = person;
-			Status = CollectorStatus.Idle;
+			m_status = CollectorStatus.Idle;
+			Refresh();
 		}
 
 
@@ -53,25 +55,18 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			base.Refresh();
 
+			UserControl control;
 			switch (m_status)
 			{
-				case CollectorStatus.View:
-					collectorTab.SelectedIndex = 1;
-					break;
-				case CollectorStatus.ViewAll:
-					collectorTab.SelectedIndex = 2;
-					break;
-				case CollectorStatus.Collection:
-					collectorTab.SelectedIndex = 3;
-					break;
-				case CollectorStatus.Distrubution:
-					collectorTab.SelectedIndex = 4;
-					break;
 				case CollectorStatus.Idle:
 				default:
-					collectorTab.SelectedIndex = 0;
+					control = new CollectorIdlePage();
 					break;
-			}	
+			}
+
+			control.Dock = DockStyle.Fill;
+			Controls.Clear();
+			Controls.Add(control);
 		}
 	}
 
