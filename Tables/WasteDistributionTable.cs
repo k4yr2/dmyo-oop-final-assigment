@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace dmyo_oop_final_assigment.Tables
@@ -26,6 +27,12 @@ namespace dmyo_oop_final_assigment.Tables
 				Status = (WasteStatus)reader.GetInt32(3),
 				Date = reader.GetDateTime(4),
 			};
+		}
+
+
+		public IEnumerable<DMYOData<WasteDistribution>> GetDistributions(int collection)
+		{
+			return Select($"where collection = {collection} and status IN (0, 1, 2) order by status desc");
 		}
 	}
 }
