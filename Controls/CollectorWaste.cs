@@ -32,6 +32,14 @@ namespace dmyo_oop_final_assigment.Controls
 		}
 
 
+		public CollectorCollection Collection
+		{
+			get
+			{
+				return m_collection;
+			}
+		}
+
 		public DMYOData<Waste> Source
 		{
 			get
