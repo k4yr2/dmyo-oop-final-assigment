@@ -83,7 +83,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				waste.Date = DateTime.Now;
 				var data = TableManager.Waste.Create(waste);
-				m_collection.Controls.Add(new CollectorWaste(m_collection, data));
+				m_collection.Panel.Controls.Add(new CollectorWaste(m_collection, data));
 			}
 			else
 			{
