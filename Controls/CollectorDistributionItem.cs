@@ -11,6 +11,8 @@ namespace dmyo_oop_final_assigment.Controls
 	{
 		private CollectorDistribution m_distribution;
 
+		private int m_index;
+
 		private DMYOData<WasteDispatch> m_source;
 
 		private DMYOData<WasteType> m_type;
@@ -23,12 +25,12 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private decimal m_capacity = 0;
 
-		public CollectorDistributionItem(CollectorDistribution distribution) : this(distribution, null)
+		public CollectorDistributionItem(CollectorDistribution distribution, int index) : this(distribution, index, null)
 		{
 
 		}
 
-		public CollectorDistributionItem(CollectorDistribution distribution, DMYOData<WasteDispatch> source)
+		public CollectorDistributionItem(CollectorDistribution distribution, int index, DMYOData<WasteDispatch> source)
 		{
 			InitializeComponent();
 
@@ -41,6 +43,7 @@ namespace dmyo_oop_final_assigment.Controls
 				}
 			};
 
+			m_index = index;
 			Bind(source);
 		}
 
@@ -77,7 +80,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-				m_capacity = TableManager.Waste.CapacityOfType(m_distribution.Source.Id, m_type.Id, m_source.Id);
+				m_capacity = TableManager.Waste.CapacityOfType(m_distribution.Source.Id, m_type.Id, m_distribution.Distributions[m_index].Id);
 				m_dispatch = Math.Min(m_dispatch, m_capacity);
 			}
 

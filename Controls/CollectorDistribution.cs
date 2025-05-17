@@ -95,6 +95,7 @@ namespace dmyo_oop_final_assigment.Controls
 				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed)
 				{
 					distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
+					m_index = distributions.Count - 1;
 				}
 
 				m_distributions = distributions.ToArray();
@@ -107,14 +108,12 @@ namespace dmyo_oop_final_assigment.Controls
 			Panel.Controls.Clear();
 			var page = Distributions[Index];
 
-			if(page.Model.Status == WasteStatus.Active)
-			{
-				foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {page.Id}"))
-				{
-					Panel.Controls.Add(new CollectorDistributionItem(this, type));
-				}
-			}
+			pageLabel.Text = $"Page {Index + 1} of {Distributions.Length}";
 
+			foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {page.Id}"))
+			{
+				Panel.Controls.Add(new CollectorDistributionItem(this, Index, type));
+			}
 		}
 
 		private void firstButton_Click(object sender, EventArgs e)
@@ -150,7 +149,12 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void sendButton_Click(object sender, EventArgs e)
 		{
+			DialogResult result = MessageBox.Show("Are you sure you want to send the distribution?", "Send", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+			if (result == DialogResult.Yes)
+			{
+				TableManager.WasteDistribution.Send(m_source.Id);
+			}
 		}
 	}
 }
