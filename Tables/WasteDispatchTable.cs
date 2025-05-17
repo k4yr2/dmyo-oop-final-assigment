@@ -1,5 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -28,6 +30,17 @@ namespace dmyo_oop_final_assigment.Tables
 				Capacity = reader.GetDecimal(4),
 				Date = reader.GetDateTime(5),
 			};
+		}
+
+
+		public IEnumerable<DMYOData<WasteDispatch>> GetDispatchs(int distribution)
+		{
+			return Select($"where distribution = {distribution}");
+		}
+
+		public DMYOData<WasteDispatch> GetDispatch(int distribution, int type)
+		{
+			return Select($"where distribution = {distribution} and type = {type}").FirstOrDefault();
 		}
 	}
 }
