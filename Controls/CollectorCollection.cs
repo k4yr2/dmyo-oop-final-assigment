@@ -59,28 +59,12 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			base.Refresh();
 
-			contentContainer.Controls.Clear();
+			Panel.Controls.Clear();
 			completeButton.Enabled = false;
 
 			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
-				contentContainer.Controls.Add(new CollectorWaste(this, waste));
-			}
-		}
-
-		public void RefreshBackgrounds()
-		{
-			var controls = contentContainer.Controls.OfType<Control>().ToArray();
-			for (int i = 0; i < controls.Length; i++)
-			{
-				if (i % 2 == 0)
-				{
-					controls[i].BackColor = Color.Gainsboro;
-				}
-				else
-				{
-					controls[i].BackColor = Color.WhiteSmoke;
-				}
+				Panel.Controls.Add(new CollectorWaste(this, waste));
 			}
 		}
 

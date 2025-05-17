@@ -115,7 +115,6 @@ namespace dmyo_oop_final_assigment.Controls
 					if (TableManager.Waste.Delete(Source.Id))
 					{
 						Collection.Panel.Controls.RemoveAt(index);
-						Collection.RefreshBackgrounds();
 					}
 					else
 					{

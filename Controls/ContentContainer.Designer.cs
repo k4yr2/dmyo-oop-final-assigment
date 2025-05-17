@@ -40,15 +40,16 @@
 			this.panel.Size = new System.Drawing.Size(590, 304);
 			this.panel.TabIndex = 0;
 			this.panel.WrapContents = false;
-			this.panel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel1_ControlAdded);
+			this.panel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panel_ControlAdded);
+			this.panel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panel_ControlRemoved);
 			this.panel.Resize += new System.EventHandler(this.panel_Resize);
 			// 
-			// ContentPanel
+			// ContentContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.panel);
-			this.Name = "ContentPanel";
+			this.Name = "ContentContainer";
 			this.Size = new System.Drawing.Size(590, 304);
 			this.ResumeLayout(false);
 

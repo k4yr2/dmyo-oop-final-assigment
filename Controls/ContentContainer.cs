@@ -40,17 +40,22 @@ namespace dmyo_oop_final_assigment.Controls
 		}
 
 
-		private void flowLayoutPanel1_ControlAdded(object sender, ControlEventArgs e)
-		{
-			Refresh();
-		}
-
 		private void panel_Resize(object sender, System.EventArgs e)
 		{
 			foreach (var control in panel.Controls.OfType<Control>())
 			{
 				control.Width = panel.Width;
 			}
+		}
+
+		private void panel_ControlAdded(object sender, ControlEventArgs e)
+		{
+			Refresh();
+		}
+
+		private void panel_ControlRemoved(object sender, ControlEventArgs e)
+		{
+			Refresh();
 		}
 	}
 }
