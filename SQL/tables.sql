@@ -1,18 +1,5 @@
 USE dmyo_oop_final_assigment;
 
-IF OBJECT_ID('Person', 'U') IS NULL
-BEGIN
-	CREATE TABLE Person (
-		id				INT				PRIMARY KEY IDENTITY(1,1),
-		name			NVARCHAR(100)	NOT NULL UNIQUE,
-		password		NVARCHAR(32)	NOT NULL,
-		role			INT				NOT NULL CHECK (role BETWEEN 0 AND 2)
-	);
-
-	INSERT INTO Person (name, password, role)
-	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('semih', 'altun', 0), ('serhat', 'genc', 1);
-END;
-
 IF OBJECT_ID('Factory', 'U') IS NULL
 BEGIN
 	CREATE TABLE Factory (
@@ -22,16 +9,18 @@ BEGIN
 	);
 END;
 
-IF OBJECT_ID('FactoryAccess', 'U') IS NULL
+IF OBJECT_ID('Person', 'U') IS NULL
 BEGIN
-	CREATE TABLE FactoryAccess (
+	CREATE TABLE Person (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		person			INT				FOREIGN KEY REFERENCES Person(id),
-		factory			INT				FOREIGN KEY REFERENCES Factory(id),
-		mode			INT				NOT NULL CHECK (mode BETWEEN 0 AND 2), -- 0: Read, 1: Write, 2: Admin
-
-		UNIQUE (person, factory)
+		name			NVARCHAR(100)	NOT NULL UNIQUE,
+		password		NVARCHAR(32)	NOT NULL,
+		role			INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id) NULL,
 	);
+
+	INSERT INTO Person (name, password, role)
+	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('semih', 'altun', 0), ('serhat', 'genc', 1);
 END;
 
 -- Waste Unit ve Kategori
@@ -173,3 +162,12 @@ BEGIN
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
+
+SELECT *
+FROM Waste
+WHERE id IN (
+    SELECT MIN(id)
+    FROM Waste
+    WHERE collection = 1006
+    GROUP BY type
+);
