@@ -59,7 +59,18 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 			else
 			{
-				m_distributions = TableManager.WasteDistribution.GetDistributions(m_source.Id).ToArray();
+				var distributions = TableManager.WasteDistribution.GetDistributions(m_source.Id).ToList();
+
+				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed)
+				{
+					distributions.Add(TableManager.WasteDistribution.Create(new WasteDistribution()
+					{
+						Collection = m_source.Id,
+						Factory = null,
+						Status = WasteStatus.Active,
+						Date = DateTime.Now
+					}));
+				}
 			}
 		}
 	}
