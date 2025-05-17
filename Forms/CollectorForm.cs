@@ -5,11 +5,11 @@ namespace dmyo_oop_final_assigment.Forms
 {
 	public partial class CollectorForm : Form
 	{
-		private Person m_person;
+		private DMYOData<Person> m_person;
 
 		private CollectorStatus m_status;
 
-		public CollectorForm(Person person)
+		public CollectorForm(DMYOData<Person> person)
 		{
 			InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace dmyo_oop_final_assigment.Forms
 		}
 
 
-		public Person Person
+		public DMYOData<Person> Person
 		{
 			get
 			{
