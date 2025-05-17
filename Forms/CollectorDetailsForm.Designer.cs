@@ -83,6 +83,7 @@
 			this.applyButton.TabIndex = 3;
 			this.applyButton.Text = "applyButton";
 			this.applyButton.UseVisualStyleBackColor = true;
+			this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
 			// 
 			// CollectorDetailsForm
 			// 

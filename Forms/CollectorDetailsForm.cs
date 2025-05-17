@@ -1,6 +1,8 @@
 ﻿using dmyo_oop_final_assigment.Controls;
 using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Pages;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -66,6 +68,30 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				applyButton.Text = "Update";
 			}
+		}
+
+		private void applyButton_Click(object sender, System.EventArgs e)
+		{
+			var waste = new Waste()
+			{
+				Collection = m_collection.Source.Id,
+				Type = Convert.ToInt32(typeBox.SelectedValue),
+				Quantity = Convert.ToInt32(quantityBox.Text)
+			};
+
+			if (m_waste == null)
+			{
+				waste.Date = DateTime.Now;
+				var data = TableManager.Waste.Create(waste);
+				m_collection.Controls.Add(new CollectorWaste(m_collection, data));
+			}
+			else
+			{
+				m_waste.Refresh();
+				TableManager.Waste.Update(m_waste.Source.Id, waste);
+			}
+
+			Close();
 		}
 	}
 }
