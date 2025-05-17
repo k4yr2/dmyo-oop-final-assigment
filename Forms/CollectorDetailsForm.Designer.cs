@@ -31,8 +31,8 @@
 			this.typeLabel = new System.Windows.Forms.Label();
 			this.quantityLabel = new System.Windows.Forms.Label();
 			this.typeBox = new System.Windows.Forms.ComboBox();
-			this.quantityBox = new System.Windows.Forms.MaskedTextBox();
 			this.applyButton = new System.Windows.Forms.Button();
+			this.quantityBox = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// typeLabel
@@ -65,16 +65,6 @@
 			this.typeBox.Size = new System.Drawing.Size(120, 21);
 			this.typeBox.TabIndex = 1;
 			// 
-			// quantityBox
-			// 
-			this.quantityBox.Location = new System.Drawing.Point(78, 36);
-			this.quantityBox.Mask = "00000";
-			this.quantityBox.Name = "quantityBox";
-			this.quantityBox.PromptChar = ' ';
-			this.quantityBox.Size = new System.Drawing.Size(120, 20);
-			this.quantityBox.TabIndex = 2;
-			this.quantityBox.ValidatingType = typeof(int);
-			// 
 			// applyButton
 			// 
 			this.applyButton.Location = new System.Drawing.Point(3, 63);
@@ -85,13 +75,21 @@
 			this.applyButton.UseVisualStyleBackColor = true;
 			this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
 			// 
+			// quantityBox
+			// 
+			this.quantityBox.Location = new System.Drawing.Point(78, 36);
+			this.quantityBox.Name = "quantityBox";
+			this.quantityBox.Size = new System.Drawing.Size(120, 20);
+			this.quantityBox.TabIndex = 4;
+			this.quantityBox.TextChanged += new System.EventHandler(this.quantityBox_TextChanged);
+			// 
 			// CollectorDetailsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(204, 93);
-			this.Controls.Add(this.applyButton);
 			this.Controls.Add(this.quantityBox);
+			this.Controls.Add(this.applyButton);
 			this.Controls.Add(this.typeBox);
 			this.Controls.Add(this.quantityLabel);
 			this.Controls.Add(this.typeLabel);
@@ -107,7 +105,7 @@
 		private System.Windows.Forms.Label typeLabel;
 		private System.Windows.Forms.Label quantityLabel;
 		private System.Windows.Forms.ComboBox typeBox;
-		private System.Windows.Forms.MaskedTextBox quantityBox;
 		private System.Windows.Forms.Button applyButton;
+		private System.Windows.Forms.TextBox quantityBox;
 	}
 }

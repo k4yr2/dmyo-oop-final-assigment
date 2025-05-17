@@ -76,7 +76,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				Collection = m_collection.Source.Id,
 				Type = Convert.ToInt32(typeBox.SelectedValue),
-				Quantity = Convert.ToInt32(quantityBox.Text)
+				Quantity = Convert.ToDecimal(quantityBox.Text)
 			};
 
 			if (m_waste == null)
@@ -95,6 +95,18 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 
 			Close();
+		}
+
+		private void quantityBox_TextChanged(object sender, EventArgs e)
+		{
+			if(decimal.TryParse(quantityBox.Text, out _))
+			{
+				applyButton.Enabled = true;
+			}
+			else
+			{
+				applyButton.Enabled = false;
+			}
 		}
 	}
 }
