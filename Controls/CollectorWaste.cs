@@ -38,6 +38,20 @@ namespace dmyo_oop_final_assigment.Controls
 		public override void Refresh()
 		{
 			base.Refresh();
+			if(m_source == null)
+			{
+				deleteButton.Enabled = false;
+				detailButton.Enabled = false;
+
+				typeLabel.Text = "Blank Type";
+				quantityLabel.Text = "0";
+				abbrLabel.Text = "pcs";
+			}
+			else
+			{
+				deleteButton.Enabled = true;
+				detailButton.Enabled = true;
+			}
 		}
 	}
 }
