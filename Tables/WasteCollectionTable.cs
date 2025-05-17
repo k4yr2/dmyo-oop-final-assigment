@@ -1,4 +1,6 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -32,6 +34,16 @@ namespace dmyo_oop_final_assigment.Tables
 		public DMYOData<WasteCollection> GetCurrent(int person)
 		{
 			return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
+		}
+
+		public IEnumerable<DMYOData<Waste>> GetWastes(int id)
+		{
+			var collection = Select($"WHERE id = {id}").FirstOrDefault();
+
+			if (collection == null)
+				return null;
+
+			return TableManager.Waste.Select($"WHERE collection = {collection.Id}");
 		}
 	}
 }
