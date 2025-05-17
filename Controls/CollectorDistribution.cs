@@ -94,24 +94,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed)
 				{
-					distributions.Add(TableManager.WasteDistribution.Create(new WasteDistribution()
-					{
-						Collection = m_source.Id,
-						Factory = null,
-						Status = WasteStatus.Active,
-						Date = DateTime.Now
-					}));
-
-					foreach (var type in TableManager.WasteType.OfCollection(m_source.Id))
-					{
-						TableManager.WasteDispatch.Create(new WasteDispatch()
-						{
-							Type = type.Id,
-							Distribution = distributions.Last().Id,
-							Quantity = 0,
-							Date = DateTime.Now
-						});
-					}
+					distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
 				}
 
 				m_distributions = distributions.ToArray();
