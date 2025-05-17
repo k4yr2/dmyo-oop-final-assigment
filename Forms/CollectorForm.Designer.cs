@@ -108,6 +108,8 @@
 			// 
 			// idleStartButton
 			// 
+			this.idleStartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.idleStartButton.Location = new System.Drawing.Point(425, 3);
 			this.idleStartButton.Name = "idleStartButton";
 			this.idleStartButton.Size = new System.Drawing.Size(98, 24);
