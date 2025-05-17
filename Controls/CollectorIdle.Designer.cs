@@ -1,4 +1,4 @@
-﻿namespace dmyo_oop_final_assigment.Pages
+﻿namespace dmyo_oop_final_assigment.Controls
 {
 	partial class CollectorIdle
 	{

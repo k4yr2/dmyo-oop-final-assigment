@@ -3,7 +3,7 @@ using dmyo_oop_final_assigment.Managers;
 using System;
 using System.Windows.Forms;
 
-namespace dmyo_oop_final_assigment.Pages
+namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class CollectorIdle : UserControl
 	{

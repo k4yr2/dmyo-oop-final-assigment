@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace dmyo_oop_final_assigment.Pages
+namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class CollectorCollection : UserControl, IDataLink<WasteCollection>
 	{

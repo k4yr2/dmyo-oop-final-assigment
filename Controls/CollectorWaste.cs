@@ -1,10 +1,8 @@
 ﻿using dmyo_oop_final_assigment.Forms;
 using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
-using dmyo_oop_final_assigment.Pages;
 using dmyo_oop_final_assigment.Providers;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace dmyo_oop_final_assigment.Controls
 {
