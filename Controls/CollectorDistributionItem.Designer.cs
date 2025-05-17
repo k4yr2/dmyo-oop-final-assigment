@@ -90,13 +90,15 @@
 			// 
 			// percentLabel
 			// 
+			this.percentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.percentLabel.Location = new System.Drawing.Point(220, 5);
 			this.percentLabel.Name = "percentLabel";
 			this.percentLabel.Size = new System.Drawing.Size(30, 30);
 			this.percentLabel.TabIndex = 5;
 			this.percentLabel.Text = "%0";
-			this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// CollectorDistributionItem
 			// 
