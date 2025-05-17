@@ -112,6 +112,7 @@ BEGIN
 		type			INT				FOREIGN KEY REFERENCES WasteType(id),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
 		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		capacity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
