@@ -4,7 +4,7 @@ namespace dmyo_oop_final_assigment.Models
 {
 	public class WasteDispatch
 	{
-		private int m_waste;
+		private int m_type;
 
 		private int m_distribution;
 
@@ -18,15 +18,15 @@ namespace dmyo_oop_final_assigment.Models
 		}
 
 
-		public int Waste
+		public int Type
 		{
 			get
 			{
-				return m_waste;
+				return m_type;
 			}
 			set
 			{
-				m_waste = value;
+				m_type = value;
 			}
 		}
 
