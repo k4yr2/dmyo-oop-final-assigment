@@ -30,7 +30,7 @@
 		{
 			this.topPanel = new System.Windows.Forms.Panel();
 			this.collectionLabel = new System.Windows.Forms.Label();
-			this.idleButton = new System.Windows.Forms.Button();
+			this.cancelButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -39,7 +39,7 @@
 			// 
 			this.topPanel.BackColor = System.Drawing.Color.LightGray;
 			this.topPanel.Controls.Add(this.collectionLabel);
-			this.topPanel.Controls.Add(this.idleButton);
+			this.topPanel.Controls.Add(this.cancelButton);
 			this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.topPanel.Location = new System.Drawing.Point(0, 0);
 			this.topPanel.Name = "topPanel";
@@ -59,15 +59,18 @@
 			this.collectionLabel.Text = "Collection";
 			this.collectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// idleButton
+			// cancelButton
 			// 
-			this.idleButton.Location = new System.Drawing.Point(5, 5);
-			this.idleButton.Margin = new System.Windows.Forms.Padding(5);
-			this.idleButton.Name = "idleButton";
-			this.idleButton.Size = new System.Drawing.Size(30, 30);
-			this.idleButton.TabIndex = 1;
-			this.idleButton.Text = "I";
-			this.idleButton.UseVisualStyleBackColor = true;
+			this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cancelButton.Location = new System.Drawing.Point(5, 5);
+			this.cancelButton.Margin = new System.Windows.Forms.Padding(5);
+			this.cancelButton.Name = "cancelButton";
+			this.cancelButton.Size = new System.Drawing.Size(30, 30);
+			this.cancelButton.TabIndex = 1;
+			this.cancelButton.Text = "X";
+			this.cancelButton.UseVisualStyleBackColor = true;
+			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
 			// contentPanel
 			// 
@@ -98,7 +101,7 @@
 
 		private System.Windows.Forms.Panel topPanel;
 		private System.Windows.Forms.Label collectionLabel;
-		private System.Windows.Forms.Button idleButton;
+		private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.FlowLayoutPanel contentPanel;
 	}
 }

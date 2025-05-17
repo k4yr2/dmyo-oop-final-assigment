@@ -80,5 +80,16 @@ namespace dmyo_oop_final_assigment.Pages
 				control.Width = contentPanel.Width;
 			}
 		}
+
+		private void cancelButton_Click(object sender, System.EventArgs e)
+		{
+			DialogResult result = MessageBox.Show("Are you sure you want to cancel the collection?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				TableManager.WasteCollection.Cancel(Form.Person.Id);
+				Form.Status = CollectorStatus.Idle;
+			}
+		}
 	}
 }
