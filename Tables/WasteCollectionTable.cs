@@ -47,19 +47,6 @@ namespace dmyo_oop_final_assigment.Tables
 			return TableManager.Waste.Select($"WHERE collection = {collection.Id}");
 		}
 
-		public bool Cancel(int person)
-		{
-			var collection = GetCurrent(person);
-
-			if (collection == null)
-				return false;
-
-			collection.Model.Status = WasteStatus.Cancelled;
-			Update(collection.Id, collection.Model);
-
-			return true;
-		}	
-
 		public DMYOData<WasteCollection> Start(int person)
 		{
 			var collection = GetCurrent(person);
@@ -76,5 +63,32 @@ namespace dmyo_oop_final_assigment.Tables
 
 			return null;
 		}
+
+		public bool Cancel(int person)
+		{
+			var collection = GetCurrent(person);
+
+			if (collection == null)
+				return false;
+
+			collection.Model.Status = WasteStatus.Cancelled;
+			Update(collection.Id, collection.Model);
+
+			return true;
+		}	
+
+		public bool Distrubute(int person)
+		{
+			var collection = GetCurrent(person);
+
+			if (collection == null)
+				return false;
+
+			collection.Model.Status = WasteStatus.Processing;
+			Update(collection.Id, collection.Model);
+
+			return true;
+		}
+
 	}
 }
