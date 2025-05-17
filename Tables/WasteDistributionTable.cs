@@ -69,6 +69,8 @@ namespace dmyo_oop_final_assigment.Tables
 						});
 					}
 				}
+
+				return distribution;
 			}
 
 			return null;
