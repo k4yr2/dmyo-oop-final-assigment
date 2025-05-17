@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CollectorWaste.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CollectorWaste.Designer.cs">
+      <DependentUpon>CollectorWaste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CollectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
     <Compile Include="Tables\WasteUnitTable.cs" />
+    <EmbeddedResource Include="Controls\CollectorWaste.resx">
+      <DependentUpon>CollectorWaste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CollectorForm.resx">
       <DependentUpon>CollectorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,7 +144,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
     <Folder Include="SQL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
