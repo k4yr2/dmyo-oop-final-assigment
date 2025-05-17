@@ -67,6 +67,9 @@ namespace dmyo_oop_final_assigment.Forms
 			UserControl control;
 			switch (m_status)
 			{
+				case CollectorStatus.Collection:
+					control = new CollectorCollectionPage();
+					break;
 				case CollectorStatus.Idle:
 				default:
 					control = new CollectorIdlePage();
