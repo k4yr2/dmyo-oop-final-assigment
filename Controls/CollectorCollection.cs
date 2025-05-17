@@ -68,19 +68,28 @@ namespace dmyo_oop_final_assigment.Pages
 			}
 		}
 
+		public void RefreshBackgrounds()
+		{
+			var controls = contentPanel.Controls.OfType<Control>().ToArray();
+			for (int i = 0; i < controls.Length; i++)
+			{
+				if (i % 2 == 0)
+				{
+					controls[i].BackColor = Color.Gainsboro;
+				}
+				else
+				{
+					controls[i].BackColor = Color.WhiteSmoke;
+				}
+			}
+		}
+
 		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
 		{
 			e.Control.Width = contentPanel.Width;
 			completeButton.Enabled = true;
 
-			if(contentPanel.Controls.Count % 2 == 0)
-			{
-				e.Control.BackColor = Color.Gainsboro;
-			}
-			else
-			{
-				e.Control.BackColor = Color.WhiteSmoke;
-			}
+			RefreshBackgrounds();
 		}
 
 		private void contentPanel_Resize(object sender, System.EventArgs e)
