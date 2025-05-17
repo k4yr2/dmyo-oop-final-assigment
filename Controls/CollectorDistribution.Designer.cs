@@ -31,6 +31,7 @@
 			this.topPanel = new System.Windows.Forms.Panel();
 			this.distributionLabel = new System.Windows.Forms.Label();
 			this.cancelButton = new System.Windows.Forms.Button();
+			this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -71,10 +72,19 @@
 			this.cancelButton.Text = "X";
 			this.cancelButton.UseVisualStyleBackColor = false;
 			// 
+			// contentPanel
+			// 
+			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentPanel.Location = new System.Drawing.Point(0, 40);
+			this.contentPanel.Name = "contentPanel";
+			this.contentPanel.Size = new System.Drawing.Size(568, 414);
+			this.contentPanel.TabIndex = 2;
+			// 
 			// CollectorDistribution
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.contentPanel);
 			this.Controls.Add(this.topPanel);
 			this.Name = "CollectorDistribution";
 			this.Size = new System.Drawing.Size(568, 454);
@@ -88,5 +98,6 @@
 		private System.Windows.Forms.Panel topPanel;
 		private System.Windows.Forms.Label distributionLabel;
 		private System.Windows.Forms.Button cancelButton;
+		private System.Windows.Forms.FlowLayoutPanel contentPanel;
 	}
 }
