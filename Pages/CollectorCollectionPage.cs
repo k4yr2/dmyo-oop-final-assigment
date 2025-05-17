@@ -3,6 +3,7 @@ using dmyo_oop_final_assigment.Forms;
 using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -61,6 +62,15 @@ namespace dmyo_oop_final_assigment.Pages
 		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
 		{
 			e.Control.Width = contentPanel.Width;
+
+			if(contentPanel.Controls.Count % 2 == 0)
+			{
+				e.Control.BackColor = Color.Gainsboro;
+			}
+			else
+			{
+				e.Control.BackColor = Color.WhiteSmoke;
+			}
 		}
 
 		private void contentPanel_Resize(object sender, System.EventArgs e)
