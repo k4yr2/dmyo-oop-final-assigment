@@ -125,5 +125,17 @@ namespace dmyo_oop_final_assigment.Pages
 				completeButton.Enabled = false;
 			}
 		}
+
+		private void completeButton_Click(object sender, System.EventArgs e)
+		{
+			if(TableManager.WasteCollection.Distrubute(Form.Person.Id))
+			{
+				Form.Status = CollectorStatus.Distrubution;
+			}
+			else
+			{
+				MessageBox.Show("You cannot complete a collection that is not active.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
 	}
 }

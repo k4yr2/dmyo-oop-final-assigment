@@ -109,6 +109,7 @@
 			this.completeButton.TabIndex = 0;
 			this.completeButton.Text = "Complete";
 			this.completeButton.UseVisualStyleBackColor = true;
+			this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
 			// 
 			// contentPanel
 			// 
