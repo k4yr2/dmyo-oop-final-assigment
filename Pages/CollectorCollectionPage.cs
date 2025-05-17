@@ -61,7 +61,6 @@ namespace dmyo_oop_final_assigment.Pages
 		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
 		{
 			e.Control.Width = contentPanel.Width;
-
 		}
 
 		private void contentPanel_Resize(object sender, System.EventArgs e)
