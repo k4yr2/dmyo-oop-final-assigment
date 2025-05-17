@@ -109,8 +109,8 @@ IF OBJECT_ID('WasteDistribution', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteDistribution (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
-		factory			INT				NULL FOREIGN KEY REFERENCES Factory(id),
+		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id) NOT NULL,
+		factory			INT				FOREIGN KEY REFERENCES Factory(id) NULL,
 		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
