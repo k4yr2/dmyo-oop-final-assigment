@@ -90,8 +90,8 @@ namespace dmyo_oop_final_assigment.Forms
 	public enum CollectorStatus
 	{
 		Idle = 0,
-		View = 1,
-		ViewAll = 2,
+		Statistics = 1,
+		Hierarchy = 2,
 		Collection = 4,
 		Distrubution = 8
 	}
