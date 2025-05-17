@@ -86,6 +86,7 @@
 			this.detailButton.TabIndex = 0;
 			this.detailButton.Text = "🖊️";
 			this.detailButton.UseVisualStyleBackColor = true;
+			this.detailButton.Click += new System.EventHandler(this.detailButton_Click);
 			// 
 			// quantityLabel
 			// 

@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Managers;
+﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Pages;
 using dmyo_oop_final_assigment.Providers;
@@ -90,6 +91,12 @@ namespace dmyo_oop_final_assigment.Controls
 				quantityLabel.Text = m_source.Model.Quantity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
 			}
+		}
+
+		private void detailButton_Click(object sender, System.EventArgs e)
+		{
+			var form = new CollectorDetailsForm(this);
+			form.ShowDialog();
 		}
 	}
 }
