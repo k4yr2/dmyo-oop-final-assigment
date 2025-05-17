@@ -35,7 +35,7 @@ namespace dmyo_oop_final_assigment.Forms
 				switch (person.Model.Role)
 				{
 					case Models.PersonRole.Collector:
-						form = new CollectorForm(person);
+						form = null;// new CollectorForm(person);
 						break;
 					default:
 						form = null;
