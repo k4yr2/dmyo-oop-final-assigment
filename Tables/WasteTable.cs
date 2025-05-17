@@ -1,7 +1,11 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -47,6 +51,29 @@ namespace dmyo_oop_final_assigment.Tables
 				  );";
 
 			return DataManager.ExecuteCommand(query, DoSelect);
+		}
+
+		public decimal SumOfType(int collection, int type)
+		{
+			return TableManager.Waste.OfCollectionType(collection, type).Sum(w => w.Model.Quantity);
+		}
+
+		public decimal CapacityOfType(int collection, int type, int distribution)
+		{
+			var distributions = TableManager.WasteDistribution.GetDistributions(collection);
+
+			decimal total = SumOfType(collection, type);
+
+			foreach (var dist in distributions)
+			{
+				if (total <= 0 || dist.Id == distribution)
+					break;
+
+				var dispatch = TableManager.WasteDispatch.GetDispatch(dist.Id, type);
+				total -= dispatch.Model.Quantity;
+			}
+
+			return Math.Max(total, 0);
 		}
 	}
 }
