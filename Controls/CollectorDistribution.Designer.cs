@@ -94,10 +94,12 @@
 			// contentPanel
 			// 
 			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.contentPanel.Location = new System.Drawing.Point(0, 40);
 			this.contentPanel.Name = "contentPanel";
 			this.contentPanel.Size = new System.Drawing.Size(568, 384);
 			this.contentPanel.TabIndex = 4;
+			this.contentPanel.WrapContents = false;
 			// 
 			// firstButton
 			// 

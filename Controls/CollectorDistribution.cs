@@ -109,7 +109,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				foreach (var waste in TableManager.Waste.Select())
 				{
-					contentPanel.Controls.Add(new Button() { Text = waste.Model.Quantity.ToString()});
+					contentPanel.Controls.Add(new CollectorDistributionItem() { Text = waste.Model.Quantity.ToString()});
 				}
 			}
 
