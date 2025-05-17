@@ -73,6 +73,12 @@
     <Compile Include="Models\WasteRecycle.cs" />
     <Compile Include="Models\WasteStock.cs" />
     <Compile Include="Models\WasteUnit.cs" />
+    <Compile Include="Pages\CollectorCollectionPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\CollectorCollectionPage.Designer.cs">
+      <DependentUpon>CollectorCollectionPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CollectorIdlePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CollectorCollectionPage.resx">
+      <DependentUpon>CollectorCollectionPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CollectorIdlePage.resx">
       <DependentUpon>CollectorIdlePage.cs</DependentUpon>
