@@ -153,5 +153,10 @@ namespace dmyo_oop_final_assigment.Controls
 				Form.Status = CollectorStatus.Idle;
 			}
 		}
+
+		private void sendButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
