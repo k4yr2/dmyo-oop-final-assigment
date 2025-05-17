@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Forms
 {
@@ -16,5 +8,14 @@ namespace dmyo_oop_final_assigment.Forms
 		{
 			InitializeComponent();
 		}
+	}
+
+	public enum CollectorStatus
+	{
+		Idle = 0,
+		View = 1,
+		ViewAll = 2,
+		Collection = 4,
+		Distrubution = 8
 	}
 }
