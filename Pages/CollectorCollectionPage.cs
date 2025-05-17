@@ -52,6 +52,7 @@ namespace dmyo_oop_final_assigment.Pages
 			base.Refresh();
 
 			contentPanel.Controls.Clear();
+			completeButton.Enabled = false;
 
 			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
@@ -62,6 +63,7 @@ namespace dmyo_oop_final_assigment.Pages
 		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
 		{
 			e.Control.Width = contentPanel.Width;
+			completeButton.Enabled = true;
 
 			if(contentPanel.Controls.Count % 2 == 0)
 			{
