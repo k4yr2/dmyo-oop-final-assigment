@@ -8,6 +8,8 @@
 
 		private int m_category;
 
+		private int m_unit;
+
 		public WasteType()
 		{
 
@@ -47,6 +49,18 @@
 			set
 			{
 				m_category = value;
+			}
+		}
+
+		public int Unit
+		{
+			get
+			{
+				return m_unit;
+			}
+			set
+			{
+				m_unit = value;
 			}
 		}
 
