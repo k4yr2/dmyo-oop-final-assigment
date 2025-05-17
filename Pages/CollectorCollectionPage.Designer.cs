@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.topPanel = new System.Windows.Forms.Panel();
-			this.idleButton = new System.Windows.Forms.Button();
 			this.collectionLabel = new System.Windows.Forms.Label();
+			this.idleButton = new System.Windows.Forms.Button();
 			this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -46,16 +46,6 @@
 			this.topPanel.Size = new System.Drawing.Size(600, 40);
 			this.topPanel.TabIndex = 0;
 			// 
-			// idleButton
-			// 
-			this.idleButton.Location = new System.Drawing.Point(5, 5);
-			this.idleButton.Margin = new System.Windows.Forms.Padding(5);
-			this.idleButton.Name = "idleButton";
-			this.idleButton.Size = new System.Drawing.Size(30, 30);
-			this.idleButton.TabIndex = 1;
-			this.idleButton.Text = "I";
-			this.idleButton.UseVisualStyleBackColor = true;
-			// 
 			// collectionLabel
 			// 
 			this.collectionLabel.BackColor = System.Drawing.Color.Silver;
@@ -69,6 +59,16 @@
 			this.collectionLabel.Text = "Collection";
 			this.collectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// idleButton
+			// 
+			this.idleButton.Location = new System.Drawing.Point(5, 5);
+			this.idleButton.Margin = new System.Windows.Forms.Padding(5);
+			this.idleButton.Name = "idleButton";
+			this.idleButton.Size = new System.Drawing.Size(30, 30);
+			this.idleButton.TabIndex = 1;
+			this.idleButton.Text = "I";
+			this.idleButton.UseVisualStyleBackColor = true;
+			// 
 			// contentPanel
 			// 
 			this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,6 +78,8 @@
 			this.contentPanel.Size = new System.Drawing.Size(600, 410);
 			this.contentPanel.TabIndex = 1;
 			this.contentPanel.WrapContents = false;
+			this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlAdded);
+			this.contentPanel.Resize += new System.EventHandler(this.contentPanel_Resize);
 			// 
 			// CollectorCollectionPage
 			// 

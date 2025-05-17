@@ -3,6 +3,7 @@ using dmyo_oop_final_assigment.Forms;
 using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Pages
@@ -54,6 +55,20 @@ namespace dmyo_oop_final_assigment.Pages
 			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
 				contentPanel.Controls.Add(new CollectorWaste(waste));
+			}
+		}
+
+		private void contentPanel_ControlAdded(object sender, ControlEventArgs e)
+		{
+			e.Control.Width = contentPanel.Width;
+
+		}
+
+		private void contentPanel_Resize(object sender, System.EventArgs e)
+		{
+			foreach (var control in contentPanel.Controls.OfType<Control>())
+			{
+				control.Width = contentPanel.Width;
 			}
 		}
 	}
