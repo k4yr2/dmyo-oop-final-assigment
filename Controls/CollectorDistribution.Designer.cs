@@ -32,12 +32,13 @@
 			this.distributionLabel = new System.Windows.Forms.Label();
 			this.cancelButton = new System.Windows.Forms.Button();
 			this.bottomPanel = new System.Windows.Forms.Panel();
+			this.pageLabel = new System.Windows.Forms.Label();
 			this.nextButton = new System.Windows.Forms.Button();
 			this.lastButton = new System.Windows.Forms.Button();
 			this.previousButton = new System.Windows.Forms.Button();
 			this.firstButton = new System.Windows.Forms.Button();
 			this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
-			this.pageLabel = new System.Windows.Forms.Label();
+			this.sendButton = new System.Windows.Forms.Button();
 			this.topPanel.SuspendLayout();
 			this.bottomPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -45,6 +46,7 @@
 			// topPanel
 			// 
 			this.topPanel.BackColor = System.Drawing.Color.DarkGray;
+			this.topPanel.Controls.Add(this.sendButton);
 			this.topPanel.Controls.Add(this.distributionLabel);
 			this.topPanel.Controls.Add(this.cancelButton);
 			this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -93,6 +95,19 @@
 			this.bottomPanel.Name = "bottomPanel";
 			this.bottomPanel.Size = new System.Drawing.Size(598, 30);
 			this.bottomPanel.TabIndex = 3;
+			// 
+			// pageLabel
+			// 
+			this.pageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.pageLabel.Location = new System.Drawing.Point(82, 0);
+			this.pageLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.pageLabel.Name = "pageLabel";
+			this.pageLabel.Size = new System.Drawing.Size(432, 30);
+			this.pageLabel.TabIndex = 2;
+			this.pageLabel.Text = "1/1";
+			this.pageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// nextButton
 			// 
@@ -145,18 +160,16 @@
 			this.contentContainer.Size = new System.Drawing.Size(598, 384);
 			this.contentContainer.TabIndex = 4;
 			// 
-			// pageLabel
+			// sendButton
 			// 
-			this.pageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.pageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.pageLabel.Location = new System.Drawing.Point(82, 0);
-			this.pageLabel.Margin = new System.Windows.Forms.Padding(0);
-			this.pageLabel.Name = "pageLabel";
-			this.pageLabel.Size = new System.Drawing.Size(432, 30);
-			this.pageLabel.TabIndex = 2;
-			this.pageLabel.Text = "1/1";
-			this.pageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.sendButton.Location = new System.Drawing.Point(526, 8);
+			this.sendButton.Margin = new System.Windows.Forms.Padding(8);
+			this.sendButton.Name = "sendButton";
+			this.sendButton.Size = new System.Drawing.Size(64, 24);
+			this.sendButton.TabIndex = 2;
+			this.sendButton.Text = "Send";
+			this.sendButton.UseVisualStyleBackColor = true;
 			// 
 			// CollectorDistribution
 			// 
@@ -185,5 +198,6 @@
 		private System.Windows.Forms.Button firstButton;
 		private ContentContainer contentContainer;
 		private System.Windows.Forms.Label pageLabel;
+		private System.Windows.Forms.Button sendButton;
 	}
 }
