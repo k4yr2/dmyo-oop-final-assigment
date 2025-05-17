@@ -142,5 +142,16 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			Index = Distributions.Length - 1;
 		}
+
+		private void cancelButton_Click(object sender, EventArgs e)
+		{
+			DialogResult result = MessageBox.Show("Are you sure you want to cancel the collection?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				TableManager.WasteCollection.Cancel(Form.Person.Id);
+				Form.Status = CollectorStatus.Idle;
+			}
+		}
 	}
 }

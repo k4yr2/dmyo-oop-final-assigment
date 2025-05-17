@@ -70,13 +70,14 @@
 			this.cancelButton.BackColor = System.Drawing.Color.Gainsboro;
 			this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 			this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cancelButton.Location = new System.Drawing.Point(5, 5);
-			this.cancelButton.Margin = new System.Windows.Forms.Padding(5);
+			this.cancelButton.Location = new System.Drawing.Point(8, 8);
+			this.cancelButton.Margin = new System.Windows.Forms.Padding(8);
 			this.cancelButton.Name = "cancelButton";
-			this.cancelButton.Size = new System.Drawing.Size(30, 30);
+			this.cancelButton.Size = new System.Drawing.Size(24, 24);
 			this.cancelButton.TabIndex = 1;
 			this.cancelButton.Text = "X";
 			this.cancelButton.UseVisualStyleBackColor = false;
+			this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 			// 
 			// bottomPanel
 			// 
