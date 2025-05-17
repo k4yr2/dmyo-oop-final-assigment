@@ -56,7 +56,7 @@ namespace dmyo_oop_final_assigment.Pages
 
 			foreach (var waste in TableManager.WasteCollection.GetWastes(Source.Id))
 			{
-				contentPanel.Controls.Add(new CollectorWaste(waste));
+				contentPanel.Controls.Add(new CollectorWaste(this, waste));
 			}
 		}
 
