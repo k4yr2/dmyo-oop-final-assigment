@@ -62,6 +62,7 @@ namespace dmyo_oop_final_assigment.Forms
 			if (m_waste == null)
 			{
 				applyButton.Text = "Create";
+				quantityBox.Text = "1";
 			}
 			else
 			{
