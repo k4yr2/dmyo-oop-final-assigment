@@ -34,7 +34,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(526, 360);
+			this.ClientSize = new System.Drawing.Size(884, 411);
 			this.Name = "CollectorForm";
 			this.Text = "2";
 			this.ResumeLayout(false);
