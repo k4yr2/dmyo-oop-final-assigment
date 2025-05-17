@@ -43,6 +43,21 @@ namespace dmyo_oop_final_assigment.Tables
 			return Select($"WHERE status IN (0, 1) and collection = {collection}").FirstOrDefault();
 		}
 
+		public bool Send(int collection)
+		{
+			var distribution = GetCurrent(collection);
+
+			if (distribution != null)
+			{
+				distribution.Model.Status = WasteStatus.Processing;
+
+				Update(distribution.Id, distribution.Model);
+				return true;
+			}
+
+			return false;
+		}
+
 		public DMYOData<WasteDistribution> GetInstance(int collection)
 		{
 			if(GetCurrent(collection) == null)
