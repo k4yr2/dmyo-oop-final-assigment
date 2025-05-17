@@ -116,5 +116,13 @@ namespace dmyo_oop_final_assigment.Pages
 			var form = new CollectorDetailsForm(this);
 			form.ShowDialog(this);
 		}
+
+		private void contentPanel_ControlRemoved(object sender, ControlEventArgs e)
+		{
+			if(contentPanel.Controls.Count == 0)
+			{
+				completeButton.Enabled = false;
+			}
+		}
 	}
 }

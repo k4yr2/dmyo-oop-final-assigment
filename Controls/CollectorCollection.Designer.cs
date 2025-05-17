@@ -120,6 +120,7 @@
 			this.contentPanel.TabIndex = 3;
 			this.contentPanel.WrapContents = false;
 			this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlAdded);
+			this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlRemoved);
 			this.contentPanel.Resize += new System.EventHandler(this.contentPanel_Resize);
 			// 
 			// CollectorCollection
