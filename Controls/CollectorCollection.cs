@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Pages
 {
-	public partial class CollectorCollectionPage : UserControl, IDataLink<WasteCollection>
+	public partial class CollectorCollection : UserControl, IDataLink<WasteCollection>
 	{
 		private CollectorForm m_form;
 
 		private DMYOData<WasteCollection> m_source;
 
-		public CollectorCollectionPage(CollectorForm form, DMYOData<WasteCollection> source)
+		public CollectorCollection(CollectorForm form, DMYOData<WasteCollection> source)
 		{
 			InitializeComponent();
 

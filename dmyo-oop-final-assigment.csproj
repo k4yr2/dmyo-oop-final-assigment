@@ -85,17 +85,17 @@
     <Compile Include="Models\WasteRecycle.cs" />
     <Compile Include="Models\WasteStock.cs" />
     <Compile Include="Models\WasteUnit.cs" />
-    <Compile Include="Pages\CollectorCollectionPage.cs">
+    <Compile Include="Controls\CollectorCollection.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\CollectorCollectionPage.Designer.cs">
-      <DependentUpon>CollectorCollectionPage.cs</DependentUpon>
+    <Compile Include="Controls\CollectorCollection.Designer.cs">
+      <DependentUpon>CollectorCollection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CollectorIdlePage.cs">
+    <Compile Include="Controls\CollectorIdle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\CollectorIdlePage.Designer.cs">
-      <DependentUpon>CollectorIdlePage.cs</DependentUpon>
+    <Compile Include="Controls\CollectorIdle.Designer.cs">
+      <DependentUpon>CollectorIdle.cs</DependentUpon>
     </Compile>
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
@@ -138,11 +138,11 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CollectorCollectionPage.resx">
-      <DependentUpon>CollectorCollectionPage.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CollectorCollection.resx">
+      <DependentUpon>CollectorCollection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CollectorIdlePage.resx">
-      <DependentUpon>CollectorIdlePage.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CollectorIdle.resx">
+      <DependentUpon>CollectorIdle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

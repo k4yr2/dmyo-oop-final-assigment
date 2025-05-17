@@ -1,6 +1,6 @@
 ﻿namespace dmyo_oop_final_assigment.Pages
 {
-	partial class CollectorIdlePage
+	partial class CollectorIdle
 	{
 		/// <summary> 
 		/// Required designer variable.

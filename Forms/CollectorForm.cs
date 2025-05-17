@@ -68,11 +68,11 @@ namespace dmyo_oop_final_assigment.Forms
 			switch (m_status)
 			{
 				case CollectorStatus.Collection:
-					control = new CollectorCollectionPage(this, collection);
+					control = new CollectorCollection(this, collection);
 					break;
 				case CollectorStatus.Idle:
 				default:
-					control = new CollectorIdlePage(this);
+					control = new CollectorIdle(this);
 					break;
 			}
 
