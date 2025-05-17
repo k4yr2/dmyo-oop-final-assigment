@@ -64,10 +64,10 @@
 			// 
 			this.abbrLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.abbrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.abbrLabel.Location = new System.Drawing.Point(276, 8);
-			this.abbrLabel.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+			this.abbrLabel.Margin = new System.Windows.Forms.Padding(0, 8, 3, 8);
 			this.abbrLabel.Name = "abbrLabel";
-			this.abbrLabel.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
 			this.abbrLabel.Size = new System.Drawing.Size(48, 24);
 			this.abbrLabel.TabIndex = 2;
 			this.abbrLabel.Text = "pcs";
@@ -93,10 +93,9 @@
 			// 
 			this.quantityLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.quantityLabel.Location = new System.Drawing.Point(222, 8);
-			this.quantityLabel.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+			this.quantityLabel.Location = new System.Drawing.Point(228, 8);
+			this.quantityLabel.Margin = new System.Windows.Forms.Padding(3, 8, 0, 8);
 			this.quantityLabel.Name = "quantityLabel";
-			this.quantityLabel.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
 			this.quantityLabel.Size = new System.Drawing.Size(48, 24);
 			this.quantityLabel.TabIndex = 2;
 			this.quantityLabel.Text = "0";
