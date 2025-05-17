@@ -4,6 +4,7 @@ using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace dmyo_oop_final_assigment.Controls
 {
@@ -101,15 +102,22 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			if(!decimal.TryParse(dispatchBox.Text, out decimal dispatch))
 			{
-				dispatch = m_capacity;
-				dispatchBox.Text = dispatch.ToString();
+				dispatchBox.Text = dispatch.ToString("0");
+				dispatchBox.SelectionStart = 0;
+				dispatchBox.SelectionLength = 1;
 			}
 
-			m_dispatch = Math.Min(dispatch, m_capacity);
-			m_percent = m_capacity == 0 ? 0 : (double)(m_dispatch / m_capacity) * 100;
-			
+			if(dispatch >= m_capacity)
+			{
+				dispatch = m_capacity;
+				dispatchBox.Text = m_capacity.ToString("0");
+				dispatchBox.SelectionStart = dispatchBox.Text.Length;
+				dispatchBox.SelectionLength = 0;
+			}
+
+			m_dispatch = dispatch;
+			m_percent = m_capacity == 0 ? 0 : (double)(m_dispatch / m_capacity) * 100;	
 			percentLabel.Text = $"%{m_percent:0.00}";
-			dispatchBox.Text = m_dispatch.ToString();
 		}
 	}
 }
