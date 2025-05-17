@@ -10,6 +10,8 @@ namespace dmyo_oop_final_assigment.Models
 
 		private decimal m_quantity;
 
+		private decimal m_capacity;
+
 		private DateTime m_date;
 
 		public WasteDispatch()
@@ -51,6 +53,18 @@ namespace dmyo_oop_final_assigment.Models
 			set
 			{
 				m_quantity = value;
+			}
+		}
+
+		public decimal Capacity
+		{
+			get
+			{
+				return m_capacity;
+			}
+			set
+			{
+				m_capacity = value;
 			}
 		}
 
