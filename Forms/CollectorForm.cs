@@ -61,7 +61,10 @@ namespace dmyo_oop_final_assigment.Forms
 
 			if(collection != null)
 			{
-				m_status = CollectorStatus.Collection;
+				if(collection.Model.Status == WasteStatus.Active)
+					m_status = CollectorStatus.Collection;
+				else 
+					m_status = CollectorStatus.Distrubution;
 			}
 
 			UserControl control;
