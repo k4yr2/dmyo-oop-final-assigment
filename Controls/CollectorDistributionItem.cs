@@ -17,8 +17,6 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteUnit> m_unit;
 
-		private DMYOData<Waste>[] m_wastes;
-
 		private decimal m_dispatch = 0;
 
 		private double m_percent = 0;
@@ -72,7 +70,6 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = null;
 				m_unit = null;
-				m_wastes = Array.Empty<DMYOData<Waste>>();
 				m_capacity = 0;
 				m_dispatch = 0;
 			}
@@ -80,8 +77,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-				m_wastes = TableManager.Waste.OfCollectionType(m_distribution.Source.Id, m_type.Id).ToArray();
-				m_capacity = m_wastes.Sum(w => w.Model.Quantity);
+				m_capacity = TableManager.Waste.CapacityOfType(m_distribution.Source.Id, m_type.Id, m_source.Id);
 				m_dispatch = Math.Min(m_dispatch, m_capacity);
 			}
 
