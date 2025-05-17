@@ -128,13 +128,18 @@ namespace dmyo_oop_final_assigment.Pages
 
 		private void completeButton_Click(object sender, System.EventArgs e)
 		{
-			if(TableManager.WasteCollection.Distrubute(Form.Person.Id))
+			DialogResult result = MessageBox.Show("Are you sure you want to complete the collection?", "Complete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
 			{
-				Form.Status = CollectorStatus.Distrubution;
-			}
-			else
-			{
-				MessageBox.Show("You cannot complete a collection that is not active.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				if (TableManager.WasteCollection.Distrubute(Form.Person.Id))
+				{
+					Form.Refresh();
+				}
+				else
+				{
+					MessageBox.Show("You cannot complete a collection that is not active.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 	}
