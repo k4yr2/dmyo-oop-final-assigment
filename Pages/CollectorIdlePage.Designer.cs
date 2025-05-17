@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.bottomPanel = new System.Windows.Forms.Panel();
 			this.startButton = new System.Windows.Forms.Button();
 			this.navPanel = new System.Windows.Forms.Panel();
 			this.statisticLabel = new System.Windows.Forms.Label();
@@ -39,42 +38,33 @@
 			this.titleLabel = new System.Windows.Forms.Label();
 			this.infoPanel = new System.Windows.Forms.Panel();
 			this.idleButton = new System.Windows.Forms.Button();
-			this.bottomPanel.SuspendLayout();
+			this.label1 = new System.Windows.Forms.Label();
 			this.navPanel.SuspendLayout();
 			this.topPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// bottomPanel
-			// 
-			this.bottomPanel.BackColor = System.Drawing.Color.LightGray;
-			this.bottomPanel.Controls.Add(this.startButton);
-			this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.bottomPanel.Location = new System.Drawing.Point(0, 408);
-			this.bottomPanel.Name = "bottomPanel";
-			this.bottomPanel.Size = new System.Drawing.Size(582, 30);
-			this.bottomPanel.TabIndex = 0;
-			// 
 			// startButton
 			// 
-			this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.startButton.Location = new System.Drawing.Point(479, 3);
+			this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.startButton.Location = new System.Drawing.Point(476, 63);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(100, 24);
 			this.startButton.TabIndex = 0;
-			this.startButton.Text = "Start Collection";
+			this.startButton.Text = "Collection";
 			this.startButton.UseVisualStyleBackColor = true;
 			// 
 			// navPanel
 			// 
+			this.navPanel.Controls.Add(this.startButton);
+			this.navPanel.Controls.Add(this.label1);
 			this.navPanel.Controls.Add(this.archiveButton);
 			this.navPanel.Controls.Add(this.archiveLabel);
 			this.navPanel.Controls.Add(this.statisticButton);
 			this.navPanel.Controls.Add(this.statisticLabel);
 			this.navPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.navPanel.Location = new System.Drawing.Point(0, 257);
+			this.navPanel.Location = new System.Drawing.Point(0, 348);
 			this.navPanel.Name = "navPanel";
-			this.navPanel.Size = new System.Drawing.Size(582, 151);
+			this.navPanel.Size = new System.Drawing.Size(579, 90);
 			this.navPanel.TabIndex = 5;
 			// 
 			// statisticLabel
@@ -86,14 +76,15 @@
 			this.statisticLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.statisticLabel.Name = "statisticLabel";
 			this.statisticLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
-			this.statisticLabel.Size = new System.Drawing.Size(582, 30);
+			this.statisticLabel.Size = new System.Drawing.Size(579, 30);
 			this.statisticLabel.TabIndex = 0;
 			this.statisticLabel.Text = "See all your collection statistics";
 			this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// statisticButton
 			// 
-			this.statisticButton.Location = new System.Drawing.Point(479, 3);
+			this.statisticButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.statisticButton.Location = new System.Drawing.Point(476, 3);
 			this.statisticButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
 			this.statisticButton.Name = "statisticButton";
 			this.statisticButton.Size = new System.Drawing.Size(100, 24);
@@ -109,14 +100,15 @@
 			this.archiveLabel.Location = new System.Drawing.Point(0, 30);
 			this.archiveLabel.Name = "archiveLabel";
 			this.archiveLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
-			this.archiveLabel.Size = new System.Drawing.Size(582, 30);
+			this.archiveLabel.Size = new System.Drawing.Size(579, 30);
 			this.archiveLabel.TabIndex = 1;
-			this.archiveLabel.Text = "Select a collection from the archive and browse";
+			this.archiveLabel.Text = "Browse collection from archive";
 			this.archiveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// archiveButton
 			// 
-			this.archiveButton.Location = new System.Drawing.Point(479, 33);
+			this.archiveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.archiveButton.Location = new System.Drawing.Point(476, 33);
 			this.archiveButton.Name = "archiveButton";
 			this.archiveButton.Size = new System.Drawing.Size(100, 24);
 			this.archiveButton.TabIndex = 2;
@@ -130,7 +122,7 @@
 			this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.topPanel.Location = new System.Drawing.Point(0, 0);
 			this.topPanel.Name = "topPanel";
-			this.topPanel.Size = new System.Drawing.Size(582, 40);
+			this.topPanel.Size = new System.Drawing.Size(579, 40);
 			this.topPanel.TabIndex = 7;
 			// 
 			// titleLabel
@@ -141,7 +133,7 @@
 			this.titleLabel.ForeColor = System.Drawing.Color.White;
 			this.titleLabel.Location = new System.Drawing.Point(0, 40);
 			this.titleLabel.Name = "titleLabel";
-			this.titleLabel.Size = new System.Drawing.Size(582, 60);
+			this.titleLabel.Size = new System.Drawing.Size(579, 60);
 			this.titleLabel.TabIndex = 8;
 			this.titleLabel.Text = "Collector Form";
 			this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,7 +144,7 @@
 			this.infoPanel.Location = new System.Drawing.Point(0, 100);
 			this.infoPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.infoPanel.Name = "infoPanel";
-			this.infoPanel.Size = new System.Drawing.Size(582, 157);
+			this.infoPanel.Size = new System.Drawing.Size(579, 248);
 			this.infoPanel.TabIndex = 9;
 			// 
 			// idleButton
@@ -165,6 +157,19 @@
 			this.idleButton.Text = "I";
 			this.idleButton.UseVisualStyleBackColor = true;
 			// 
+			// label1
+			// 
+			this.label1.BackColor = System.Drawing.Color.Gainsboro;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label1.Location = new System.Drawing.Point(0, 60);
+			this.label1.Name = "label1";
+			this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
+			this.label1.Size = new System.Drawing.Size(579, 30);
+			this.label1.TabIndex = 3;
+			this.label1.Text = "Start a new collection";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
 			// CollectorIdlePage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,10 +178,8 @@
 			this.Controls.Add(this.titleLabel);
 			this.Controls.Add(this.topPanel);
 			this.Controls.Add(this.navPanel);
-			this.Controls.Add(this.bottomPanel);
 			this.Name = "CollectorIdlePage";
-			this.Size = new System.Drawing.Size(582, 438);
-			this.bottomPanel.ResumeLayout(false);
+			this.Size = new System.Drawing.Size(579, 438);
 			this.navPanel.ResumeLayout(false);
 			this.topPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -184,8 +187,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Panel bottomPanel;
 		private System.Windows.Forms.Button startButton;
 		private System.Windows.Forms.Panel navPanel;
 		private System.Windows.Forms.Button statisticButton;
@@ -196,5 +197,6 @@
 		private System.Windows.Forms.Button idleButton;
 		private System.Windows.Forms.Label titleLabel;
 		private System.Windows.Forms.Panel infoPanel;
+		private System.Windows.Forms.Label label1;
 	}
 }
