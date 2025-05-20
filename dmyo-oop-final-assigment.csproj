@@ -59,11 +59,11 @@
     <Compile Include="Controls\CollectorDistributionItem.Designer.cs">
       <DependentUpon>CollectorDistributionItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CollectorWaste.cs">
+    <Compile Include="Controls\CollectorCollectionItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CollectorWaste.Designer.cs">
-      <DependentUpon>CollectorWaste.cs</DependentUpon>
+    <Compile Include="Controls\CollectorCollectionItem.Designer.cs">
+      <DependentUpon>CollectorCollectionItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ContentContainer.cs">
       <SubType>UserControl</SubType>
@@ -150,8 +150,8 @@
     <EmbeddedResource Include="Controls\CollectorDistributionItem.resx">
       <DependentUpon>CollectorDistributionItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CollectorWaste.resx">
-      <DependentUpon>CollectorWaste.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CollectorCollectionItem.resx">
+      <DependentUpon>CollectorCollectionItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ContentContainer.resx">
       <DependentUpon>ContentContainer.cs</DependentUpon>

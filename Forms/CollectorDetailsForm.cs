@@ -11,19 +11,19 @@ namespace dmyo_oop_final_assigment.Forms
 	{
 		private CollectorCollection m_collection;
 
-		private CollectorWaste m_waste;
+		private CollectorCollectionItem m_waste;
 
 		public CollectorDetailsForm(CollectorCollection collection) : this(collection, null)
 		{
 
 		}
 
-		public CollectorDetailsForm(CollectorWaste waste) : this(waste.Collection, waste)
+		public CollectorDetailsForm(CollectorCollectionItem waste) : this(waste.Host, waste)
 		{
 
 		}
 
-		private CollectorDetailsForm(CollectorCollection collection, CollectorWaste waste)
+		private CollectorDetailsForm(CollectorCollection collection, CollectorCollectionItem waste)
 		{
 			InitializeComponent();
 
@@ -42,7 +42,7 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 		}
 
-		public CollectorWaste Waste
+		public CollectorCollectionItem Waste
 		{
 			get
 			{
@@ -87,7 +87,7 @@ namespace dmyo_oop_final_assigment.Forms
 			{
 				waste.Date = DateTime.Now;
 				var data = TableManager.Waste.Create(waste);
-				m_collection.Panel.Controls.Add(new CollectorWaste(m_collection, data));
+				m_collection.Panel.Controls.Add(new CollectorCollectionItem(m_collection, data));
 			}
 			else
 			{

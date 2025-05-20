@@ -6,37 +6,35 @@ using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
-	public partial class CollectorWaste : UserControl, IDataLink<Waste>
+	public partial class CollectorCollectionItem : UserControl, IDataLink<Waste>
 	{
-		private CollectorCollection m_collection;
+		private CollectorCollection m_host;
 
 		private DMYOData<Waste> m_source;
 
 		private DMYOData<WasteType> m_type;
 
-		private DMYOData<WasteCategory> m_category;
-
 		private DMYOData<WasteUnit> m_unit;
 
-		public CollectorWaste(CollectorCollection collection) : this(collection, null)
+		public CollectorCollectionItem(CollectorCollection host) : this(host, null)
 		{
 
 		}
 
-		public CollectorWaste(CollectorCollection collection, DMYOData<Waste> source)
+		public CollectorCollectionItem(CollectorCollection host, DMYOData<Waste> source)
 		{
 			InitializeComponent();
 
-			m_collection = collection;
+			m_host = host;
 			Bind(source);
 		}
 
 
-		public CollectorCollection Collection
+		public CollectorCollection Host
 		{
 			get
 			{
-				return m_collection;
+				return m_host;
 			}
 		}
 
@@ -56,13 +54,11 @@ namespace dmyo_oop_final_assigment.Controls
 			if(m_source == null)
 			{
 				m_type = null;
-				m_category = null;
 				m_unit = null;
 			}
 			else
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
-				m_category = TableManager.WasteCategory.Read(m_type.Model.Category);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
 			}
 
@@ -109,16 +105,16 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if (result == DialogResult.Yes)
 			{
-				int index = Collection.Panel.Controls.IndexOf(this);
+				int index = Host.Panel.Controls.IndexOf(this);
 				if (index >= 0)
 				{
 					if (TableManager.Waste.Delete(Source.Id))
 					{
-						Collection.Panel.Controls.RemoveAt(index);
+						Host.Panel.Controls.RemoveAt(index);
 					}
 					else
 					{
-						MessageBox.Show(Collection, "Failed to delete waste.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show(Host, "Failed to delete waste.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 			}
