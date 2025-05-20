@@ -8,7 +8,7 @@ namespace dmyo_oop_final_assigment.Managers
 {
 	internal static class DataManager
 	{
-		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assigment;Integrated Security=True";
+		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assignment;Integrated Security=True";
 
 
 		public static void UseConnection(Action<SqlConnection> action)
