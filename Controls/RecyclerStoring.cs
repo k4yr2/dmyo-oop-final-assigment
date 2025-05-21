@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -36,6 +37,16 @@ namespace dmyo_oop_final_assigment.Controls
             base.Refresh();
 
             Panel.Controls.Clear();
+
+            var factory = Form.Person.Model.Factory;
+
+            if (factory.HasValue)
+            {
+                foreach (var distribution in TableManager.WasteDistribution.OfSubmitteds(factory.Value))
+                {
+                    Panel.Controls.Add(new RecyclerStoringItem(this, distribution));
+                }
+            }
         }
     }
 }
