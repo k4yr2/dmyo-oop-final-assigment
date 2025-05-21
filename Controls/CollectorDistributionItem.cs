@@ -133,7 +133,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-                Capacity = TableManager.Waste.CapacityOfType(m_host.Source.Id, m_type.Id, m_distribution.Id);
+                Capacity = TableManager.Waste.CapacityOf(m_host.Source.Id, m_type.Id, m_distribution.Id);
                 Quantity = Math.Min(m_source.Model.Quantity, m_capacity);
 			}
 
