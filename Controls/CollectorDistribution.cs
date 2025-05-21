@@ -114,6 +114,15 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				Panel.Controls.Add(new CollectorDistributionItem(this, distribution, type));
 			}
+
+			if(distribution.Model.Status == WasteStatus.Active)
+			{
+				sendButton.Enabled = true;
+			}
+			else
+			{
+				sendButton.Enabled = false;
+            }
 		}
 
 		private void firstButton_Click(object sender, EventArgs e)
@@ -153,8 +162,11 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if (result == DialogResult.Yes)
 			{
-				TableManager.WasteDistribution.Send(m_source.Id);
-			}
+				if(TableManager.WasteDistribution.Send(m_source.Id))
+				{
+                    Refresh();
+                }
+            }
 		}
 	}
 }
