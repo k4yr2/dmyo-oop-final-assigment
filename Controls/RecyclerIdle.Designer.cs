@@ -32,8 +32,8 @@
             this.navPanel = new System.Windows.Forms.Panel();
             this.stockButton = new System.Windows.Forms.Button();
             this.stockLabel = new System.Windows.Forms.Label();
-            this.distributionButton = new System.Windows.Forms.Button();
-            this.distributionLabel = new System.Windows.Forms.Label();
+            this.storingButton = new System.Windows.Forms.Button();
+            this.storingLabel = new System.Windows.Forms.Label();
             this.archivesLabel = new System.Windows.Forms.Label();
             this.archivesButton = new System.Windows.Forms.Button();
             this.recyclingLabel = new System.Windows.Forms.Label();
@@ -62,8 +62,8 @@
             this.navPanel.Controls.Add(this.archivesLabel);
             this.navPanel.Controls.Add(this.stockButton);
             this.navPanel.Controls.Add(this.stockLabel);
-            this.navPanel.Controls.Add(this.distributionButton);
-            this.navPanel.Controls.Add(this.distributionLabel);
+            this.navPanel.Controls.Add(this.storingButton);
+            this.navPanel.Controls.Add(this.storingLabel);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.navPanel.Location = new System.Drawing.Point(0, 288);
             this.navPanel.Name = "navPanel";
@@ -93,30 +93,30 @@
             this.stockLabel.Text = "Browse the factory\'s stocks";
             this.stockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // distributionButton
+            // storingButton
             // 
-            this.distributionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.distributionButton.Location = new System.Drawing.Point(750, 3);
-            this.distributionButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.distributionButton.Name = "distributionButton";
-            this.distributionButton.Size = new System.Drawing.Size(100, 24);
-            this.distributionButton.TabIndex = 11;
-            this.distributionButton.Text = "Distribution";
-            this.distributionButton.UseVisualStyleBackColor = true;
+            this.storingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.storingButton.Location = new System.Drawing.Point(750, 3);
+            this.storingButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.storingButton.Name = "storingButton";
+            this.storingButton.Size = new System.Drawing.Size(100, 24);
+            this.storingButton.TabIndex = 11;
+            this.storingButton.Text = "Storing";
+            this.storingButton.UseVisualStyleBackColor = true;
             // 
-            // distributionLabel
+            // storingLabel
             // 
-            this.distributionLabel.BackColor = System.Drawing.Color.Gainsboro;
-            this.distributionLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.distributionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.distributionLabel.Location = new System.Drawing.Point(0, 0);
-            this.distributionLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.distributionLabel.Name = "distributionLabel";
-            this.distributionLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
-            this.distributionLabel.Size = new System.Drawing.Size(855, 30);
-            this.distributionLabel.TabIndex = 1;
-            this.distributionLabel.Text = "Evaluate the distributions submitted to the factory";
-            this.distributionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.storingLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.storingLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.storingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.storingLabel.Location = new System.Drawing.Point(0, 0);
+            this.storingLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.storingLabel.Name = "storingLabel";
+            this.storingLabel.Padding = new System.Windows.Forms.Padding(0, 0, 110, 0);
+            this.storingLabel.Size = new System.Drawing.Size(855, 30);
+            this.storingLabel.TabIndex = 1;
+            this.storingLabel.Text = "Store the requests submitted to the factory";
+            this.storingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // archivesLabel
             // 
@@ -184,8 +184,8 @@
 
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel navPanel;
-        private System.Windows.Forms.Label distributionLabel;
-        private System.Windows.Forms.Button distributionButton;
+        private System.Windows.Forms.Label storingLabel;
+        private System.Windows.Forms.Button storingButton;
         private System.Windows.Forms.Label stockLabel;
         private System.Windows.Forms.Button stockButton;
         private System.Windows.Forms.Label recyclingLabel;
