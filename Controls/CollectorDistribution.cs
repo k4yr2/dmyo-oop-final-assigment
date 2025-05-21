@@ -93,7 +93,6 @@ namespace dmyo_oop_final_assigment.Controls
 			factoryBox.DataSource = TableManager.Factory.Select().ToList();
 			factoryBox.DisplayMember = "Display";
 			factoryBox.ValueMember = "Id";
-            factoryBox.SelectedItem = null;
 
             if (m_source == null)
 			{
@@ -119,7 +118,7 @@ namespace dmyo_oop_final_assigment.Controls
 			Panel.Controls.Clear();
 			var distribution = Distributions[Index];
 
-			pageLabel.Text = $"Page {Index + 1} of {Distributions.Length}";
+            pageLabel.Text = $"Page {Index + 1} of {Distributions.Length}";
 
 			foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {distribution.Id}"))
 			{
@@ -131,7 +130,14 @@ namespace dmyo_oop_final_assigment.Controls
 				sendButton.Enabled = true;
 				factoryBox.Enabled = true;
 
-                factoryBox.SelectedItem = null;
+                if (distribution?.Model.Factory.HasValue ?? false)
+                {
+                    factoryBox.SelectedItem = TableManager.Factory.Read(distribution.Model.Factory.Value);
+                }
+                else
+                {
+                    factoryBox.SelectedItem = null;
+                }
             }
             else
 			{
@@ -143,18 +149,13 @@ namespace dmyo_oop_final_assigment.Controls
 					factoryBox.Text = "BLANK";
                 }
             }
-		}
 
-		public void Save()
+            factoryBox.SelectionStart = 0;
+            factoryBox.SelectionLength = 0;
+        }
+
+        public void Save()
 		{
-            var distribution = Distributions[Index] ?? null;
-
-            if (distribution != null && distribution.Model.Status == WasteStatus.Active)
-			{
-				distribution.Model.Factory = factoryBox.SelectedItem == null ? (int?)null : ((DMYOData<Factory>)factoryBox.SelectedItem).Id;
-                TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
-            }
-
             foreach (var item in Panel.Controls.OfType<CollectorDistributionItem>())
 			{
                 TableManager.WasteDispatch.Update(item.Source.Id, item.Source.Model);
@@ -206,5 +207,26 @@ namespace dmyo_oop_final_assigment.Controls
                 }
             }
 		}
-	}
+
+        private void factoryBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			var factory = (DMYOData<Factory>)factoryBox.SelectedItem;
+
+			if(factory != null)
+			{
+                var distribution = Distributions?[Index] ?? null;
+
+                if (distribution != null)
+                {
+                    distribution.Model.Factory = factory.Id;
+					TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
+
+					sendButton.Enabled = true;
+					return;
+				}
+            }
+
+			sendButton.Enabled = false;
+        }
+    }
 }

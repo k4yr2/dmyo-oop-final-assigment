@@ -173,6 +173,7 @@
             this.factoryBox.Name = "factoryBox";
             this.factoryBox.Size = new System.Drawing.Size(136, 21);
             this.factoryBox.TabIndex = 3;
+            this.factoryBox.SelectedIndexChanged += new System.EventHandler(this.factoryBox_SelectedIndexChanged);
             // 
             // contentContainer
             // 
