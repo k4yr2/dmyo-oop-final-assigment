@@ -6,6 +6,9 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		name			NVARCHAR(50)	NOT NULL DEFAULT 'My Factory',
 	);
+
+	INSERT INTO Factory (name) VALUES 
+    (N'Alpha Factory'), (N'Beta Manufacturing')
 END;
 
 IF OBJECT_ID('Person', 'U') IS NULL
