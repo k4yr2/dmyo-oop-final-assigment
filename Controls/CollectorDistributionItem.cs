@@ -19,8 +19,6 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteUnit> m_unit;
 
-		private decimal m_quantity = 0;
-
 		private double m_percent = 0;
 
 		private decimal m_capacity = 0;
@@ -38,7 +36,6 @@ namespace dmyo_oop_final_assigment.Controls
 			m_host.Form.FormClosed += (s, e) => {
 				if(m_source != null)
 				{
-					m_source.Model.Quantity = m_quantity;
 					TableManager.WasteDispatch.Update(m_source.Id, m_source.Model);
 				}
 			};
@@ -92,13 +89,13 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			get
 			{
-				return m_quantity;
+				return Source.Model.Quantity;
 			}
 			set
 			{
-				m_quantity = value;
-				quantityBox.Text = m_quantity.ToString("0.00");
-                Percent = m_capacity == 0 ? 0 : (double)(m_quantity / m_capacity) * 100;
+                Source.Model.Quantity = value;
+				quantityBox.Text = Source.Model.Quantity.ToString("0.00");
+                Percent = m_capacity == 0 ? 0 : (double)(Source.Model.Quantity / m_capacity) * 100;
             }
 		}
 
@@ -138,7 +135,6 @@ namespace dmyo_oop_final_assigment.Controls
 				m_type = null;
 				m_unit = null;
 				m_capacity = 0;
-				m_quantity = 0;
 			}
 			else
 			{
