@@ -143,6 +143,18 @@ BEGIN
 	);
 END;
 
+-- Waste Heap
+
+IF OBJECT_ID('WasteHeap', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteHeap (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+	);
+END;
+
 -- Waste Recycle & Waste Gain
 
 IF OBJECT_ID('WasteRecycle', 'U') IS NULL
