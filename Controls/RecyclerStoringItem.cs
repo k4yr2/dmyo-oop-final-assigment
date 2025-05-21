@@ -1,6 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
+using System;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -76,6 +77,14 @@ namespace dmyo_oop_final_assigment.Controls
                 m_collection = TableManager.WasteCollection.Read(m_source.Model.Collection);
                 m_person = TableManager.Person.Read(m_collection.Model.Person);
             }
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+
+            dateLabel.Text = (m_source?.Model.Date ?? DateTime.MinValue).ToString("dd/MM/yyyy");
+            nameLabel.Text = m_person?.Model.Name ?? "Unknown";
         }
     }
 }
