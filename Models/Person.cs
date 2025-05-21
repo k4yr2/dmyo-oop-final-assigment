@@ -8,6 +8,9 @@
 
 		private PersonRole m_role;
 
+		private int? m_factory;
+
+
 		public Person()
 		{
 
@@ -49,7 +52,19 @@
 				m_role = value;
 			}
 		}	
-	}
+
+		public int? Factory
+		{
+			get
+			{
+				return m_factory;
+			}
+			set
+			{
+				m_factory = value;
+			}
+        }
+    }
 
 	public enum PersonRole
 	{
