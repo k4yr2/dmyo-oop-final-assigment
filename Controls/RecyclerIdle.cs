@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using dmyo_oop_final_assigment.Forms;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
 {
     public partial class RecyclerIdle : UserControl
     {
-        public RecyclerIdle()
+        private RecyclerForm m_form;
+
+        public RecyclerIdle(RecyclerForm form)
         {
             InitializeComponent();
+            m_form = form;
+        }
+
+        public RecyclerForm Form
+        {
+            get
+            {
+                return m_form;
+            }
         }
     }
 }
