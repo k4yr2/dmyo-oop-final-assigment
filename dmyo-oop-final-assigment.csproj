@@ -89,6 +89,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RecyclerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecyclerForm.Designer.cs">
+      <DependentUpon>RecyclerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\TableManager.cs" />
     <Compile Include="Models\Factory.cs" />
     <Compile Include="Models\FactoryAccess.cs" />
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CollectorIdle.resx">
       <DependentUpon>CollectorIdle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecyclerForm.resx">
+      <DependentUpon>RecyclerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
