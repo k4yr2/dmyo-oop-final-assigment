@@ -37,7 +37,10 @@ namespace dmyo_oop_final_assigment.Forms
 					case Models.PersonRole.Collector:
 						form = new CollectorForm(person);
 						break;
-					default:
+					case Models.PersonRole.Recycler:
+						form = new RecyclerForm(person);
+                        break;
+                    default:
 						form = null;
 						break;
 				}
