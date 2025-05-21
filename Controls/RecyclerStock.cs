@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
@@ -18,6 +19,12 @@ namespace dmyo_oop_final_assigment.Controls
         private RecyclerForm m_form;
 
         private DMYOData<WasteStock> m_source;
+
+        private DMYOData<WasteDistribution> m_distribution;
+
+        private DMYOData<WasteCollection> m_collection;
+
+        private DMYOData<Person> m_person;
 
 
         public RecyclerStock(RecyclerForm form) : this(form, null)
@@ -54,13 +61,26 @@ namespace dmyo_oop_final_assigment.Controls
         public void Bind(DMYOData<WasteStock> source)
         {
             m_source = source;
+            if(m_source == null)
+            {
+                m_distribution = null;
+                m_collection = null;
+                m_person = null;
+            }
+            else
+            {
+                m_distribution = TableManager.WasteDistribution.Read(m_source.Model.Distribution);
+                m_collection = TableManager.WasteCollection.Read(m_distribution.Model.Collection);
+                m_person = TableManager.Person.Read(m_collection.Model.Person);
+            }
+
             Refresh();
         }
 
         public override void Refresh()
         {
             base.Refresh();
-
+            stockLabel.Text = m_person?.Model.Name ?? "0";
         }
     }
 }
