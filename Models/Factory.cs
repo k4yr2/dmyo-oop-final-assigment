@@ -21,5 +21,10 @@
 				m_name = value;
 			}
 		}
+
+        public override string ToString()
+        {
+            return m_name;
+        }
 	}
 }
