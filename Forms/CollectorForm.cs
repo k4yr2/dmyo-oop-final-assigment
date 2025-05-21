@@ -67,7 +67,8 @@ namespace dmyo_oop_final_assigment.Forms
 			}
 
 			UserControl control;
-			switch (m_status)
+            CollectorStatus status = m_status;
+            switch (m_status)
 			{
 				case CollectorStatus.Collection:
 					control = new CollectorCollection(this, collection);
@@ -81,9 +82,12 @@ namespace dmyo_oop_final_assigment.Forms
 					break;
 			}
 
-			control.Dock = DockStyle.Fill;
-			Controls.Clear();
-			Controls.Add(control);
+			if(status == m_status)
+			{
+                control.Dock = DockStyle.Fill;
+                Controls.Clear();
+                Controls.Add(control);
+            }
 		}
 	}
 
