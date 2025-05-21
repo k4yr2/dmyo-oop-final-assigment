@@ -69,34 +69,44 @@ namespace dmyo_oop_final_assigment.Tables
 			return false;
 		}
 
-		public DMYOData<WasteDistribution> GetInstance(int collection)
+		public bool HasCapacity(int collection)
 		{
-			if(GetCurrent(collection) == null)
+			foreach (var type in TableManager.WasteType.OfCollection(collection))
 			{
-				var distribution = Create(new WasteDistribution()
-				{
-					Collection = collection,
-					Factory = null,
-					Status = WasteStatus.Active,
-					Date = DateTime.Now
-				});
+				if (TableManager.Waste.CapacityOf(collection, type.Id, -1) > 0)
+					return true;
+			}
+			return false;
+        }
 
-				foreach (var type in TableManager.WasteType.OfCollection(collection))
-				{
-					if(TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id) > 0)
-					{
-						TableManager.WasteDispatch.Create(new WasteDispatch()
-						{
-							Distribution = distribution.Id,
-							Type = type.Id,
-							Quantity = 0,
-							Capacity = TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id),
-							Date = DateTime.Now
-						});
-					}
-				}
+        public DMYOData<WasteDistribution> GetInstance(int collection)
+		{
+			if(GetCurrent(collection) == null && HasCapacity(collection))
+            {
+                var distribution = Create(new WasteDistribution()
+                {
+                    Collection = collection,
+                    Factory = null,
+                    Status = WasteStatus.Active,
+                    Date = DateTime.Now
+                });
 
-				return distribution;
+                foreach (var type in TableManager.WasteType.OfCollection(collection))
+                {
+                    if (TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id) > 0)
+                    {
+                        TableManager.WasteDispatch.Create(new WasteDispatch()
+                        {
+                            Distribution = distribution.Id,
+                            Type = type.Id,
+                            Quantity = 0,
+                            Capacity = TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id),
+                            Date = DateTime.Now
+                        });
+                    }
+                }
+
+                return distribution;
 			}
 
 			return null;
