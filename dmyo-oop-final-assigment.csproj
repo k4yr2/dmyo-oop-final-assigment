@@ -83,6 +83,12 @@
     <Compile Include="Controls\RecyclerIdle.Designer.cs">
       <DependentUpon>RecyclerIdle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RecyclerStoringItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoringItem.Designer.cs">
+      <DependentUpon>RecyclerStoringItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CollectorDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RecyclerIdle.resx">
       <DependentUpon>RecyclerIdle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStoringItem.resx">
+      <DependentUpon>RecyclerStoringItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CollectorDetailsForm.resx">
       <DependentUpon>CollectorDetailsForm.cs</DependentUpon>
