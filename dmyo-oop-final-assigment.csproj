@@ -71,6 +71,12 @@
     <Compile Include="Controls\ContentContainer.Designer.cs">
       <DependentUpon>ContentContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RecyclerStoring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoring.Designer.cs">
+      <DependentUpon>RecyclerStoring.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RecyclerIdle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ContentContainer.resx">
       <DependentUpon>ContentContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStoring.resx">
+      <DependentUpon>RecyclerStoring.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RecyclerIdle.resx">
       <DependentUpon>RecyclerIdle.cs</DependentUpon>
