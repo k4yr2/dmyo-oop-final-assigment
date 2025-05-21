@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dmyo_oop_final_assigment.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace dmyo_oop_final_assigment.Controls
 {
     public partial class RecyclerStock : UserControl
     {
-        public RecyclerStock()
+        private RecyclerForm m_form;
+
+        public RecyclerStock(RecyclerForm form)
         {
             InitializeComponent();
+            m_form = form;
+
+            Refresh();
+        }
+
+
+        public RecyclerForm Form
+        {
+            get
+            {
+                return m_form;
+            }
         }
     }
 }

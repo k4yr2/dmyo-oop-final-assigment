@@ -84,7 +84,7 @@
             this.stockLabel.Name = "stockLabel";
             this.stockLabel.Size = new System.Drawing.Size(80, 24);
             this.stockLabel.TabIndex = 1;
-            this.stockLabel.Text = "Storing";
+            this.stockLabel.Text = "STOCK";
             this.stockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // seperatorLabel
