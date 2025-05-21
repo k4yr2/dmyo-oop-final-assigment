@@ -56,10 +56,20 @@ namespace dmyo_oop_final_assigment.Forms
             base.Refresh();
 
             UserControl control;
+
+            var stock = TableManager.WasteStock.GetCurrent(Person.Id);
+            if(stock != null)
+            {
+                m_status = RecyclerStatus.Stock;
+            }
+
             switch (m_status)
             {
                 case RecyclerStatus.Storing:
                     control = new RecyclerStoring(this);
+                    break;
+                case RecyclerStatus.Stock:
+                    control = new RecyclerStock(this);
                     break;
                 case RecyclerStatus.Idle:
                 default:
