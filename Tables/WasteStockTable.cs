@@ -1,5 +1,6 @@
 ﻿using dmyo_oop_final_assigment.Models;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -27,5 +28,11 @@ namespace dmyo_oop_final_assigment.Tables
                 Date = reader.GetDateTime(4),
 			};
 		}
-	}
+
+
+		public DMYOData<WasteStock> GetCurrent(int person)
+		{
+			return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
+        }
+    }
 }
