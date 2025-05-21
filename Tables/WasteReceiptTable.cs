@@ -37,5 +37,10 @@ namespace dmyo_oop_final_assigment.Tables
         {
             return Select($"where stock = {stock}");
         }
+
+		public DMYOData<WasteReceipt> GetOf(int dispatch)
+		{
+			return Select($"where dispatch = {dispatch}").FirstOrDefault();
+        }
     }
 }
