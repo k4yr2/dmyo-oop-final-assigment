@@ -21,8 +21,8 @@ BEGIN
 		factory			INT				FOREIGN KEY REFERENCES Factory(id) NULL,
 	);
 
-	INSERT INTO Person (name, password, role)
-	VALUES ('dmyo', '2025', 2), ('sinan', 'demirci', 0), ('semih', 'altun', 0), ('serhat', 'genc', 1);
+	INSERT INTO Person (name, password, role, factory) VALUES 
+	('dmyo', '2025', 2, null), ('sinan', 'demirci', 0, null), ('semih', 'altun', 0, null), ('kayra', 'ozkaya', 1, 1), ('serhat', 'genc', 1, 2);
 END;
 
 -- Waste Unit ve Kategori
