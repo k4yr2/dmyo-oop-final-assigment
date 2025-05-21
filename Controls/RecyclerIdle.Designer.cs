@@ -76,6 +76,7 @@
             this.storageButton.TabIndex = 17;
             this.storageButton.Text = "Storage";
             this.storageButton.UseVisualStyleBackColor = true;
+            this.storageButton.Click += new System.EventHandler(this.storageButton_Click);
             // 
             // storageLabel
             // 

@@ -63,6 +63,7 @@ namespace dmyo_oop_final_assigment.Forms
                 m_status = RecyclerStatus.Stock;
             }
 
+            var status = m_status;
             switch (m_status)
             {
                 case RecyclerStatus.Storing:
@@ -77,9 +78,12 @@ namespace dmyo_oop_final_assigment.Forms
                     break;
             }
 
-            control.Dock = DockStyle.Fill;
-            Controls.Clear();
-            Controls.Add(control);
+            if(status == m_status)
+            {
+                control.Dock = DockStyle.Fill;
+                Controls.Clear();
+                Controls.Add(control);
+            }
         }
     }
 
@@ -88,5 +92,6 @@ namespace dmyo_oop_final_assigment.Forms
         Idle = 0,
         Storing = 1,
         Stock = 2,
+        Storage = 3,
     }
 }
