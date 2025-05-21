@@ -116,9 +116,9 @@
             // 
             this.percentLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.percentLabel.Location = new System.Drawing.Point(250, 0);
+            this.percentLabel.Location = new System.Drawing.Point(210, 0);
             this.percentLabel.Name = "percentLabel";
-            this.percentLabel.Size = new System.Drawing.Size(60, 40);
+            this.percentLabel.Size = new System.Drawing.Size(100, 40);
             this.percentLabel.TabIndex = 11;
             this.percentLabel.Text = "%0";
             this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
