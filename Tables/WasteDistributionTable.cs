@@ -33,9 +33,12 @@ namespace dmyo_oop_final_assigment.Tables
 		}
 
 
-		public IEnumerable<DMYOData<WasteDistribution>> GetDistributions(int collection)
+		public IEnumerable<DMYOData<WasteDistribution>> GetDistributions(int collection, params int[] status)
 		{
-			return Select($"where collection = {collection} and status IN (0, 1, 2) order by status desc");
+			if(status.Length == 0)
+				status = new int[] { 0, 1, 2 };
+
+            return Select($"where collection = {collection} and status IN ({string.Join(",", status)}) order by status desc");
 		}
 
 		public DMYOData<WasteDistribution> GetCurrent(int collection)
