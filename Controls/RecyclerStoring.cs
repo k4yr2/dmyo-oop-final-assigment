@@ -12,6 +12,8 @@ namespace dmyo_oop_final_assigment.Controls
         {
             InitializeComponent();
             m_form = form;
+
+            Refresh();
         }
 
 
