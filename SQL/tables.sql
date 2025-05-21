@@ -127,6 +127,7 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		person			INT				FOREIGN KEY REFERENCES Person(id),
 		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3),
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
