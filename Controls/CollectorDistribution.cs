@@ -93,6 +93,7 @@ namespace dmyo_oop_final_assigment.Controls
 			factoryBox.DataSource = TableManager.Factory.Select().ToList();
 			factoryBox.DisplayMember = "Display";
 			factoryBox.ValueMember = "Id";
+			factoryBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (m_source == null)
 			{
@@ -132,7 +133,7 @@ namespace dmyo_oop_final_assigment.Controls
 
                 if (distribution?.Model.Factory.HasValue ?? false)
                 {
-                    factoryBox.SelectedItem = TableManager.Factory.Read(distribution.Model.Factory.Value);
+                    factoryBox.SelectedValue = TableManager.Factory.Read(distribution.Model.Factory.Value).Id;
                 }
                 else
                 {
@@ -149,9 +150,6 @@ namespace dmyo_oop_final_assigment.Controls
 					factoryBox.Text = "BLANK";
                 }
             }
-
-            factoryBox.SelectionStart = 0;
-            factoryBox.SelectionLength = 0;
         }
 
         public void Save()
@@ -210,23 +208,23 @@ namespace dmyo_oop_final_assigment.Controls
 
         private void factoryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-			var factory = (DMYOData<Factory>)factoryBox.SelectedItem;
-
-			if(factory != null)
-			{
-                var distribution = Distributions?[Index] ?? null;
-
-                if (distribution != null)
-                {
-                    distribution.Model.Factory = factory.Id;
-					TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
-
-					sendButton.Enabled = true;
-					return;
-				}
+            if (!(factoryBox.SelectedItem is DMYOData<Factory> factory))
+            {
+                sendButton.Enabled = false;
+                return;
             }
 
-			sendButton.Enabled = false;
+            var distribution = Distributions?[Index];
+            if (distribution == null)
+            {
+                sendButton.Enabled = false;
+                return;
+            }
+
+            distribution.Model.Factory = factory.Id;
+            TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
+
+            sendButton.Enabled = true;
         }
     }
 }

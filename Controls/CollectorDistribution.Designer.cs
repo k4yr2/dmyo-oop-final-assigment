@@ -169,9 +169,9 @@
             // 
             this.factoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.factoryBox.FormattingEnabled = true;
-            this.factoryBox.Location = new System.Drawing.Point(379, 11);
+            this.factoryBox.Location = new System.Drawing.Point(405, 11);
             this.factoryBox.Name = "factoryBox";
-            this.factoryBox.Size = new System.Drawing.Size(136, 21);
+            this.factoryBox.Size = new System.Drawing.Size(110, 21);
             this.factoryBox.TabIndex = 3;
             this.factoryBox.SelectedIndexChanged += new System.EventHandler(this.factoryBox_SelectedIndexChanged);
             // 
