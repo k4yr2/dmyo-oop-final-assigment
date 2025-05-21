@@ -48,5 +48,10 @@ namespace dmyo_oop_final_assigment.Controls
                 }
             }
         }
+
+        private void idleButton_Click(object sender, System.EventArgs e)
+        {
+            Form.Status = RecyclerStatus.Idle;
+        }
     }
 }
