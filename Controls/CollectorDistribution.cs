@@ -127,10 +127,12 @@ namespace dmyo_oop_final_assigment.Controls
 			if(distribution.Model.Status == WasteStatus.Active)
 			{
 				sendButton.Enabled = true;
-			}
+				factoryBox.Enabled = true;
+            }
 			else
 			{
 				sendButton.Enabled = false;
+				factoryBox.Enabled = false;
             }
 		}
 
