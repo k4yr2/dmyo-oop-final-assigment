@@ -20,5 +20,10 @@ namespace dmyo_oop_final_assigment.Controls
                 return m_form;
             }
         }
+
+        private void storingButton_Click(object sender, System.EventArgs e)
+        {
+            Form.Status = RecyclerStatus.Storing;
+        }
     }
 }

@@ -103,6 +103,7 @@
             this.storingButton.TabIndex = 11;
             this.storingButton.Text = "Storing";
             this.storingButton.UseVisualStyleBackColor = true;
+            this.storingButton.Click += new System.EventHandler(this.storingButton_Click);
             // 
             // storingLabel
             // 
