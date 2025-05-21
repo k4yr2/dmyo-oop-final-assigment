@@ -76,6 +76,7 @@ namespace dmyo_oop_final_assigment.Forms
     public enum RecyclerStatus
     {
         Idle = 0,
-        Storing = 1
+        Storing = 1,
+        Stock = 2,
     }
 }
