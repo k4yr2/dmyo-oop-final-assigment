@@ -12,21 +12,19 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "Factory";
 
-		public override string[] Params => new string[] { "name", "location" };
+		public override string[] Params => new string[] { "name" };
 
 
 		public override void SetParameters(Factory user, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@name", user.Name);
-			command.Parameters.AddWithValue("@location", user.Location);
 		}
 
 		public override Factory GetModel(SqlDataReader reader)
 		{
 			return new Factory()
 			{
-				Name = reader.GetString(1),
-				Location = reader.GetString(2),
+				Name = reader.GetString(1)
 			};
 		}
 	}
