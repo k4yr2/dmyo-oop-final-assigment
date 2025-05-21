@@ -102,7 +102,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				var distributions = TableManager.WasteDistribution.GetDistributions(m_source.Id).ToList();
 
-				if(distributions.Count == 0 || distributions.Last().Model.Status.HasFlag(WasteStatus.Completed | WasteStatus.Cancelled))
+				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed || distributions.Last().Model.Status == WasteStatus.Cancelled)
 				{
 					distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
 					m_index = distributions.Count - 1;
