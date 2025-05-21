@@ -5,7 +5,6 @@ BEGIN
 	CREATE TABLE Factory (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		name			NVARCHAR(50)	NOT NULL DEFAULT 'My Factory',
-		location		NVARCHAR(200)	NOT NULL DEFAULT 'No location entered'
 	);
 END;
 
