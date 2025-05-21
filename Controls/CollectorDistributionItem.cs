@@ -19,6 +19,8 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteUnit> m_unit;
 
+		private DMYOData<WasteReceipt> m_receipt;
+
 		private double m_percent = 0;
 
 		private decimal m_capacity = 0;
@@ -78,7 +80,19 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public decimal Quantity
+		public DMYOData<WasteReceipt> Receipt
+		{
+			get
+			{
+				return m_receipt;
+			}
+			set
+			{
+				m_receipt = value;
+			}
+        }
+
+        public decimal Quantity
 		{
 			get
 			{
@@ -127,12 +141,14 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = null;
 				m_unit = null;
+				m_receipt = null;
 				m_capacity = 0;
 			}
 			else
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
-				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
+				m_receipt = TableManager.WasteReceipt.GetOf(m_source.Id);
+                m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
                 Capacity = TableManager.Waste.CapacityOf(m_host.Source.Id, m_type.Id, m_distribution.Id);
                 Quantity = Math.Min(m_source.Model.Quantity, m_capacity);
 			}
@@ -167,18 +183,30 @@ namespace dmyo_oop_final_assigment.Controls
 						quantityPanel.Visible = true;
                         quantityBox.Text = m_source.Model.Quantity.ToString();
 						quantityLabel.Visible = false;
+						receiptLabel.Visible = false;
                         break;
 					case WasteStatus.Cancelled:
                         quantityPanel.Visible = false;
                         quantityLabel.Visible = true;
                         quantityLabel.Text = m_source.Model.Quantity.ToString();
 						typeLabel.ForeColor = System.Drawing.Color.Red;
+                        receiptLabel.Visible = false;
+                        break;
+					case WasteStatus.Completed:
+						quantityPanel.Visible = false;
+						quantityLabel.Visible = true;
+						quantityLabel.Text = m_source.Model.Quantity.ToString();
+						typeLabel.ForeColor = System.Drawing.Color.Green;
+						receiptLabel.Visible = true;
+						receiptLabel.Text = m_receipt?.Model.Quantity.ToString() ?? "0";
+                        receiptLabel.ForeColor = System.Drawing.Color.Green;
                         break;
                     default:
                     case WasteStatus.Processing:
                         quantityPanel.Visible = false;
 						quantityLabel.Visible = true;
                         quantityLabel.Text = m_source.Model.Quantity.ToString();
+                        receiptLabel.Visible = false;
                         break;
 				}
 			}
