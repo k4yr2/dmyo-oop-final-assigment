@@ -110,13 +110,13 @@ namespace dmyo_oop_final_assigment.Controls
 				switch (m_distribution.Source.Model.Status)
 				{
 					case WasteStatus.Active:
-						quantityBox.Visible = true;
+						quantityPanel.Visible = true;
                         quantityBox.Text = m_source.Model.Quantity.ToString();
 						quantityLabel.Visible = false;
                         break;
                     default:
                     case WasteStatus.Processing:
-						quantityBox.Visible = false;
+                        quantityPanel.Visible = false;
 						quantityLabel.Visible = true;
                         quantityLabel.Text = m_source.Model.Quantity.ToString();
                         break;
