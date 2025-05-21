@@ -94,7 +94,7 @@ namespace dmyo_oop_final_assigment.Controls
         {
             if(TableManager.WasteStock.Init(Host.Form.Person.Id, Source.Id) != null)
             {
-                Host.Form.Status = RecyclerStatus.Storing;
+                Host.Form.Status = RecyclerStatus.Stock;
             }
             else
             {
