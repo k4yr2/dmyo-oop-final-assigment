@@ -75,15 +75,16 @@ namespace dmyo_oop_final_assigment.Forms
 		}
 
 
-        private void quickAdminButton_dmyo2025_Click(object sender, EventArgs e)
-		{
-			Login("dmyo", "2025");
-		}
+        private void quickLogin_dmyo_2025_Click(object sender, EventArgs e)
+        {
+            Login("dmyo", "2025");
+        }
 
         private void quickLogin_sinan_demirci_Click(object sender, EventArgs e)
         {
             Login("sinan", "demirci");
         }
+
         private void quickLogin_semih_altun_Click(object sender, EventArgs e)
         {
             Login("semih", "altun");

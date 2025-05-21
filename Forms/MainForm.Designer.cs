@@ -41,7 +41,7 @@
             this.loginContentPanel = new System.Windows.Forms.Panel();
             this.quickPresetPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quickAdminPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
+            this.quickLogin_dmyo_2025 = new System.Windows.Forms.Button();
             this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quickLogin_sinan_demirci = new System.Windows.Forms.Button();
             this.quickLogin_semih_altun = new System.Windows.Forms.Button();
@@ -203,23 +203,23 @@
             // quickAdminPanel
             // 
             this.quickAdminPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.quickAdminPanel.Controls.Add(this.quickAdminButton_dmyo2025);
+            this.quickAdminPanel.Controls.Add(this.quickLogin_dmyo_2025);
             this.quickAdminPanel.Location = new System.Drawing.Point(0, 0);
             this.quickAdminPanel.Margin = new System.Windows.Forms.Padding(0);
             this.quickAdminPanel.Name = "quickAdminPanel";
             this.quickAdminPanel.Size = new System.Drawing.Size(150, 92);
             this.quickAdminPanel.TabIndex = 6;
             // 
-            // quickAdminButton_dmyo2025
+            // quickLogin_dmyo_2025
             // 
-            this.quickAdminButton_dmyo2025.Location = new System.Drawing.Point(5, 5);
-            this.quickAdminButton_dmyo2025.Margin = new System.Windows.Forms.Padding(5);
-            this.quickAdminButton_dmyo2025.Name = "quickAdminButton_dmyo2025";
-            this.quickAdminButton_dmyo2025.Size = new System.Drawing.Size(120, 30);
-            this.quickAdminButton_dmyo2025.TabIndex = 5;
-            this.quickAdminButton_dmyo2025.Text = "dmyo 2025";
-            this.quickAdminButton_dmyo2025.UseVisualStyleBackColor = true;
-            this.quickAdminButton_dmyo2025.Click += new System.EventHandler(this.quickAdminButton_dmyo2025_Click);
+            this.quickLogin_dmyo_2025.Location = new System.Drawing.Point(5, 5);
+            this.quickLogin_dmyo_2025.Margin = new System.Windows.Forms.Padding(5);
+            this.quickLogin_dmyo_2025.Name = "quickLogin_dmyo_2025";
+            this.quickLogin_dmyo_2025.Size = new System.Drawing.Size(120, 30);
+            this.quickLogin_dmyo_2025.TabIndex = 5;
+            this.quickLogin_dmyo_2025.Text = "dmyo 2025";
+            this.quickLogin_dmyo_2025.UseVisualStyleBackColor = true;
+            this.quickLogin_dmyo_2025.Click += new System.EventHandler(this.quickLogin_dmyo_2025_Click);
             // 
             // quickCollectorPanel
             // 
@@ -418,7 +418,7 @@
 		private System.Windows.Forms.Label loginLabel;
 		private System.Windows.Forms.FlowLayoutPanel quickAdminPanel;
 		private System.Windows.Forms.FlowLayoutPanel quickCollectorPanel;
-		private System.Windows.Forms.Button quickAdminButton_dmyo2025;
+		private System.Windows.Forms.Button quickLogin_dmyo_2025;
 		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
 		private System.Windows.Forms.LinkLabel githubLink;
 		private System.Windows.Forms.LinkLabel linkLabel1;
