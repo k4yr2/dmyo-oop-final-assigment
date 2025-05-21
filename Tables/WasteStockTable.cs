@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -34,5 +35,25 @@ namespace dmyo_oop_final_assigment.Tables
 		{
 			return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
         }
+
+		public DMYOData<WasteStock> Init(int person, int distribution) 
+		{ 
+			var stock = GetCurrent(person);
+
+			if (stock == null)
+			{
+				return Create(new WasteStock()
+				{
+					Person = person,
+					Distribution = distribution,
+					Status = WasteStatus.Active,
+					Date = DateTime.Now
+				});
+			}
+			else
+			{
+				return null;
+			}
+		}
     }
 }
