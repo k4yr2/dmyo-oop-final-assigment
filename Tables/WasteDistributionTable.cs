@@ -16,7 +16,7 @@ namespace dmyo_oop_final_assigment.Tables
 		public override void SetParameters(WasteDistribution distribution, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@collection", distribution.Collection);
-			command.Parameters.AddWithValue("@factory", (object)distribution.Factory ?? DBNull.Value);
+			command.Parameters.AddWithValue("@factory", (object)distribution.Factory.Value ?? DBNull.Value);
 			command.Parameters.AddWithValue("@status", distribution.Status);
 			command.Parameters.AddWithValue("@date", distribution.Date);
 		}
