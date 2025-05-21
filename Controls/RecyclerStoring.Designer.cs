@@ -31,6 +31,7 @@
             this.topPanel = new System.Windows.Forms.Panel();
             this.idleButton = new System.Windows.Forms.Button();
             this.storingLabel = new System.Windows.Forms.Label();
+            this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +71,19 @@
             this.storingLabel.Text = "Storing";
             this.storingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // contentContainer
+            // 
+            this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentContainer.Location = new System.Drawing.Point(0, 40);
+            this.contentContainer.Name = "contentContainer";
+            this.contentContainer.Size = new System.Drawing.Size(659, 306);
+            this.contentContainer.TabIndex = 2;
+            // 
             // RecyclerStoring
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.contentContainer);
             this.Controls.Add(this.topPanel);
             this.Name = "RecyclerStoring";
             this.Size = new System.Drawing.Size(659, 346);
@@ -87,5 +97,6 @@
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label storingLabel;
         private System.Windows.Forms.Button idleButton;
+        private ContentContainer contentContainer;
     }
 }
