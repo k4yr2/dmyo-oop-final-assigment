@@ -43,7 +43,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(659, 40);
+            this.topPanel.Size = new System.Drawing.Size(727, 40);
             this.topPanel.TabIndex = 1;
             // 
             // idleButton
@@ -76,7 +76,7 @@
             this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentContainer.Location = new System.Drawing.Point(0, 40);
             this.contentContainer.Name = "contentContainer";
-            this.contentContainer.Size = new System.Drawing.Size(659, 306);
+            this.contentContainer.Size = new System.Drawing.Size(727, 366);
             this.contentContainer.TabIndex = 2;
             // 
             // RecyclerStoring
@@ -86,7 +86,7 @@
             this.Controls.Add(this.contentContainer);
             this.Controls.Add(this.topPanel);
             this.Name = "RecyclerStoring";
-            this.Size = new System.Drawing.Size(659, 346);
+            this.Size = new System.Drawing.Size(727, 406);
             this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
