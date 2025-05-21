@@ -42,7 +42,8 @@ namespace dmyo_oop_final_assigment.Forms
                         break;
                     default:
 						form = null;
-						break;
+						MessageBox.Show("Invalid role", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
 				}
 
 				if (form != null)
