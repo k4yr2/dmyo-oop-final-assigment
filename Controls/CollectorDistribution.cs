@@ -104,9 +104,17 @@ namespace dmyo_oop_final_assigment.Controls
 
 				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed || distributions.Last().Model.Status == WasteStatus.Cancelled)
 				{
-					distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
-					m_index = distributions.Count - 1;
-				}
+					if(TableManager.WasteDistribution.HasCapacity(m_source.Id))
+                    {
+                        distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
+                        m_index = distributions.Count - 1;
+					}
+					else
+					{
+						TableManager.WasteCollection.Complete(Form.Person.Id);
+                        Form.Status = CollectorStatus.Idle;
+                    }
+                }
 
 				m_distributions = distributions.ToArray();
 				RefreshPage();
