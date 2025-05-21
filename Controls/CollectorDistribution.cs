@@ -89,7 +89,11 @@ namespace dmyo_oop_final_assigment.Controls
 			base.Refresh();
 			Panel.Controls.Clear();
 
-			if (m_source == null)
+			factoryBox.DataSource = TableManager.Factory.Select().ToList();
+			factoryBox.DisplayMember = "Display";
+			factoryBox.ValueMember = "Id";
+
+            if (m_source == null)
 			{
 				m_distributions = Array.Empty<DMYOData<WasteDistribution>>();
 			}
