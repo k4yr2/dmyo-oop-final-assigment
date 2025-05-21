@@ -83,14 +83,14 @@ namespace dmyo_oop_final_assigment.Tables
 
 				foreach (var type in TableManager.WasteType.OfCollection(collection))
 				{
-					if(TableManager.Waste.CapacityOfType(collection, type.Id, distribution.Id) > 0)
+					if(TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id) > 0)
 					{
 						TableManager.WasteDispatch.Create(new WasteDispatch()
 						{
 							Distribution = distribution.Id,
 							Type = type.Id,
 							Quantity = 0,
-							Capacity = TableManager.Waste.CapacityOfType(collection, type.Id, distribution.Id),
+							Capacity = TableManager.Waste.CapacityOf(collection, type.Id, distribution.Id),
 							Date = DateTime.Now
 						});
 					}

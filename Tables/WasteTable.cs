@@ -58,7 +58,7 @@ namespace dmyo_oop_final_assigment.Tables
 			return TableManager.Waste.OfCollectionType(collection, type).Sum(w => w.Model.Quantity);
 		}
 
-		public decimal CapacityOfType(int collection, int type, int distribution)
+		public decimal CapacityOf(int collection, int type, int distribution)
 		{
 			var distributions = TableManager.WasteDistribution.GetDistributions(collection);
 
@@ -69,8 +69,13 @@ namespace dmyo_oop_final_assigment.Tables
 				if (total <= 0 || dist.Id == distribution)
 					break;
 
+				if (dist.Model.Status == WasteStatus.Cancelled)
+					continue;
+
 				var dispatch = TableManager.WasteDispatch.GetDispatch(dist.Id, type);
-				total -= dispatch.Model.Quantity;
+				var receipt = TableManager.WasteReceipt.GetOf(type);
+
+                total -= receipt.Model.Quantity;
 			}
 
 			return Math.Max(total, 0);
