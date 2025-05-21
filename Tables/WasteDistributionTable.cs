@@ -41,7 +41,12 @@ namespace dmyo_oop_final_assigment.Tables
             return Select($"where collection = {collection} and status IN ({string.Join(",", status)}) order by status desc");
 		}
 
-		public DMYOData<WasteDistribution> GetCurrent(int collection)
+		public IEnumerable<DMYOData<WasteDistribution>> OfSubmitteds(int factory)
+		{
+			return Select($"where factory = {factory} and status = 1 order by date desc");
+        }
+
+        public DMYOData<WasteDistribution> GetCurrent(int collection)
 		{
 			return Select($"WHERE status IN (0, 1) and collection = {collection}").FirstOrDefault();
 		}
