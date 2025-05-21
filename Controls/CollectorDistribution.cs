@@ -5,6 +5,7 @@ using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace dmyo_oop_final_assigment.Controls
 {
@@ -92,6 +93,7 @@ namespace dmyo_oop_final_assigment.Controls
 			factoryBox.DataSource = TableManager.Factory.Select().ToList();
 			factoryBox.DisplayMember = "Display";
 			factoryBox.ValueMember = "Id";
+            factoryBox.SelectedItem = null;
 
             if (m_source == null)
 			{
@@ -128,17 +130,32 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				sendButton.Enabled = true;
 				factoryBox.Enabled = true;
+
+                factoryBox.SelectedItem = null;
             }
-			else
+            else
 			{
 				sendButton.Enabled = false;
 				factoryBox.Enabled = false;
+
+				if(!Form.Person.Model.Factory.HasValue)
+				{
+					factoryBox.Text = "BLANK";
+                }
             }
 		}
 
 		public void Save()
 		{
-			foreach (var item in Panel.Controls.OfType<CollectorDistributionItem>())
+            var distribution = Distributions[Index] ?? null;
+
+            if (distribution != null && distribution.Model.Status == WasteStatus.Active)
+			{
+				distribution.Model.Factory = factoryBox.SelectedItem == null ? (int?)null : ((DMYOData<Factory>)factoryBox.SelectedItem).Id;
+                TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
+            }
+
+            foreach (var item in Panel.Controls.OfType<CollectorDistributionItem>())
 			{
                 TableManager.WasteDispatch.Update(item.Source.Id, item.Source.Model);
             }

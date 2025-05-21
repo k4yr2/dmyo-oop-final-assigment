@@ -38,8 +38,8 @@
             this.lastButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.firstButton = new System.Windows.Forms.Button();
-            this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
             this.factoryBox = new System.Windows.Forms.ComboBox();
+            this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
             this.topPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -165,6 +165,15 @@
             this.firstButton.UseVisualStyleBackColor = true;
             this.firstButton.Click += new System.EventHandler(this.firstButton_Click);
             // 
+            // factoryBox
+            // 
+            this.factoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.factoryBox.FormattingEnabled = true;
+            this.factoryBox.Location = new System.Drawing.Point(379, 11);
+            this.factoryBox.Name = "factoryBox";
+            this.factoryBox.Size = new System.Drawing.Size(136, 21);
+            this.factoryBox.TabIndex = 3;
+            // 
             // contentContainer
             // 
             this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -173,14 +182,6 @@
             this.contentContainer.Name = "contentContainer";
             this.contentContainer.Size = new System.Drawing.Size(598, 384);
             this.contentContainer.TabIndex = 4;
-            // 
-            // factoryBox
-            // 
-            this.factoryBox.FormattingEnabled = true;
-            this.factoryBox.Location = new System.Drawing.Point(414, 10);
-            this.factoryBox.Name = "factoryBox";
-            this.factoryBox.Size = new System.Drawing.Size(100, 21);
-            this.factoryBox.TabIndex = 3;
             // 
             // CollectorDistribution
             // 
