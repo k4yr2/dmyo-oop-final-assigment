@@ -1,4 +1,5 @@
 ﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using System.Windows.Forms;
 
 namespace dmyo_oop_final_assigment.Controls
@@ -21,6 +22,16 @@ namespace dmyo_oop_final_assigment.Controls
             get
             {
                 return m_form;
+            }
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+
+            foreach (var heap in TableManager.WasteHeap.OfFactory(Form.Person.Model.Factory.Value))
+            {
+
             }
         }
     }
