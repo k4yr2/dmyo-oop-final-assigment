@@ -37,7 +37,13 @@ namespace dmyo_oop_final_assigment.Tables
 			return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
         }
 
-		public DMYOData<WasteStock> Init(int person, int distribution) 
+		public DMYOData<WasteStock> GetOf(int distribution)
+		{
+			return Select($"WHERE distribution = {distribution}").FirstOrDefault();
+        }
+
+
+        public DMYOData<WasteStock> Init(int person, int distribution) 
 		{ 
 			var stock = GetCurrent(person);
 
