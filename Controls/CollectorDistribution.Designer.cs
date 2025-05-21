@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
             this.topPanel = new System.Windows.Forms.Panel();
+            this.factoryBox = new System.Windows.Forms.ComboBox();
             this.sendButton = new System.Windows.Forms.Button();
             this.distributionLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.lastButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.firstButton = new System.Windows.Forms.Button();
-            this.factoryBox = new System.Windows.Forms.ComboBox();
             this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
             this.topPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
@@ -56,6 +56,16 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(598, 40);
             this.topPanel.TabIndex = 1;
+            // 
+            // factoryBox
+            // 
+            this.factoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.factoryBox.FormattingEnabled = true;
+            this.factoryBox.Location = new System.Drawing.Point(405, 11);
+            this.factoryBox.Name = "factoryBox";
+            this.factoryBox.Size = new System.Drawing.Size(110, 21);
+            this.factoryBox.TabIndex = 3;
+            this.factoryBox.SelectionChangeCommitted += new System.EventHandler(this.factoryBox_SelectionChangeCommitted);
             // 
             // sendButton
             // 
@@ -164,16 +174,6 @@
             this.firstButton.Text = "<<";
             this.firstButton.UseVisualStyleBackColor = true;
             this.firstButton.Click += new System.EventHandler(this.firstButton_Click);
-            // 
-            // factoryBox
-            // 
-            this.factoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.factoryBox.FormattingEnabled = true;
-            this.factoryBox.Location = new System.Drawing.Point(405, 11);
-            this.factoryBox.Name = "factoryBox";
-            this.factoryBox.Size = new System.Drawing.Size(110, 21);
-            this.factoryBox.TabIndex = 3;
-            this.factoryBox.SelectedIndexChanged += new System.EventHandler(this.factoryBox_SelectedIndexChanged);
             // 
             // contentContainer
             // 

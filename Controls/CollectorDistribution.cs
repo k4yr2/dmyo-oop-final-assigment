@@ -130,30 +130,35 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				sendButton.Enabled = true;
 				factoryBox.Enabled = true;
-
-                if (distribution?.Model.Factory.HasValue ?? false)
-                {
-                    factoryBox.SelectedValue = TableManager.Factory.Read(distribution.Model.Factory.Value).Id;
-                }
-                else
-                {
-                    factoryBox.SelectedItem = null;
-                }
             }
             else
 			{
 				sendButton.Enabled = false;
 				factoryBox.Enabled = false;
+            }
 
-				if(!Form.Person.Model.Factory.HasValue)
-				{
-					factoryBox.Text = "BLANK";
+            if (distribution?.Model.Factory.HasValue ?? false)
+            {
+                var factory = TableManager.Factory.Read(distribution.Model.Factory.Value);
+                if (factory != null)
+                {
+                    factoryBox.SelectedValue = factory.Id;
                 }
+                else
+                {
+                    factoryBox.SelectedIndex = -1;
+                    factoryBox.Text = "BLANK";
+                }
+            }
+            else
+            {
+                factoryBox.SelectedItem = null;
+                factoryBox.Text = "BLANK";
             }
         }
 
         public void Save()
-		{
+        {
             foreach (var item in Panel.Controls.OfType<CollectorDistributionItem>())
 			{
                 TableManager.WasteDispatch.Update(item.Source.Id, item.Source.Model);
@@ -206,25 +211,15 @@ namespace dmyo_oop_final_assigment.Controls
             }
 		}
 
-        private void factoryBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void factoryBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (!(factoryBox.SelectedItem is DMYOData<Factory> factory))
-            {
-                sendButton.Enabled = false;
-                return;
-            }
-
             var distribution = Distributions?[Index];
-            if (distribution == null)
+
+            if (distribution != null)
             {
-                sendButton.Enabled = false;
-                return;
+				distribution.Model.Factory = (int?)factoryBox.SelectedValue;
+                TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
             }
-
-            distribution.Model.Factory = factory.Id;
-            TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
-
-            sendButton.Enabled = true;
         }
     }
 }
