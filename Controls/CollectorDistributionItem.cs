@@ -72,8 +72,64 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
+		public DMYOData<WasteType> Type
+		{
+			get
+			{
+				return m_type;
+			}
+        }
 
-		public void Bind(DMYOData<WasteDispatch> source)
+		public DMYOData<WasteUnit> Unit
+		{
+			get
+			{
+				return m_unit;
+			}
+		}
+
+		public decimal Quantity
+		{
+			get
+			{
+				return m_quantity;
+			}
+			set
+			{
+				m_quantity = value;
+				quantityBox.Text = m_quantity.ToString("0.00");
+                Percent = m_capacity == 0 ? 0 : (double)(m_quantity / m_capacity) * 100;
+            }
+		}
+
+		public double Percent
+		{
+			get
+			{
+				return m_percent;
+			}
+			set
+			{
+				m_percent = value;
+				percentLabel.Text = $"%{m_percent:0.00}";
+            }
+		}
+
+		public decimal Capacity
+		{
+			get
+			{
+				return m_capacity;
+            }
+			set
+			{
+				m_capacity = value;
+                capacityLabel.Text = m_capacity.ToString("0.00");
+            }
+        }
+
+
+        public void Bind(DMYOData<WasteDispatch> source)
 		{
 			m_source = source;
 
@@ -88,8 +144,8 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-				m_capacity = TableManager.Waste.CapacityOfType(m_host.Source.Id, m_type.Id, m_distribution.Id);
-				m_quantity = Math.Min(m_source.Model.Quantity, m_capacity);
+                Capacity = TableManager.Waste.CapacityOfType(m_host.Source.Id, m_type.Id, m_distribution.Id);
+                Quantity = Math.Min(m_source.Model.Quantity, m_capacity);
 			}
 
 			Refresh();
@@ -134,24 +190,21 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private void dispatchBox_TextChanged(object sender, EventArgs e)
 		{
-			if(!decimal.TryParse(quantityBox.Text, out decimal dispatch))
+			if(!decimal.TryParse(quantityBox.Text, out decimal quantity))
 			{
-				quantityBox.Text = dispatch.ToString("0");
+				quantityBox.Text = quantity.ToString("0");
 				quantityBox.SelectionStart = 0;
 				quantityBox.SelectionLength = 1;
+
+				return;
 			}
 
-			if(dispatch >= m_capacity)
+			if(quantity >= m_capacity)
 			{
-				dispatch = m_capacity;
-				quantityBox.Text = m_capacity.ToString("0");
-				quantityBox.SelectionStart = quantityBox.Text.Length;
-				quantityBox.SelectionLength = 0;
+                quantity = m_capacity;
 			}
 
-			m_quantity = dispatch;
-			m_percent = m_capacity == 0 ? 0 : (double)(m_quantity / m_capacity) * 100;	
-			percentLabel.Text = $"%{m_percent:0.00}";
+			Quantity = quantity;
 		}
 	}
 }
