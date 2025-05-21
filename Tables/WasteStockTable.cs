@@ -43,13 +43,26 @@ namespace dmyo_oop_final_assigment.Tables
 
 			if (stock == null)
 			{
-				return Create(new WasteStock()
+				stock = Create(new WasteStock()
 				{
 					Person = person,
 					Distribution = distribution,
 					Status = WasteStatus.Active,
 					Date = DateTime.Now
 				});
+
+				foreach (var dispatch in TableManager.WasteDispatch.GetDispatchs(stock.Model.Distribution))
+				{
+                    TableManager.WasteReceipt.Create(new WasteReceipt()
+                    {
+						Dispatch = dispatch.Id,
+                        Stock = stock.Id,
+						Quantity = 0,
+						Date = DateTime.Now,
+                    });
+                }
+
+                return stock;
 			}
 			else
 			{
