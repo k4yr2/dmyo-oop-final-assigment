@@ -38,6 +38,11 @@ namespace dmyo_oop_final_assigment.Controls
             m_form = form;
 
             Bind(source);
+
+            m_form.FormClosing += (s, e) =>
+            {
+                Save();
+            };
         }
 
 
@@ -97,12 +102,23 @@ namespace dmyo_oop_final_assigment.Controls
             }
         }
 
+        public void Save()
+        {
+            foreach (var item in Panel.Controls.OfType<RecyclerStockItem>())
+            {
+                var receipt = item.Source;
+                TableManager.WasteReceipt.Update(receipt.Id, receipt.Model);
+            }
+        }
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to cancel the stock?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                Save();
+
                 if (TableManager.WasteStock.Cancel(Form.Person.Id))
                 {
                     Form.Status = RecyclerStatus.Idle;
@@ -120,6 +136,8 @@ namespace dmyo_oop_final_assigment.Controls
 
             if (result == DialogResult.Yes)
             {
+                Save();
+
                 if (TableManager.WasteStock.Complete(Form.Person.Id))
                 {
                     Form.Status = RecyclerStatus.Idle;
