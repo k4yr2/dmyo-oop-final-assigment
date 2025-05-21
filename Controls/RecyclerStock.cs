@@ -82,5 +82,22 @@ namespace dmyo_oop_final_assigment.Controls
             base.Refresh();
             stockLabel.Text = m_person?.Model.Name ?? "0";
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the stock?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (TableManager.WasteStock.Cancel(Form.Person.Id))
+                {
+                    Form.Status = RecyclerStatus.Idle;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to cancel the collection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

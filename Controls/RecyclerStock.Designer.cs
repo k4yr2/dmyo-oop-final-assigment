@@ -73,6 +73,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "X";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // stockLabel
             // 
