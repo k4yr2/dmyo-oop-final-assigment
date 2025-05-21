@@ -35,12 +35,9 @@
             this.archiveLabel = new System.Windows.Forms.Label();
             this.statisticButton = new System.Windows.Forms.Button();
             this.statisticLabel = new System.Windows.Forms.Label();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.idleButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.navPanel.SuspendLayout();
-            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // startButton
@@ -129,33 +126,13 @@
             this.statisticLabel.Text = "See all your collection statistics";
             this.statisticLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // topPanel
-            // 
-            this.topPanel.BackColor = System.Drawing.Color.LightGray;
-            this.topPanel.Controls.Add(this.idleButton);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(900, 40);
-            this.topPanel.TabIndex = 7;
-            // 
-            // idleButton
-            // 
-            this.idleButton.Location = new System.Drawing.Point(5, 5);
-            this.idleButton.Margin = new System.Windows.Forms.Padding(5);
-            this.idleButton.Name = "idleButton";
-            this.idleButton.Size = new System.Drawing.Size(30, 30);
-            this.idleButton.TabIndex = 0;
-            this.idleButton.Text = "I";
-            this.idleButton.UseVisualStyleBackColor = true;
-            // 
             // titleLabel
             // 
             this.titleLabel.BackColor = System.Drawing.Color.LightSlateGray;
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(0, 40);
+            this.titleLabel.Location = new System.Drawing.Point(0, 0);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(900, 60);
             this.titleLabel.TabIndex = 8;
@@ -165,10 +142,10 @@
             // infoPanel
             // 
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.infoPanel.Location = new System.Drawing.Point(0, 100);
+            this.infoPanel.Location = new System.Drawing.Point(0, 60);
             this.infoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(900, 260);
+            this.infoPanel.Size = new System.Drawing.Size(900, 300);
             this.infoPanel.TabIndex = 9;
             // 
             // CollectorIdle
@@ -177,12 +154,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.topPanel);
             this.Controls.Add(this.navPanel);
             this.Name = "CollectorIdle";
             this.Size = new System.Drawing.Size(900, 450);
             this.navPanel.ResumeLayout(false);
-            this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -194,8 +169,6 @@
 		private System.Windows.Forms.Label statisticLabel;
 		private System.Windows.Forms.Label archiveLabel;
 		private System.Windows.Forms.Button archiveButton;
-		private System.Windows.Forms.Panel topPanel;
-		private System.Windows.Forms.Button idleButton;
 		private System.Windows.Forms.Label titleLabel;
 		private System.Windows.Forms.Panel infoPanel;
 		private System.Windows.Forms.Label label1;
