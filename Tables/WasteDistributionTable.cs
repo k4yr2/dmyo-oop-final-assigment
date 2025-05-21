@@ -43,7 +43,10 @@ namespace dmyo_oop_final_assigment.Tables
 
 		public IEnumerable<DMYOData<WasteDistribution>> OfSubmitteds(int factory)
 		{
-			return Select($"where factory = {factory} and status = 1 order by date desc");
+			return Select($@"where factory = {factory} 
+			and status = 1 
+			and collection in (select id from WasteCollection where status = 1 and WasteCollection.id = id)	
+			order by date desc");
         }
 
         public DMYOData<WasteDistribution> GetCurrent(int collection)
