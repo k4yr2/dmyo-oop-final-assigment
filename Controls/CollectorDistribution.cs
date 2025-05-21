@@ -191,9 +191,15 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if (result == DialogResult.Yes)
 			{
-				TableManager.WasteCollection.Cancel(Form.Person.Id);
-				Form.Status = CollectorStatus.Idle;
-			}
+				if(TableManager.WasteCollection.Cancel(Form.Person.Id))
+				{
+                    Form.Status = CollectorStatus.Idle;
+                }
+				else
+				{
+					MessageBox.Show("Failed to cancel the collection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 		}
 
 		private void sendButton_Click(object sender, EventArgs e)
