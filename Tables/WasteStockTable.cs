@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
 using System;
 using System.Data.SqlClient;
 using System.Linq;
@@ -55,5 +56,28 @@ namespace dmyo_oop_final_assigment.Tables
 				return null;
 			}
 		}
+
+		public bool Cancel(int person)
+		{
+			var stock = GetCurrent(person);
+			if (stock != null)
+			{
+				stock.Model.Status = WasteStatus.Cancelled;
+				Update(stock.Id, stock.Model);
+
+				var distribution = TableManager.WasteDistribution.Read(stock.Model.Distribution);
+				if(distribution != null)
+				{
+					distribution.Model.Status = WasteStatus.Cancelled;
+					TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
+                }
+
+				return true;
+			}
+			else
+			{
+				return false;
+            }
+        }
     }
 }
