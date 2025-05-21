@@ -84,11 +84,10 @@ namespace dmyo_oop_final_assigment.Forms
         {
             Login("sinan", "demirci");
         }
-
-        private void quickCollectorButton_SinanDemirci_Click_1(object sender, EventArgs e)
-		{
-			Login("semih", "altun");
-		}
+        private void quickLogin_semih_altun_Click(object sender, EventArgs e)
+        {
+            Login("semih", "altun");
+        }
 
         private void quickRecyclerLogin_serhat_genc_Click(object sender, EventArgs e)
         {

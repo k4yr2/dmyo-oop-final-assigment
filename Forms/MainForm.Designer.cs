@@ -44,7 +44,7 @@
             this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
             this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quickLogin_sinan_demirci = new System.Windows.Forms.Button();
-            this.quickCollectorButton_SinanDemirci = new System.Windows.Forms.Button();
+            this.quickLogin_semih_altun = new System.Windows.Forms.Button();
             this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quickRecyclerLogin_serhat_genc = new System.Windows.Forms.Button();
             this.loginTopPanel = new System.Windows.Forms.Panel();
@@ -226,7 +226,7 @@
             this.quickCollectorPanel.AutoScroll = true;
             this.quickCollectorPanel.BackColor = System.Drawing.Color.Gainsboro;
             this.quickCollectorPanel.Controls.Add(this.quickLogin_sinan_demirci);
-            this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
+            this.quickCollectorPanel.Controls.Add(this.quickLogin_semih_altun);
             this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
             this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
             this.quickCollectorPanel.Name = "quickCollectorPanel";
@@ -244,16 +244,16 @@
             this.quickLogin_sinan_demirci.UseVisualStyleBackColor = true;
             this.quickLogin_sinan_demirci.Click += new System.EventHandler(this.quickLogin_sinan_demirci_Click);
             // 
-            // quickCollectorButton_SinanDemirci
+            // quickLogin_semih_altun
             // 
-            this.quickCollectorButton_SinanDemirci.Location = new System.Drawing.Point(5, 45);
-            this.quickCollectorButton_SinanDemirci.Margin = new System.Windows.Forms.Padding(5);
-            this.quickCollectorButton_SinanDemirci.Name = "quickCollectorButton_SinanDemirci";
-            this.quickCollectorButton_SinanDemirci.Size = new System.Drawing.Size(120, 30);
-            this.quickCollectorButton_SinanDemirci.TabIndex = 5;
-            this.quickCollectorButton_SinanDemirci.Text = "Semih Altun";
-            this.quickCollectorButton_SinanDemirci.UseVisualStyleBackColor = true;
-            this.quickCollectorButton_SinanDemirci.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click_1);
+            this.quickLogin_semih_altun.Location = new System.Drawing.Point(5, 45);
+            this.quickLogin_semih_altun.Margin = new System.Windows.Forms.Padding(5);
+            this.quickLogin_semih_altun.Name = "quickLogin_semih_altun";
+            this.quickLogin_semih_altun.Size = new System.Drawing.Size(120, 30);
+            this.quickLogin_semih_altun.TabIndex = 5;
+            this.quickLogin_semih_altun.Text = "Semih Altun";
+            this.quickLogin_semih_altun.UseVisualStyleBackColor = true;
+            this.quickLogin_semih_altun.Click += new System.EventHandler(this.quickLogin_semih_altun_Click);
             // 
             // quickRecyclerPanel
             // 
@@ -416,7 +416,6 @@
 		private System.Windows.Forms.FlowLayoutPanel quickPresetPanel;
 		private System.Windows.Forms.Label quickLoginLabel;
 		private System.Windows.Forms.Label loginLabel;
-		private System.Windows.Forms.Button quickCollectorButton_SinanDemirci;
 		private System.Windows.Forms.FlowLayoutPanel quickAdminPanel;
 		private System.Windows.Forms.FlowLayoutPanel quickCollectorPanel;
 		private System.Windows.Forms.Button quickAdminButton_dmyo2025;
@@ -425,5 +424,6 @@
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Button quickLogin_sinan_demirci;
         private System.Windows.Forms.Button quickRecyclerLogin_serhat_genc;
+        private System.Windows.Forms.Button quickLogin_semih_altun;
     }
 }
