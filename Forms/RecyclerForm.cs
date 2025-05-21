@@ -64,9 +64,9 @@ namespace dmyo_oop_final_assigment.Forms
                     break;
             }
 
-            //control.Dock = DockStyle.Fill;
-            //Controls.Clear();
-            //Controls.Add(control);
+            control.Dock = DockStyle.Fill;
+            Controls.Clear();
+            Controls.Add(control);
         }
     }
 
