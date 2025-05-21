@@ -43,9 +43,10 @@
             this.quickAdminPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.quickAdminButton_dmyo2025 = new System.Windows.Forms.Button();
             this.quickCollectorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.quickLogin_sinan_demirci = new System.Windows.Forms.Button();
             this.quickCollectorButton_SinanDemirci = new System.Windows.Forms.Button();
             this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.quickRecyclerLogin_serhat_genc = new System.Windows.Forms.Button();
             this.loginTopPanel = new System.Windows.Forms.Panel();
             this.quickLoginLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.githubLink = new System.Windows.Forms.LinkLabel();
             this.bodyPanel = new System.Windows.Forms.Panel();
-            this.quickRecyclerLogin_serhat_genc = new System.Windows.Forms.Button();
             this.bannerPanel.SuspendLayout();
             this.loginControlPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
@@ -225,7 +225,7 @@
             // 
             this.quickCollectorPanel.AutoScroll = true;
             this.quickCollectorPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.quickCollectorPanel.Controls.Add(this.button1);
+            this.quickCollectorPanel.Controls.Add(this.quickLogin_sinan_demirci);
             this.quickCollectorPanel.Controls.Add(this.quickCollectorButton_SinanDemirci);
             this.quickCollectorPanel.Location = new System.Drawing.Point(150, 0);
             this.quickCollectorPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -233,16 +233,16 @@
             this.quickCollectorPanel.Size = new System.Drawing.Size(150, 92);
             this.quickCollectorPanel.TabIndex = 6;
             // 
-            // button1
+            // quickLogin_sinan_demirci
             // 
-            this.button1.Location = new System.Drawing.Point(5, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Sinan Demirci";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.quickCollectorButton_SinanDemirci_Click);
+            this.quickLogin_sinan_demirci.Location = new System.Drawing.Point(5, 5);
+            this.quickLogin_sinan_demirci.Margin = new System.Windows.Forms.Padding(5);
+            this.quickLogin_sinan_demirci.Name = "quickLogin_sinan_demirci";
+            this.quickLogin_sinan_demirci.Size = new System.Drawing.Size(120, 30);
+            this.quickLogin_sinan_demirci.TabIndex = 5;
+            this.quickLogin_sinan_demirci.Text = "Sinan Demirci";
+            this.quickLogin_sinan_demirci.UseVisualStyleBackColor = true;
+            this.quickLogin_sinan_demirci.Click += new System.EventHandler(this.quickLogin_sinan_demirci_Click);
             // 
             // quickCollectorButton_SinanDemirci
             // 
@@ -264,6 +264,17 @@
             this.quickRecyclerPanel.Name = "quickRecyclerPanel";
             this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
             this.quickRecyclerPanel.TabIndex = 6;
+            // 
+            // quickRecyclerLogin_serhat_genc
+            // 
+            this.quickRecyclerLogin_serhat_genc.Location = new System.Drawing.Point(5, 5);
+            this.quickRecyclerLogin_serhat_genc.Margin = new System.Windows.Forms.Padding(5);
+            this.quickRecyclerLogin_serhat_genc.Name = "quickRecyclerLogin_serhat_genc";
+            this.quickRecyclerLogin_serhat_genc.Size = new System.Drawing.Size(120, 30);
+            this.quickRecyclerLogin_serhat_genc.TabIndex = 5;
+            this.quickRecyclerLogin_serhat_genc.Text = "Serhat Genç";
+            this.quickRecyclerLogin_serhat_genc.UseVisualStyleBackColor = true;
+            this.quickRecyclerLogin_serhat_genc.Click += new System.EventHandler(this.quickRecyclerLogin_serhat_genc_Click);
             // 
             // loginTopPanel
             // 
@@ -359,17 +370,6 @@
             this.bodyPanel.Size = new System.Drawing.Size(726, 344);
             this.bodyPanel.TabIndex = 3;
             // 
-            // quickRecyclerLogin_serhat_genc
-            // 
-            this.quickRecyclerLogin_serhat_genc.Location = new System.Drawing.Point(5, 5);
-            this.quickRecyclerLogin_serhat_genc.Margin = new System.Windows.Forms.Padding(5);
-            this.quickRecyclerLogin_serhat_genc.Name = "quickRecyclerLogin_serhat_genc";
-            this.quickRecyclerLogin_serhat_genc.Size = new System.Drawing.Size(120, 30);
-            this.quickRecyclerLogin_serhat_genc.TabIndex = 5;
-            this.quickRecyclerLogin_serhat_genc.Text = "Serhat Genç";
-            this.quickRecyclerLogin_serhat_genc.UseVisualStyleBackColor = true;
-            this.quickRecyclerLogin_serhat_genc.Click += new System.EventHandler(this.quickRecyclerLogin_serhat_genc_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,7 +423,7 @@
 		private System.Windows.Forms.FlowLayoutPanel quickRecyclerPanel;
 		private System.Windows.Forms.LinkLabel githubLink;
 		private System.Windows.Forms.LinkLabel linkLabel1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button quickLogin_sinan_demirci;
         private System.Windows.Forms.Button quickRecyclerLogin_serhat_genc;
     }
 }

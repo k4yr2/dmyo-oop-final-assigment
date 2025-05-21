@@ -74,17 +74,18 @@ namespace dmyo_oop_final_assigment.Forms
 			quickRecyclerPanel.Width = (Width - 200) / 3;
 		}
 
-		private void quickCollectorButton_SinanDemirci_Click(object sender, EventArgs e)
-		{
-			Login("sinan", "demirci");
-		}
 
-		private void quickAdminButton_dmyo2025_Click(object sender, EventArgs e)
+        private void quickAdminButton_dmyo2025_Click(object sender, EventArgs e)
 		{
 			Login("dmyo", "2025");
 		}
 
-		private void quickCollectorButton_SinanDemirci_Click_1(object sender, EventArgs e)
+        private void quickLogin_sinan_demirci_Click(object sender, EventArgs e)
+        {
+            Login("sinan", "demirci");
+        }
+
+        private void quickCollectorButton_SinanDemirci_Click_1(object sender, EventArgs e)
 		{
 			Login("semih", "altun");
 		}
