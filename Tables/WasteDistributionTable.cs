@@ -36,7 +36,7 @@ namespace dmyo_oop_final_assigment.Tables
 		public IEnumerable<DMYOData<WasteDistribution>> GetDistributions(int collection, params int[] status)
 		{
 			if(status.Length == 0)
-				status = new int[] { 0, 1, 2 };
+				status = new int[] { 0, 1, 2, 3 };
 
             return Select($"where collection = {collection} and status IN ({string.Join(",", status)}) order by status desc");
 		}
