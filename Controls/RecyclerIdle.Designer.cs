@@ -30,8 +30,8 @@
         {
             this.titleLabel = new System.Windows.Forms.Label();
             this.navPanel = new System.Windows.Forms.Panel();
-            this.recyclingButton = new System.Windows.Forms.Button();
-            this.recyclingLabel = new System.Windows.Forms.Label();
+            this.storageButton = new System.Windows.Forms.Button();
+            this.storageLabel = new System.Windows.Forms.Label();
             this.stockButton = new System.Windows.Forms.Button();
             this.storingButton = new System.Windows.Forms.Button();
             this.storingLabel = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             // 
             // navPanel
             // 
-            this.navPanel.Controls.Add(this.recyclingButton);
-            this.navPanel.Controls.Add(this.recyclingLabel);
+            this.navPanel.Controls.Add(this.storageButton);
+            this.navPanel.Controls.Add(this.storageLabel);
             this.navPanel.Controls.Add(this.stockButton);
             this.navPanel.Controls.Add(this.storingButton);
             this.navPanel.Controls.Add(this.storingLabel);
@@ -66,30 +66,30 @@
             this.navPanel.Size = new System.Drawing.Size(1140, 80);
             this.navPanel.TabIndex = 10;
             // 
-            // recyclingButton
+            // storageButton
             // 
-            this.recyclingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.recyclingButton.Location = new System.Drawing.Point(1000, 42);
-            this.recyclingButton.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
-            this.recyclingButton.Name = "recyclingButton";
-            this.recyclingButton.Size = new System.Drawing.Size(133, 30);
-            this.recyclingButton.TabIndex = 17;
-            this.recyclingButton.Text = "Recycling";
-            this.recyclingButton.UseVisualStyleBackColor = true;
+            this.storageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.storageButton.Location = new System.Drawing.Point(1000, 42);
+            this.storageButton.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
+            this.storageButton.Name = "storageButton";
+            this.storageButton.Size = new System.Drawing.Size(133, 30);
+            this.storageButton.TabIndex = 17;
+            this.storageButton.Text = "Storage";
+            this.storageButton.UseVisualStyleBackColor = true;
             // 
-            // recyclingLabel
+            // storageLabel
             // 
-            this.recyclingLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.recyclingLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.recyclingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.recyclingLabel.Location = new System.Drawing.Point(0, 37);
-            this.recyclingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.recyclingLabel.Name = "recyclingLabel";
-            this.recyclingLabel.Padding = new System.Windows.Forms.Padding(0, 0, 147, 0);
-            this.recyclingLabel.Size = new System.Drawing.Size(1140, 37);
-            this.recyclingLabel.TabIndex = 16;
-            this.recyclingLabel.Text = "Start a new recycling process";
-            this.recyclingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.storageLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.storageLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.storageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.storageLabel.Location = new System.Drawing.Point(0, 37);
+            this.storageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.storageLabel.Name = "storageLabel";
+            this.storageLabel.Padding = new System.Windows.Forms.Padding(0, 0, 147, 0);
+            this.storageLabel.Size = new System.Drawing.Size(1140, 37);
+            this.storageLabel.TabIndex = 16;
+            this.storageLabel.Text = "Browse the storage and recycle";
+            this.storageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // stockButton
             // 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.Label storingLabel;
         private System.Windows.Forms.Button storingButton;
         private System.Windows.Forms.Button stockButton;
-        private System.Windows.Forms.Label recyclingLabel;
-        private System.Windows.Forms.Button recyclingButton;
+        private System.Windows.Forms.Label storageLabel;
+        private System.Windows.Forms.Button storageButton;
     }
 }
