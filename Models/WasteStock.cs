@@ -8,7 +8,9 @@ namespace dmyo_oop_final_assigment.Models
 
 		private int m_distribution;
 
-		private DateTime m_date;
+		private WasteStatus m_status;
+
+        private DateTime m_date;
 
 		public WasteStock()
 		{
@@ -40,7 +42,19 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public DateTime Date
+		public WasteStatus Status
+		{
+			get
+			{
+				return m_status;
+			}
+			set
+			{
+				m_status = value;
+			}
+        }
+
+        public DateTime Date
 		{
 			get
 			{
