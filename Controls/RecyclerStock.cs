@@ -113,5 +113,22 @@ namespace dmyo_oop_final_assigment.Controls
                 }
             }
         }
+
+        private void completeButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to complete the stock?", "Complete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (TableManager.WasteStock.Complete(Form.Person.Id))
+                {
+                    Form.Status = RecyclerStatus.Idle;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to complete the collection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
