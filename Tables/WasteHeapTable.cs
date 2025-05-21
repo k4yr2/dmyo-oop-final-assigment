@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
-    internal class WasteHeapTable : DMYOTable<WasteHeap>
+    public class WasteHeapTable : DMYOTable<WasteHeap>
     {
         public override string Name => "WasteHeap";
 
