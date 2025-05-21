@@ -1,5 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -29,5 +31,11 @@ namespace dmyo_oop_final_assigment.Tables
 				Date = reader.GetDateTime(4),
 			};
 		}
-	}
+
+
+        public IEnumerable<DMYOData<WasteReceipt>> GetReceipts(int stock)
+        {
+            return Select($"where distribution = {stock}");
+        }
+    }
 }
