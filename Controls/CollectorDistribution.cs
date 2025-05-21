@@ -125,6 +125,14 @@ namespace dmyo_oop_final_assigment.Controls
             }
 		}
 
+		public void Save()
+		{
+			foreach (var item in Panel.Controls.OfType<CollectorDistributionItem>())
+			{
+                TableManager.WasteDispatch.Update(item.Source.Id, item.Source.Model);
+            }
+		}
+
 		private void firstButton_Click(object sender, EventArgs e)
 		{
 			Index = 0;
@@ -162,7 +170,9 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if (result == DialogResult.Yes)
 			{
-				if(TableManager.WasteDistribution.Send(m_source.Id))
+				Save();
+
+                if (TableManager.WasteDistribution.Send(m_source.Id))
 				{
                     Refresh();
                 }
