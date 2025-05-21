@@ -33,7 +33,7 @@
             this.storageButton = new System.Windows.Forms.Button();
             this.storageLabel = new System.Windows.Forms.Label();
             this.stockButton = new System.Windows.Forms.Button();
-            this.storingButton = new System.Windows.Forms.Button();
+            this.distributionButton = new System.Windows.Forms.Button();
             this.storingLabel = new System.Windows.Forms.Label();
             this.navPanel.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             this.navPanel.Controls.Add(this.storageButton);
             this.navPanel.Controls.Add(this.storageLabel);
             this.navPanel.Controls.Add(this.stockButton);
-            this.navPanel.Controls.Add(this.storingButton);
+            this.navPanel.Controls.Add(this.distributionButton);
             this.navPanel.Controls.Add(this.storingLabel);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.navPanel.Location = new System.Drawing.Point(0, 422);
@@ -102,17 +102,17 @@
             this.stockButton.Text = "Stock";
             this.stockButton.UseVisualStyleBackColor = true;
             // 
-            // storingButton
+            // distributionButton
             // 
-            this.storingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.storingButton.Location = new System.Drawing.Point(1000, 4);
-            this.storingButton.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
-            this.storingButton.Name = "storingButton";
-            this.storingButton.Size = new System.Drawing.Size(133, 30);
-            this.storingButton.TabIndex = 11;
-            this.storingButton.Text = "Storing";
-            this.storingButton.UseVisualStyleBackColor = true;
-            this.storingButton.Click += new System.EventHandler(this.storingButton_Click);
+            this.distributionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.distributionButton.Location = new System.Drawing.Point(1000, 4);
+            this.distributionButton.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
+            this.distributionButton.Name = "distributionButton";
+            this.distributionButton.Size = new System.Drawing.Size(133, 30);
+            this.distributionButton.TabIndex = 11;
+            this.distributionButton.Text = "Distribution";
+            this.distributionButton.UseVisualStyleBackColor = true;
+            this.distributionButton.Click += new System.EventHandler(this.storingButton_Click);
             // 
             // storingLabel
             // 
@@ -125,7 +125,7 @@
             this.storingLabel.Padding = new System.Windows.Forms.Padding(0, 0, 147, 0);
             this.storingLabel.Size = new System.Drawing.Size(1140, 37);
             this.storingLabel.TabIndex = 1;
-            this.storingLabel.Text = "Store the requests submitted to the factory";
+            this.storingLabel.Text = "Browse the requests submitted to the factory";
             this.storingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // RecyclerIdle
@@ -147,7 +147,7 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel navPanel;
         private System.Windows.Forms.Label storingLabel;
-        private System.Windows.Forms.Button storingButton;
+        private System.Windows.Forms.Button distributionButton;
         private System.Windows.Forms.Button stockButton;
         private System.Windows.Forms.Label storageLabel;
         private System.Windows.Forms.Button storageButton;
