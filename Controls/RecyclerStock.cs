@@ -57,6 +57,14 @@ namespace dmyo_oop_final_assigment.Controls
             }
         }
 
+        public FlowLayoutPanel Panel
+        {
+            get
+            {
+                return contentContainer.Panel;
+            }
+        }
+
 
         public void Bind(DMYOData<WasteStock> source)
         {

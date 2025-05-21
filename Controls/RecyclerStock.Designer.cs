@@ -33,6 +33,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.stockLabel = new System.Windows.Forms.Label();
             this.seperatorLabel = new System.Windows.Forms.Label();
+            this.contentContainer = new dmyo_oop_final_assigment.Controls.ContentContainer();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,10 +98,19 @@
             this.seperatorLabel.Text = "/";
             this.seperatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // contentContainer
+            // 
+            this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentContainer.Location = new System.Drawing.Point(0, 40);
+            this.contentContainer.Name = "contentContainer";
+            this.contentContainer.Size = new System.Drawing.Size(614, 398);
+            this.contentContainer.TabIndex = 3;
+            // 
             // RecyclerStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.contentContainer);
             this.Controls.Add(this.topPanel);
             this.Name = "RecyclerStock";
             this.Size = new System.Drawing.Size(614, 438);
@@ -116,5 +126,6 @@
         private System.Windows.Forms.Label stockLabel;
         private System.Windows.Forms.Label storingLabel;
         private System.Windows.Forms.Button cancelButton;
+        private ContentContainer contentContainer;
     }
 }
