@@ -46,7 +46,7 @@
             this.quickLogin_sinan_demirci = new System.Windows.Forms.Button();
             this.quickLogin_semih_altun = new System.Windows.Forms.Button();
             this.quickRecyclerPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.quickRecyclerLogin_serhat_genc = new System.Windows.Forms.Button();
+            this.quickLogin_serhat_genc = new System.Windows.Forms.Button();
             this.loginTopPanel = new System.Windows.Forms.Panel();
             this.quickLoginLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
@@ -258,23 +258,23 @@
             // quickRecyclerPanel
             // 
             this.quickRecyclerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.quickRecyclerPanel.Controls.Add(this.quickRecyclerLogin_serhat_genc);
+            this.quickRecyclerPanel.Controls.Add(this.quickLogin_serhat_genc);
             this.quickRecyclerPanel.Location = new System.Drawing.Point(300, 0);
             this.quickRecyclerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.quickRecyclerPanel.Name = "quickRecyclerPanel";
             this.quickRecyclerPanel.Size = new System.Drawing.Size(150, 92);
             this.quickRecyclerPanel.TabIndex = 6;
             // 
-            // quickRecyclerLogin_serhat_genc
+            // quickLogin_serhat_genc
             // 
-            this.quickRecyclerLogin_serhat_genc.Location = new System.Drawing.Point(5, 5);
-            this.quickRecyclerLogin_serhat_genc.Margin = new System.Windows.Forms.Padding(5);
-            this.quickRecyclerLogin_serhat_genc.Name = "quickRecyclerLogin_serhat_genc";
-            this.quickRecyclerLogin_serhat_genc.Size = new System.Drawing.Size(120, 30);
-            this.quickRecyclerLogin_serhat_genc.TabIndex = 5;
-            this.quickRecyclerLogin_serhat_genc.Text = "Serhat Genç";
-            this.quickRecyclerLogin_serhat_genc.UseVisualStyleBackColor = true;
-            this.quickRecyclerLogin_serhat_genc.Click += new System.EventHandler(this.quickRecyclerLogin_serhat_genc_Click);
+            this.quickLogin_serhat_genc.Location = new System.Drawing.Point(5, 5);
+            this.quickLogin_serhat_genc.Margin = new System.Windows.Forms.Padding(5);
+            this.quickLogin_serhat_genc.Name = "quickLogin_serhat_genc";
+            this.quickLogin_serhat_genc.Size = new System.Drawing.Size(120, 30);
+            this.quickLogin_serhat_genc.TabIndex = 5;
+            this.quickLogin_serhat_genc.Text = "Serhat Genç";
+            this.quickLogin_serhat_genc.UseVisualStyleBackColor = true;
+            this.quickLogin_serhat_genc.Click += new System.EventHandler(this.quickLogin_serhat_genc_Click);
             // 
             // loginTopPanel
             // 
@@ -423,7 +423,7 @@
 		private System.Windows.Forms.LinkLabel githubLink;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Button quickLogin_sinan_demirci;
-        private System.Windows.Forms.Button quickRecyclerLogin_serhat_genc;
+        private System.Windows.Forms.Button quickLogin_serhat_genc;
         private System.Windows.Forms.Button quickLogin_semih_altun;
     }
 }

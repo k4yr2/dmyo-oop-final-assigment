@@ -90,10 +90,11 @@ namespace dmyo_oop_final_assigment.Forms
             Login("semih", "altun");
         }
 
-        private void quickRecyclerLogin_serhat_genc_Click(object sender, EventArgs e)
+        private void quickLogin_serhat_genc_Click(object sender, EventArgs e)
         {
             Login("serhat", "genc");
         }
+
 
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
