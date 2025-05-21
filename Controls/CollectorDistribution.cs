@@ -106,13 +106,13 @@ namespace dmyo_oop_final_assigment.Controls
 		public void RefreshPage()
 		{
 			Panel.Controls.Clear();
-			var page = Distributions[Index];
+			var distribution = Distributions[Index];
 
 			pageLabel.Text = $"Page {Index + 1} of {Distributions.Length}";
 
-			foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {page.Id}"))
+			foreach (var type in TableManager.WasteDispatch.Select($"where distribution = {distribution.Id}"))
 			{
-				Panel.Controls.Add(new CollectorDistributionItem(this, Index, type));
+				Panel.Controls.Add(new CollectorDistributionItem(this, distribution, type));
 			}
 		}
 

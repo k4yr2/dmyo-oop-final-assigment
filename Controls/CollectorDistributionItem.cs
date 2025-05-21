@@ -9,9 +9,9 @@ namespace dmyo_oop_final_assigment.Controls
 {
 	public partial class CollectorDistributionItem : UserControl, IDataLink<WasteDispatch>
 	{
-		private CollectorDistribution m_distribution;
+		private CollectorDistribution m_host;
 
-		private int m_index;
+        private DMYOData<WasteDistribution> m_distribution;
 
 		private DMYOData<WasteDispatch> m_source;
 
@@ -25,17 +25,17 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private decimal m_capacity = 0;
 
-		public CollectorDistributionItem(CollectorDistribution distribution, int index) : this(distribution, index, null)
+		public CollectorDistributionItem(CollectorDistribution host, DMYOData<WasteDistribution> distribution) : this(host, distribution, null)
 		{
 
 		}
 
-		public CollectorDistributionItem(CollectorDistribution distribution, int index, DMYOData<WasteDispatch> source)
+		public CollectorDistributionItem(CollectorDistribution host, DMYOData<WasteDistribution> distribution, DMYOData<WasteDispatch> source)
 		{
 			InitializeComponent();
 
-			m_distribution = distribution;
-			m_distribution.Form.FormClosed += (s, e) => {
+			m_host = host;
+			m_host.Form.FormClosed += (s, e) => {
 				if(m_source != null)
 				{
 					m_source.Model.Quantity = m_dispatch;
@@ -43,7 +43,7 @@ namespace dmyo_oop_final_assigment.Controls
 				}
 			};
 
-			m_index = index;
+            m_distribution = distribution;
 			Bind(source);
 		}
 
@@ -52,7 +52,7 @@ namespace dmyo_oop_final_assigment.Controls
 		{
 			get
 			{
-				return m_distribution;
+				return m_host;
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
-				m_capacity = TableManager.Waste.CapacityOfType(m_distribution.Source.Id, m_type.Id, m_distribution.Distributions[m_index].Id);
+				m_capacity = TableManager.Waste.CapacityOfType(m_host.Source.Id, m_type.Id, m_distribution.Id);
 				m_dispatch = Math.Min(m_dispatch, m_capacity);
 			}
 
@@ -107,7 +107,7 @@ namespace dmyo_oop_final_assigment.Controls
 				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
 
-				switch (m_distribution.Source.Model.Status)
+				switch (m_distribution.Model.Status)
 				{
 					case WasteStatus.Active:
 						quantityPanel.Visible = true;
