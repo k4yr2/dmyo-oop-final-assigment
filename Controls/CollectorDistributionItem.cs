@@ -33,13 +33,6 @@ namespace dmyo_oop_final_assigment.Controls
 			InitializeComponent();
 
 			m_host = host;
-			m_host.Form.FormClosed += (s, e) => {
-				if(m_source != null)
-				{
-					TableManager.WasteDispatch.Update(m_source.Id, m_source.Model);
-				}
-			};
-
             m_distribution = distribution;
 			Bind(source);
 		}

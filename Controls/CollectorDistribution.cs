@@ -24,6 +24,11 @@ namespace dmyo_oop_final_assigment.Controls
 
 			m_form = form;
 			Bind(source);
+
+			m_form.FormClosing += (s, e) =>
+			{
+				Save();
+			};
 		}
 
 
