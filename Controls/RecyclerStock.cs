@@ -89,6 +89,12 @@ namespace dmyo_oop_final_assigment.Controls
         {
             base.Refresh();
             stockLabel.Text = m_person?.Model.Name ?? "0";
+
+            Panel.Controls.Clear();
+            foreach (var receipt in TableManager.WasteReceipt.GetReceipts(Source.Id))
+            {
+                Panel.Controls.Add(new RecyclerStockItem(this, Source, receipt));
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
