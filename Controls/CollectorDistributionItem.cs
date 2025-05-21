@@ -159,13 +159,20 @@ namespace dmyo_oop_final_assigment.Controls
 
 				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
+                typeLabel.ForeColor = System.Drawing.Color.Black;
 
-				switch (m_distribution.Model.Status)
+                switch (m_distribution.Model.Status)
 				{
 					case WasteStatus.Active:
 						quantityPanel.Visible = true;
                         quantityBox.Text = m_source.Model.Quantity.ToString();
 						quantityLabel.Visible = false;
+                        break;
+					case WasteStatus.Cancelled:
+                        quantityPanel.Visible = false;
+                        quantityLabel.Visible = true;
+                        quantityLabel.Text = m_source.Model.Quantity.ToString();
+						typeLabel.ForeColor = System.Drawing.Color.Red;
                         break;
                     default:
                     case WasteStatus.Processing:
