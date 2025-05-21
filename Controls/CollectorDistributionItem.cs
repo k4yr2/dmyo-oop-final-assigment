@@ -94,8 +94,8 @@ namespace dmyo_oop_final_assigment.Controls
 			if(m_source == null)
 			{
 				typeLabel.Text = "BLANK";
-				dispatchBox.Enabled = false;
-				dispatchBox.Text = "0";
+				quantityBox.Enabled = false;
+				quantityBox.Text = "0";
 				percentLabel.Text = $"%{m_percent:0.00}";
 				capacityLabel.Text = "0";
 				abbrLabel.Text = "pcs";
@@ -103,28 +103,42 @@ namespace dmyo_oop_final_assigment.Controls
 			else
 			{
 				typeLabel.Text = m_type.Model.Name;
-				dispatchBox.Enabled = true;
-				dispatchBox.Text = m_source.Model.Quantity.ToString();
+
 				capacityLabel.Text = m_capacity.ToString();
 				abbrLabel.Text = m_unit.Model.Abbr;
+
+				switch (m_distribution.Source.Model.Status)
+				{
+					case WasteStatus.Active:
+						quantityBox.Visible = true;
+                        quantityBox.Text = m_source.Model.Quantity.ToString();
+						quantityLabel.Visible = false;
+                        break;
+                    default:
+                    case WasteStatus.Processing:
+						quantityBox.Visible = false;
+						quantityLabel.Visible = true;
+                        quantityLabel.Text = m_source.Model.Quantity.ToString();
+                        break;
+				}
 			}
-		}
+        }
 
 		private void dispatchBox_TextChanged(object sender, EventArgs e)
 		{
-			if(!decimal.TryParse(dispatchBox.Text, out decimal dispatch))
+			if(!decimal.TryParse(quantityBox.Text, out decimal dispatch))
 			{
-				dispatchBox.Text = dispatch.ToString("0");
-				dispatchBox.SelectionStart = 0;
-				dispatchBox.SelectionLength = 1;
+				quantityBox.Text = dispatch.ToString("0");
+				quantityBox.SelectionStart = 0;
+				quantityBox.SelectionLength = 1;
 			}
 
 			if(dispatch >= m_capacity)
 			{
 				dispatch = m_capacity;
-				dispatchBox.Text = m_capacity.ToString("0");
-				dispatchBox.SelectionStart = dispatchBox.Text.Length;
-				dispatchBox.SelectionLength = 0;
+				quantityBox.Text = m_capacity.ToString("0");
+				quantityBox.SelectionStart = quantityBox.Text.Length;
+				quantityBox.SelectionLength = 0;
 			}
 
 			m_dispatch = dispatch;

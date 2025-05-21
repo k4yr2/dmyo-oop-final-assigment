@@ -28,96 +28,108 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.abbrLabel = new System.Windows.Forms.Label();
-			this.typeLabel = new System.Windows.Forms.Label();
-			this.capacityLabel = new System.Windows.Forms.Label();
-			this.dispatchBox = new System.Windows.Forms.TextBox();
-			this.seperatorLabel = new System.Windows.Forms.Label();
-			this.percentLabel = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// abbrLabel
-			// 
-			this.abbrLabel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.abbrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.abbrLabel.Location = new System.Drawing.Point(360, 0);
-			this.abbrLabel.Name = "abbrLabel";
-			this.abbrLabel.Size = new System.Drawing.Size(40, 40);
-			this.abbrLabel.TabIndex = 1;
-			this.abbrLabel.Text = "pcs";
-			this.abbrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// typeLabel
-			// 
-			this.typeLabel.Dock = System.Windows.Forms.DockStyle.Left;
-			this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.typeLabel.Location = new System.Drawing.Point(0, 0);
-			this.typeLabel.Name = "typeLabel";
-			this.typeLabel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-			this.typeLabel.Size = new System.Drawing.Size(160, 40);
-			this.typeLabel.TabIndex = 0;
-			this.typeLabel.Text = "BLANK";
-			this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// capacityLabel
-			// 
-			this.capacityLabel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.capacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.capacityLabel.Location = new System.Drawing.Point(320, 0);
-			this.capacityLabel.Name = "capacityLabel";
-			this.capacityLabel.Size = new System.Drawing.Size(40, 40);
-			this.capacityLabel.TabIndex = 2;
-			this.capacityLabel.Text = "0";
-			this.capacityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// dispatchBox
-			// 
-			this.dispatchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.dispatchBox.Location = new System.Drawing.Point(232, 11);
-			this.dispatchBox.Margin = new System.Windows.Forms.Padding(5);
-			this.dispatchBox.Name = "dispatchBox";
-			this.dispatchBox.Size = new System.Drawing.Size(60, 20);
-			this.dispatchBox.TabIndex = 3;
-			this.dispatchBox.TextChanged += new System.EventHandler(this.dispatchBox_TextChanged);
-			// 
-			// seperatorLabel
-			// 
-			this.seperatorLabel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.seperatorLabel.Location = new System.Drawing.Point(300, 0);
-			this.seperatorLabel.Name = "seperatorLabel";
-			this.seperatorLabel.Size = new System.Drawing.Size(20, 40);
-			this.seperatorLabel.TabIndex = 4;
-			this.seperatorLabel.Text = "/";
-			this.seperatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// percentLabel
-			// 
-			this.percentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.percentLabel.Location = new System.Drawing.Point(220, 5);
-			this.percentLabel.Name = "percentLabel";
-			this.percentLabel.Size = new System.Drawing.Size(4, 30);
-			this.percentLabel.TabIndex = 5;
-			this.percentLabel.Text = "%0";
-			this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// CollectorDistributionItem
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.percentLabel);
-			this.Controls.Add(this.seperatorLabel);
-			this.Controls.Add(this.dispatchBox);
-			this.Controls.Add(this.capacityLabel);
-			this.Controls.Add(this.abbrLabel);
-			this.Controls.Add(this.typeLabel);
-			this.Margin = new System.Windows.Forms.Padding(0);
-			this.MinimumSize = new System.Drawing.Size(400, 40);
-			this.Name = "CollectorDistributionItem";
-			this.Size = new System.Drawing.Size(400, 40);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.abbrLabel = new System.Windows.Forms.Label();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.capacityLabel = new System.Windows.Forms.Label();
+            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.seperatorLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.percentLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // abbrLabel
+            // 
+            this.abbrLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.abbrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.abbrLabel.Location = new System.Drawing.Point(360, 0);
+            this.abbrLabel.Name = "abbrLabel";
+            this.abbrLabel.Size = new System.Drawing.Size(40, 40);
+            this.abbrLabel.TabIndex = 1;
+            this.abbrLabel.Text = "pcs";
+            this.abbrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.typeLabel.Location = new System.Drawing.Point(0, 0);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.typeLabel.Size = new System.Drawing.Size(160, 40);
+            this.typeLabel.TabIndex = 0;
+            this.typeLabel.Text = "BLANK";
+            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // capacityLabel
+            // 
+            this.capacityLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.capacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.capacityLabel.Location = new System.Drawing.Point(300, 0);
+            this.capacityLabel.Name = "capacityLabel";
+            this.capacityLabel.Size = new System.Drawing.Size(60, 40);
+            this.capacityLabel.TabIndex = 2;
+            this.capacityLabel.Text = "0";
+            this.capacityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // quantityBox
+            // 
+            this.quantityBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.quantityBox.Location = new System.Drawing.Point(193, 11);
+            this.quantityBox.Margin = new System.Windows.Forms.Padding(5);
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(57, 20);
+            this.quantityBox.TabIndex = 3;
+            this.quantityBox.TextChanged += new System.EventHandler(this.dispatchBox_TextChanged);
+            // 
+            // seperatorLabel
+            // 
+            this.seperatorLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.seperatorLabel.Location = new System.Drawing.Point(270, 0);
+            this.seperatorLabel.Name = "seperatorLabel";
+            this.seperatorLabel.Size = new System.Drawing.Size(30, 40);
+            this.seperatorLabel.TabIndex = 4;
+            this.seperatorLabel.Text = "/";
+            this.seperatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // quantityLabel
+            // 
+            this.quantityLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.quantityLabel.Location = new System.Drawing.Point(210, 0);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(60, 40);
+            this.quantityLabel.TabIndex = 6;
+            this.quantityLabel.Text = "0";
+            this.quantityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // percentLabel
+            // 
+            this.percentLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.percentLabel.Location = new System.Drawing.Point(150, 0);
+            this.percentLabel.Name = "percentLabel";
+            this.percentLabel.Size = new System.Drawing.Size(60, 40);
+            this.percentLabel.TabIndex = 7;
+            this.percentLabel.Text = "%0";
+            this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CollectorDistributionItem
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.percentLabel);
+            this.Controls.Add(this.quantityLabel);
+            this.Controls.Add(this.seperatorLabel);
+            this.Controls.Add(this.quantityBox);
+            this.Controls.Add(this.capacityLabel);
+            this.Controls.Add(this.abbrLabel);
+            this.Controls.Add(this.typeLabel);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(400, 40);
+            this.Name = "CollectorDistributionItem";
+            this.Size = new System.Drawing.Size(400, 40);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -125,9 +137,10 @@
 
 		private System.Windows.Forms.Label typeLabel;
 		private System.Windows.Forms.Label capacityLabel;
-		private System.Windows.Forms.TextBox dispatchBox;
+		private System.Windows.Forms.TextBox quantityBox;
 		private System.Windows.Forms.Label seperatorLabel;
-		private System.Windows.Forms.Label percentLabel;
 		private System.Windows.Forms.Label abbrLabel;
-	}
+        private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.Label percentLabel;
+    }
 }
