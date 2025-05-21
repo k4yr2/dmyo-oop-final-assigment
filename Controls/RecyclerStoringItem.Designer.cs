@@ -73,6 +73,7 @@
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.dateLabel);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "RecyclerStoringItem";
             this.Size = new System.Drawing.Size(336, 40);
             this.ResumeLayout(false);
