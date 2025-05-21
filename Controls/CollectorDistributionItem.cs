@@ -48,7 +48,7 @@ namespace dmyo_oop_final_assigment.Controls
 		}
 
 
-		public CollectorDistribution Distribution
+		public CollectorDistribution Host
 		{
 			get
 			{
@@ -56,7 +56,15 @@ namespace dmyo_oop_final_assigment.Controls
 			}
 		}
 
-		public DMYOData<WasteDispatch> Source
+		public DMYOData<WasteDistribution> Distribution
+		{
+			get
+			{
+				return m_distribution;
+			}
+        }
+
+        public DMYOData<WasteDispatch> Source
 		{
 			get
 			{
