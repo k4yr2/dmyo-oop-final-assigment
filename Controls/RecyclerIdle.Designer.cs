@@ -88,7 +88,7 @@
             this.storageLabel.Padding = new System.Windows.Forms.Padding(0, 0, 147, 0);
             this.storageLabel.Size = new System.Drawing.Size(1140, 37);
             this.storageLabel.TabIndex = 16;
-            this.storageLabel.Text = "Browse the storage and recycle";
+            this.storageLabel.Text = "Browse the factory\'s storage and recycle";
             this.storageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // stockButton
