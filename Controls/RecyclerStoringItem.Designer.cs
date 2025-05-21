@@ -65,6 +65,7 @@
             this.goButton.TabIndex = 2;
             this.goButton.Text = ">";
             this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
             // RecyclerStoringItem
             // 

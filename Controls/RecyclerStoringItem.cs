@@ -1,4 +1,5 @@
-﻿using dmyo_oop_final_assigment.Managers;
+﻿using dmyo_oop_final_assigment.Forms;
+using dmyo_oop_final_assigment.Managers;
 using dmyo_oop_final_assigment.Models;
 using dmyo_oop_final_assigment.Providers;
 using System;
@@ -87,6 +88,18 @@ namespace dmyo_oop_final_assigment.Controls
 
             dateLabel.Text = (m_source?.Model.Date ?? DateTime.MinValue).ToString("dd/MM/yyyy HH:mm");
             nameLabel.Text = m_person?.Model.Name ?? "Unknown";
+        }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            if(TableManager.WasteStock.Init(Host.Form.Person.Id, Source.Id) != null)
+            {
+                Host.Form.Status = RecyclerStatus.Storing;
+            }
+            else
+            {
+                MessageBox.Show("Failed to store waste.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
