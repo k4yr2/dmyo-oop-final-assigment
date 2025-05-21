@@ -5,7 +5,6 @@ using dmyo_oop_final_assigment.Providers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace dmyo_oop_final_assigment.Controls
 {
@@ -103,7 +102,7 @@ namespace dmyo_oop_final_assigment.Controls
 			{
 				var distributions = TableManager.WasteDistribution.GetDistributions(m_source.Id).ToList();
 
-				if(distributions.Count == 0 || distributions.Last().Model.Status == WasteStatus.Completed)
+				if(distributions.Count == 0 || distributions.Last().Model.Status.HasFlag(WasteStatus.Completed | WasteStatus.Cancelled))
 				{
 					distributions.Add(TableManager.WasteDistribution.GetInstance(m_source.Id));
 					m_index = distributions.Count - 1;
