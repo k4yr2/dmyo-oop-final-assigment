@@ -35,7 +35,7 @@ namespace dmyo_oop_final_assigment.Tables
 
         public IEnumerable<DMYOData<WasteReceipt>> GetReceipts(int stock)
         {
-            return Select($"where distribution = {stock}");
+            return Select($"where stock = {stock}");
         }
     }
 }
