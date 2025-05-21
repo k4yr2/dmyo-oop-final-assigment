@@ -19,7 +19,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 		private DMYOData<WasteUnit> m_unit;
 
-		private decimal m_dispatch = 0;
+		private decimal m_quantity = 0;
 
 		private double m_percent = 0;
 
@@ -38,7 +38,7 @@ namespace dmyo_oop_final_assigment.Controls
 			m_host.Form.FormClosed += (s, e) => {
 				if(m_source != null)
 				{
-					m_source.Model.Quantity = m_dispatch;
+					m_source.Model.Quantity = m_quantity;
 					TableManager.WasteDispatch.Update(m_source.Id, m_source.Model);
 				}
 			};
@@ -74,14 +74,14 @@ namespace dmyo_oop_final_assigment.Controls
 				m_type = null;
 				m_unit = null;
 				m_capacity = 0;
-				m_dispatch = 0;
+				m_quantity = 0;
 			}
 			else
 			{
 				m_type = TableManager.WasteType.Read(m_source.Model.Type);
 				m_unit = TableManager.WasteUnit.Read(m_type.Model.Unit);
 				m_capacity = TableManager.Waste.CapacityOfType(m_host.Source.Id, m_type.Id, m_distribution.Id);
-				m_dispatch = Math.Min(m_dispatch, m_capacity);
+				m_quantity = Math.Min(m_source.Model.Quantity, m_capacity);
 			}
 
 			Refresh();
@@ -141,8 +141,8 @@ namespace dmyo_oop_final_assigment.Controls
 				quantityBox.SelectionLength = 0;
 			}
 
-			m_dispatch = dispatch;
-			m_percent = m_capacity == 0 ? 0 : (double)(m_dispatch / m_capacity) * 100;	
+			m_quantity = dispatch;
+			m_percent = m_capacity == 0 ? 0 : (double)(m_quantity / m_capacity) * 100;	
 			percentLabel.Text = $"%{m_percent:0.00}";
 		}
 	}
