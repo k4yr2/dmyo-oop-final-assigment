@@ -90,5 +90,15 @@ namespace dmyo_oop_final_assigment.Tables
 			return true;
 		}
 
-	}
+		public bool Complete(int person)
+		{
+			var collection = GetCurrent(person);
+			if (collection == null)
+				return false;
+
+			collection.Model.Status = WasteStatus.Completed;
+			Update(collection.Id, collection.Model);
+			return true;
+        }
+    }
 }
