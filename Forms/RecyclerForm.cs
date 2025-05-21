@@ -60,6 +60,7 @@ namespace dmyo_oop_final_assigment.Forms
             {
                 case RecyclerStatus.Idle:
                 default:
+                    control = new RecyclerIdle(this);
                     break;
             }
 
