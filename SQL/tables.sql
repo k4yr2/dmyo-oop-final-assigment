@@ -157,9 +157,9 @@ END;
 
 -- Waste Recycle & Waste Gain
 
-IF OBJECT_ID('WasteRecycle', 'U') IS NULL
+IF OBJECT_ID('WasteRecycling', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteRecycle (
+	CREATE TABLE WasteRecycling (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
 		person			INT				FOREIGN KEY REFERENCES Person(id),
@@ -172,7 +172,7 @@ IF OBJECT_ID('WasteProduct', 'U') IS NULL
 BEGIN
 	CREATE TABLE WasteProduct (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
+		recycling		INT				FOREIGN KEY REFERENCES WasteRecycling(id),
 		type			INT				FOREIGN KEY REFERENCES WasteType(id),
 		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0)
 	);
