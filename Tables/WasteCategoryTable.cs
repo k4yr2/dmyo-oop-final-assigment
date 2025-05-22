@@ -1,7 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Models;
 using System.Data.SqlClient;
 
-namespace dmyo_oop_final_assigment.Table
+namespace dmyo_oop_final_assigment.Tables
 {
 	public class WasteCategoryTable : DMYOTable<WasteCategory>
 	{

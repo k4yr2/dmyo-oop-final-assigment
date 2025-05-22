@@ -1,8 +1,6 @@
-﻿using dmyo_oop_final_assigment.Models;
-
-namespace dmyo_oop_final_assigment.Providers
+﻿namespace dmyo_oop_final_assigment.Providers
 {
-	public interface IDataLink<TModel> : IDataRef<TModel> where TModel : DMYOModel
+	public interface IDataLink<TModel> : IDataRef<TModel>
 	{
 		void Bind(DMYOData<TModel> data);
 	}

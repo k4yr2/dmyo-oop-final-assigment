@@ -47,35 +47,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\DMYOGridControl.cs">
+    <Compile Include="Controls\CollectorDistribution.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DMYOGridControl.Designer.cs">
-      <DependentUpon>DMYOGridControl.cs</DependentUpon>
+    <Compile Include="Controls\CollectorDistribution.Designer.cs">
+      <DependentUpon>CollectorDistribution.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\DMYONav.cs">
+    <Compile Include="Controls\RecyclerRecyclingItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DMYONav.Designer.cs">
-      <DependentUpon>DMYONav.cs</DependentUpon>
+    <Compile Include="Controls\RecyclerRecyclingItem.Designer.cs">
+      <DependentUpon>RecyclerRecyclingItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\DMYONavSub.cs">
+    <Compile Include="Controls\RecyclerRecycling.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DMYONavSub.Designer.cs">
-      <DependentUpon>DMYONavSub.cs</DependentUpon>
+    <Compile Include="Controls\RecyclerRecycling.Designer.cs">
+      <DependentUpon>RecyclerRecycling.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PagebarControl.cs">
+    <Compile Include="Controls\RecyclerStorageItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PagebarControl.Designer.cs">
-      <DependentUpon>PagebarControl.cs</DependentUpon>
+    <Compile Include="Controls\RecyclerStorageItem.Designer.cs">
+      <DependentUpon>RecyclerStorageItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AuthorityForm.cs">
+    <Compile Include="Controls\RecyclerStockItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStockItem.Designer.cs">
+      <DependentUpon>RecyclerStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CollectorDistributionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CollectorDistributionItem.Designer.cs">
+      <DependentUpon>CollectorDistributionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CollectorCollectionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CollectorCollectionItem.Designer.cs">
+      <DependentUpon>CollectorCollectionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ContentContainer.Designer.cs">
+      <DependentUpon>ContentContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecyclerStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStock.Designer.cs">
+      <DependentUpon>RecyclerStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecyclerStorage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStorage.Designer.cs">
+      <DependentUpon>RecyclerStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoring.Designer.cs">
+      <DependentUpon>RecyclerStoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecyclerIdle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerIdle.Designer.cs">
+      <DependentUpon>RecyclerIdle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoringItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerStoringItem.Designer.cs">
+      <DependentUpon>RecyclerStoringItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CollectorDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AuthorityForm.Designer.cs">
-      <DependentUpon>AuthorityForm.cs</DependentUpon>
+    <Compile Include="Forms\CollectorDetailsForm.Designer.cs">
+      <DependentUpon>CollectorDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CollectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CollectorForm.Designer.cs">
+      <DependentUpon>CollectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -83,18 +143,44 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grids\DMYOGrid.cs" />
-    <Compile Include="Grids\WasteCategoryGrid.cs" />
-    <Compile Include="Grids\WasteTypeGrid.cs" />
+    <Compile Include="Forms\RecyclerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecyclerForm.Designer.cs">
+      <DependentUpon>RecyclerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\TableManager.cs" />
-    <Compile Include="Models\Authority.cs" />
-    <Compile Include="Models\DMYOModel.cs" />
+    <Compile Include="Models\Factory.cs" />
+    <Compile Include="Models\FactoryAccess.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Waste.cs" />
     <Compile Include="Models\WasteCategory.cs" />
+    <Compile Include="Models\WasteCollection.cs" />
+    <Compile Include="Models\WasteDistribution.cs" />
+    <Compile Include="Models\WasteDispatch.cs" />
+    <Compile Include="Models\WasteHeap.cs" />
+    <Compile Include="Models\WasteReceipt.cs" />
+    <Compile Include="Models\WasteProduct.cs" />
+    <Compile Include="Models\WasteRecycling.cs" />
+    <Compile Include="Models\WasteStock.cs" />
+    <Compile Include="Models\WasteUnit.cs" />
+    <Compile Include="Controls\CollectorCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CollectorCollection.Designer.cs">
+      <DependentUpon>CollectorCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CollectorIdle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CollectorIdle.Designer.cs">
+      <DependentUpon>CollectorIdle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Providers\IDataLink.cs" />
     <Compile Include="Providers\IDataRef.cs" />
     <Compile Include="Providers\IDataCRUD.cs" />
     <Compile Include="Managers\DataManager.cs" />
-    <Compile Include="Models\DMYOData.cs" />
+    <Compile Include="DMYOData.cs" />
     <Compile Include="Models\WasteType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,27 +190,78 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Providers\IDataCollection.cs" />
-    <Compile Include="Tables\AuthorityTable.cs" />
-    <Compile Include="Tables\DMYOTable.cs" />
+    <Compile Include="DMYOTable.cs" />
+    <Compile Include="Tables\FactoryAccessTable.cs" />
+    <Compile Include="Tables\FactoryTable.cs" />
+    <Compile Include="Tables\PersonTable.cs" />
     <Compile Include="Tables\WasteCategoryTable.cs" />
+    <Compile Include="Tables\WasteCollectionTable.cs" />
+    <Compile Include="Tables\WasteDistributionTable.cs" />
+    <Compile Include="Tables\WasteDispatchTable.cs" />
+    <Compile Include="Tables\WasteHeapTable.cs" />
+    <Compile Include="Tables\WasteReceiptTable.cs" />
+    <Compile Include="Tables\WasteProductTable.cs" />
+    <Compile Include="Tables\WasteRecyclingTable.cs" />
+    <Compile Include="Tables\WasteStockTable.cs" />
+    <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />
-    <EmbeddedResource Include="Controls\DMYOGridControl.resx">
-      <DependentUpon>DMYOGridControl.cs</DependentUpon>
+    <Compile Include="Tables\WasteUnitTable.cs" />
+    <EmbeddedResource Include="Controls\CollectorDistribution.resx">
+      <DependentUpon>CollectorDistribution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DMYONav.resx">
-      <DependentUpon>DMYONav.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\RecyclerRecyclingItem.resx">
+      <DependentUpon>RecyclerRecyclingItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DMYONavSub.resx">
-      <DependentUpon>DMYONavSub.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\RecyclerRecycling.resx">
+      <DependentUpon>RecyclerRecycling.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PagebarControl.resx">
-      <DependentUpon>PagebarControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\RecyclerStorageItem.resx">
+      <DependentUpon>RecyclerStorageItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AuthorityForm.resx">
-      <DependentUpon>AuthorityForm.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\RecyclerStockItem.resx">
+      <DependentUpon>RecyclerStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CollectorDistributionItem.resx">
+      <DependentUpon>CollectorDistributionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CollectorCollectionItem.resx">
+      <DependentUpon>CollectorCollectionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ContentContainer.resx">
+      <DependentUpon>ContentContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStock.resx">
+      <DependentUpon>RecyclerStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStorage.resx">
+      <DependentUpon>RecyclerStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStoring.resx">
+      <DependentUpon>RecyclerStoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerIdle.resx">
+      <DependentUpon>RecyclerIdle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerStoringItem.resx">
+      <DependentUpon>RecyclerStoringItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CollectorDetailsForm.resx">
+      <DependentUpon>CollectorDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CollectorForm.resx">
+      <DependentUpon>CollectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CollectorCollection.resx">
+      <DependentUpon>CollectorCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CollectorIdle.resx">
+      <DependentUpon>CollectorIdle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecyclerForm.resx">
+      <DependentUpon>RecyclerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

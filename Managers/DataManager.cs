@@ -1,124 +1,91 @@
-﻿using dmyo_oop_final_assigment.Models;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Managers
 {
 	internal static class DataManager
 	{
-		// Connection string
-		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assigment;Integrated Security=True";
-
-		// Connection object
-		private static SqlConnection m_connection;
+		private static string connectionString = "Data Source=localhost;Initial Catalog=dmyo_oop_final_assignment;Integrated Security=True";
 
 
-		// Property to get the connection object
-		private static SqlConnection Connection
+		public static void UseConnection(Action<SqlConnection> action)
 		{
-			get
+			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
-				if (m_connection == null)
+				try
 				{
-					m_connection = new SqlConnection(connectionString);
+					connection.Open();
+					action.Invoke(connection);
 				}
-
-				return m_connection;
+				finally
+				{
+					connection.Close();
+				}
 			}
 		}
 
-		// Util method to open the connection
-		private static void OpenConnection()
+		public static T[] UseConnection<T>(Func<SqlConnection, IEnumerable<T>> func)
 		{
-			if (m_connection == null)
+			T[] array = Array.Empty<T>();
+			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
-				m_connection = new SqlConnection(connectionString);
+				try
+				{
+					connection.Open();
+					array = func?.Invoke(connection).ToArray();
+				}
+				finally
+				{
+					connection.Close();
+				}
 			}
 
-			if (m_connection.State != System.Data.ConnectionState.Open)
-			{
-				m_connection.Open();
-			}
+			return array;
 		}
-
-		// Util method to close the connection
-		private static void CloseConnection()
-		{
-			if (m_connection != null && m_connection.State == System.Data.ConnectionState.Open)
-			{
-				m_connection.Close();
-			}
-		}
-
 
 		public static void ExecuteCommand(string query)
 		{
-			try
-			{
-				OpenConnection();
-				using (SqlCommand command = new SqlCommand(query, Connection))
-				{
-
-				}
-			}
-			finally
-			{
-				CloseConnection();
-			}
+			ExecuteCommand(query, null);
 		}
 
-		public static void ExecuteCommand(string query, Action<SqlCommand> func)
+		public static void ExecuteCommand(string query, Action<SqlCommand> act)
 		{
-			try
+			UseConnection((connection) =>
 			{
-				OpenConnection();
-				using (SqlCommand command = new SqlCommand(query, Connection))
+				using (SqlCommand command = new SqlCommand(query, connection))
 				{
-					func.Invoke(command);
+					act?.Invoke(command);
 				}
-			}
-			finally
-			{
-				CloseConnection();
-			}
+			});
 		}
 
-		public static IEnumerable<T> ExecuteCommand<T>(string query, Func<SqlCommand, IEnumerable<T>> func)
+		public static T[] ExecuteCommand<T>(string query, Func<SqlCommand, IEnumerable<T>> func)
 		{
-			try
+			return UseConnection((connection) =>
 			{
-				OpenConnection();
-				using (SqlCommand command = new SqlCommand(query, Connection))
+				IEnumerable<T> array = Enumerable.Empty<T>();
+				using (SqlCommand command = new SqlCommand(query, connection))
 				{
-					foreach (var item in func.Invoke(command))
-						yield return item;
+					array = func?.Invoke(command);
 				}
-			}
-			finally
-			{
-				CloseConnection();
-			}
+
+				return array;
+			});
 		}
-	
+
 
 		public static void FillTable(DataTable table, string query)
 		{
-			try
+			UseConnection((connection) =>
 			{
-				OpenConnection();
 				using (SqlDataAdapter adapter = new SqlDataAdapter(query, connectionString))
 				{
 					adapter.Fill(table);
 				}
-			}
-			finally
-			{
-				CloseConnection();
-			}
+			});
 		}
 	}
 }

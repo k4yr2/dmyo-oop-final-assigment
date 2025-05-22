@@ -1,67 +1,188 @@
 USE dmyo_oop_final_assigment;
 
-IF OBJECT_ID('User', 'U') IS NULL
+IF OBJECT_ID('Factory', 'U') IS NULL
 BEGIN
-	CREATE TABLE [User] (
-		id			INT PRIMARY		KEY IDENTITY(1,1),
-		name		NVARCHAR(100)	NOT NULL UNIQUE,
-		password	NVARCHAR(32)	NOT NULL,
-		role		VARCHAR(20)		NOT NULL CHECK (role IN ('collector', 'recycler', 'admin'))
+	CREATE TABLE Factory (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL DEFAULT 'My Factory',
 	);
 
-	INSERT INTO [User] (name, password, role)
-	VALUES ('dmyo', '2025', 'admin'), ('sinan', 'demirci', 'collector'), ('serhat', 'genc', 'recycler');
+	INSERT INTO Factory (name) VALUES 
+    (N'Alpha Factory'), (N'Beta Manufacturing')
 END;
+
+IF OBJECT_ID('Person', 'U') IS NULL
+BEGIN
+	CREATE TABLE Person (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(100)	NOT NULL UNIQUE,
+		password		NVARCHAR(32)	NOT NULL,
+		role			INT				NOT NULL CHECK (role BETWEEN 0 AND 2),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id) NULL,
+	);
+
+	INSERT INTO Person (name, password, role, factory) VALUES 
+	('dmyo', '2025', 2, null), ('sinan', 'demirci', 0, null), ('semih', 'altun', 0, null), ('kayra', 'ozkaya', 1, 1), ('serhat', 'genc', 1, 2);
+END;
+
+-- Waste Unit ve Kategori
 
 IF OBJECT_ID('WasteUnit', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteUnit] (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		abbr		NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
+	CREATE TABLE WasteUnit (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		abbr			NVARCHAR(10)	NOT NULL DEFAULT 'pcs'
 	);
+
+	INSERT INTO WasteUnit (name, abbr)
+	VALUES ('Kilogram', 'kg'), ('Liter', 'lt'), ('Piece', 'pcs');
 END;
 
 IF OBJECT_ID('WasteCategory', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteCategory] (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		hazardLevel INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
-		recyclable	BIT				DEFAULT(0),
-		description NVARCHAR(500)
+	CREATE TABLE WasteCategory (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		description		NVARCHAR(500),
+		hazardLevel		INT				DEFAULT 0 CHECK (hazardLevel BETWEEN 0 AND 5),
+		recyclable		BIT				DEFAULT(0)
 	);
+
+	INSERT INTO WasteCategory (name, description, hazardLevel, recyclable) VALUES 
+	('Organic', 'Organic content such as food waste.', 1, 1),
+	('Chemical', 'Industrial chemical waste.', 4, 0),
+	('Electronic', 'Electronic device parts.', 2, 1);
 END;
 
 IF OBJECT_ID('WasteType', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteType] (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		unit		INT				FOREIGN KEY REFERENCES WasteUnit(id),
-		category	INT				FOREIGN KEY REFERENCES WasteCategory(id),
-		description NVARCHAR(500),
+	CREATE TABLE WasteType (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		name			NVARCHAR(50)	NOT NULL UNIQUE,
+		description		NVARCHAR(500),
+		unit			INT				FOREIGN KEY REFERENCES WasteUnit(id),
+		category		INT				FOREIGN KEY REFERENCES WasteCategory(id)
 	);
+
+	INSERT INTO WasteType (name, description, unit, category) VALUES
+	('Food Waste', 'Leftover food materials', 1, 1),
+	('Acid Solution', 'Laboratory acids', 2, 2),
+	('Broken Phone', 'Non-functioning cell phones', 3, 3);
 END;
+
+-- Waste Collection & Waste
 
 IF OBJECT_ID('WasteCollection', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteCollection] (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL,
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		location	NVARCHAR(100)	DEFAULT 'no location entered'
+	CREATE TABLE WasteCollection (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
 
-IF OBJECT_ID('WasteEntry', 'U') IS NULL
+IF OBJECT_ID('Waste', 'U') IS NULL
 BEGIN
-	CREATE TABLE [WasteEntry] (
-		id			INT				PRIMARY KEY IDENTITY(1,1),
-		name		NVARCHAR(50)	NOT NULL UNIQUE,
-		date		DATETIME		NOT NULL DEFAULT GETDATE(),
-		type		INT				FOREIGN KEY REFERENCES WasteType(id) DEFAULT 0,
-		collection	INT				FOREIGN KEY REFERENCES WasteCollection(id) DEFAULT 0,
-		quantity	DECIMAL(10,2),
+	CREATE TABLE Waste (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT 0,
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
+
+-- Waste Distribution & Waste Dispatch
+
+IF OBJECT_ID('WasteDistribution', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteDistribution (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		collection		INT				FOREIGN KEY REFERENCES WasteCollection(id) NOT NULL,
+		factory			INT				FOREIGN KEY REFERENCES Factory(id) NULL,
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3), -- 0: Active, 1: Processing, 2: Completed, 3: Canceled 
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
+
+IF OBJECT_ID('WasteDispatch', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteDispatch (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		capacity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
+
+-- Waste Stock & Waste Receipt
+
+IF OBJECT_ID('WasteStock', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteStock (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
+		distribution	INT				FOREIGN KEY REFERENCES WasteDistribution(id),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3),
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
+
+IF OBJECT_ID('WasteReceipt', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteReceipt (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		dispatch		INT				FOREIGN KEY REFERENCES WasteDispatch(id),
+		stock			INT				FOREIGN KEY REFERENCES WasteStock(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
+
+-- Waste Heap
+
+IF OBJECT_ID('WasteHeap', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteHeap (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
+	);
+END;
+
+-- Waste Recycle & Waste Gain
+
+IF OBJECT_ID('WasteRecycling', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteRecycling (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		factory			INT				FOREIGN KEY REFERENCES Factory(id),
+		person			INT				FOREIGN KEY REFERENCES Person(id),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3),
+		date			DATETIME		NOT NULL DEFAULT GETDATE()
+	);
+END;
+
+IF OBJECT_ID('WasteProduct', 'U') IS NULL
+BEGIN
+	CREATE TABLE WasteProduct (
+		id				INT				PRIMARY KEY IDENTITY(1,1),
+		recycling		INT				FOREIGN KEY REFERENCES WasteRecycling(id),
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0)
+	);
+END;
+
+SELECT *
+FROM Waste
+WHERE id IN (
+    SELECT MIN(id)
+    FROM Waste
+    WHERE collection = 1006
+    GROUP BY type
+);
