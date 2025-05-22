@@ -79,5 +79,22 @@ namespace dmyo_oop_final_assigment.Controls
                 }
             }
         }
+
+        private void completeButton_Click(object sender, System.EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to complete the recycling?", "Complete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (TableManager.WasteRecycling.Complete(Form.Person.Id))
+                {
+                    Form.Status = RecyclerStatus.Idle;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to complete recycling", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

@@ -74,6 +74,7 @@
             this.completeButton.TabIndex = 1;
             this.completeButton.Text = "Complete";
             this.completeButton.UseVisualStyleBackColor = false;
+            this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
             // 
             // cancelButton
             // 
