@@ -1,5 +1,8 @@
-﻿using dmyo_oop_final_assigment.Models;
+﻿using dmyo_oop_final_assigment.Managers;
+using dmyo_oop_final_assigment.Models;
+using System;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -27,5 +30,43 @@ namespace dmyo_oop_final_assigment.Tables
 				Date = reader.GetDateTime(4),
 			};
 		}
-	}
+
+
+        public DMYOData<WasteRecycle> GetCurrent(int person)
+        {
+            return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
+        }
+
+        public DMYOData<WasteRecycle> Init(int person, int distribution)
+        {
+            var recycle = GetCurrent(person);
+
+            if (recycle == null)
+            {
+                recycle = Create(new WasteRecycle()
+                {
+                    Factory = TableManager.Person.Read(person).Model.Factory.Value,
+                    Person = person,
+                    Status = WasteStatus.Active,
+                    Date = DateTime.Now
+                });
+
+                foreach (var heap in TableManager.WasteHeap.OfFactory(recycle.Model.Factory))
+                {
+                    TableManager.WasteProduct.Create(new WasteProduct()
+                    {
+                        Recycle = recycle.Id,
+                        Type = heap.Model.Type,
+                        Quantity = 0,
+                    });
+                }
+
+                return recycle;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
 }
