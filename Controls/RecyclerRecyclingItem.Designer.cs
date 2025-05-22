@@ -34,9 +34,7 @@
             this.seperatorLabel = new System.Windows.Forms.Label();
             this.quantityBox = new System.Windows.Forms.TextBox();
             this.quantityPanel = new System.Windows.Forms.Panel();
-            this.quantityLabel = new System.Windows.Forms.Label();
             this.percentLabel = new System.Windows.Forms.Label();
-            this.receiptLabel = new System.Windows.Forms.Label();
             this.quantityPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,28 +100,16 @@
             this.quantityPanel.Controls.Add(this.quantityBox);
             this.quantityPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.quantityPanel.Location = new System.Drawing.Point(494, 0);
-            this.quantityPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityPanel.Margin = new System.Windows.Forms.Padding(4);
             this.quantityPanel.Name = "quantityPanel";
             this.quantityPanel.Size = new System.Drawing.Size(80, 49);
             this.quantityPanel.TabIndex = 8;
-            // 
-            // quantityLabel
-            // 
-            this.quantityLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.quantityLabel.Location = new System.Drawing.Point(414, 0);
-            this.quantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(80, 49);
-            this.quantityLabel.TabIndex = 10;
-            this.quantityLabel.Text = "0";
-            this.quantityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // percentLabel
             // 
             this.percentLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.percentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.percentLabel.Location = new System.Drawing.Point(281, 0);
+            this.percentLabel.Location = new System.Drawing.Point(361, 0);
             this.percentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.percentLabel.Name = "percentLabel";
             this.percentLabel.Size = new System.Drawing.Size(133, 49);
@@ -131,25 +117,11 @@
             this.percentLabel.Text = "%0";
             this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // receiptLabel
-            // 
-            this.receiptLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.receiptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.receiptLabel.Location = new System.Drawing.Point(201, 0);
-            this.receiptLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.receiptLabel.Name = "receiptLabel";
-            this.receiptLabel.Size = new System.Drawing.Size(80, 49);
-            this.receiptLabel.TabIndex = 12;
-            this.receiptLabel.Text = "0";
-            this.receiptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CollectorDistributionItem
+            // RecyclerRecyclingItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.percentLabel);
-            this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.quantityPanel);
             this.Controls.Add(this.seperatorLabel);
             this.Controls.Add(this.capacityLabel);
@@ -157,7 +129,7 @@
             this.Controls.Add(this.typeLabel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(533, 49);
-            this.Name = "CollectorDistributionItem";
+            this.Name = "RecyclerRecyclingItem";
             this.Size = new System.Drawing.Size(747, 49);
             this.quantityPanel.ResumeLayout(false);
             this.quantityPanel.PerformLayout();
@@ -173,8 +145,6 @@
 		private System.Windows.Forms.Label abbrLabel;
         private System.Windows.Forms.TextBox quantityBox;
         private System.Windows.Forms.Panel quantityPanel;
-        private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.Label percentLabel;
-        private System.Windows.Forms.Label receiptLabel;
     }
 }

@@ -98,7 +98,7 @@ namespace dmyo_oop_final_assigment.Controls
 			set
 			{
                 Source.Model.Quantity = value;
-				quantityBox.Text = Source.Model.Quantity.ToString("0.00");
+				quantityBox.Text = Source.Model.Quantity.ToString();
                 Percent = m_capacity == 0 ? 0 : (double)(Source.Model.Quantity / m_capacity) * 100;
             }
 		}
