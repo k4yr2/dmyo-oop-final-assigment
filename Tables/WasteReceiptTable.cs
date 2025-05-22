@@ -18,7 +18,6 @@ namespace dmyo_oop_final_assigment.Tables
 			command.Parameters.AddWithValue("@stock", receipt.Stock);
 			command.Parameters.AddWithValue("@quantity", receipt.Quantity);
 			command.Parameters.AddWithValue("@date", receipt.Date);
-
 		}
 
 		public override WasteReceipt GetModel(SqlDataReader reader)
