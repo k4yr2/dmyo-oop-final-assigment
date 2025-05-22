@@ -1,5 +1,7 @@
 ﻿using dmyo_oop_final_assigment.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
@@ -25,5 +27,11 @@ namespace dmyo_oop_final_assigment.Tables
                 Quantity = reader.GetDecimal(3)
 			};
 		}
-	}
+
+
+        public IEnumerable<DMYOData<WasteProduct>> GetProducts(int recycling)
+        {
+            return Select($"where recycling = {recycling}");
+        }
+    }
 }
