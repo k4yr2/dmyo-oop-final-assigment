@@ -84,12 +84,22 @@ namespace dmyo_oop_final_assigment.Tables
 				stock.Model.Status = WasteStatus.Completed;
 				Update(stock.Id, stock.Model);
 
-				var distribution = TableManager.WasteDistribution.Read(stock.Model.Distribution);
+                var distribution = TableManager.WasteDistribution.Read(stock.Model.Distribution);
 				if(distribution != null)
 				{
-					distribution.Model.Status = WasteStatus.Completed;
+                    foreach (var receipt in TableManager.WasteReceipt.GetReceipts(stock.Id))
+                    {
+                        var dispatch = TableManager.WasteDispatch.Read(receipt.Model.Dispatch);
+                        var heap = TableManager.WasteHeap.Fetch(distribution.Model.Factory.Value, dispatch.Model.Type);
+
+						heap.Model.Quantity += receipt.Model.Quantity;
+						TableManager.WasteHeap.Update(heap.Id, heap.Model);
+                    }
+
+                    distribution.Model.Status = WasteStatus.Completed;
 					TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
 				}
+
 				return true;
 			}
 			else
