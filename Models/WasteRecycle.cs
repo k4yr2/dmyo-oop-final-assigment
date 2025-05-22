@@ -8,7 +8,7 @@ namespace dmyo_oop_final_assigment.Models
 
 		private int m_person;
 
-		private bool m_active;
+		private WasteStatus m_status;
 
 		private DateTime m_date;
 
@@ -42,15 +42,15 @@ namespace dmyo_oop_final_assigment.Models
 			}
 		}
 
-		public bool Active
+		public WasteStatus Status
 		{
 			get
 			{
-				return m_active;
+				return m_status;
 			}
 			set
 			{
-				m_active = value;
+                m_status = value;
 			}
 		}
 
