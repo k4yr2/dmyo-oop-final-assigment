@@ -168,14 +168,13 @@ BEGIN
 	);
 END;
 
-IF OBJECT_ID('WasteGain', 'U') IS NULL
+IF OBJECT_ID('WasteProduct', 'U') IS NULL
 BEGIN
-	CREATE TABLE WasteGain (
+	CREATE TABLE WasteProduct (
 		id				INT				PRIMARY KEY IDENTITY(1,1),
-		receipt			INT				FOREIGN KEY REFERENCES WasteReceipt(id),
 		recycle			INT				FOREIGN KEY REFERENCES WasteRecycle(id),
-		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0),
-		date			DATETIME		NOT NULL DEFAULT GETDATE()
+		type			INT				FOREIGN KEY REFERENCES WasteType(id),
+		quantity		DECIMAL(10, 2)	NOT NULL DEFAULT(0)
 	);
 END;
 
