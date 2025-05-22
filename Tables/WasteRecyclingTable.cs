@@ -37,7 +37,7 @@ namespace dmyo_oop_final_assigment.Tables
             return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
         }
 
-        public DMYOData<WasteRecycling> Init(int person, int distribution)
+        public DMYOData<WasteRecycling> Init(int person)
         {
             var recycle = GetCurrent(person);
 
