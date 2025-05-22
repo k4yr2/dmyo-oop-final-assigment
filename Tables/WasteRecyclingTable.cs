@@ -68,5 +68,29 @@ namespace dmyo_oop_final_assigment.Tables
                 return null;
             }
         }
+
+        public bool Complete(int person)
+        {
+            var recycling = GetCurrent(person);
+            if (recycling != null)
+            {
+                recycling.Model.Status = WasteStatus.Completed;
+                Update(recycling.Id, recycling.Model);
+
+                foreach (var product in TableManager.WasteProduct.GetProducts(recycling.Id))
+                {
+                    var heap = TableManager.WasteHeap.Fetch(recycling.Model.Factory, product.Model.Type);
+                    heap.Model.Quantity -= product.Model.Quantity;
+
+                    TableManager.WasteHeap.Update(heap.Id, heap.Model);
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
