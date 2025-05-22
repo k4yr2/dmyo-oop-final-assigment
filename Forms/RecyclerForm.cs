@@ -58,7 +58,13 @@ namespace dmyo_oop_final_assigment.Forms
             UserControl control;
 
             var stock = TableManager.WasteStock.GetCurrent(Person.Id);
-            if(stock != null)
+            var recycling = TableManager.WasteRecycle.GetCurrent(Person.Id);
+
+            if (recycling != null)
+            {
+                m_status = RecyclerStatus.Recycling;
+            }
+            else if (stock != null)
             {
                 m_status = RecyclerStatus.Stock;
             }
@@ -96,5 +102,6 @@ namespace dmyo_oop_final_assigment.Forms
         Storing = 1,
         Stock = 2,
         Storage = 3,
+        Recycling = 4,
     }
 }
