@@ -53,6 +53,12 @@
     <Compile Include="Controls\CollectorDistribution.Designer.cs">
       <DependentUpon>CollectorDistribution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RecyclerRecyclingItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecyclerRecyclingItem.Designer.cs">
+      <DependentUpon>RecyclerRecyclingItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RecyclerRecycling.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     <Compile Include="Tables\WasteUnitTable.cs" />
     <EmbeddedResource Include="Controls\CollectorDistribution.resx">
       <DependentUpon>CollectorDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecyclerRecyclingItem.resx">
+      <DependentUpon>RecyclerRecyclingItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RecyclerRecycling.resx">
       <DependentUpon>RecyclerRecycling.cs</DependentUpon>
