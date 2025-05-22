@@ -32,6 +32,7 @@
             this.storageLabel = new System.Windows.Forms.Label();
             this.idleButton = new System.Windows.Forms.Button();
             this.contentContainer1 = new dmyo_oop_final_assigment.Controls.ContentContainer();
+            this.recycleButton = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             // 
             this.topPanel.BackColor = System.Drawing.Color.DarkGray;
             this.topPanel.Controls.Add(this.storageLabel);
+            this.topPanel.Controls.Add(this.recycleButton);
             this.topPanel.Controls.Add(this.idleButton);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
@@ -82,6 +84,20 @@
             this.contentContainer1.Size = new System.Drawing.Size(724, 333);
             this.contentContainer1.TabIndex = 3;
             // 
+            // recycleButton
+            // 
+            this.recycleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.recycleButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.recycleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recycleButton.Location = new System.Drawing.Point(611, 9);
+            this.recycleButton.Margin = new System.Windows.Forms.Padding(11, 10, 4, 10);
+            this.recycleButton.Name = "recycleButton";
+            this.recycleButton.Size = new System.Drawing.Size(100, 30);
+            this.recycleButton.TabIndex = 1;
+            this.recycleButton.Text = "Recycle";
+            this.recycleButton.UseVisualStyleBackColor = false;
+            this.recycleButton.Click += new System.EventHandler(this.recycleButton_Click);
+            // 
             // RecyclerStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -101,5 +117,6 @@
         private System.Windows.Forms.Label storageLabel;
         private System.Windows.Forms.Button idleButton;
         private ContentContainer contentContainer1;
+        private System.Windows.Forms.Button recycleButton;
     }
 }

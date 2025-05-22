@@ -50,5 +50,15 @@ namespace dmyo_oop_final_assigment.Controls
         {
             Form.Status = RecyclerStatus.Idle;
         }
+
+        private void recycleButton_Click(object sender, System.EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the collection?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                TableManager.WasteCollection.Cancel(Form.Person.Id);
+            }
+        }
     }
 }
