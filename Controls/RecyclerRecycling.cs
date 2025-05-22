@@ -18,6 +18,11 @@ namespace dmyo_oop_final_assigment.Controls
             m_form = form;
 
             Bind(source);
+
+            m_form.FormClosing += (s, e) =>
+            {
+                Save();
+            };
         }
 
 
@@ -60,6 +65,18 @@ namespace dmyo_oop_final_assigment.Controls
             foreach (var product in TableManager.WasteProduct.GetProducts(m_source.Id))
             {
                 Panel.Controls.Add(new RecyclerRecyclingItem(this, Source, product));
+            }
+        }
+
+        public void Save()
+        {
+            foreach (var item in Panel.Controls)
+            {
+                if (item is RecyclerRecyclingItem recyclingItem)
+                {
+                    var product = recyclingItem.Source;
+                    TableManager.WasteProduct.Update(product.Id, product.Model);
+                }
             }
         }
     }
