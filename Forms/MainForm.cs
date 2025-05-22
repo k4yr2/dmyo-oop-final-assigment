@@ -95,6 +95,11 @@ namespace dmyo_oop_final_assigment.Forms
             Login("serhat", "genc");
         }
 
+        private void quickLogin_kayra_ozkaya_Click(object sender, EventArgs e)
+        {
+            Login("kayra", "ozkaya");
+        }
+
 
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
