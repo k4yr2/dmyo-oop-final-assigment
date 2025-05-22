@@ -218,6 +218,7 @@
             // 
             // quickLogin_dmyo_2025
             // 
+            this.quickLogin_dmyo_2025.Enabled = false;
             this.quickLogin_dmyo_2025.Location = new System.Drawing.Point(7, 6);
             this.quickLogin_dmyo_2025.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.quickLogin_dmyo_2025.Name = "quickLogin_dmyo_2025";
