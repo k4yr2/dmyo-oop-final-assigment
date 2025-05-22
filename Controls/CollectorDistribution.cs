@@ -135,7 +135,7 @@ namespace dmyo_oop_final_assigment.Controls
 
 			if(distribution.Model.Status == WasteStatus.Active)
 			{
-				sendButton.Enabled = true;
+				sendButton.Enabled = false;
 				factoryBox.Enabled = true;
             }
             else
@@ -150,6 +150,9 @@ namespace dmyo_oop_final_assigment.Controls
                 if (factory != null)
                 {
                     factoryBox.SelectedValue = factory.Id;
+
+					if(distribution.Model.Status == WasteStatus.Active)
+						sendButton.Enabled = true;
                 }
                 else
                 {
@@ -232,6 +235,7 @@ namespace dmyo_oop_final_assigment.Controls
             {
 				distribution.Model.Factory = (int?)factoryBox.SelectedValue;
                 TableManager.WasteDistribution.Update(distribution.Id, distribution.Model);
+                sendButton.Enabled = true;
             }
         }
     }
