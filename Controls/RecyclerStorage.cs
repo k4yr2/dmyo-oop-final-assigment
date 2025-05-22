@@ -57,7 +57,14 @@ namespace dmyo_oop_final_assigment.Controls
 
             if (result == DialogResult.Yes)
             {
-                TableManager.WasteCollection.Cancel(Form.Person.Id);
+                if (TableManager.WasteRecycling.Init(Form.Person.Id) != null)
+                {
+                    Form.Status = RecyclerStatus.Recycling;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to start recycling", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
