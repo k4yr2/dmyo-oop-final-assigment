@@ -71,6 +71,7 @@
             this.idleButton.TabIndex = 1;
             this.idleButton.Text = "I";
             this.idleButton.UseVisualStyleBackColor = false;
+            this.idleButton.Click += new System.EventHandler(this.idleButton_Click);
             // 
             // contentContainer1
             // 

@@ -45,5 +45,10 @@ namespace dmyo_oop_final_assigment.Controls
                     Panel.Controls.Add(new RecyclerStorageItem(this, heap));
             }
         }
+
+        private void idleButton_Click(object sender, System.EventArgs e)
+        {
+            Form.Status = RecyclerStatus.Idle;
+        }
     }
 }
