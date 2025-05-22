@@ -72,6 +72,9 @@ namespace dmyo_oop_final_assigment.Forms
                 case RecyclerStatus.Stock:
                     control = new RecyclerStock(this, stock);
                     break;
+                case RecyclerStatus.Storage:
+                    control = new RecyclerStorage(this);
+                    break;
                 case RecyclerStatus.Idle:
                 default:
                     control = new RecyclerIdle(this);
