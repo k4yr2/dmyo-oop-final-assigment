@@ -6,13 +6,13 @@ using System.Linq;
 
 namespace dmyo_oop_final_assigment.Tables
 {
-	public class WasteRecycleTable : DMYOTable<WasteRecycle>
+	public class WasteRecyclingTable : DMYOTable<WasteRecycling>
 	{
-		public override string Name => nameof(WasteRecycle);
+		public override string Name => nameof(WasteRecycling);
 
 		public override string[] Params => new string[] { "factory", "person", "status", "date" };
 
-		public override void SetParameters(WasteRecycle recycle, SqlCommand command)
+		public override void SetParameters(WasteRecycling recycle, SqlCommand command)
 		{
 			command.Parameters.AddWithValue("@factory", recycle.Factory);
 			command.Parameters.AddWithValue("@person", recycle.Person);
@@ -20,9 +20,9 @@ namespace dmyo_oop_final_assigment.Tables
 			command.Parameters.AddWithValue("@date", recycle.Date);
 		}
 
-		public override WasteRecycle GetModel(SqlDataReader reader)
+		public override WasteRecycling GetModel(SqlDataReader reader)
 		{
-			return new WasteRecycle()
+			return new WasteRecycling()
 			{
 				Factory = reader.GetInt32(1),
 				Person = reader.GetInt32(2),
@@ -32,18 +32,18 @@ namespace dmyo_oop_final_assigment.Tables
 		}
 
 
-        public DMYOData<WasteRecycle> GetCurrent(int person)
+        public DMYOData<WasteRecycling> GetCurrent(int person)
         {
             return Select($"WHERE status IN (0, 1) and person = {person}").FirstOrDefault();
         }
 
-        public DMYOData<WasteRecycle> Init(int person, int distribution)
+        public DMYOData<WasteRecycling> Init(int person, int distribution)
         {
             var recycle = GetCurrent(person);
 
             if (recycle == null)
             {
-                recycle = Create(new WasteRecycle()
+                recycle = Create(new WasteRecycling()
                 {
                     Factory = TableManager.Person.Read(person).Model.Factory.Value,
                     Person = person,
@@ -55,7 +55,7 @@ namespace dmyo_oop_final_assigment.Tables
                 {
                     TableManager.WasteProduct.Create(new WasteProduct()
                     {
-                        Recycle = recycle.Id,
+                        Recycling = recycle.Id,
                         Type = heap.Model.Type,
                         Quantity = 0,
                     });

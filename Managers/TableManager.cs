@@ -30,7 +30,7 @@ namespace dmyo_oop_final_assigment.Managers
 
 		private static readonly WasteHeapTable m_wasteHeap = new WasteHeapTable();
 
-        private static readonly WasteRecycleTable m_wasteRecycle = new WasteRecycleTable();
+        private static readonly WasteRecyclingTable m_wasteRecycling = new WasteRecyclingTable();
 
 		private static readonly WasteProductTable m_wasteProduct = new WasteProductTable();
 
@@ -140,11 +140,11 @@ namespace dmyo_oop_final_assigment.Managers
 			}
         }
 
-        public static WasteRecycleTable WasteRecycle
+        public static WasteRecyclingTable WasteRecycling
 		{
 			get
 			{
-				return m_wasteRecycle;
+				return m_wasteRecycling;
 			}
 		}
 

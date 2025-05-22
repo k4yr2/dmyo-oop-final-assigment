@@ -149,7 +149,7 @@
     <Compile Include="Models\WasteHeap.cs" />
     <Compile Include="Models\WasteReceipt.cs" />
     <Compile Include="Models\WasteProduct.cs" />
-    <Compile Include="Models\WasteRecycle.cs" />
+    <Compile Include="Models\WasteRecycling.cs" />
     <Compile Include="Models\WasteStock.cs" />
     <Compile Include="Models\WasteUnit.cs" />
     <Compile Include="Controls\CollectorCollection.cs">
@@ -189,7 +189,7 @@
     <Compile Include="Tables\WasteHeapTable.cs" />
     <Compile Include="Tables\WasteReceiptTable.cs" />
     <Compile Include="Tables\WasteProductTable.cs" />
-    <Compile Include="Tables\WasteRecycleTable.cs" />
+    <Compile Include="Tables\WasteRecyclingTable.cs" />
     <Compile Include="Tables\WasteStockTable.cs" />
     <Compile Include="Tables\WasteTable.cs" />
     <Compile Include="Tables\WasteTypeTable.cs" />

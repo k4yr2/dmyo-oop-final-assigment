@@ -2,7 +2,7 @@
 
 namespace dmyo_oop_final_assigment.Models
 {
-	public class WasteRecycle
+	public class WasteRecycling
 	{
 		private int m_factory;
 
@@ -12,7 +12,7 @@ namespace dmyo_oop_final_assigment.Models
 
 		private DateTime m_date;
 
-		public WasteRecycle()
+		public WasteRecycling()
 		{
 
 		}

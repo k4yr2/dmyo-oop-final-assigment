@@ -7,11 +7,11 @@ namespace dmyo_oop_final_assigment.Tables
 	{
 		public override string Name => "WasteProduct";
 
-		public override string[] Params => new string[] { "recycle", "type", "quantity" };
+		public override string[] Params => new string[] { "recycling", "type", "quantity" };
 
 		public override void SetParameters(WasteProduct recyclate, SqlCommand command)
 		{
-			command.Parameters.AddWithValue("@recycle", recyclate.Recycle);
+			command.Parameters.AddWithValue("@recycling", recyclate.Recycling);
             command.Parameters.AddWithValue("@type", recyclate.Type);
             command.Parameters.AddWithValue("@quantity", recyclate.Quantity);
 		}
@@ -20,7 +20,7 @@ namespace dmyo_oop_final_assigment.Tables
 		{
 			return new WasteProduct()
 			{
-				Recycle = reader.GetInt32(1),
+				Recycling = reader.GetInt32(1),
                 Type = reader.GetInt32(2),
                 Quantity = reader.GetDecimal(3)
 			};

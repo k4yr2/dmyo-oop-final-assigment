@@ -2,7 +2,7 @@
 {
 	public class WasteProduct
 	{
-		private int m_recycle;
+		private int m_recycling;
 
         private int m_type;
 
@@ -14,15 +14,15 @@
 		}
 
 
-		public int Recycle
+		public int Recycling
 		{
 			get
 			{
-				return m_recycle;
+				return m_recycling;
 			}
 			set
 			{
-				m_recycle = value;
+				m_recycling = value;
 			}
 		}
 
