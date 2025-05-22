@@ -25,13 +25,24 @@ namespace dmyo_oop_final_assigment.Controls
             }
         }
 
+        public FlowLayoutPanel Panel
+        {
+            get
+            {
+                return contentContainer1.Panel;
+            }
+        }
+
+
         public override void Refresh()
         {
             base.Refresh();
 
+            Panel.Controls.Clear();
             foreach (var heap in TableManager.WasteHeap.OfFactory(Form.Person.Model.Factory.Value))
             {
-
+                if(heap.Model.Quantity > 0)
+                    Panel.Controls.Add(new RecyclerStorageItem(this, heap));
             }
         }
     }
