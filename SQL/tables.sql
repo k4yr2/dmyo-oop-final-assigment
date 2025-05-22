@@ -163,7 +163,7 @@ BEGIN
 		id				INT				PRIMARY KEY IDENTITY(1,1),
 		factory			INT				FOREIGN KEY REFERENCES Factory(id),
 		person			INT				FOREIGN KEY REFERENCES Person(id),
-		active			BIT				NOT NULL DEFAULT(0),
+		status			INT				NOT NULL DEFAULT(0) CHECK (status BETWEEN 0 AND 3),
 		date			DATETIME		NOT NULL DEFAULT GETDATE()
 	);
 END;
