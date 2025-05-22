@@ -73,7 +73,14 @@ namespace dmyo_oop_final_assigment.Tables
 					continue;
 
 				var dispatch = TableManager.WasteDispatch.GetDispatch(dist.Id, type);
-				var receipt = TableManager.WasteReceipt.GetOf(dispatch.Id);
+
+				if(dispatch == null)
+					continue;
+
+                var receipt = TableManager.WasteReceipt.GetOf(dispatch.Id);
+
+				if (receipt == null)
+					continue;
 
                 total -= receipt.Model.Quantity;
 			}
